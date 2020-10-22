@@ -18,6 +18,9 @@ namespace libnokogiri {
 		This table and the descriptions of each link type has been directly lifted from [https://www.tcpdump.org/linktypes.html](https://www.tcpdump.org/linktypes.html).
 
 		Note: See the site linked above for details on the `link_type_t::User0` through `link_type_t::User15` values and other notes about reserved ranges.
+
+		TODO: Waiting on the tcpdump mailing list to respond to https://lists.sandelman.ca/pipermail/tcpdump-workers/2020-October/001548.html to see if we can add needed
+		link types.
 	*/
 	enum class link_type_t : std::uint16_t {
 		BSDLoopback                = 0x0000U, /*!< BSD loopback encapsulation; the link layer header is a 4-byte field, in host byte order, containing a value of 2 for IPv4 packets, a value of either 24, 28, or 30 for IPv6 packets, a value of 7 for OSI packets, or a value of 23 for IPX packets. All of the IPv6 values correspond to IPv6 packets; code reading files should check for all of them. Note that `host byte order` is the byte order of the machine on which the packets are captured; if a live capture is being done, `host byte order` is the byte order of the machine capturing the packets, but if a `savefile` is being read, the byte order is not necessarily that of the machine reading the capture file. */
