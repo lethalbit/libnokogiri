@@ -1,0 +1,292 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t" kind="struct" language="C++" prot="public" final="yes">
+    <compoundname>libnokogiri::pcap::packet_header_modified_t</compoundname>
+    <includes refid="pcap_8hh" local="no">pcap.hh</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a0f1f768038691355390858ed0684886e" prot="private" static="no" mutable="no">
+        <type><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t" kindref="compound">packet_header_t</ref></type>
+        <definition>packet_header_t libnokogiri::pcap::packet_header_modified_t::_base_header</definition>
+        <argsstring></argsstring>
+        <name>_base_header</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="199" column="1" bodyfile="pcap.hh" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1ada3918260c161dfe7b19ce926d300f35" prot="private" static="no" mutable="no">
+        <type>std::uint32_t</type>
+        <definition>std::uint32_t libnokogiri::pcap::packet_header_modified_t::_if_index</definition>
+        <argsstring></argsstring>
+        <name>_if_index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="200" column="1" bodyfile="pcap.hh" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a912d68bb189f4ff6d274ea52167c8999" prot="private" static="no" mutable="no">
+        <type>std::uint16_t</type>
+        <definition>std::uint16_t libnokogiri::pcap::packet_header_modified_t::_proto</definition>
+        <argsstring></argsstring>
+        <name>_proto</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="201" column="1" bodyfile="pcap.hh" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1abb5ae280e1c9085f246422481f266dfa" prot="private" static="no" mutable="no">
+        <type>std::uint8_t</type>
+        <definition>std::uint8_t libnokogiri::pcap::packet_header_modified_t::_type</definition>
+        <argsstring></argsstring>
+        <name>_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="202" column="1" bodyfile="pcap.hh" bodystart="202" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a8fd4a09d97337f1d1d91fd82b7c04a42" prot="private" static="no" mutable="no">
+        <type>std::uint8_t</type>
+        <definition>std::uint8_t libnokogiri::pcap::packet_header_modified_t::_padding</definition>
+        <argsstring></argsstring>
+        <name>_padding</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="203" column="1" bodyfile="pcap.hh" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a81aa37b1ef69e193ba56f51389f51936" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr libnokogiri::pcap::packet_header_modified_t::packet_header_modified_t</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>packet_header_modified_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="205" column="1" bodyfile="pcap.hh" bodystart="205" bodyend="207"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a0f6abc81a93ba4737731f2dd783c5e6b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr libnokogiri::pcap::packet_header_modified_t::packet_header_modified_t</definition>
+        <argsstring>(packet_header_t base_header, std::uint32_t if_index, std::uint16_t protocol, std::uint8_t type) noexcept</argsstring>
+        <name>packet_header_modified_t</name>
+        <param>
+          <type><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t" kindref="compound">packet_header_t</ref></type>
+          <declname>base_header</declname>
+        </param>
+        <param>
+          <type>std::uint32_t</type>
+          <declname>if_index</declname>
+        </param>
+        <param>
+          <type>std::uint16_t</type>
+          <declname>protocol</declname>
+        </param>
+        <param>
+          <type>std::uint8_t</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="209" column="1" bodyfile="pcap.hh" bodystart="209" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a5b4aa06001df4e422366006d32c45dff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>libnokogiri::pcap::packet_header_modified_t::packet_header_modified_t</definition>
+        <argsstring>(std::nullptr_t) noexcept</argsstring>
+        <name>packet_header_modified_t</name>
+        <param>
+          <type>std::nullptr_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="214" column="1" bodyfile="pcap.hh" bodystart="214" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1aebaa8e56ba6567bc279fad8204f81e47" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t" kindref="compound">packet_header_t</ref></type>
+        <definition>packet_header_t libnokogiri::pcap::packet_header_modified_t::base_header</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>base_header</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="218" column="1" bodyfile="pcap.hh" bodystart="218" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1af79884c4df05bcd9fb4302277bccf59e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void libnokogiri::pcap::packet_header_modified_t::base_header</definition>
+        <argsstring>(packet_header_t base_header) noexcept</argsstring>
+        <name>base_header</name>
+        <param>
+          <type><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t" kindref="compound">packet_header_t</ref></type>
+          <declname>base_header</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="219" column="1" bodyfile="pcap.hh" bodystart="219" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1aecefe500478e0b79f1c34331f5362a7f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::uint32_t</type>
+        <definition>std::uint32_t libnokogiri::pcap::packet_header_modified_t::interface_index</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>interface_index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="222" column="1" bodyfile="pcap.hh" bodystart="222" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a23dbd8346862d11df3b1195ef8d77ccf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void libnokogiri::pcap::packet_header_modified_t::interface_index</definition>
+        <argsstring>(std::uint32_t interface_index) noexcept</argsstring>
+        <name>interface_index</name>
+        <param>
+          <type>std::uint32_t</type>
+          <declname>interface_index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="223" column="1" bodyfile="pcap.hh" bodystart="223" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1afdc05fee90005200b34482b46eccb1f5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::uint16_t</type>
+        <definition>std::uint16_t libnokogiri::pcap::packet_header_modified_t::protocol</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>protocol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="226" column="1" bodyfile="pcap.hh" bodystart="226" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a8f52653583d599396e2cd33201184c09" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void libnokogiri::pcap::packet_header_modified_t::protocol</definition>
+        <argsstring>(std::uint16_t protocol) noexcept</argsstring>
+        <name>protocol</name>
+        <param>
+          <type>std::uint16_t</type>
+          <declname>protocol</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="227" column="1" bodyfile="pcap.hh" bodystart="227" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1aaeb34ff208e5b5772e97675002901c31" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::uint8_t</type>
+        <definition>std::uint8_t libnokogiri::pcap::packet_header_modified_t::type</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="230" column="1" bodyfile="pcap.hh" bodystart="230" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a52b308a8be3358f5c3db81f3b098b29b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void libnokogiri::pcap::packet_header_modified_t::type</definition>
+        <argsstring>(std::uint8_t type) noexcept</argsstring>
+        <name>type</name>
+        <param>
+          <type>std::uint8_t</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="231" column="1" bodyfile="pcap.hh" bodystart="231" bodyend="231"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The packet header for the patched version of libpcap. </para>    </briefdescription>
+    <detaileddescription>
+<para>This header is an extension of the normal packet header, it adds four fields to the end of the traditional header.</para><para>The packet headers have the following structure</para><para><programlisting><codeline><highlight class="normal"><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3</highlight></codeline>
+<codeline><highlight class="normal"><sp/>0<sp/>1<sp/>2<sp/>3<sp/>4<sp/>5<sp/>6<sp/>7<sp/>0<sp/>1<sp/>2<sp/>3<sp/>4<sp/>5<sp/>6<sp/>7<sp/>0<sp/>1<sp/>2<sp/>3<sp/>4<sp/>5<sp/>6<sp/>7<sp/>0<sp/>1<sp/>2<sp/>3<sp/>4<sp/>5<sp/>6<sp/>7</highlight></codeline>
+<codeline><highlight class="normal">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Packet<sp/>Header<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Interface<sp/>Index<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Protocol<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>Type<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/>Padding<sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <location file="pcap.hh" line="197" column="1" bodyfile="pcap.hh" bodystart="197" bodyend="233"/>
+    <listofallmembers>
+      <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a0f1f768038691355390858ed0684886e" prot="private" virt="non-virtual"><scope>libnokogiri::pcap::packet_header_modified_t</scope><name>_base_header</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1ada3918260c161dfe7b19ce926d300f35" prot="private" virt="non-virtual"><scope>libnokogiri::pcap::packet_header_modified_t</scope><name>_if_index</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a8fd4a09d97337f1d1d91fd82b7c04a42" prot="private" virt="non-virtual"><scope>libnokogiri::pcap::packet_header_modified_t</scope><name>_padding</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a912d68bb189f4ff6d274ea52167c8999" prot="private" virt="non-virtual"><scope>libnokogiri::pcap::packet_header_modified_t</scope><name>_proto</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1abb5ae280e1c9085f246422481f266dfa" prot="private" virt="non-virtual"><scope>libnokogiri::pcap::packet_header_modified_t</scope><name>_type</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1aebaa8e56ba6567bc279fad8204f81e47" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::packet_header_modified_t</scope><name>base_header</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1af79884c4df05bcd9fb4302277bccf59e" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::packet_header_modified_t</scope><name>base_header</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1aecefe500478e0b79f1c34331f5362a7f" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::packet_header_modified_t</scope><name>interface_index</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a23dbd8346862d11df3b1195ef8d77ccf" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::packet_header_modified_t</scope><name>interface_index</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a81aa37b1ef69e193ba56f51389f51936" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::packet_header_modified_t</scope><name>packet_header_modified_t</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a0f6abc81a93ba4737731f2dd783c5e6b" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::packet_header_modified_t</scope><name>packet_header_modified_t</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a5b4aa06001df4e422366006d32c45dff" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::packet_header_modified_t</scope><name>packet_header_modified_t</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1afdc05fee90005200b34482b46eccb1f5" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::packet_header_modified_t</scope><name>protocol</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a8f52653583d599396e2cd33201184c09" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::packet_header_modified_t</scope><name>protocol</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1aaeb34ff208e5b5772e97675002901c31" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::packet_header_modified_t</scope><name>type</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a52b308a8be3358f5c3db81f3b098b29b" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::packet_header_modified_t</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

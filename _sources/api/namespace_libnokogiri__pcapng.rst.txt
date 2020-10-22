@@ -1,0 +1,57 @@
+
+.. _namespace_libnokogiri__pcapng:
+
+Namespace libnokogiri::pcapng
+=============================
+
+
+libnokogiri pcapng interface 
+ 
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+Detailed Description
+--------------------
+
+All of the objects and machinery in order to read and write pcapng files are located in this namespace. 
+ 
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_libnokogiri__pcapng__blocks`
+
+- :ref:`namespace_libnokogiri__pcapng__options`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structlibnokogiri_1_1pcapng_1_1block__storage__t`
+
+- :ref:`exhale_struct_structlibnokogiri_1_1pcapng_1_1block__t`
+
+- :ref:`exhale_struct_structlibnokogiri_1_1pcapng_1_1option__t`
+
+- :ref:`exhale_struct_structlibnokogiri_1_1pcapng_1_1pcapng__t`
+
+- :ref:`exhale_struct_structlibnokogiri_1_1pcapng_1_1section__t`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1`
+
+- :ref:`exhale_enum_namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bd`

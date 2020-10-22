@@ -1,0 +1,24 @@
+
+.. _namespace_libnokogiri__compiletime:
+
+Namespace libnokogiri::compiletime
+==================================
+
+
+libnokogiri library configuration constants 
+ 
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+Detailed Description
+--------------------
+
+This namespace contains constants that were configured at compile time for the library, thus is indicates things like version number, zlib support and other miscellaneous things. 
+ 
+

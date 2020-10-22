@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="blocks_2interface__description_8hh" kind="file" language="C++">
+    <compoundname>interface_description.hh</compoundname>
+    <includes local="no">cstdint</includes>
+    <includes refid="block_8hh" local="no">libnokogiri/pcapng/block.hh</includes>
+    <includedby refid="blocks_8hh" local="no">pcapng/blocks.hh</includedby>
+    <incdepgraph>
+      <node id="98">
+        <label>cstdint</label>
+      </node>
+      <node id="99">
+        <label>libnokogiri/pcapng/block.hh</label>
+        <link refid="block_8hh_source"/>
+        <childnode refid="98" relation="include">
+        </childnode>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+      </node>
+      <node id="97">
+        <label>pcapng/blocks/interface_description.hh</label>
+        <link refid="blocks_2interface__description_8hh"/>
+        <childnode refid="98" relation="include">
+        </childnode>
+        <childnode refid="99" relation="include">
+        </childnode>
+      </node>
+      <node id="101">
+        <label>optional</label>
+      </node>
+      <node id="100">
+        <label>utility</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="105">
+        <label>libnokogiri.hh</label>
+        <link refid="libnokogiri_8hh_source"/>
+      </node>
+      <node id="103">
+        <label>pcapng/blocks.hh</label>
+        <link refid="blocks_8hh_source"/>
+        <childnode refid="104" relation="include">
+        </childnode>
+      </node>
+      <node id="102">
+        <label>pcapng/blocks/interface_description.hh</label>
+        <link refid="blocks_2interface__description_8hh"/>
+        <childnode refid="103" relation="include">
+        </childnode>
+      </node>
+      <node id="104">
+        <label>pcapng.hh</label>
+        <link refid="pcapng_8hh_source"/>
+        <childnode refid="105" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1interface__description__t" prot="public">libnokogiri::pcapng::blocks::interface_description_t</innerclass>
+    <innernamespace refid="namespacelibnokogiri_1_1pcapng_1_1blocks">libnokogiri::pcapng::blocks</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>LGPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>pcapng/blocks/section_header.hh<sp/>-<sp/>pcapng<sp/>section<sp/>header<sp/>block<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(LIBNOKOGIRI_PCAPNG_BLOCKS_INTERFACE_DESCRIPTION_HH)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LIBNOKOGIRI_PCAPNG_BLOCKS_INTERFACE_DESCRIPTION_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;libnokogiri/pcapng/block.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacelibnokogiri_1_1pcapng_1_1blocks" kindref="compound">libnokogiri::pcapng::blocks</ref><sp/>{</highlight></codeline>
+<codeline lineno="16" refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1interface__description__t" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1interface__description__t" kindref="compound">interface_description_t</ref><sp/>final<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcapng_1_1block__t" kindref="compound">block_t</ref><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c" kindref="member">link_type_t</ref><sp/>_link_type;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::array&lt;uint8_t,<sp/>16&gt;<sp/>_reserved;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint32_t<sp/>_snap_len;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>LIBNOKOGIRI_PCAPNG_BLOCKS_INTERFACE_DESCRIPTION_HH<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="pcapng/blocks/interface_description.hh"/>
+  </compounddef>
+</doxygen>

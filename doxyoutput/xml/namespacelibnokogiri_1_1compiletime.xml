@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacelibnokogiri_1_1compiletime" kind="namespace" language="C++">
+    <compoundname>libnokogiri::compiletime</compoundname>
+    <briefdescription>
+<para>libnokogiri library configuration constants </para>    </briefdescription>
+    <detaileddescription>
+<para>This namespace contains constants that were configured at compile time for the library, thus is indicates things like version number, zlib support and other miscellaneous things. </para>    </detaileddescription>
+    <location file="libnokogiri.hh" line="51" column="1"/>
+  </compounddef>
+</doxygen>

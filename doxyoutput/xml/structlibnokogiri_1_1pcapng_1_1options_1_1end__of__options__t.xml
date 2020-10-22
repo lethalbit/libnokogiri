@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structlibnokogiri_1_1pcapng_1_1options_1_1end__of__options__t" kind="struct" language="C++" prot="public" final="yes">
+    <compoundname>libnokogiri::pcapng::options::end_of_options_t</compoundname>
+    <basecompoundref refid="structlibnokogiri_1_1pcapng_1_1option__t" prot="public" virt="non-virtual">libnokogiri::pcapng::option_t</basecompoundref>
+    <includes refid="option_8hh" local="no">option.hh</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structlibnokogiri_1_1pcapng_1_1options_1_1end__of__options__t_1af06d6fd664da6b75ac7f7ded48dc0aa5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr libnokogiri::pcapng::options::end_of_options_t::end_of_options_t</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>end_of_options_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/option.hh" line="126" column="1" bodyfile="pcapng/option.hh" bodystart="126" bodyend="127"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Sentinel type for the end of a collection of options. </para>    </briefdescription>
+    <detaileddescription>
+<para>This special struct is used to signify the end of a collection of options.</para><para>Therefore it has no members or methods other than those relating to the base <ref refid="structlibnokogiri_1_1pcapng_1_1option__t" kindref="compound">option_t</ref> class.</para><para>Within the list of options this is represented as 4 bytes of consecutive <computeroutput>0x00</computeroutput>&apos;s</para><para>The option is represented in file as follows</para><para><programlisting><codeline><highlight class="normal"><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3</highlight></codeline>
+<codeline><highlight class="normal"><sp/>0<sp/>1<sp/>2<sp/>3<sp/>4<sp/>5<sp/>6<sp/>7<sp/>0<sp/>1<sp/>2<sp/>3<sp/>4<sp/>5<sp/>6<sp/>7<sp/>0<sp/>1<sp/>2<sp/>3<sp/>4<sp/>5<sp/>6<sp/>7<sp/>0<sp/>1<sp/>2<sp/>3<sp/>4<sp/>5<sp/>6<sp/>7</highlight></codeline>
+<codeline><highlight class="normal">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0000U<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0000U<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="7">
+        <label>libnokogiri::pcapng::option_t</label>
+        <link refid="structlibnokogiri_1_1pcapng_1_1option__t"/>
+      </node>
+      <node id="6">
+        <label>libnokogiri::pcapng::options::end_of_options_t</label>
+        <link refid="structlibnokogiri_1_1pcapng_1_1options_1_1end__of__options__t"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="9">
+        <label>libnokogiri::pcapng::option_t</label>
+        <link refid="structlibnokogiri_1_1pcapng_1_1option__t"/>
+      </node>
+      <node id="8">
+        <label>libnokogiri::pcapng::options::end_of_options_t</label>
+        <link refid="structlibnokogiri_1_1pcapng_1_1options_1_1end__of__options__t"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="pcapng/option.hh" line="125" column="1" bodyfile="pcapng/option.hh" bodystart="125" bodyend="128"/>
+    <listofallmembers>
+      <member refid="structlibnokogiri_1_1pcapng_1_1options_1_1end__of__options__t_1af06d6fd664da6b75ac7f7ded48dc0aa5" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::options::end_of_options_t</scope><name>end_of_options_t</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1option__t_1a280efe65c024745372eefb55c97875b6" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::options::end_of_options_t</scope><name>length</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1option__t_1a6b5fe61e5c697dc17370a4378822f819" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::options::end_of_options_t</scope><name>multiple_allowed</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1option__t_1a68a3d5b94ccb258af9431d8f311bd69e" prot="protected" virt="non-virtual"><scope>libnokogiri::pcapng::options::end_of_options_t</scope><name>option_t</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1option__t_1ab243ab6abaf402e95dd12ab950417e51" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::options::end_of_options_t</scope><name>option_t</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1option__t_1adc80d9c6eed25d0ee3678558b75924aa" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::options::end_of_options_t</scope><name>size</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1option__t_1a8e74771be5c630bc93a50d24572a92cc" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::options::end_of_options_t</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

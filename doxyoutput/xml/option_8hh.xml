@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="option_8hh" kind="file" language="C++">
+    <compoundname>option.hh</compoundname>
+    <includes local="no">cstdint</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">unordered_map</includes>
+    <includes local="no">limits</includes>
+    <includedby refid="options_2interface__description_8hh" local="no">pcapng/options/interface_description.hh</includedby>
+    <includedby refid="options_2section__header_8hh" local="no">pcapng/options/section_header.hh</includedby>
+    <includedby refid="options_8hh" local="no">pcapng/options.hh</includedby>
+    <includedby refid="pcapng_8hh" local="no">pcapng.hh</includedby>
+    <incdepgraph>
+      <node id="144">
+        <label>limits</label>
+      </node>
+      <node id="141">
+        <label>cstdint</label>
+      </node>
+      <node id="140">
+        <label>pcapng/option.hh</label>
+        <link refid="option_8hh"/>
+        <childnode refid="141" relation="include">
+        </childnode>
+        <childnode refid="142" relation="include">
+        </childnode>
+        <childnode refid="143" relation="include">
+        </childnode>
+        <childnode refid="144" relation="include">
+        </childnode>
+      </node>
+      <node id="143">
+        <label>unordered_map</label>
+      </node>
+      <node id="142">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="150">
+        <label>pcapng/options/section_header.hh</label>
+        <link refid="options_2section__header_8hh_source"/>
+        <childnode refid="147" relation="include">
+        </childnode>
+      </node>
+      <node id="145">
+        <label>pcapng/option.hh</label>
+        <link refid="option_8hh"/>
+        <childnode refid="146" relation="include">
+        </childnode>
+        <childnode refid="150" relation="include">
+        </childnode>
+        <childnode refid="147" relation="include">
+        </childnode>
+        <childnode refid="148" relation="include">
+        </childnode>
+      </node>
+      <node id="149">
+        <label>libnokogiri.hh</label>
+        <link refid="libnokogiri_8hh_source"/>
+      </node>
+      <node id="148">
+        <label>pcapng.hh</label>
+        <link refid="pcapng_8hh_source"/>
+        <childnode refid="149" relation="include">
+        </childnode>
+      </node>
+      <node id="147">
+        <label>pcapng/options.hh</label>
+        <link refid="options_8hh_source"/>
+        <childnode refid="148" relation="include">
+        </childnode>
+      </node>
+      <node id="146">
+        <label>pcapng/options/interface_description.hh</label>
+        <link refid="options_2interface__description_8hh_source"/>
+        <childnode refid="147" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structlibnokogiri_1_1pcapng_1_1option__t" prot="public">libnokogiri::pcapng::option_t</innerclass>
+    <innerclass refid="structlibnokogiri_1_1pcapng_1_1options_1_1end__of__options__t" prot="public">libnokogiri::pcapng::options::end_of_options_t</innerclass>
+    <innernamespace refid="namespacelibnokogiri_1_1pcapng">libnokogiri::pcapng</innernamespace>
+    <innernamespace refid="namespacelibnokogiri_1_1pcapng_1_1options">libnokogiri::pcapng::options</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>LGPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>pcapng/option.hh<sp/>-<sp/>Base<sp/>type<sp/>for<sp/>pcapng<sp/>options<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(LIBNOKOGIRI_PCAPNG_OPTIONS_HH)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LIBNOKOGIRI_PCAPNG_OPTIONS_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;limits&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacelibnokogiri_1_1pcapng" kindref="compound">libnokogiri::pcapng</ref><sp/>{</highlight></codeline>
+<codeline lineno="22" refid="namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>struct</highlight><highlight class="normal"><sp/><ref refid="namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bd" kindref="member">option_type_t</ref><sp/>:<sp/>std::uint16_t<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bda87557f11575c0ad78e4e28abedc13b6e" kindref="member">End</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x0000U,<sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bda0be8406951cdfda82f00f79328cf4efc" kindref="member">Comment</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x0001U,<sp/></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bda7bd9867bf70236befc1c9f79bc769455" kindref="member">SHBHardware</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x0002U,<sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bdafe3ffa72a8b875f2eef78463d9485ebb" kindref="member">SHBOperatingSystem</ref><sp/>=<sp/>0x0003U,<sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bda337673f32b7c7aa33cea8c388cd278c9" kindref="member">SHBUserApplication</ref><sp/>=<sp/>0x0004U,<sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bdabfacbbe4e8be8fbc78a60cd9f8e67dd5" kindref="member">Custom1</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x0BACU,<sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bda1d8ba0be5e8d76a3e6fb571c80929db2" kindref="member">Custom2</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x0BADU,<sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>0x0BAEU<sp/>-<sp/>0x4BABU<sp/>:<sp/>Unallocated,<sp/>presumed<sp/>reserved<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bda01cd47f19cbca3337e2f0864d20544c8" kindref="member">Custom3</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x4BACU,<sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bdaadea16898400a3a8fa1921341144807e" kindref="member">Custom4</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x4BADU,<sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>0x4BAEU<sp/>-<sp/>0xFFFFU<sp/>:<sp/>Unallocated,<sp/>presumed<sp/>reserved<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="structlibnokogiri_1_1pcapng_1_1option__t" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structlibnokogiri_1_1pcapng_1_1option__t" kindref="compound">option_t</ref><sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bd" kindref="member">option_type_t</ref><sp/>_type;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint16_t<sp/>_length;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>_multiple_allowed;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/><ref refid="structlibnokogiri_1_1pcapng_1_1option__t" kindref="compound">option_t</ref>(<ref refid="namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bd" kindref="member">option_type_t</ref><sp/>type,<sp/>std::uint16_t<sp/>length,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>multiple)<sp/>noexcept<sp/>:</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_type{type},<sp/>_length{length},<sp/>_multiple_allowed{multiple}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="comment">/*<sp/>NOP<sp/>*/</highlight><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/><ref refid="structlibnokogiri_1_1pcapng_1_1option__t" kindref="compound">option_t</ref>()<sp/>noexcept<sp/>:</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_type{<ref refid="namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bda87557f11575c0ad78e4e28abedc13b6e" kindref="member">option_type_t::End</ref>},<sp/>_length{0U},<sp/>_multiple_allowed{</highlight><highlight class="keyword">false</highlight><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="comment">/*<sp/>NOP<sp/>*/</highlight><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
+<codeline lineno="88" refid="structlibnokogiri_1_1pcapng_1_1option__t_1a8e74771be5c630bc93a50d24572a92cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bd" kindref="member">option_type_t</ref><sp/><ref refid="structlibnokogiri_1_1pcapng_1_1option__t_1a8e74771be5c630bc93a50d24572a92cc" kindref="member">type</ref>()<sp/>const<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_type;<sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
+<codeline lineno="92" refid="structlibnokogiri_1_1pcapng_1_1option__t_1a280efe65c024745372eefb55c97875b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint16_t<sp/><ref refid="structlibnokogiri_1_1pcapng_1_1option__t_1a280efe65c024745372eefb55c97875b6" kindref="member">length</ref>()<sp/>const<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_length;<sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
+<codeline lineno="96" refid="structlibnokogiri_1_1pcapng_1_1option__t_1adc80d9c6eed25d0ee3678558b75924aa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/><ref refid="structlibnokogiri_1_1pcapng_1_1option__t_1adc80d9c6eed25d0ee3678558b75924aa" kindref="member">size</ref>()<sp/>const<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_length<sp/>+<sp/>4;<sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
+<codeline lineno="100" refid="structlibnokogiri_1_1pcapng_1_1option__t_1a6b5fe61e5c697dc17370a4378822f819" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcapng_1_1option__t_1a6b5fe61e5c697dc17370a4378822f819" kindref="member">multiple_allowed</ref>()<sp/>const<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_multiple_allowed;<sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">options<sp/>{</highlight></codeline>
+<codeline lineno="125" refid="structlibnokogiri_1_1pcapng_1_1options_1_1end__of__options__t" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structlibnokogiri_1_1pcapng_1_1options_1_1end__of__options__t" kindref="compound">end_of_options_t</ref><sp/>final<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcapng_1_1option__t" kindref="compound">option_t</ref><sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/><ref refid="structlibnokogiri_1_1pcapng_1_1options_1_1end__of__options__t" kindref="compound">end_of_options_t</ref>()<sp/>noexcept<sp/>:<sp/><ref refid="structlibnokogiri_1_1pcapng_1_1option__t" kindref="compound">option_t</ref>(<ref refid="namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bda87557f11575c0ad78e4e28abedc13b6e" kindref="member">option_type_t::End</ref>,<sp/>0x0000U,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="comment">/*<sp/>NOP<sp/>*/</highlight><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>LIBNOKOGIRI_PCAPNG_OPTIONS_HH<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="pcapng/option.hh"/>
+  </compounddef>
+</doxygen>

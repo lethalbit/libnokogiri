@@ -1,0 +1,16 @@
+.. _exhale_struct_structlibnokogiri_1_1pcap_1_1pcap__t:
+
+Struct pcap_t
+=============
+
+- Defined in :ref:`file_pcap.hh`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: libnokogiri::pcap::pcap_t
+   :members:
+   :protected-members:
+   :undoc-members:

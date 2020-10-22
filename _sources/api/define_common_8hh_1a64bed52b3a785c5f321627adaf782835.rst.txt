@@ -1,0 +1,13 @@
+.. _exhale_define_common_8hh_1a64bed52b3a785c5f321627adaf782835:
+
+Define LIBNOKOGIRI_COMMON_HH
+============================
+
+- Defined in :ref:`file_common.hh`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: LIBNOKOGIRI_COMMON_HH

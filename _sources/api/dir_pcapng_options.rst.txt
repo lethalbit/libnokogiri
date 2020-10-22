@@ -1,0 +1,21 @@
+.. _dir_pcapng_options:
+
+
+Directory options
+=================
+
+
+|exhale_lsh| :ref:`Parent directory <dir_pcapng>` (``pcapng``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+*Directory path:* ``pcapng/options``
+
+
+Files
+-----
+
+- :ref:`file_pcapng_options_interface_description.hh`
+- :ref:`file_pcapng_options_section_header.hh`
+
+

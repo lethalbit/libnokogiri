@@ -1,0 +1,55 @@
+
+.. _namespace_libnokogiri__pcap:
+
+Namespace libnokogiri::pcap
+===========================
+
+
+libnokogiri pcap interface 
+ 
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+Detailed Description
+--------------------
+
+All of the objects and machinery in order to read and write legacy pcap files are located in this namespace. 
+ 
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structlibnokogiri_1_1pcap_1_1file__header__t`
+
+- :ref:`exhale_struct_structlibnokogiri_1_1pcap_1_1packet__header__modified__t`
+
+- :ref:`exhale_struct_structlibnokogiri_1_1pcap_1_1packet__header__t`
+
+- :ref:`exhale_struct_structlibnokogiri_1_1pcap_1_1packet__t`
+
+- :ref:`exhale_struct_structlibnokogiri_1_1pcap_1_1pcap__t`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_namespacelibnokogiri_1_1pcap_1a4ab33a63f40fd16d1dadad8d2c03c4c1`
+
+- :ref:`exhale_typedef_namespacelibnokogiri_1_1pcap_1a8ee510d6a9b5728597274839cf179381`

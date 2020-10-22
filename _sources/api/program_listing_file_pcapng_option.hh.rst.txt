@@ -1,0 +1,73 @@
+
+.. _program_listing_file_pcapng_option.hh:
+
+Program Listing for File option.hh
+==================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_pcapng_option.hh>` (``pcapng/option.hh``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   // SPDX-License-Identifier: LGPL-3.0-or-later
+   /* pcapng/option.hh - Base type for pcapng options */
+   #if !defined(LIBNOKOGIRI_PCAPNG_OPTIONS_HH)
+   #define LIBNOKOGIRI_PCAPNG_OPTIONS_HH
+   
+   #include <cstdint>
+   #include <memory>
+   #include <unordered_map>
+   #include <limits>
+   
+   namespace libnokogiri::pcapng {
+       enum struct option_type_t : std::uint16_t {
+           End                = 0x0000U, 
+           Comment            = 0x0001U, 
+           SHBHardware        = 0x0002U, 
+           SHBOperatingSystem = 0x0003U, 
+           SHBUserApplication = 0x0004U, 
+           Custom1            = 0x0BACU, 
+           Custom2            = 0x0BADU, 
+           /* 0x0BAEU - 0x4BABU : Unallocated, presumed reserved */
+           Custom3            = 0x4BACU, 
+           Custom4            = 0x4BADU, 
+           /* 0x4BAEU - 0xFFFFU : Unallocated, presumed reserved */
+       };
+   
+       struct option_t {
+       private:
+           option_type_t _type;
+           std::uint16_t _length;
+           bool _multiple_allowed;
+       protected:
+           constexpr option_t(option_type_t type, std::uint16_t length, bool multiple) noexcept :
+               _type{type}, _length{length}, _multiple_allowed{multiple}
+               { /* NOP */ }
+       public:
+           constexpr option_t() noexcept :
+               _type{option_type_t::End}, _length{0U}, _multiple_allowed{false}
+               { /* NOP */ }
+   
+           [[nodiscard]]
+           option_type_t type() const noexcept { return _type; }
+   
+           [[nodiscard]]
+           std::uint16_t length() const noexcept { return _length; }
+   
+           [[nodiscard]]
+           std::size_t size() const noexcept { return _length + 4; }
+   
+           [[nodiscard]]
+           bool multiple_allowed() const noexcept { return _multiple_allowed; }
+       };
+   
+       namespace options {
+           struct end_of_options_t final : public option_t {
+               constexpr end_of_options_t() noexcept : option_t(option_type_t::End, 0x0000U, false)
+                   { /* NOP */ }
+           };
+       }
+   }
+   
+   #endif /* LIBNOKOGIRI_PCAPNG_OPTIONS_HH */

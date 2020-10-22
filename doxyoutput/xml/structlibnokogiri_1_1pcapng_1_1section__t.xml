@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structlibnokogiri_1_1pcapng_1_1section__t" kind="struct" language="C++" prot="public" final="yes">
+    <compoundname>libnokogiri::pcapng::section_t</compoundname>
+    <includes refid="section_8hh" local="no">section.hh</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcapng_1_1section__t_1af8a329a8c1cee04fa41c793adcf18508" prot="private" static="no" mutable="no">
+        <type>std::uint32_t</type>
+        <definition>std::uint32_t libnokogiri::pcapng::section_t::_length</definition>
+        <argsstring></argsstring>
+        <name>_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/section.hh" line="19" column="1" bodyfile="pcapng/section.hh" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcapng_1_1section__t_1a521d238470677f0fb107a290f808d742" prot="private" static="no" mutable="no">
+        <type>std::uintptr_t</type>
+        <definition>std::uintptr_t libnokogiri::pcapng::section_t::_offset</definition>
+        <argsstring></argsstring>
+        <name>_offset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/section.hh" line="20" column="1" bodyfile="pcapng/section.hh" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcapng_1_1section__t_1a2a86a9526eea6af4b12a7c1ee00eafe3" prot="private" static="no" mutable="no">
+        <type><ref refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t" kindref="compound">blocks::section_header_t</ref></type>
+        <definition>blocks::section_header_t libnokogiri::pcapng::section_t::_header</definition>
+        <argsstring></argsstring>
+        <name>_header</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/section.hh" line="21" column="1" bodyfile="pcapng/section.hh" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcapng_1_1section__t_1aceb50c084a25a22a1bbf0250e5fa9295" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structlibnokogiri_1_1pcapng_1_1block__storage__t" kindref="compound">block_storage_t</ref> &gt;</type>
+        <definition>std::vector&lt;block_storage_t&gt; libnokogiri::pcapng::section_t::_blocks</definition>
+        <argsstring></argsstring>
+        <name>_blocks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/section.hh" line="22" column="1" bodyfile="pcapng/section.hh" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Storage for sections within a pcapng file. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pcapng/section.hh" line="17" column="1" bodyfile="pcapng/section.hh" bodystart="17" bodyend="24"/>
+    <listofallmembers>
+      <member refid="structlibnokogiri_1_1pcapng_1_1section__t_1aceb50c084a25a22a1bbf0250e5fa9295" prot="private" virt="non-virtual"><scope>libnokogiri::pcapng::section_t</scope><name>_blocks</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1section__t_1a2a86a9526eea6af4b12a7c1ee00eafe3" prot="private" virt="non-virtual"><scope>libnokogiri::pcapng::section_t</scope><name>_header</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1section__t_1af8a329a8c1cee04fa41c793adcf18508" prot="private" virt="non-virtual"><scope>libnokogiri::pcapng::section_t</scope><name>_length</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1section__t_1a521d238470677f0fb107a290f808d742" prot="private" virt="non-virtual"><scope>libnokogiri::pcapng::section_t</scope><name>_offset</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

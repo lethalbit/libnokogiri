@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespacelibnokogiri_1a6ae0f93f4f2ab00b34bc908c12b8a072:
+
+Typedef libnokogiri::file_t
+===========================
+
+- Defined in :ref:`file_common.hh`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: libnokogiri::file_t

@@ -1,0 +1,13 @@
+.. _exhale_enum_namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c:
+
+Enum link_type_t
+================
+
+- Defined in :ref:`file_common.hh`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: libnokogiri::link_type_t

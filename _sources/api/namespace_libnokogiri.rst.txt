@@ -1,0 +1,49 @@
+
+.. _namespace_libnokogiri:
+
+Namespace libnokogiri
+=====================
+
+
+Overarching libnokogiri namespace. 
+ 
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_libnokogiri__compiletime`
+
+- :ref:`namespace_libnokogiri__pcap`
+
+- :ref:`namespace_libnokogiri__pcapng`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structlibnokogiri_1_1version__t`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_namespacelibnokogiri_1a6ae0f93f4f2ab00b34bc908c12b8a072`

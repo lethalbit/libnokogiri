@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structlibnokogiri_1_1pcapng_1_1block__storage__t" kind="struct" language="C++" prot="public" final="yes">
+    <compoundname>libnokogiri::pcapng::block_storage_t</compoundname>
+    <includes refid="block_8hh" local="no">block.hh</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcapng_1_1block__storage__t_1af6dad51c0588fdaf5dd8bf8f2b5ea930" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1" kindref="member">block_type_t</ref></type>
+        <definition>block_type_t libnokogiri::pcapng::block_storage_t::_type</definition>
+        <argsstring></argsstring>
+        <name>_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/block.hh" line="134" column="1" bodyfile="pcapng/block.hh" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcapng_1_1block__storage__t_1a4b91c07bd4d632c5a5611bae91a37005" prot="private" static="no" mutable="no">
+        <type>std::uint32_t</type>
+        <definition>std::uint32_t libnokogiri::pcapng::block_storage_t::_length</definition>
+        <argsstring></argsstring>
+        <name>_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/block.hh" line="135" column="1" bodyfile="pcapng/block.hh" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcapng_1_1block__storage__t_1ad8cbf1254a4171d98553a5657b7324f1" prot="private" static="no" mutable="no">
+        <type>std::uintptr_t</type>
+        <definition>std::uintptr_t libnokogiri::pcapng::block_storage_t::_offset</definition>
+        <argsstring></argsstring>
+        <name>_offset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/block.hh" line="136" column="1" bodyfile="pcapng/block.hh" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcapng_1_1block__storage__t_1a2044e9b4605da46ce361475b8351e845" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="structlibnokogiri_1_1pcapng_1_1block__t" kindref="compound">block_t</ref> &gt;</type>
+        <definition>std::optional&lt;block_t&gt; libnokogiri::pcapng::block_storage_t::_block_cache</definition>
+        <argsstring></argsstring>
+        <name>_block_cache</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/block.hh" line="137" column="1" bodyfile="pcapng/block.hh" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structlibnokogiri_1_1pcapng_1_1block__storage__t_1a016f1eab28bfd26ee1894e7b70b77d5e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr libnokogiri::pcapng::block_storage_t::block_storage_t</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>block_storage_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/block.hh" line="139" column="1" bodyfile="pcapng/block.hh" bodystart="139" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcapng_1_1block__storage__t_1adbcbf4e352f05246808dd433d81e9dca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr libnokogiri::pcapng::block_storage_t::block_storage_t</definition>
+        <argsstring>(block_type_t type, std::uint32_t length, std::uintptr_t offset, std::optional&lt; block_t &gt; block=std::nullopt) noexcept</argsstring>
+        <name>block_storage_t</name>
+        <param>
+          <type><ref refid="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1" kindref="member">block_type_t</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>std::uint32_t</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>std::uintptr_t</type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="structlibnokogiri_1_1pcapng_1_1block__t" kindref="compound">block_t</ref> &gt;</type>
+          <declname>block</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/block.hh" line="143" column="1" bodyfile="pcapng/block.hh" bodystart="143" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcapng_1_1block__storage__t_1a876eeed80f8067d9e21ce6ef443f85e0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1" kindref="member">block_type_t</ref></type>
+        <definition>block_type_t libnokogiri::pcapng::block_storage_t::type</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the type of the block stored </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/block.hh" line="149" column="1" bodyfile="pcapng/block.hh" bodystart="149" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcapng_1_1block__storage__t_1a8bd8682f54b22528308b3bf02cfe57ce" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::uint32_t</type>
+        <definition>std::uint32_t libnokogiri::pcapng::block_storage_t::length</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the length of the block stored </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/block.hh" line="152" column="1" bodyfile="pcapng/block.hh" bodystart="152" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcapng_1_1block__storage__t_1aaefb53a2f47a769d18a387ea42dc4284" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::uintptr_t</type>
+        <definition>std::uintptr_t libnokogiri::pcapng::block_storage_t::offset</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>offset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the offset of the block into the pcap file </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/block.hh" line="155" column="1" bodyfile="pcapng/block.hh" bodystart="155" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcapng_1_1block__storage__t_1a8a9f3f0df89ebea5528fcdbb2a7a30f1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="structlibnokogiri_1_1pcapng_1_1block__t" kindref="compound">block_t</ref> &gt;</type>
+        <definition>std::optional&lt;block_t&gt; libnokogiri::pcapng::block_storage_t::get_block</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>get_block</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the block from the file </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/block.hh" line="158" column="1" bodyfile="pcapng/block.hh" bodystart="158" bodyend="164"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Cached block information for pcapng sections. </para>    </briefdescription>
+    <detaileddescription>
+<para>This structure stores a small amount of information pertaining to a block in a section of a pcapng file.</para><para>It holds the block type, the block length, and the offset into the pcapng file the block is located at.</para><para>This class lets us know where every block is and it&apos;s size without actually loading the blocks into memory. This makes reading a file and searching for blocks much faster and more memory efficient in exchange for a small time penalty when first reading the file. </para>    </detaileddescription>
+    <location file="pcapng/block.hh" line="132" column="1" bodyfile="pcapng/block.hh" bodystart="132" bodyend="166"/>
+    <listofallmembers>
+      <member refid="structlibnokogiri_1_1pcapng_1_1block__storage__t_1a2044e9b4605da46ce361475b8351e845" prot="private" virt="non-virtual"><scope>libnokogiri::pcapng::block_storage_t</scope><name>_block_cache</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1block__storage__t_1a4b91c07bd4d632c5a5611bae91a37005" prot="private" virt="non-virtual"><scope>libnokogiri::pcapng::block_storage_t</scope><name>_length</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1block__storage__t_1ad8cbf1254a4171d98553a5657b7324f1" prot="private" virt="non-virtual"><scope>libnokogiri::pcapng::block_storage_t</scope><name>_offset</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1block__storage__t_1af6dad51c0588fdaf5dd8bf8f2b5ea930" prot="private" virt="non-virtual"><scope>libnokogiri::pcapng::block_storage_t</scope><name>_type</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1block__storage__t_1a016f1eab28bfd26ee1894e7b70b77d5e" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::block_storage_t</scope><name>block_storage_t</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1block__storage__t_1adbcbf4e352f05246808dd433d81e9dca" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::block_storage_t</scope><name>block_storage_t</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1block__storage__t_1a8a9f3f0df89ebea5528fcdbb2a7a30f1" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::block_storage_t</scope><name>get_block</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1block__storage__t_1a8bd8682f54b22528308b3bf02cfe57ce" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::block_storage_t</scope><name>length</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1block__storage__t_1aaefb53a2f47a769d18a387ea42dc4284" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::block_storage_t</scope><name>offset</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1block__storage__t_1a876eeed80f8067d9e21ce6ef443f85e0" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::block_storage_t</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

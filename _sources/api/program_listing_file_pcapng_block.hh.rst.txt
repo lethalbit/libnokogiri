@@ -1,0 +1,112 @@
+
+.. _program_listing_file_pcapng_block.hh:
+
+Program Listing for File block.hh
+=================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_pcapng_block.hh>` (``pcapng/block.hh``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   // SPDX-License-Identifier: LGPL-3.0-or-later
+   /* pcapng/block.hh - Base type for pcapng blocks */
+   #if !defined(LIBNOKOGIRI_PCAPNG_BLOCK_HH)
+   #define LIBNOKOGIRI_PCAPNG_BLOCK_HH
+   
+   #include <cstdint>
+   #include <utility>
+   #include <optional>
+   
+   namespace libnokogiri::pcapng {
+       enum struct block_type_t : std::uint32_t {
+           Reserved                   = 0x00000000U,
+           InterfaceDescription       = 0x00000001U, 
+           Packet                     = 0x00000002U, 
+           SimplePacket               = 0x00000003U, 
+           NameResolution             = 0x00000004U, 
+           InterfaceStatistics        = 0x00000005U, 
+           EnhancedPacket             = 0x00000006U, 
+           SocketAggrigation          = 0x00000007U, 
+           ARINC429AFDXEncapsulation  = 0x00000008U,
+           SystemdJournalExport       = 0x00000009U, 
+           DecryptionSecrets          = 0x0000000AU, 
+           /* 0x0000000BU - 0x00000100U : Unallocated, presumed reserved */
+           HoneProjectMachineInfo     = 0x00000101U,
+           HoneProjectConnectionEvent = 0x00000102U,
+           /* 0x00000103U - 0x00000200U : Unallocated, presumed reserved */
+           SysdigMachineInfo          = 0x00000201U,
+           SysdigProcessInfoV1        = 0x00000202U,
+           SysdigFDList               = 0x00000203U,
+           SysdigEvent                = 0x00000204U,
+           SysdigInterfaceList        = 0x00000205U,
+           SysdigUserList             = 0x00000206U,
+           SysdigProcessInfoV2        = 0x00000207U,
+           SysdigEventWithFlags       = 0x00000208U,
+           SysdigProcessInfoV3        = 0x00000209U,
+           SysdigProcessInfoV4        = 0x00000210U,
+           SysdigProcessInfoV5        = 0x00000211U,
+           SysdigProcessInfoV6        = 0x00000212U,
+           SysdigProcessInfoV7        = 0x00000213U,
+           /* 0x00000213U - 0x00000BACU : Unallocated, presumed reserved */
+           CustomRewriteCopyable      = 0x00000BADU, 
+           /* 0x00000BAEU - 0x40000BACU : Unallocated, presumed reserved */
+           CustomRewriteUncopyable    = 0x40000BADU, 
+           /* 0x40000BAEU - 0x0A0D0D09U : Unallocated, presumed reserved */
+           SectionHeader              = 0x0A0D0D0AU, /* RFC Section 4.1 */
+           /* 0x0A0D0D0BU - 0x0A0D09FFU : Unallocated, presumed reserved */
+           /* 0x0A0D0A00U - 0x0A0D0AFFU : Reserved, Safegaurd range */
+           /* 0x80000000U - 0xFFFFFFFFU : Reserved for local use */
+   
+       };
+   
+       struct block_t {
+       private:
+           block_type_t _type;
+       protected:
+           constexpr block_t(block_type_t type) noexcept :
+               _type{type}
+               { /* NOP */ }
+       public:
+           constexpr block_t() noexcept :
+               _type{block_type_t::Reserved}
+               { /* NOP */ }
+           [[nodiscard]]
+           block_type_t type() const noexcept { return _type; }
+       };
+   
+       struct block_storage_t final {
+       private:
+           block_type_t _type;
+           std::uint32_t _length;
+           std::uintptr_t _offset;
+           std::optional<block_t> _block_cache;
+       public:
+           constexpr block_storage_t() noexcept :
+               _type{block_type_t::Reserved}, _length{0U}, _offset{0U}, _block_cache{std::nullopt}
+               { /* NOP */ }
+   
+           constexpr block_storage_t(block_type_t type, std::uint32_t length, std::uintptr_t offset, std::optional<block_t> block = std::nullopt) noexcept :
+               _type{type}, _length{length}, _offset{offset}, _block_cache{block}
+               { /* NOP */ }
+   
+           [[nodiscard]]
+           block_type_t type() const noexcept { return _type; }
+           [[nodiscard]]
+           std::uint32_t length() const noexcept { return _length; }
+           [[nodiscard]]
+           std::uintptr_t offset() const noexcept { return _offset; }
+           [[nodiscard]]
+           std::optional<block_t> get_block() noexcept {
+               if (_block_cache == std::nullopt) {
+                   return std::nullopt;
+               } else {
+                   return _block_cache;
+               }
+           }
+   
+       };
+   }
+   
+   #endif /* LIBNOKOGIRI_PCAPNG_BLOCK_HH */

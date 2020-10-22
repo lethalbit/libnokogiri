@@ -1,0 +1,16 @@
+.. _exhale_struct_structlibnokogiri_1_1pcapng_1_1pcapng__t:
+
+Struct pcapng_t
+===============
+
+- Defined in :ref:`file_pcapng.hh`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: libnokogiri::pcapng::pcapng_t
+   :members:
+   :protected-members:
+   :undoc-members:

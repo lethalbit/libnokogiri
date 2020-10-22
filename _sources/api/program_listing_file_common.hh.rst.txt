@@ -1,0 +1,245 @@
+
+.. _program_listing_file_common.hh:
+
+Program Listing for File common.hh
+==================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_common.hh>` (``common.hh``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   // SPDX-License-Identifier: LGPL-3.0-or-later
+   /* common.hh - Common templates and type definitions */
+   #pragma once
+   #if !defined(LIBNOKOGIRI_COMMON_HH)
+   #define LIBNOKOGIRI_COMMON_HH
+   
+   #include <libnokogiri/internal/defs.hh>
+   #include <libnokogiri/internal/mmap.hh>
+   #include <libnokogiri/internal/fd.hh>
+   
+   namespace libnokogiri {
+       using file_t = libnokogiri::internal::optional_pair<libnokogiri::internal::fd_t&, libnokogiri::internal::mmap_t&>;
+   
+       enum class link_type_t : std::uint16_t {
+           BSDLoopback                = 0x0000U, 
+           Ethernet                   = 0x0001U, 
+           /* 0x0002U : Undefined, presumed reserved */
+           AX25                       = 0x0003U, 
+           /* 0x0004U - 0x0005U : Undefined, presumed reserved */
+           IEEE802_5                  = 0x0006U, 
+           ARCNET_BSD                 = 0x0007U, 
+           SLIP                       = 0x0008U, 
+           PPP                        = 0x0009U, 
+           FDDI                       = 0x000AU, 
+           /* 0x000BU - 0x0031U : Undefined, presumed reserved */
+           PPP_HDLC                   = 0x0032U, 
+           PPPoE                      = 0x0033U, 
+           /* 0x0034U - 0x0063U : Undefined, presumed reserved */
+           ATM_RFC1483                = 0x0064U, 
+           Raw                        = 0x0065U, 
+           /* 0x0066U - 0x0067U : Undefined, presumed reserved */
+           CiscoHDLC                  = 0x0068U, 
+           IEEE802_11                 = 0x0069U, 
+           /* 0x0068U : Undefined, presumed reserved */
+           LAPFFrameRelay             = 0x006BU, 
+           OpenBSDLoopback            = 0x006CU, 
+           /* 0x006DU - 0x0070U : Undefined, presumed reserved */
+           LinuxSLL                   = 0x0071U, 
+           AppleLocalTalk             = 0x0072U, 
+           /* 0x0073U - 0x0074U : Undefined, presumed reserved */
+           OpenBSDPFLog               = 0x0075U, 
+           /* 0x0076U - 0x0067U : Undefined, presumed reserved */
+           IEEE802_11_Prism            = 0x0077U, 
+           /* 0x0078U - 0x0079U : Undefined, presumed reserved */
+           IPOverFC                   = 0x007AU, 
+           SunATM                     = 0x007BU, 
+           /* 0x007CU - 0x007EU : Undefined, presumed reserved */
+           IEEE802_11_Radiotap        = 0x007FU, 
+           /* 0x0080U : Undefined, presumed reserved */
+           ARCNETLinux                = 0x0081U, 
+           /* 0x0082U - 0x0089U : Undefined, presumed reserved */
+           AppleIPOverIEEE1394        = 0x008AU, 
+           MTP2WithPHeader            = 0x008BU, 
+           MTP2                       = 0x008CU, 
+           MTP3                       = 0x008DU, 
+           SCCP                       = 0x008EU, 
+           DOCSIS                     = 0x008FU, 
+           LinuxIrDA                  = 0x0090U, 
+           /* 0x0091U - 0x0092U : Undefined, presumed reserved */
+           User0                      = 0x0093U, 
+           User1                      = 0x0094U, 
+           User2                      = 0x0095U, 
+           User3                      = 0x0096U, 
+           User4                      = 0x0097U, 
+           User5                      = 0x0098U, 
+           User6                      = 0x0099U, 
+           User7                      = 0x009AU, 
+           User8                      = 0x009BU, 
+           User9                      = 0x009CU, 
+           User10                     = 0x009DU, 
+           User11                     = 0x009EU, 
+           User12                     = 0x009FU, 
+           User13                     = 0x00A0U, 
+           User14                     = 0x00A1U, 
+           User15                     = 0x00A2U, 
+           IEEE802_11_AVS             = 0x00A3U, 
+           /* 0x00A4U : Undefined, presumed reserved */
+           BACNet_MS_TP               = 0x00A5U, 
+           PPP_PPPD                   = 0x00A6U, 
+           /* 0x00A7U - 0x00A8U : Undefined, presumed reserved */
+           GPRS_LLC                   = 0x00A9U, 
+           GPF_T                      = 0x00AAU, 
+           GPF_F                      = 0x00ABU, 
+           /* 0x00ACU - 0x00B0U : Undefined, presumed reserved */
+           LinuxLAPD                  = 0x00B1U, 
+           /* 0x00B2U - 0x00B5U : Undefined, presumed reserved */
+           MFR                        = 0x00B6U, 
+           /* 0x00B7U - 0x00BAU : Undefined, presumed reserved */
+           BluetoothHCI_H4            = 0x00BBU, 
+           /* 0x00BC : Undefined, presumed reserved */
+           USBLinux                   = 0x00BDU, 
+           /* 0x00BEU - 0x00BFU : Undefined, presumed reserved */
+           PPI                        = 0x00C0U, 
+           /* 0x00C1U - 0x00C2U : Undefined, presumed reserved */
+           IEEE802_15_4_WithFCS       = 0x00C3U, 
+           SITA                       = 0x00C4U, 
+           ERF                        = 0x00C5U, 
+           /* 0x00C6U - 0x00C8U : Undefined, presumed reserved */
+           BluetoothHCI_H4WithPhdr    = 0x00C9U, 
+           AX25_KIDD                  = 0x00CAU, 
+           LAPD                       = 0x00CBU, 
+           PPPWithDir                 = 0x00CCU, 
+           CiscoHDLCWithDir           = 0x00CDU, 
+           FrameRelayWithDir          = 0x00CEU, 
+           LAPBWithDir                = 0x00CFU, 
+           /* 0x00D0U : Undefined, presumed reserved */
+           Ipmb_linux                 = 0x00D1U, 
+           /* 0x00D2U - 0x00D6U : Undefined, presumed reserved */
+           IEEE802_15_4_nonask_phy    = 0x00D7U, 
+           /* 0x00D9U - 0x00DBU : Undefined, presumed reserved */
+           UUSBLinuxMmapped           = 0x00DCU, 
+           /* 0x00DDU - 0x00DFU : Undefined, presumed reserved */
+           FC2                        = 0x00E0U, 
+           FC2WithFrameDelims         = 0x00E1U, 
+           IPNET                      = 0x00E2U, 
+           CANSocketCan               = 0x00E3U, 
+           IpV4                       = 0x00E4U, 
+           IpV6                       = 0x00E5U, 
+           IEEE802_15_4_nofcs         = 0x00E6U, 
+           DBus                       = 0x00E7U, 
+           /* 0x00E8U - 0x00EAU : Undefined, presumed reserved */
+           DVB_CI                     = 0x00EBU, 
+           Mux27010                   = 0x00ECU, 
+           Stanag5066DPDU             = 0x00EDU, 
+           /* 0x00EEU : Undefined, presumed reserved */
+           NFLog                      = 0x00EFU, 
+           NetAnalyzer                = 0x00F0U, 
+           NetAnalyzerTransparent     = 0x00F1U, 
+           IPoIB                      = 0x00F2U, 
+           MPEG2Transport             = 0x00F3U, 
+           NG40                       = 0x00F4U, 
+           NFC_LLCP                   = 0x00F5U, 
+           /* 0x00F6U : Undefined, presumed reserved */
+           InfiniBand                 = 0x00F7U, 
+           SCTP                       = 0x00F8U, 
+           USBPcap                    = 0x00F9U, 
+           RTACSerial                 = 0x00FAU, 
+           BluetoothLELL              = 0x00FBU, 
+           /* 0x00FCU : Undefined, presumed reserved */
+           Netlink                    = 0x00FDU, 
+           BluetoothLinuxMonitor     = 0x00FEU, 
+           Bluetooth_bredr_bb         = 0x00FFU, 
+           BluetoothLELLWithPHDR      = 0x0100U, 
+           PROFIBUSDatalink           = 0x0101U, 
+           PKTAP                      = 0x0102U, 
+           EoPON                      = 0x0103U, 
+           IPMI_hpm_2                 = 0x0104U, 
+           ZWaveR1R2                  = 0x0105U, 
+           ZWaveR3                    = 0x0106U, 
+           WattStopperDLM             = 0x0107U, 
+           ISO14443                   = 0x0108U, 
+           RDS                        = 0x0109U, 
+           USBDarwin                  = 0x010AU, 
+           /* 0x010BU : Undefined, presumed reserved */
+           SDLC                       = 0x010CU, 
+           /* 0x010DU : Undefined, presumed reserved */
+           LoRaTap                    = 0x010EU, 
+           VSOCK                      = 0x010FU, 
+           NordicBLE                  = 0x0110U, 
+           DOCSIS31_XRA31             = 0x0111U, 
+           Ethernet_mpacket           = 0x0112U, 
+           DisplayportAux             = 0x0113U, 
+           LinuxSLL2                  = 0x0114U, 
+           /* 0x0115U : Undefined, presumed reserved */
+           Openvizsla                 = 0x0116U, 
+           EBHSCR                     = 0x0117U, 
+           VPPDispatch                = 0x0118U, 
+           DSATagBRCM                 = 0x0119U, 
+           DSATagBRCMPrepend          = 0x011AU, 
+           IEEE802_15_4_Tap           = 0x011BU, 
+           DSATagDSA                  = 0x011CU, 
+           DSATagEDSA                 = 0x011DU, 
+           ELEE                       = 0x011EU, 
+           ZWaveSerial                = 0x011FU, 
+           USB2                       = 0x0120U, 
+           ATSC_ALP                   = 0x0121U, 
+       };
+   
+       struct version_t final {
+       private:
+           std::uint16_t _major;
+           std::uint16_t _minor;
+       public:
+           constexpr version_t() noexcept :
+               _major{0U}, _minor{0U}
+               { /* NOP */ }
+   
+           constexpr version_t(std::uint16_t major, std::uint16_t minor) noexcept :
+               _major{major}, _minor{minor}
+               { /* NOP */ }
+   
+           version_t(std::nullptr_t) noexcept { /* NOP */ }
+   
+           [[nodiscard]]
+           std::uint32_t major() const noexcept { return _major; }
+           [[nodiscard]]
+           std::uint32_t minor() const noexcept { return _minor; }
+   
+           [[nodiscard]]
+           bool operator==(const version_t& ver) const noexcept {
+               return (_major == ver.major() && _minor == ver.minor());
+           }
+           [[nodiscard]]
+           bool operator!=(const version_t& ver)  const noexcept {
+               return !operator==(ver);
+           }
+   
+           [[nodiscard]]
+           bool operator>(const version_t& ver) const noexcept {
+               return (
+                   (_major > ver.major() && _minor >= ver.minor()) ||
+                   (_major >= ver.major() && _minor > ver.minor()));
+           }
+           [[nodiscard]]
+           bool operator>=(const version_t& ver) const noexcept {
+               return (operator>(ver) || operator==(ver));
+           }
+   
+           [[nodiscard]]
+           bool operator<(const version_t& ver) const noexcept {
+               return (
+                   (_major < ver.major() &&  _minor <= ver.minor()) ||
+                   (_minor <= ver.major() && _minor < ver.minor()));
+           }
+   
+           [[nodiscard]]
+           bool operator<=(const version_t& ver) const noexcept {
+               return (operator<(ver) || operator==(ver));
+           }
+       };
+   }
+   
+   #endif /* LIBNOKOGIRI_COMMON_HH */

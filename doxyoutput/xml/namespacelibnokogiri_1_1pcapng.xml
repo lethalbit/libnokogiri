@@ -1,0 +1,344 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacelibnokogiri_1_1pcapng" kind="namespace" language="C++">
+    <compoundname>libnokogiri::pcapng</compoundname>
+    <innerclass refid="structlibnokogiri_1_1pcapng_1_1block__storage__t" prot="public">libnokogiri::pcapng::block_storage_t</innerclass>
+    <innerclass refid="structlibnokogiri_1_1pcapng_1_1block__t" prot="public">libnokogiri::pcapng::block_t</innerclass>
+    <innerclass refid="structlibnokogiri_1_1pcapng_1_1option__t" prot="public">libnokogiri::pcapng::option_t</innerclass>
+    <innerclass refid="structlibnokogiri_1_1pcapng_1_1pcapng__t" prot="public">libnokogiri::pcapng::pcapng_t</innerclass>
+    <innerclass refid="structlibnokogiri_1_1pcapng_1_1section__t" prot="public">libnokogiri::pcapng::section_t</innerclass>
+    <innernamespace refid="namespacelibnokogiri_1_1pcapng_1_1blocks">libnokogiri::pcapng::blocks</innernamespace>
+    <innernamespace refid="namespacelibnokogiri_1_1pcapng_1_1options">libnokogiri::pcapng::options</innernamespace>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1" prot="public" static="no">
+        <name>block_type_t</name>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1a942d4e37dd5607ab68e54755540d4a47" prot="public">
+          <name>Reserved</name>
+          <initializer>= 0x00000000U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1a824260db36ab1e235a2b3df1fc3a3fa5" prot="public">
+          <name>InterfaceDescription</name>
+          <initializer>= 0x00000001U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>RFC Section 4.2 </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1af39181116a0042e3b50710c2a1e70f74" prot="public">
+          <name>Packet</name>
+          <initializer>= 0x00000002U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>RFC Appendix A </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1aafa5836bc1b1a9bf077d6591ad986300" prot="public">
+          <name>SimplePacket</name>
+          <initializer>= 0x00000003U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>RFC Section 4.4 </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1a17d075e151266a92d8a27cae36fd597d" prot="public">
+          <name>NameResolution</name>
+          <initializer>= 0x00000004U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>RFC Section 4.4 </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1aad7e4a75f562379e2d44d47cbef2a642" prot="public">
+          <name>InterfaceStatistics</name>
+          <initializer>= 0x00000005U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>RFC Section 4.6 </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1ad7c1d44ddc788ea81cd248d91bedd7d2" prot="public">
+          <name>EnhancedPacket</name>
+          <initializer>= 0x00000006U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>RFC Section 4.3 </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1abd8f5d533781aad4ffbf89fb21d7a345" prot="public">
+          <name>SocketAggrigation</name>
+          <initializer>= 0x00000007U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Also used for IRIG Timestamps sometimes? </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1a79c170260a800ac9b9eec69636cc6f75" prot="public">
+          <name>ARINC429AFDXEncapsulation</name>
+          <initializer>= 0x00000008U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1a053871fd175b6550a4e0ce1d490b7729" prot="public">
+          <name>SystemdJournalExport</name>
+          <initializer>= 0x00000009U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>RFC Section 4.7 </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1afd5841696f56ac5ee014f2e4f9932ab5" prot="public">
+          <name>DecryptionSecrets</name>
+          <initializer>= 0x0000000AU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>RFC Section 4.8 </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1a86f472dca93eb6bcf36928572b80f2a1" prot="public">
+          <name>HoneProjectMachineInfo</name>
+          <initializer>= 0x00000101U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1ada50fcd83d741d04ad27639af0de74e6" prot="public">
+          <name>HoneProjectConnectionEvent</name>
+          <initializer>= 0x00000102U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1a5a33db55b353d647e483ab1963fc3c04" prot="public">
+          <name>SysdigMachineInfo</name>
+          <initializer>= 0x00000201U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1aab31ccceefe5e753a029a05e63d4df74" prot="public">
+          <name>SysdigProcessInfoV1</name>
+          <initializer>= 0x00000202U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1a0faf52cf90f0ab735f1730655999511f" prot="public">
+          <name>SysdigFDList</name>
+          <initializer>= 0x00000203U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1a7b321cc21e47e322a53e7976d3d2b339" prot="public">
+          <name>SysdigEvent</name>
+          <initializer>= 0x00000204U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1a6f318627efec97e385733350fdee86e5" prot="public">
+          <name>SysdigInterfaceList</name>
+          <initializer>= 0x00000205U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1a14d5aa13bc94bcaf6cb2246af5ebc4d3" prot="public">
+          <name>SysdigUserList</name>
+          <initializer>= 0x00000206U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1a47f1a2d2ef2e395a99da60e8103dd6a0" prot="public">
+          <name>SysdigProcessInfoV2</name>
+          <initializer>= 0x00000207U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1a62e9364fb79ee2a892ee2b36b57d5f8a" prot="public">
+          <name>SysdigEventWithFlags</name>
+          <initializer>= 0x00000208U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1a238ad8de658f130f12a39c7eae9fa298" prot="public">
+          <name>SysdigProcessInfoV3</name>
+          <initializer>= 0x00000209U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1af67d645aa04409c9d67f83b70ab067ef" prot="public">
+          <name>SysdigProcessInfoV4</name>
+          <initializer>= 0x00000210U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1a3cbe8eda7992b4b530960977354a4ed5" prot="public">
+          <name>SysdigProcessInfoV5</name>
+          <initializer>= 0x00000211U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1a5179eea838b34bd5581d5809c6c51fe9" prot="public">
+          <name>SysdigProcessInfoV6</name>
+          <initializer>= 0x00000212U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1a91113a7932dd43c08f25ea02e331bdab" prot="public">
+          <name>SysdigProcessInfoV7</name>
+          <initializer>= 0x00000213U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1a48c4c0e1411053c492a07936f9ad971d" prot="public">
+          <name>CustomRewriteCopyable</name>
+          <initializer>= 0x00000BADU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>RFC Section 4.9 </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1a7f8324d7e9f4fc3eeb94de838695c538" prot="public">
+          <name>CustomRewriteUncopyable</name>
+          <initializer>= 0x40000BADU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>RFC Section 4.9 </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1ad7000cab80380735f75d8b3f4f0a5667" prot="public">
+          <name>SectionHeader</name>
+          <initializer>= 0x0A0D0D0AU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Predefined block types. </para>        </briefdescription>
+        <detaileddescription>
+<para>The following block types are predefined by the pcapng specification, as such they are explicitly named.</para><para>For documentation on how to register new block types with libnokogiri see the <computeroutput>Adding Blocks</computeroutput> section in <computeroutput>Extending libnokogiri</computeroutput>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/block.hh" line="20" column="1" bodyfile="pcapng/block.hh" bodystart="20" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bd" prot="public" static="no">
+        <name>option_type_t</name>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bda87557f11575c0ad78e4e28abedc13b6e" prot="public">
+          <name>End</name>
+          <initializer>= 0x0000U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Indicates the end of options </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bda0be8406951cdfda82f00f79328cf4efc" prot="public">
+          <name>Comment</name>
+          <initializer>= 0x0001U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>UTF-8 encoded string, not zero terminated </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bda7bd9867bf70236befc1c9f79bc769455" prot="public">
+          <name>SHBHardware</name>
+          <initializer>= 0x0002U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>UTF-8 non zero terminated string - Hardware used to create this section </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bdafe3ffa72a8b875f2eef78463d9485ebb" prot="public">
+          <name>SHBOperatingSystem</name>
+          <initializer>= 0x0003U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>UTF-8 non zero terminated string - Operating system used to create this section </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bda337673f32b7c7aa33cea8c388cd278c9" prot="public">
+          <name>SHBUserApplication</name>
+          <initializer>= 0x0004U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>UTF-8 non zero terminated string - Application used to create this section </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bdabfacbbe4e8be8fbc78a60cd9f8e67dd5" prot="public">
+          <name>Custom1</name>
+          <initializer>= 0x0BACU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Contains a UTF-8 string, can be safely copied, see section 6.2 </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bda1d8ba0be5e8d76a3e6fb571c80929db2" prot="public">
+          <name>Custom2</name>
+          <initializer>= 0x0BADU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Contains binary data, can be safely copied, see section 6.2 </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bda01cd47f19cbca3337e2f0864d20544c8" prot="public">
+          <name>Custom3</name>
+          <initializer>= 0x4BACU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Contains a UTF-8 string, can not be copied, see section 6.2 </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bdaadea16898400a3a8fa1921341144807e" prot="public">
+          <name>Custom4</name>
+          <initializer>= 0x4BADU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Contains binary data, can not be copied, see section 6.2 </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Predefined option types. </para>        </briefdescription>
+        <detaileddescription>
+<para>The following are predefined option types as defined by the pcapng standard, as such they are explicitly named.</para><para>For documentation on how to register new option types with libnokogiri see the <computeroutput>Adding Options</computeroutput> section in <computeroutput>Extending libnokogiri</computeroutput>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/option.hh" line="22" column="1" bodyfile="pcapng/option.hh" bodystart="22" bodyend="36"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>libnokogiri pcapng interface </para>    </briefdescription>
+    <detaileddescription>
+<para>All of the objects and machinery in order to read and write pcapng files are located in this namespace. </para>    </detaileddescription>
+    <location file="libnokogiri.hh" line="22" column="1"/>
+  </compounddef>
+</doxygen>

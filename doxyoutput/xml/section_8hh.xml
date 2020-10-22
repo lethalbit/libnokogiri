@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="section_8hh" kind="file" language="C++">
+    <compoundname>section.hh</compoundname>
+    <includes local="no">cstdint</includes>
+    <includes local="no">vector</includes>
+    <includes refid="block_8hh" local="no">libnokogiri/pcapng/block.hh</includes>
+    <includes refid="blocks_2section__header_8hh" local="no">libnokogiri/pcapng/blocks/section_header.hh</includes>
+    <includedby refid="pcapng_8hh" local="no">pcapng.hh</includedby>
+    <incdepgraph>
+      <node id="163">
+        <label>cstdint</label>
+      </node>
+      <node id="171">
+        <label>libnokogiri/internal/mmap.hh</label>
+      </node>
+      <node id="165">
+        <label>libnokogiri/pcapng/block.hh</label>
+        <link refid="block_8hh_source"/>
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="166" relation="include">
+        </childnode>
+        <childnode refid="167" relation="include">
+        </childnode>
+      </node>
+      <node id="168">
+        <label>libnokogiri/pcapng/blocks/section_header.hh</label>
+        <link refid="blocks_2section__header_8hh_source"/>
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+        <childnode refid="165" relation="include">
+        </childnode>
+      </node>
+      <node id="169">
+        <label>libnokogiri/common.hh</label>
+        <link refid="common_8hh_source"/>
+        <childnode refid="170" relation="include">
+        </childnode>
+        <childnode refid="171" relation="include">
+        </childnode>
+        <childnode refid="172" relation="include">
+        </childnode>
+      </node>
+      <node id="172">
+        <label>libnokogiri/internal/fd.hh</label>
+      </node>
+      <node id="170">
+        <label>libnokogiri/internal/defs.hh</label>
+      </node>
+      <node id="167">
+        <label>optional</label>
+      </node>
+      <node id="164">
+        <label>vector</label>
+      </node>
+      <node id="166">
+        <label>utility</label>
+      </node>
+      <node id="162">
+        <label>pcapng/section.hh</label>
+        <link refid="section_8hh"/>
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="164" relation="include">
+        </childnode>
+        <childnode refid="165" relation="include">
+        </childnode>
+        <childnode refid="168" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="175">
+        <label>libnokogiri.hh</label>
+        <link refid="libnokogiri_8hh_source"/>
+      </node>
+      <node id="174">
+        <label>pcapng.hh</label>
+        <link refid="pcapng_8hh_source"/>
+        <childnode refid="175" relation="include">
+        </childnode>
+      </node>
+      <node id="173">
+        <label>pcapng/section.hh</label>
+        <link refid="section_8hh"/>
+        <childnode refid="174" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structlibnokogiri_1_1pcapng_1_1section__t" prot="public">libnokogiri::pcapng::section_t</innerclass>
+    <innernamespace refid="namespacelibnokogiri_1_1pcapng">libnokogiri::pcapng</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>LGPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>pcapng/section.hh<sp/>-<sp/>Container<sp/>for<sp/>pcapng<sp/>file<sp/>sections<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(LIBNOKOGIRI_PCAPNG_SECTION_HH)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LIBNOKOGIRI_PCAPNG_SECTION_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;libnokogiri/pcapng/block.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;libnokogiri/pcapng/blocks/section_header.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacelibnokogiri_1_1pcapng" kindref="compound">libnokogiri::pcapng</ref><sp/>{</highlight></codeline>
+<codeline lineno="17" refid="structlibnokogiri_1_1pcapng_1_1section__t" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structlibnokogiri_1_1pcapng_1_1section__t" kindref="compound">section_t</ref><sp/>final<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint32_t<sp/>_length;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uintptr_t<sp/>_offset;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t" kindref="compound">blocks::section_header_t</ref><sp/>_header;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;block_storage_t&gt;<sp/>_blocks;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>LIBNOKOGIRI_PCAPNG_SECTION_HH<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="pcapng/section.hh"/>
+  </compounddef>
+</doxygen>

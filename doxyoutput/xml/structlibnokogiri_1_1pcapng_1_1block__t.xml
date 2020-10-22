@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structlibnokogiri_1_1pcapng_1_1block__t" kind="struct" language="C++" prot="public">
+    <compoundname>libnokogiri::pcapng::block_t</compoundname>
+    <derivedcompoundref refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1interface__description__t" prot="public" virt="non-virtual">libnokogiri::pcapng::blocks::interface_description_t</derivedcompoundref>
+    <derivedcompoundref refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t" prot="public" virt="non-virtual">libnokogiri::pcapng::blocks::section_header_t</derivedcompoundref>
+    <includes refid="block_8hh" local="no">block.hh</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcapng_1_1block__t_1a0206568c734511cb08f49ff3e88cd61f" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1" kindref="member">block_type_t</ref></type>
+        <definition>block_type_t libnokogiri::pcapng::block_t::_type</definition>
+        <argsstring></argsstring>
+        <name>_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/block.hh" line="103" column="1" bodyfile="pcapng/block.hh" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="structlibnokogiri_1_1pcapng_1_1block__t_1a4e9e0237d79928f8a2aa1fbd68b2d30b" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr libnokogiri::pcapng::block_t::block_t</definition>
+        <argsstring>(block_type_t type) noexcept</argsstring>
+        <name>block_t</name>
+        <param>
+          <type><ref refid="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1" kindref="member">block_type_t</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/block.hh" line="105" column="1" bodyfile="pcapng/block.hh" bodystart="105" bodyend="107"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structlibnokogiri_1_1pcapng_1_1block__t_1acf163733b945bfd998b638fb5dea083b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr libnokogiri::pcapng::block_t::block_t</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>block_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/block.hh" line="109" column="1" bodyfile="pcapng/block.hh" bodystart="109" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcapng_1_1block__t_1a4dcc5f61c022b2f64b1260808e2218e2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1" kindref="member">block_type_t</ref></type>
+        <definition>block_type_t libnokogiri::pcapng::block_t::type</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the type of the block </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/block.hh" line="114" column="1" bodyfile="pcapng/block.hh" bodystart="114" bodyend="114"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Base for all pcapng blocks. </para>    </briefdescription>
+    <detaileddescription>
+<para>This structure represents the atomic base for all blocks defined by libnokogiri as well as by the developer if they add custom blocks.</para><para>For documentation on how to add new blocks to libnokogiri see the <computeroutput>Adding Blocks</computeroutput> section in <computeroutput>Extending libnokogiri</computeroutput></para><para>Block have the following overarching structure</para><para><programlisting><codeline><highlight class="normal"><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3</highlight></codeline>
+<codeline><highlight class="normal"><sp/>0<sp/>1<sp/>2<sp/>3<sp/>4<sp/>5<sp/>6<sp/>7<sp/>0<sp/>1<sp/>2<sp/>3<sp/>4<sp/>5<sp/>6<sp/>7<sp/>0<sp/>1<sp/>2<sp/>3<sp/>4<sp/>5<sp/>6<sp/>7<sp/>0<sp/>1<sp/>2<sp/>3<sp/>4<sp/>5<sp/>6<sp/>7</highlight></codeline>
+<codeline><highlight class="normal">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Block<sp/>Type<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Total<sp/>Block<sp/>Size<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</highlight></codeline>
+<codeline><highlight class="normal">/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Block<sp/>Data<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/</highlight></codeline>
+<codeline><highlight class="normal">/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Variable<sp/>Length<sp/>padded<sp/>to<sp/>32<sp/>bits<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/</highlight></codeline>
+<codeline><highlight class="normal">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Total<sp/>Block<sp/>Size<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</highlight></codeline>
+</programlisting></para><para><itemizedlist>
+<listitem><para><computeroutput>Block Type</computeroutput> is a 32-bit unsigned value that indicates the type of block.</para></listitem><listitem><para><computeroutput>Total Block Size</computeroutput> is a 32-bit unsigned value that indicates the size of the block</para></listitem><listitem><para><computeroutput>Block Data</computeroutput> is the actual data for the block, its length is <computeroutput>Total Block Size</computeroutput> - 12</para></listitem></itemizedlist>
+</para><para>The reason for the trailing <computeroutput>Total Block Size</computeroutput> field is to allow for bidirectional seeking in the pcap file.</para><para>All blocks share this format.</para><para>NOTE:** The most significant bit (MSB) of the <computeroutput>Block Type</computeroutput> field indicates if the block if reserved for local use. An MSB of <computeroutput>0b1</computeroutput> indicates that it is a local block, where as an MSB of <computeroutput>0b0</computeroutput> indicates that the type is standard. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>libnokogiri::pcapng::block_t</label>
+        <link refid="structlibnokogiri_1_1pcapng_1_1block__t"/>
+      </node>
+      <node id="4">
+        <label>libnokogiri::pcapng::blocks::section_header_t</label>
+        <link refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>libnokogiri::pcapng::blocks::interface_description_t</label>
+        <link refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1interface__description__t"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="pcapng/block.hh" line="101" column="1" bodyfile="pcapng/block.hh" bodystart="101" bodyend="115"/>
+    <listofallmembers>
+      <member refid="structlibnokogiri_1_1pcapng_1_1block__t_1a0206568c734511cb08f49ff3e88cd61f" prot="private" virt="non-virtual"><scope>libnokogiri::pcapng::block_t</scope><name>_type</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1block__t_1a4e9e0237d79928f8a2aa1fbd68b2d30b" prot="protected" virt="non-virtual"><scope>libnokogiri::pcapng::block_t</scope><name>block_t</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1block__t_1acf163733b945bfd998b638fb5dea083b" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::block_t</scope><name>block_t</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1block__t_1a4dcc5f61c022b2f64b1260808e2218e2" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::block_t</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

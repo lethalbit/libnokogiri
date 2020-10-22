@@ -1,0 +1,16 @@
+.. _exhale_struct_structlibnokogiri_1_1version__t:
+
+Struct version_t
+================
+
+- Defined in :ref:`file_common.hh`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: libnokogiri::version_t
+   :members:
+   :protected-members:
+   :undoc-members:

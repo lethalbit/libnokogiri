@@ -1,0 +1,52 @@
+
+.. _file_pcapng_options_interface_description.hh:
+
+File interface_description.hh
+=============================
+
+|exhale_lsh| :ref:`Parent directory <dir_pcapng_options>` (``pcapng/options``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``pcapng/options/interface_description.hh``)
+--------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_pcapng_options_interface_description.hh.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``cstdint``
+
+- ``libnokogiri/pcapng/option.hh``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_pcapng_options.hh`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_libnokogiri__pcapng__options`
+

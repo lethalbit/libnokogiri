@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_44783a566ae8cb6c3d1129f135b0e9a8" kind="dir">
+    <compoundname>pcapng/options</compoundname>
+    <innerfile refid="options_2interface__description_8hh">interface_description.hh</innerfile>
+    <innerfile refid="options_2section__header_8hh">section_header.hh</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pcapng/options/"/>
+  </compounddef>
+</doxygen>

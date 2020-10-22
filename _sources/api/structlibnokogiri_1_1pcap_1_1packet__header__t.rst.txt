@@ -1,0 +1,16 @@
+.. _exhale_struct_structlibnokogiri_1_1pcap_1_1packet__header__t:
+
+Struct packet_header_t
+======================
+
+- Defined in :ref:`file_pcap.hh`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: libnokogiri::pcap::packet_header_t
+   :members:
+   :protected-members:
+   :undoc-members:

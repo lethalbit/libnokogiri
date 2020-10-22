@@ -1,0 +1,26 @@
+.. _exhale_struct_structlibnokogiri_1_1pcapng_1_1block__t:
+
+Struct block_t
+==============
+
+- Defined in :ref:`file_pcapng_block.hh`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Types
+*************
+
+- ``public libnokogiri::pcapng::blocks::interface_description_t`` (:ref:`exhale_struct_structlibnokogiri_1_1pcapng_1_1blocks_1_1interface__description__t`)
+- ``public libnokogiri::pcapng::blocks::section_header_t`` (:ref:`exhale_struct_structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t`)
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: libnokogiri::pcapng::block_t
+   :members:
+   :protected-members:
+   :undoc-members:

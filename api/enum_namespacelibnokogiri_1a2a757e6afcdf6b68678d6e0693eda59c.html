@@ -1,0 +1,888 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enum link_type_t &#8212; libnokogiri 0.0.1 e1bf431 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+    <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Enum pcap_variant_t" href="enum_namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656.html" />
+    <link rel="prev" title="Struct version_t" href="structlibnokogiri_1_1version__t.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">libnokogiri</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=lethalbit&repo=libnokogiri&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">libnokogiri API</a><ul>
+      <li>Previous: <a href="structlibnokogiri_1_1version__t.html" title="previous chapter">Struct version_t</a></li>
+      <li>Next: <a href="enum_namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656.html" title="next chapter">Enum pcap_variant_t</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div><h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">libnokogiri API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending/index.html">Extending libnokogiri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">libnokogiri examples</a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="enum-link-type-t">
+<span id="exhale-enum-namespacelibnokogiri-1a2a757e6afcdf6b68678d6e0693eda59c"></span><h1>Enum link_type_t<a class="headerlink" href="#enum-link-type-t" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_common.hh.html#file-common-hh"><span class="std std-ref">File common.hh</span></a></p></li>
+</ul>
+<div class="section" id="enum-documentation">
+<h2>Enum Documentation<a class="headerlink" href="#enum-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp enum">
+<dt id="_CPPv4N11libnokogiri11link_type_tE">
+<span id="_CPPv3N11libnokogiri11link_type_tE"></span><span id="_CPPv2N11libnokogiri11link_type_tE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c"></span><em class="property">enum </em><code class="sig-prename descclassname">libnokogiri<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">link_type_t</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the link layer of the interface. </p>
+<p>This table and the descriptions of each link type has been directly lifted from <a class="reference external" href="https://www.tcpdump.org/linktypes.html">https://www.tcpdump.org/linktypes.html</a>.</p>
+<p>Note: See the site linked above for details on the <code class="docutils literal notranslate"><a class="reference internal" href="#namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cafc461ac8b6e3f19a9f64800389e202fe"><span class="std std-ref"><span class="pre">link_type_t::User0</span></span></a></code> through <code class="docutils literal notranslate"><a class="reference internal" href="#namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca3e98cb5941d48a70df0c8cdf76c127b0"><span class="std std-ref"><span class="pre">link_type_t::User15</span></span></a></code> values and other notes about reserved ranges. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t11BSDLoopbackE">
+<span id="_CPPv3N11libnokogiri11link_type_t11BSDLoopbackE"></span><span id="_CPPv2N11libnokogiri11link_type_t11BSDLoopbackE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cae5b6b0a6dbe9bcb19027b161b42521a2"></span><em class="property">enumerator </em><code class="sig-name descname">BSDLoopback</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t11BSDLoopbackE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>BSD loopback encapsulation; the link layer header is a 4-byte field, in host byte order, containing a value of 2 for IPv4 packets, a value of either 24, 28, or 30 for IPv6 packets, a value of 7 for OSI packets, or a value of 23 for IPX packets. All of the IPv6 values correspond to IPv6 packets; code reading files should check for all of them. Note that <code class="docutils literal notranslate"><span class="pre">host</span> <span class="pre">byte</span> <span class="pre">order</span></code> is the byte order of the machine on which the packets are captured; if a live capture is being done, <code class="docutils literal notranslate"><span class="pre">host</span> <span class="pre">byte</span> <span class="pre">order</span></code> is the byte order of the machine capturing the packets, but if a <code class="docutils literal notranslate"><span class="pre">savefile</span></code> is being read, the byte order is not necessarily that of the machine reading the capture file. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t8EthernetE">
+<span id="_CPPv3N11libnokogiri11link_type_t8EthernetE"></span><span id="_CPPv2N11libnokogiri11link_type_t8EthernetE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cabe2ae05fb04ddcf6efa31e63e0f0e111"></span><em class="property">enumerator </em><code class="sig-name descname">Ethernet</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t8EthernetE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://ieeexplore.ieee.org/document/7428776/">IEEE 802.3</a> Ethernet (10Mb, 100Mb, 1000Mb, and up). </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t4AX25E">
+<span id="_CPPv3N11libnokogiri11link_type_t4AX25E"></span><span id="_CPPv2N11libnokogiri11link_type_t4AX25E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca2dee3025b92d805b29b31502b291c8b5"></span><em class="property">enumerator </em><code class="sig-name descname">AX25</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t4AX25E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="http://www.ax25.net/AX25.2.2-Jul%2098-2.pdf">AX.25</a> packet, with nothing preceding it. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t9IEEE802_5E">
+<span id="_CPPv3N11libnokogiri11link_type_t9IEEE802_5E"></span><span id="_CPPv2N11libnokogiri11link_type_t9IEEE802_5E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca336b84f7003c52b860da0a6b227035de"></span><em class="property">enumerator </em><code class="sig-name descname">IEEE802_5</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t9IEEE802_5E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>IEEE 802.5 Token Ring. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t10ARCNET_BSDE">
+<span id="_CPPv3N11libnokogiri11link_type_t10ARCNET_BSDE"></span><span id="_CPPv2N11libnokogiri11link_type_t10ARCNET_BSDE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca58fd303e9d811ce808d0f2d75f2c3a4b"></span><em class="property">enumerator </em><code class="sig-name descname">ARCNET_BSD</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t10ARCNET_BSDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ARCNET Data Packets, as described by the ARCNET Trade Association standard <a class="reference external" href="https://web.archive.org/web/20100414154838/http://www.arcnet.com/resources/ata8781.pdf">ATA 878.1-1999</a>, but without the Starting Delimiter, Information Length, or Frame Check Sequence fields, and with only the first ISU of the Destination Identifier. For most packet types, ARCNET Trade Association draft standard <a class="reference external" href="https://web.archive.org/web/20100414154914/http://www.arcnet.com/resources/ata8782.pdf">ATA 878.2</a> is also used. See also <a class="reference external" href="https://tools.ietf.org/html/rfc1051">RFC 1051</a> and <a class="reference external" href="https://tools.ietf.org/html/rfc1201">RFC 1201</a>; for RFC 1051 frames, ATA 878.2 is not used. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t4SLIPE">
+<span id="_CPPv3N11libnokogiri11link_type_t4SLIPE"></span><span id="_CPPv2N11libnokogiri11link_type_t4SLIPE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca967f286a09dc85f538b86aa7138b77f4"></span><em class="property">enumerator </em><code class="sig-name descname">SLIP</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t4SLIPE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SLIP, encapsulated with a <a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_SLIP.html">LINKTYPE_SLIP header</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t3PPPE">
+<span id="_CPPv3N11libnokogiri11link_type_t3PPPE"></span><span id="_CPPv2N11libnokogiri11link_type_t3PPPE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cab55e74d4007b674b329d70f5550028ba"></span><em class="property">enumerator </em><code class="sig-name descname">PPP</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t3PPPE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>PPP, as per <a class="reference external" href="https://tools.ietf.org/html/rfc1661">RFC 1661</a> and <a class="reference external" href="https://tools.ietf.org/html/rfc1662">RFC 1662</a>; if the first 2 bytes are 0xff and 0x03, it’s PPP in HDLC-like framing, with the PPP header following those two bytes, otherwise it’s PPP without framing, and the packet begins with the PPP header. The data in the frame is not octet-stuffed or bit-stuffed. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t4FDDIE">
+<span id="_CPPv3N11libnokogiri11link_type_t4FDDIE"></span><span id="_CPPv2N11libnokogiri11link_type_t4FDDIE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caf7c404d255e5da7e6626c691335a5dba"></span><em class="property">enumerator </em><code class="sig-name descname">FDDI</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t4FDDIE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>FDDI, as specified by ANSI INCITS 239-1994. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t8PPP_HDLCE">
+<span id="_CPPv3N11libnokogiri11link_type_t8PPP_HDLCE"></span><span id="_CPPv2N11libnokogiri11link_type_t8PPP_HDLCE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caf8c29a969b7b67d8f6d5a86dc75e0b6c"></span><em class="property">enumerator </em><code class="sig-name descname">PPP_HDLC</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t8PPP_HDLCE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>PPP in HDLC-like framing, as per <a class="reference external" href="https://tools.ietf.org/html/rfc1662">RFC 1662</a>, or Cisco PPP with HDLC framing, as per <a class="reference external" href="https://tools.ietf.org/html/rfc1547#section-4.3.1">section 4.3.1 of RFC 1547</a>; the first byte will be 0xFF for PPP in HDLC-like framing, and will be 0x0F or 0x8F for Cisco PPP with HDLC framing. The data in the frame is not octet-stuffed or bit-stuffed. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t5PPPoEE">
+<span id="_CPPv3N11libnokogiri11link_type_t5PPPoEE"></span><span id="_CPPv2N11libnokogiri11link_type_t5PPPoEE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca69c9d8b039f2ad8d2b0472d46964f648"></span><em class="property">enumerator </em><code class="sig-name descname">PPPoE</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t5PPPoEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>PPPoE; the packet begins with a PPPoE header, as per <a class="reference external" href="https://tools.ietf.org/html/rfc2516">RFC 2516</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t11ATM_RFC1483E">
+<span id="_CPPv3N11libnokogiri11link_type_t11ATM_RFC1483E"></span><span id="_CPPv2N11libnokogiri11link_type_t11ATM_RFC1483E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cab6480060aefcfd68f7990a7541e46e68"></span><em class="property">enumerator </em><code class="sig-name descname">ATM_RFC1483</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t11ATM_RFC1483E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://tools.ietf.org/html/rfc1483">RFC 1483</a> LLC/SNAP-encapsulated ATM; the packet begins with an <a class="reference external" href="https://www.iso.org/standard/30174.html">ISO 8802-2</a> (formerly known as IEEE 802.2) LLC header. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t3RawE">
+<span id="_CPPv3N11libnokogiri11link_type_t3RawE"></span><span id="_CPPv2N11libnokogiri11link_type_t3RawE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca65e65c8ab0d8609ce12fc68a03cb8e00"></span><em class="property">enumerator </em><code class="sig-name descname">Raw</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t3RawE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Raw IP; the packet begins with an IPv4 or IPv6 header, with the <code class="docutils literal notranslate"><span class="pre">version</span></code> field of the header indicating whether it’s an IPv4 or IPv6 header. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t9CiscoHDLCE">
+<span id="_CPPv3N11libnokogiri11link_type_t9CiscoHDLCE"></span><span id="_CPPv2N11libnokogiri11link_type_t9CiscoHDLCE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cab68995019372b622fc06c29b52ab3815"></span><em class="property">enumerator </em><code class="sig-name descname">CiscoHDLC</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t9CiscoHDLCE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Cisco PPP with HDLC framing, as per <a class="reference external" href="https://tools.ietf.org/html/rfc1547#section-4.3.1">section 4.3.1 of RFC 1547</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t10IEEE802_11E">
+<span id="_CPPv3N11libnokogiri11link_type_t10IEEE802_11E"></span><span id="_CPPv2N11libnokogiri11link_type_t10IEEE802_11E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca49608cbdd79bd9596601f1f68d11ff01"></span><em class="property">enumerator </em><code class="sig-name descname">IEEE802_11</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t10IEEE802_11E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://ieeexplore.ieee.org/document/7786995/">IEEE 802.11</a> wireless LAN. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t14LAPFFrameRelayE">
+<span id="_CPPv3N11libnokogiri11link_type_t14LAPFFrameRelayE"></span><span id="_CPPv2N11libnokogiri11link_type_t14LAPFFrameRelayE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca1884dca6cdade4d9b9ac6a9bf64e1752"></span><em class="property">enumerator </em><code class="sig-name descname">LAPFFrameRelay</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t14LAPFFrameRelayE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Frame Relay LAPF frames, beginning with a <a class="reference external" href="https://www.itu.int/rec/T-REC-Q.922/en/">ITU-T Recommendation Q.922</a> LAPF header starting with the address field, and without an FCS at the end of the frame. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t15OpenBSDLoopbackE">
+<span id="_CPPv3N11libnokogiri11link_type_t15OpenBSDLoopbackE"></span><span id="_CPPv2N11libnokogiri11link_type_t15OpenBSDLoopbackE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca3bd489e4b80355f319b6ebc2cd236946"></span><em class="property">enumerator </em><code class="sig-name descname">OpenBSDLoopback</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t15OpenBSDLoopbackE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>OpenBSD loopback encapsulation; the link-layer header is a 4-byte field, in network byte order, containing a value of 2 for IPv4 packets, a value of either 24, 28, or 30 for IPv6 packets, a value of 7 for OSI packets, or a value of 23 for IPX packets. All of the IPv6 values correspond to IPv6 packets; code reading files should check for all of them. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t8LinuxSLLE">
+<span id="_CPPv3N11libnokogiri11link_type_t8LinuxSLLE"></span><span id="_CPPv2N11libnokogiri11link_type_t8LinuxSLLE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cab1b49589cab763561da80acd0f8c82b1"></span><em class="property">enumerator </em><code class="sig-name descname">LinuxSLL</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t8LinuxSLLE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_LINUX_SLL.html">Linux “cooked” capture encapsulation</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t14AppleLocalTalkE">
+<span id="_CPPv3N11libnokogiri11link_type_t14AppleLocalTalkE"></span><span id="_CPPv2N11libnokogiri11link_type_t14AppleLocalTalkE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cafa0fe6cb80a0ea9f7434217b151ab4ec"></span><em class="property">enumerator </em><code class="sig-name descname">AppleLocalTalk</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t14AppleLocalTalkE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Apple LocalTalk; the packet begins with an AppleTalk LocalTalk Link Access Protocol header, as described in chapter 1 of <a class="reference external" href="https://web.archive.org/web/20040719034527/http://developer.apple.com:80/macos/opentransport/docs/dev/Inside_AppleTalk.pdf">Inside AppleTalk, Second Edition</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t12OpenBSDPFLogE">
+<span id="_CPPv3N11libnokogiri11link_type_t12OpenBSDPFLogE"></span><span id="_CPPv2N11libnokogiri11link_type_t12OpenBSDPFLogE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca35aadc8d64ba1244fe11a5df240c01a5"></span><em class="property">enumerator </em><code class="sig-name descname">OpenBSDPFLog</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t12OpenBSDPFLogE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>OpenBSD pflog; the link-layer header contains a <code class="docutils literal notranslate"><span class="pre">struct</span> <span class="pre">pfloghdr</span></code> structure, as defined by the host on which the file was saved. (This differs from operating system to operating system and release to release; there is nothing in the file to indicate what the layout of that structure is.) </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t16IEEE802_11_PrismE">
+<span id="_CPPv3N11libnokogiri11link_type_t16IEEE802_11_PrismE"></span><span id="_CPPv2N11libnokogiri11link_type_t16IEEE802_11_PrismE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca9c2efb46a9a189a48ebba61d4e4b0739"></span><em class="property">enumerator </em><code class="sig-name descname">IEEE802_11_Prism</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t16IEEE802_11_PrismE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_IEEE802_11_PRISM.html">Prism monitor mode information</a> followed by an 802.11 header. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t8IPOverFCE">
+<span id="_CPPv3N11libnokogiri11link_type_t8IPOverFCE"></span><span id="_CPPv2N11libnokogiri11link_type_t8IPOverFCE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca79b460bc500316bea2e8e846aa6dca53"></span><em class="property">enumerator </em><code class="sig-name descname">IPOverFC</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t8IPOverFCE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://tools.ietf.org/html/rfc2625">RFC 2625</a> IP-over-Fibre Channel, with the link-layer header being the Network_Header as described in that RFC. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t6SunATME">
+<span id="_CPPv3N11libnokogiri11link_type_t6SunATME"></span><span id="_CPPv2N11libnokogiri11link_type_t6SunATME"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca4c365a12736ec215a2bd031a67bd9983"></span><em class="property">enumerator </em><code class="sig-name descname">SunATM</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t6SunATME" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ATM traffic, encapsulated as per <a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_SUNATM.html">the scheme used by SunATM devices</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t19IEEE802_11_RadiotapE">
+<span id="_CPPv3N11libnokogiri11link_type_t19IEEE802_11_RadiotapE"></span><span id="_CPPv2N11libnokogiri11link_type_t19IEEE802_11_RadiotapE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca2318341c0031baa0fda4ced1a7ad09f0"></span><em class="property">enumerator </em><code class="sig-name descname">IEEE802_11_Radiotap</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t19IEEE802_11_RadiotapE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="http://www.radiotap.org/">Radiotap link-layer information</a> followed by an 802.11 header. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t11ARCNETLinuxE">
+<span id="_CPPv3N11libnokogiri11link_type_t11ARCNETLinuxE"></span><span id="_CPPv2N11libnokogiri11link_type_t11ARCNETLinuxE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca4c239252aa0eacae66e442846dd8cafe"></span><em class="property">enumerator </em><code class="sig-name descname">ARCNETLinux</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t11ARCNETLinuxE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ARCNET Data Packets, as described by the ARCNET Trade Association standard <a class="reference external" href="https://web.archive.org/web/20100414154838/http://www.arcnet.com/resources/ata8781.pdf">ATA 878.1-1999</a>, but without the Starting Delimiter, Information Length, or Frame Check Sequence fields, with only the first ISU of the Destination Identifier, and with an extra two-ISU <code class="docutils literal notranslate"><span class="pre">offset</span></code> field following the Destination Identifier. For most packet types, ARCNET Trade Association draft standard <a class="reference external" href="https://web.archive.org/web/20100414154914/http://www.arcnet.com/resources/ata8782.pdf">ATA 878.2</a> is also used; however, no exception frames are supplied, and reassembled frames, rather than fragments, are supplied. See also <a class="reference external" href="https://tools.ietf.org/html/rfc1051">RFC 1051</a> and <a class="reference external" href="https://tools.ietf.org/html/rfc1201">RFC 1201</a>; for RFC 1051 frames, ATA 878.2 is not used. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t19AppleIPOverIEEE1394E">
+<span id="_CPPv3N11libnokogiri11link_type_t19AppleIPOverIEEE1394E"></span><span id="_CPPv2N11libnokogiri11link_type_t19AppleIPOverIEEE1394E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caee2416f4569d79383bdbfc5ac664720f"></span><em class="property">enumerator </em><code class="sig-name descname">AppleIPOverIEEE1394</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t19AppleIPOverIEEE1394E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_APPLE_IP_OVER_IEEE1394.html">Apple IP-over-IEEE 1394 cooked header</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t15MTP2WithPHeaderE">
+<span id="_CPPv3N11libnokogiri11link_type_t15MTP2WithPHeaderE"></span><span id="_CPPv2N11libnokogiri11link_type_t15MTP2WithPHeaderE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caa1750c99a1c4abbfd5800c5909747b54"></span><em class="property">enumerator </em><code class="sig-name descname">MTP2WithPHeader</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t15MTP2WithPHeaderE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Signaling System 7 Message Transfer Part Level 2, as specified by <a class="reference external" href="https://www.itu.int/rec/T-REC-Q.703/en/">ITU-T Recommendation Q.703</a>, preceded by a pseudo-header. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t4MTP2E">
+<span id="_CPPv3N11libnokogiri11link_type_t4MTP2E"></span><span id="_CPPv2N11libnokogiri11link_type_t4MTP2E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca393e2acfec653476370b147f4a3988db"></span><em class="property">enumerator </em><code class="sig-name descname">MTP2</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t4MTP2E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Signaling System 7 Message Transfer Part Level 2, as specified by <a class="reference external" href="https://www.itu.int/rec/T-REC-Q.703/en/">ITU-T Recommendation Q.703</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t4MTP3E">
+<span id="_CPPv3N11libnokogiri11link_type_t4MTP3E"></span><span id="_CPPv2N11libnokogiri11link_type_t4MTP3E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cac5d77c5f51aa68081a065de0cacff009"></span><em class="property">enumerator </em><code class="sig-name descname">MTP3</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t4MTP3E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Signaling System 7 Message Transfer Part Level 3, as specified by <a class="reference external" href="https://www.itu.int/rec/T-REC-Q.704/en/">ITU-T Recommendation Q.704</a>, with no MTP2 header preceding the MTP3 packet. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t4SCCPE">
+<span id="_CPPv3N11libnokogiri11link_type_t4SCCPE"></span><span id="_CPPv2N11libnokogiri11link_type_t4SCCPE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cad5a4fb9284ab1549fb5086f755357755"></span><em class="property">enumerator </em><code class="sig-name descname">SCCP</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t4SCCPE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Signaling System 7 Signaling Connection Control Part, as specified by <a class="reference external" href="https://www.itu.int/rec/T-REC-Q.711/en/">ITU-T Recommendation Q.711</a>, <a class="reference external" href="https://www.itu.int/rec/T-REC-Q.712/en/">ITU-T Recommendation Q.712</a>, <a class="reference external" href="https://www.itu.int/rec/T-REC-Q.713/en/">ITU-T Recommendation Q.713</a>, and <a class="reference external" href="https://www.itu.int/rec/T-REC-Q.714/en/">ITU-T Recommendation Q.714</a>, with no MTP3 or MTP2 headers preceding the SCCP packet. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t6DOCSISE">
+<span id="_CPPv3N11libnokogiri11link_type_t6DOCSISE"></span><span id="_CPPv2N11libnokogiri11link_type_t6DOCSISE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cad29a162f47a9b43f1d249d373292aed0"></span><em class="property">enumerator </em><code class="sig-name descname">DOCSIS</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t6DOCSISE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>DOCSIS MAC frames, as described by the <a class="reference external" href="https://apps.cablelabs.com/specification/CM-SP-MULPIv3.1">DOCSIS 3.1 MAC and Upper Layer Protocols Interface Specification</a> or earlier specifications for MAC frames. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t9LinuxIrDAE">
+<span id="_CPPv3N11libnokogiri11link_type_t9LinuxIrDAE"></span><span id="_CPPv2N11libnokogiri11link_type_t9LinuxIrDAE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caf29599cf9ff0307232d253feb447dd2c"></span><em class="property">enumerator </em><code class="sig-name descname">LinuxIrDA</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t9LinuxIrDAE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Linux-IrDA packets, with a <a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_LINUX_IRDA.html">LINKTYPE_LINUX_IRDA header</a>, with the payload for IrDA frames beginning with by the IrLAP header as defined by <a class="reference external" href="https://www.irda.org/library-of-specs">IrDA Data Specifications</a>, including the IrDA Link Access Protocol specification. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t5User0E">
+<span id="_CPPv3N11libnokogiri11link_type_t5User0E"></span><span id="_CPPv2N11libnokogiri11link_type_t5User0E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cafc461ac8b6e3f19a9f64800389e202fe"></span><em class="property">enumerator </em><code class="sig-name descname">User0</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t5User0E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reserved for private use; See note above. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t5User1E">
+<span id="_CPPv3N11libnokogiri11link_type_t5User1E"></span><span id="_CPPv2N11libnokogiri11link_type_t5User1E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca6b908b785fdba05a6446347dae08d8c5"></span><em class="property">enumerator </em><code class="sig-name descname">User1</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t5User1E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reserved for private use; See note above. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t5User2E">
+<span id="_CPPv3N11libnokogiri11link_type_t5User2E"></span><span id="_CPPv2N11libnokogiri11link_type_t5User2E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caa09bccf2b2963982b34dc0e08d8b582a"></span><em class="property">enumerator </em><code class="sig-name descname">User2</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t5User2E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reserved for private use; See note above. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t5User3E">
+<span id="_CPPv3N11libnokogiri11link_type_t5User3E"></span><span id="_CPPv2N11libnokogiri11link_type_t5User3E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cae5d2ad241ec44cf155bc78ae8d11f715"></span><em class="property">enumerator </em><code class="sig-name descname">User3</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t5User3E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reserved for private use; See note above. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t5User4E">
+<span id="_CPPv3N11libnokogiri11link_type_t5User4E"></span><span id="_CPPv2N11libnokogiri11link_type_t5User4E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca5ad55d96abf0e50647d6de116530d6df"></span><em class="property">enumerator </em><code class="sig-name descname">User4</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t5User4E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reserved for private use; See note above. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t5User5E">
+<span id="_CPPv3N11libnokogiri11link_type_t5User5E"></span><span id="_CPPv2N11libnokogiri11link_type_t5User5E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca50c22602b70659dde2893f3a2ba0ab82"></span><em class="property">enumerator </em><code class="sig-name descname">User5</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t5User5E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reserved for private use; See note above. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t5User6E">
+<span id="_CPPv3N11libnokogiri11link_type_t5User6E"></span><span id="_CPPv2N11libnokogiri11link_type_t5User6E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca10ddead5bb8bcfaa4d62090acd7cdfb2"></span><em class="property">enumerator </em><code class="sig-name descname">User6</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t5User6E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reserved for private use; See note above. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t5User7E">
+<span id="_CPPv3N11libnokogiri11link_type_t5User7E"></span><span id="_CPPv2N11libnokogiri11link_type_t5User7E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca98cd5d17f0660baca7d652995f0d17b6"></span><em class="property">enumerator </em><code class="sig-name descname">User7</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t5User7E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reserved for private use; See note above. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t5User8E">
+<span id="_CPPv3N11libnokogiri11link_type_t5User8E"></span><span id="_CPPv2N11libnokogiri11link_type_t5User8E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cad306313ac03787c5f5f41641773bfb9a"></span><em class="property">enumerator </em><code class="sig-name descname">User8</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t5User8E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reserved for private use; See note above. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t5User9E">
+<span id="_CPPv3N11libnokogiri11link_type_t5User9E"></span><span id="_CPPv2N11libnokogiri11link_type_t5User9E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca2a19bc085beedfd33873400cb9249e4f"></span><em class="property">enumerator </em><code class="sig-name descname">User9</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t5User9E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reserved for private use; See note above. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t6User10E">
+<span id="_CPPv3N11libnokogiri11link_type_t6User10E"></span><span id="_CPPv2N11libnokogiri11link_type_t6User10E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca31b083bc7281321ea98d3c1bc9701627"></span><em class="property">enumerator </em><code class="sig-name descname">User10</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t6User10E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reserved for private use; See note above. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t6User11E">
+<span id="_CPPv3N11libnokogiri11link_type_t6User11E"></span><span id="_CPPv2N11libnokogiri11link_type_t6User11E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca8189d5d4551ef7c14034917663cdedf7"></span><em class="property">enumerator </em><code class="sig-name descname">User11</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t6User11E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reserved for private use; See note above. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t6User12E">
+<span id="_CPPv3N11libnokogiri11link_type_t6User12E"></span><span id="_CPPv2N11libnokogiri11link_type_t6User12E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca33b564a1370a1c48f07d6f89074bdf1f"></span><em class="property">enumerator </em><code class="sig-name descname">User12</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t6User12E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reserved for private use; See note above. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t6User13E">
+<span id="_CPPv3N11libnokogiri11link_type_t6User13E"></span><span id="_CPPv2N11libnokogiri11link_type_t6User13E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca85f10a42777948fc9b135cfb54cfce89"></span><em class="property">enumerator </em><code class="sig-name descname">User13</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t6User13E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reserved for private use; See note above. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t6User14E">
+<span id="_CPPv3N11libnokogiri11link_type_t6User14E"></span><span id="_CPPv2N11libnokogiri11link_type_t6User14E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca92c843669b9da5ac3267d0fe2f927da9"></span><em class="property">enumerator </em><code class="sig-name descname">User14</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t6User14E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reserved for private use; See note above. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t6User15E">
+<span id="_CPPv3N11libnokogiri11link_type_t6User15E"></span><span id="_CPPv2N11libnokogiri11link_type_t6User15E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca3e98cb5941d48a70df0c8cdf76c127b0"></span><em class="property">enumerator </em><code class="sig-name descname">User15</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t6User15E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reserved for private use; See note above. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t14IEEE802_11_AVSE">
+<span id="_CPPv3N11libnokogiri11link_type_t14IEEE802_11_AVSE"></span><span id="_CPPv2N11libnokogiri11link_type_t14IEEE802_11_AVSE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca75c3e36e178a9c5b70c7a95b040c6cbd"></span><em class="property">enumerator </em><code class="sig-name descname">IEEE802_11_AVS</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t14IEEE802_11_AVSE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="http://web.archive.org/web/20040803232023/http://www.shaftnet.org/~pizza/software/capturefrm.txt">AVS monitor mode information</a> followed by an 802.11 header. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t12BACNet_MS_TPE">
+<span id="_CPPv3N11libnokogiri11link_type_t12BACNet_MS_TPE"></span><span id="_CPPv2N11libnokogiri11link_type_t12BACNet_MS_TPE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cae63fce1dc02f85924a89073b9b2cd434"></span><em class="property">enumerator </em><code class="sig-name descname">BACNet_MS_TP</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t12BACNet_MS_TPE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>BACnet MS/TP frames, as specified by section 9.3 MS/TP Frame Format of <a class="reference external" href="http://www.ashrae.org/resources--publications/bookstore/standard-135">ANSI/ASHRAE Standard 135, BACnet® - A Data Communication Protocol for Building Automation and Control Networks</a>, including the preamble and, if present, the Data CRC. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t8PPP_PPPDE">
+<span id="_CPPv3N11libnokogiri11link_type_t8PPP_PPPDE"></span><span id="_CPPv2N11libnokogiri11link_type_t8PPP_PPPDE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca01e22ecbfc793a3c281dec4835c41df2"></span><em class="property">enumerator </em><code class="sig-name descname">PPP_PPPD</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t8PPP_PPPDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>PPP in HDLC-like encapsulation, like LINKTYPE_PPP_HDLC, but with the 0xff address byte replaced by a direction indication - 0x00 for incoming and 0x01 for outgoing. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t8GPRS_LLCE">
+<span id="_CPPv3N11libnokogiri11link_type_t8GPRS_LLCE"></span><span id="_CPPv2N11libnokogiri11link_type_t8GPRS_LLCE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca0173e924ec3c8141fc7cc09e64ae641a"></span><em class="property">enumerator </em><code class="sig-name descname">GPRS_LLC</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t8GPRS_LLCE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>General Packet Radio Service Logical Link Control, as defined by <a class="reference external" href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=224">3GPP TS 04.64</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t5GPF_TE">
+<span id="_CPPv3N11libnokogiri11link_type_t5GPF_TE"></span><span id="_CPPv2N11libnokogiri11link_type_t5GPF_TE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca18d8291edc211aff4aac938fd44788a8"></span><em class="property">enumerator </em><code class="sig-name descname">GPF_T</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t5GPF_TE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transparent-mapped generic framing procedure, as specified by <a class="reference external" href="https://www.itu.int/rec/T-REC-G.7041/en">ITU-T Recommendation G.7041/Y.1303</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t5GPF_FE">
+<span id="_CPPv3N11libnokogiri11link_type_t5GPF_FE"></span><span id="_CPPv2N11libnokogiri11link_type_t5GPF_FE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca208cf8bedf3461b1160d47797e795219"></span><em class="property">enumerator </em><code class="sig-name descname">GPF_F</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t5GPF_FE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Frame-mapped generic framing procedure, as specified by <a class="reference external" href="https://www.itu.int/rec/T-REC-G.7041/en">ITU-T Recommendation G.7041/Y.1303</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t9LinuxLAPDE">
+<span id="_CPPv3N11libnokogiri11link_type_t9LinuxLAPDE"></span><span id="_CPPv2N11libnokogiri11link_type_t9LinuxLAPDE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca8538eb88694a1b6c0e9f8891344a9f75"></span><em class="property">enumerator </em><code class="sig-name descname">LinuxLAPD</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t9LinuxLAPDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Link Access Procedures on the D Channel (LAPD) frames, as specified by <a class="reference external" href="https://www.itu.int/rec/T-REC-Q.920/en">ITU-T Recommendation Q.920</a> and <a class="reference external" href="https://www.itu.int/rec/T-REC-Q.921/en">ITU-T Recommendation Q.921</a>, captured via vISDN, with a <a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_LINUX_LAPD.html">LINKTYPE_LINUX_LAPD header</a>, followed by the Q.921 frame, starting with the address field. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t3MFRE">
+<span id="_CPPv3N11libnokogiri11link_type_t3MFRE"></span><span id="_CPPv2N11libnokogiri11link_type_t3MFRE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caffc2af63e0deedb77f8a5b9b310333a4"></span><em class="property">enumerator </em><code class="sig-name descname">MFR</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t3MFRE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://web.archive.org/web/20160427004354/https://www.broadband-forum.org/technical/download/FRF.16/frf16.1.pdf">FRF.16.1</a> Multi-Link Frame Relay frames, beginning with an <a class="reference external" href="https://web.archive.org/web/20181021041543/https://www.broadband-forum.org/technical/download/FRF.12/frf12.pdf">FRF.12</a> Interface fragmentation format fragmentation header. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t15BluetoothHCI_H4E">
+<span id="_CPPv3N11libnokogiri11link_type_t15BluetoothHCI_H4E"></span><span id="_CPPv2N11libnokogiri11link_type_t15BluetoothHCI_H4E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caff8e6211a66d019eda013ff67ac7c028"></span><em class="property">enumerator </em><code class="sig-name descname">BluetoothHCI_H4</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t15BluetoothHCI_H4E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Bluetooth HCI UART transport layer; the frame contains an HCI packet indicator byte, as specified by the UART Transport Layer portion of the most recent Bluetooth Core specification, followed by an HCI packet of the specified packet type, as specified by the Host Controller Interface Functional Specification portion of the most recent Bluetooth Core Specification. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t8USBLinuxE">
+<span id="_CPPv3N11libnokogiri11link_type_t8USBLinuxE"></span><span id="_CPPv2N11libnokogiri11link_type_t8USBLinuxE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca451393c043dff7b4170903607a769506"></span><em class="property">enumerator </em><code class="sig-name descname">USBLinux</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t8USBLinuxE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>USB packets, beginning with a Linux USB header, as specified by the struct usbmon_packet in the Documentation/usb/usbmon.txt file in the Linux source tree. Only the first 48 bytes of that header are present. All fields in the header are in host byte order. When performing a live capture, the host byte order is the byte order of the machine on which the packets are captured. When reading a pcap file, the byte order is the byte order for the file, as specified by the file’s magic number; when reading a pcapng file, the byte order is the byte order for the section of the pcapng file, as specified by the Section Header Block. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t3PPIE">
+<span id="_CPPv3N11libnokogiri11link_type_t3PPIE"></span><span id="_CPPv2N11libnokogiri11link_type_t3PPIE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cada388f5a4dd69f102143b581d2b1b4d8"></span><em class="property">enumerator </em><code class="sig-name descname">PPI</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t3PPIE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Per-Packet Information information, as specified by the Per-Packet Information Header Specification, followed by a packet with the LINKTYPE_ value specified by the pph_dlt field of that header. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t20IEEE802_15_4_WithFCSE">
+<span id="_CPPv3N11libnokogiri11link_type_t20IEEE802_15_4_WithFCSE"></span><span id="_CPPv2N11libnokogiri11link_type_t20IEEE802_15_4_WithFCSE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca3d1aab6d9c89e09fda36bd0bc49e05b6"></span><em class="property">enumerator </em><code class="sig-name descname">IEEE802_15_4_WithFCS</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t20IEEE802_15_4_WithFCSE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>IEEE 802.15.4 Low-Rate Wireless Networks, with each packet having the FCS at the end of the frame. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t4SITAE">
+<span id="_CPPv3N11libnokogiri11link_type_t4SITAE"></span><span id="_CPPv2N11libnokogiri11link_type_t4SITAE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cacb6fe47339d6e36801bc175626c8fc82"></span><em class="property">enumerator </em><code class="sig-name descname">SITA</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t4SITAE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Various link-layer types, with a pseudo-header, for SITA. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t3ERFE">
+<span id="_CPPv3N11libnokogiri11link_type_t3ERFE"></span><span id="_CPPv2N11libnokogiri11link_type_t3ERFE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca37a5fe612ac8fe5cc64e84d2d10694e6"></span><em class="property">enumerator </em><code class="sig-name descname">ERF</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t3ERFE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Various link-layer types, with a pseudo-header, for Endace DAG cards; encapsulates Endace ERF records. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t23BluetoothHCI_H4WithPhdrE">
+<span id="_CPPv3N11libnokogiri11link_type_t23BluetoothHCI_H4WithPhdrE"></span><span id="_CPPv2N11libnokogiri11link_type_t23BluetoothHCI_H4WithPhdrE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cae9da339092bda485404e5a0799cf80bb"></span><em class="property">enumerator </em><code class="sig-name descname">BluetoothHCI_H4WithPhdr</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t23BluetoothHCI_H4WithPhdrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Bluetooth HCI UART transport layer; the frame contains a 4-byte direction field, in network byte order (big-endian), the low-order bit of which is set if the frame was sent from the host to the controller and clear if the frame was received by the host from the controller, followed by an HCI packet indicator byte, as specified by the UART Transport Layer portion of the most recent <a class="reference external" href="https://web.archive.org/web/20130314201541/https://www.bluetooth.org/Technical/Specifications/adopted.htm">Bluetooth Core specification</a>, followed by an HCI packet of the specified packet type, as specified by the Host Controller Interface Functional Specification portion of the most recent Bluetooth Core Specification. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t9AX25_KIDDE">
+<span id="_CPPv3N11libnokogiri11link_type_t9AX25_KIDDE"></span><span id="_CPPv2N11libnokogiri11link_type_t9AX25_KIDDE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca9bdad89049a00d729c7fbf61f4170419"></span><em class="property">enumerator </em><code class="sig-name descname">AX25_KIDD</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t9AX25_KIDDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="http://www.ax25.net/AX25.2.2-Jul%2098-2.pdf">AX.25</a> packet, with a 1-byte <a class="reference external" href="http://www.ax25.net/kiss.aspx">KISS</a> header containing a type indicator. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t4LAPDE">
+<span id="_CPPv3N11libnokogiri11link_type_t4LAPDE"></span><span id="_CPPv2N11libnokogiri11link_type_t4LAPDE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca353b816a8df4221a725eaa648901e170"></span><em class="property">enumerator </em><code class="sig-name descname">LAPD</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t4LAPDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Link Access Procedures on the D Channel (LAPD) frames, as specified by <a class="reference external" href="https://www.itu.int/rec/T-REC-Q.920/en">ITU-T Recommendation Q.920</a> and <a class="reference external" href="https://www.itu.int/rec/T-REC-Q.921/en">ITU-T Recommendation Q.921</a>, starting with the address field, with no pseudo-header. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t10PPPWithDirE">
+<span id="_CPPv3N11libnokogiri11link_type_t10PPPWithDirE"></span><span id="_CPPv2N11libnokogiri11link_type_t10PPPWithDirE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cae44dab6aebca13d4b2ae15a65e031acd"></span><em class="property">enumerator </em><code class="sig-name descname">PPPWithDir</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t10PPPWithDirE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>PPP, as per <a class="reference external" href="https://tools.ietf.org/html/rfc1661">RFC 1661</a> and <a class="reference external" href="https://tools.ietf.org/html/rfc1662">RFC 1662</a>, preceded with a one-byte pseudo-header with a zero value meaning “received by this host” and a non-zero value meaning “sent by this host”; if the first 2 bytes are 0xff and 0x03, it’s PPP in HDLC-like framing, with the PPP header following those two bytes, otherwise it’s PPP without framing, and the packet begins with the PPP header. The data in the frame is not octet-stuffed or bit-stuffed. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t16CiscoHDLCWithDirE">
+<span id="_CPPv3N11libnokogiri11link_type_t16CiscoHDLCWithDirE"></span><span id="_CPPv2N11libnokogiri11link_type_t16CiscoHDLCWithDirE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca07a8b867bb8ee7cd6868d4e3e88bfe48"></span><em class="property">enumerator </em><code class="sig-name descname">CiscoHDLCWithDir</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t16CiscoHDLCWithDirE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Cisco PPP with HDLC framing, as per <a class="reference external" href="https://tools.ietf.org/html/rfc1547#section-4.3.1">section 4.3.1 of RFC 1547</a>, preceded with a one-byte pseudo-header with a zero value meaning “received by this host” and a non-zero value meaning “sent by this host”. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t17FrameRelayWithDirE">
+<span id="_CPPv3N11libnokogiri11link_type_t17FrameRelayWithDirE"></span><span id="_CPPv2N11libnokogiri11link_type_t17FrameRelayWithDirE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca4f50b894418c8bc927a8124948d4cd18"></span><em class="property">enumerator </em><code class="sig-name descname">FrameRelayWithDir</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t17FrameRelayWithDirE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Frame Relay LAPF frames, beginning with a one-byte pseudo-header with a zero value meaning “received by this host” (DCE-&gt;DTE) and a non-zero value meaning “sent by this host” (DTE-&gt;DCE), followed by an <a class="reference external" href="https://www.itu.int/rec/T-REC-Q.922/en/">ITU-T Recommendation Q.922</a> LAPF header starting with the address field, and without an FCS at the end of the frame. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t11LAPBWithDirE">
+<span id="_CPPv3N11libnokogiri11link_type_t11LAPBWithDirE"></span><span id="_CPPv2N11libnokogiri11link_type_t11LAPBWithDirE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca400f91751d881fc10f3bf506471d1e44"></span><em class="property">enumerator </em><code class="sig-name descname">LAPBWithDir</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t11LAPBWithDirE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Link Access Procedure, Balanced (LAPB), as specified by <a class="reference external" href="https://www.itu.int/rec/T-REC-X.25/en">ITU-T Recommendation X.25</a>, preceded with a one-byte pseudo-header with a zero value meaning “received by this host” (DCE-&gt;DTE) and a non-zero value meaning “sent by this host” (DTE-&gt;DCE). </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t10Ipmb_linuxE">
+<span id="_CPPv3N11libnokogiri11link_type_t10Ipmb_linuxE"></span><span id="_CPPv2N11libnokogiri11link_type_t10Ipmb_linuxE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caf6cc6409ad34b13b1d909d665f92762e"></span><em class="property">enumerator </em><code class="sig-name descname">Ipmb_linux</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t10Ipmb_linuxE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://www.intel.com/content/www/us/en/products/docs/servers/ipmi/ipmi-second-gen-interface-spec-v2-rev1-1.html">IPMB</a> over an <a class="reference external" href="https://www.nxp.com/docs/en/user-guide/UM10204.pdf">I2C</a> circuit, with a <a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_IPMB_LINUX.html">Linux-specific pseudo-header</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t23IEEE802_15_4_nonask_phyE">
+<span id="_CPPv3N11libnokogiri11link_type_t23IEEE802_15_4_nonask_phyE"></span><span id="_CPPv2N11libnokogiri11link_type_t23IEEE802_15_4_nonask_phyE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca557f26c82c27b1e69048847d36181ca1"></span><em class="property">enumerator </em><code class="sig-name descname">IEEE802_15_4_nonask_phy</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t23IEEE802_15_4_nonask_phyE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://ieeexplore.ieee.org/document/7460875/">IEEE 802.15.4</a> Low-Rate Wireless Networks, with each packet having the FCS at the end of the frame, and with the PHY-level data for the O-QPSK, BPSK, GFSK, MSK, and RCC DSS BPSK PHYs (4 octets of 0 as preamble, one octet of SFD, one octet of frame length + reserved bit) preceding the MAC-layer data (starting with the frame control field). </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t16UUSBLinuxMmappedE">
+<span id="_CPPv3N11libnokogiri11link_type_t16UUSBLinuxMmappedE"></span><span id="_CPPv2N11libnokogiri11link_type_t16UUSBLinuxMmappedE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca144d0cc28a0a76bf85a0a260f1fa628a"></span><em class="property">enumerator </em><code class="sig-name descname">UUSBLinuxMmapped</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t16UUSBLinuxMmappedE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>USB packets, beginning with a Linux USB header, as specified by the struct usbmon_packet in the Documentation/usb/usbmon.txt file in the Linux source tree. All 64 bytes of the header are present. All fields in the header are in host byte order. When performing a live capture, the host byte order is the byte order of the machine on which the packets are captured. When reading a pcap file, the byte order is the byte order for the file, as specified by the file’s magic number; when reading a pcapng file, the byte order is the byte order for the section of the pcapng file, as specified by the Section Header Block. For isochronous transfers, the ndesc field specifies the number of isochronous descriptors that follow. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t3FC2E">
+<span id="_CPPv3N11libnokogiri11link_type_t3FC2E"></span><span id="_CPPv2N11libnokogiri11link_type_t3FC2E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caff9971710c5b208a0619e9b58d986c82"></span><em class="property">enumerator </em><code class="sig-name descname">FC2</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t3FC2E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Fibre Channel FC-2 frames, beginning with a Frame_Header. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t18FC2WithFrameDelimsE">
+<span id="_CPPv3N11libnokogiri11link_type_t18FC2WithFrameDelimsE"></span><span id="_CPPv2N11libnokogiri11link_type_t18FC2WithFrameDelimsE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca4d28d7b324e7d7deca269aa6264a1a24"></span><em class="property">enumerator </em><code class="sig-name descname">FC2WithFrameDelims</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t18FC2WithFrameDelimsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Fibre Channel FC-2 frames, beginning an encoding of the SOF, followed by a Frame_Header, and ending with an encoding of the SOF. The encodings represent the frame delimiters as 4-byte sequences representing the corresponding ordered sets, with K28.5 represented as 0xBC, and the D symbols as the corresponding byte values; for example, SOFi2, which is K28.5 - D21.5 - D1.2 - D21.2, is represented as 0xBC 0xB5 0x55 0x55. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t5IPNETE">
+<span id="_CPPv3N11libnokogiri11link_type_t5IPNETE"></span><span id="_CPPv2N11libnokogiri11link_type_t5IPNETE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cae3d0f095cad170bbae8544296a54828e"></span><em class="property">enumerator </em><code class="sig-name descname">IPNET</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t5IPNETE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_IPNET.html">Solaris ipnet pseudo-header</a>, followed by an IPv4 or IPv6 datagram. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t12CANSocketCanE">
+<span id="_CPPv3N11libnokogiri11link_type_t12CANSocketCanE"></span><span id="_CPPv2N11libnokogiri11link_type_t12CANSocketCanE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cac7d9ff912f35ff0ac494c1dcc16fde90"></span><em class="property">enumerator </em><code class="sig-name descname">CANSocketCan</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t12CANSocketCanE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CAN (Controller Area Network) frames, with <a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_CAN_SOCKETCAN.html">a pseudo-header</a> followed by the frame payload. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t4IpV4E">
+<span id="_CPPv3N11libnokogiri11link_type_t4IpV4E"></span><span id="_CPPv2N11libnokogiri11link_type_t4IpV4E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca47ac86b4ef084e23d564acf75b2f729d"></span><em class="property">enumerator </em><code class="sig-name descname">IpV4</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t4IpV4E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Raw IPv4; the packet begins with an IPv4 header. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t4IpV6E">
+<span id="_CPPv3N11libnokogiri11link_type_t4IpV6E"></span><span id="_CPPv2N11libnokogiri11link_type_t4IpV6E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cac959746aaa3cfb32b00307eb89094227"></span><em class="property">enumerator </em><code class="sig-name descname">IpV6</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t4IpV6E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Raw IPv6; the packet begins with an IPv6 header. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t18IEEE802_15_4_nofcsE">
+<span id="_CPPv3N11libnokogiri11link_type_t18IEEE802_15_4_nofcsE"></span><span id="_CPPv2N11libnokogiri11link_type_t18IEEE802_15_4_nofcsE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca3770e6b0ad13d2a34035a4aa50980f81"></span><em class="property">enumerator </em><code class="sig-name descname">IEEE802_15_4_nofcs</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t18IEEE802_15_4_nofcsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://ieeexplore.ieee.org/document/7460875/">IEEE 802.15.4</a> Low-Rate Wireless Network, without the FCS at the end of the frame. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t4DBusE">
+<span id="_CPPv3N11libnokogiri11link_type_t4DBusE"></span><span id="_CPPv2N11libnokogiri11link_type_t4DBusE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cabcc879868ab9d6e92dc80e84a75ddbc2"></span><em class="property">enumerator </em><code class="sig-name descname">DBus</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t4DBusE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Raw <a class="reference external" href="http://www.freedesktop.org/wiki/Software/dbus">D-Bus</a> <a class="reference external" href="https://dbus.freedesktop.org/doc/dbus-specification.html#message-protocol-messages">messages</a>, starting with the endianness flag, followed by the message type, etc., but without the <a class="reference external" href="https://dbus.freedesktop.org/doc/dbus-specification.html#auth-protocol">authentication handshake</a> before the message sequence. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t6DVB_CIE">
+<span id="_CPPv3N11libnokogiri11link_type_t6DVB_CIE"></span><span id="_CPPv2N11libnokogiri11link_type_t6DVB_CIE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca262f1df53d2cf33abc77db69643db8a9"></span><em class="property">enumerator </em><code class="sig-name descname">DVB_CI</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t6DVB_CIE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>DVB-CI (DVB Common Interface for communication between a PC Card module and a DVB receiver), with the message format specified by the <a class="reference external" href="https://www.kaiser.cx/pcap-dvbci.html">PCAP format for DVB-CI specification</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t8Mux27010E">
+<span id="_CPPv3N11libnokogiri11link_type_t8Mux27010E"></span><span id="_CPPv2N11libnokogiri11link_type_t8Mux27010E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca49afefe8249f659f4dcd173b283331b0"></span><em class="property">enumerator </em><code class="sig-name descname">Mux27010</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t8Mux27010E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_MUX27010.html">Variant of 3GPP TS 27.010 multiplexing protocol</a> (similar to, but not the same as, 27.010). </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t14Stanag5066DPDUE">
+<span id="_CPPv3N11libnokogiri11link_type_t14Stanag5066DPDUE"></span><span id="_CPPv2N11libnokogiri11link_type_t14Stanag5066DPDUE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca84f2a8382eadb2dd5ba54f2b5116b210"></span><em class="property">enumerator </em><code class="sig-name descname">Stanag5066DPDU</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t14Stanag5066DPDUE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>D_PDUs as described by NATO standard STANAG 5066, starting with the synchronization sequence, and including both header and data CRCs. The current version of STANAG 5066 is backwards-compatible with <a class="reference external" href="https://web.archive.org/web/20051004082010/http://www.armymars.net/ArmyMARS/HF-Email/resources/stanag5066.pdf">the 1.0.2 version</a>, although newer versions are classified. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t5NFLogE">
+<span id="_CPPv3N11libnokogiri11link_type_t5NFLogE"></span><span id="_CPPv2N11libnokogiri11link_type_t5NFLogE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca1d3f02b06d144a73fa862497b5cb7ff0"></span><em class="property">enumerator </em><code class="sig-name descname">NFLog</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t5NFLogE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_NFLOG.html">Linux netlink NETLINK NFLOG socket log messages</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t11NetAnalyzerE">
+<span id="_CPPv3N11libnokogiri11link_type_t11NetAnalyzerE"></span><span id="_CPPv2N11libnokogiri11link_type_t11NetAnalyzerE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca1d0f230d7cf77f98faec585ad8aa7778"></span><em class="property">enumerator </em><code class="sig-name descname">NetAnalyzer</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t11NetAnalyzerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_NETANALYZER.html">Pseudo-header for Hilscher Gesellschaft für Systemautomation mbH netANALYZER devices</a>, followed by an Ethernet frame, beginning with the MAC header and ending with the FCS. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t22NetAnalyzerTransparentE">
+<span id="_CPPv3N11libnokogiri11link_type_t22NetAnalyzerTransparentE"></span><span id="_CPPv2N11libnokogiri11link_type_t22NetAnalyzerTransparentE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca82d60156ffb662adbf086577b554662b"></span><em class="property">enumerator </em><code class="sig-name descname">NetAnalyzerTransparent</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t22NetAnalyzerTransparentE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_NETANALYZER.html">Pseudo-header for Hilscher Gesellschaft für Systemautomation mbH netANALYZER devices</a>, followed by an Ethernet frame, beginning with the preamble, SFD, and MAC header, and ending with the FCS. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t5IPoIBE">
+<span id="_CPPv3N11libnokogiri11link_type_t5IPoIBE"></span><span id="_CPPv2N11libnokogiri11link_type_t5IPoIBE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cafeec5b89d5c456f17c00ab1d3b0e3f39"></span><em class="property">enumerator </em><code class="sig-name descname">IPoIB</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t5IPoIBE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>IP-over-InfiniBand, as specified by <a class="reference external" href="https://tools.ietf.org/html/rfc4391#section-6">RFC 4391 section 6</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t14MPEG2TransportE">
+<span id="_CPPv3N11libnokogiri11link_type_t14MPEG2TransportE"></span><span id="_CPPv2N11libnokogiri11link_type_t14MPEG2TransportE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cac2e70ecfc34ff0668002bd392084d4bf"></span><em class="property">enumerator </em><code class="sig-name descname">MPEG2Transport</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t14MPEG2TransportE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>MPEG-2 Transport Stream transport packets, as specified by ISO 13818-1/<a class="reference external" href="https://www.itu.int/rec/T-REC-H.222.0">ITU-T Recommendation H.222.0</a> (see table 2-2 of section 2.4.3.2 “Transport Stream packet layer”). </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t4NG40E">
+<span id="_CPPv3N11libnokogiri11link_type_t4NG40E"></span><span id="_CPPv2N11libnokogiri11link_type_t4NG40E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cad90b6a71fd29b43afac07497c4571da2"></span><em class="property">enumerator </em><code class="sig-name descname">NG40</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t4NG40E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_NG40.html">Pseudo-header for ng4T GmbH’s UMTS Iub/Iur-over-ATM and Iub/Iur-over-IP format as used by their ng40 protocol tester</a>, followed by frames for the Frame Protocol as specified by <a class="reference external" href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1201">3GPP TS 25.427</a> for dedicated channels and <a class="reference external" href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1207">3GPP TS 25.435</a> for common/shared channels in the case of ATM AAL2 or UDP traffic, by SSCOP packets as specified by <a class="reference external" href="https://www.itu.int/rec/T-REC-Q.2110-199407-I/en">ITU-T Recommendation Q.2110</a> for ATM AAL5 traffic, and by NBAP packets for SCTP traffic. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t8NFC_LLCPE">
+<span id="_CPPv3N11libnokogiri11link_type_t8NFC_LLCPE"></span><span id="_CPPv2N11libnokogiri11link_type_t8NFC_LLCPE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca87862db2e9f1e85b94034318a0671854"></span><em class="property">enumerator </em><code class="sig-name descname">NFC_LLCP</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t8NFC_LLCPE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_NFC_LLCP.html">Pseudo-header for NFC LLCP packet captures</a>, followed by frame data for the LLCP Protocol as specified by <a class="reference external" href="http://www.nfc-forum.org/specs/spec_list/">NFCForum-TS-LLCP_1.1</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t10InfiniBandE">
+<span id="_CPPv3N11libnokogiri11link_type_t10InfiniBandE"></span><span id="_CPPv2N11libnokogiri11link_type_t10InfiniBandE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cae80aa7eb4d97de6f81e145e9aac80506"></span><em class="property">enumerator </em><code class="sig-name descname">InfiniBand</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t10InfiniBandE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Raw InfiniBand frames, starting with the Local Routing Header, as specified in Chapter 5 “Data packet format” of <a class="reference external" href="https://www.afs.enea.it/asantoro/V1r1_2_1.Release_12062007.pdf">InfiniBand™ Architectural Specification Release 1.2.1 Volume 1 - General Specifications</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t4SCTPE">
+<span id="_CPPv3N11libnokogiri11link_type_t4SCTPE"></span><span id="_CPPv2N11libnokogiri11link_type_t4SCTPE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca74096394e1dbe6f5b2ac4d54d4e88c97"></span><em class="property">enumerator </em><code class="sig-name descname">SCTP</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t4SCTPE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SCTP packets, as defined by <a class="reference external" href="https://tools.ietf.org/html/rfc4960">RFC 4960</a>, with no lower-level protocols such as IPv4 or IPv6. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t7USBPcapE">
+<span id="_CPPv3N11libnokogiri11link_type_t7USBPcapE"></span><span id="_CPPv2N11libnokogiri11link_type_t7USBPcapE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caf069a8444572295f4e7faeb08ee14ba7"></span><em class="property">enumerator </em><code class="sig-name descname">USBPcap</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t7USBPcapE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>USB packets, beginning with a <a class="reference external" href="https://desowin.org/usbpcap/captureformat.html">USBPcap header</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t10RTACSerialE">
+<span id="_CPPv3N11libnokogiri11link_type_t10RTACSerialE"></span><span id="_CPPv2N11libnokogiri11link_type_t10RTACSerialE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca46c8e857dfe2b1f053a124a93777ad82"></span><em class="property">enumerator </em><code class="sig-name descname">RTACSerial</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t10RTACSerialE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_RTAC_SERIAL.html">Serial-line packet header for the Schweitzer Engineering Laboratories “RTAC” product</a>, followed by a payload for one of a number of industrial control protocols. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t13BluetoothLELLE">
+<span id="_CPPv3N11libnokogiri11link_type_t13BluetoothLELLE"></span><span id="_CPPv2N11libnokogiri11link_type_t13BluetoothLELLE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca5f1ee75f16c678c9531f5faf137e6078"></span><em class="property">enumerator </em><code class="sig-name descname">BluetoothLELL</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t13BluetoothLELLE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Bluetooth Low Energy air interface Link Layer packets, in the format described in section 2.1 “PACKET FORMAT” of volume 6 of the <a class="reference external" href="https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=229737">Bluetooth Specification Version 4.0</a> (see PDF page 2200), but without the Preamble. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t7NetlinkE">
+<span id="_CPPv3N11libnokogiri11link_type_t7NetlinkE"></span><span id="_CPPv2N11libnokogiri11link_type_t7NetlinkE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca66a4eb423eb37cfabd21e784ac6bb6e6"></span><em class="property">enumerator </em><code class="sig-name descname">Netlink</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t7NetlinkE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_NETLINK.html">Linux Netlink capture encapsulation</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t21BluetoothLinuxMonitorE">
+<span id="_CPPv3N11libnokogiri11link_type_t21BluetoothLinuxMonitorE"></span><span id="_CPPv2N11libnokogiri11link_type_t21BluetoothLinuxMonitorE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca3bcd73e42d1bfe8c35b928277644dba0"></span><em class="property">enumerator </em><code class="sig-name descname">BluetoothLinuxMonitor</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t21BluetoothLinuxMonitorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_BLUETOOTH_LINUX_MONITOR.html">Bluetooth Linux Monitor encapsulation of traffic for the BlueZ stack</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t18Bluetooth_bredr_bbE">
+<span id="_CPPv3N11libnokogiri11link_type_t18Bluetooth_bredr_bbE"></span><span id="_CPPv2N11libnokogiri11link_type_t18Bluetooth_bredr_bbE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca5af1189110bce28a460fc7c8e9ac1bac"></span><em class="property">enumerator </em><code class="sig-name descname">Bluetooth_bredr_bb</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t18Bluetooth_bredr_bbE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="http://www.whiterocker.com/bt/LINKTYPE_BLUETOOTH_BREDR_BB.html">Bluetooth Basic Rate and Enhanced Data Rate baseband packets</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t21BluetoothLELLWithPHDRE">
+<span id="_CPPv3N11libnokogiri11link_type_t21BluetoothLELLWithPHDRE"></span><span id="_CPPv2N11libnokogiri11link_type_t21BluetoothLELLWithPHDRE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca66c59c0d1a154c15e7ac8805dedb21c1"></span><em class="property">enumerator </em><code class="sig-name descname">BluetoothLELLWithPHDR</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t21BluetoothLELLWithPHDRE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_BLUETOOTH_LE_LL_WITH_PHDR.html">Bluetooth Low Energy link-layer packets</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t16PROFIBUSDatalinkE">
+<span id="_CPPv3N11libnokogiri11link_type_t16PROFIBUSDatalinkE"></span><span id="_CPPv2N11libnokogiri11link_type_t16PROFIBUSDatalinkE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca3ceb4dfb3735204c8af460d6236abba1"></span><em class="property">enumerator </em><code class="sig-name descname">PROFIBUSDatalink</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t16PROFIBUSDatalinkE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>PROFIBUS data link layer packets, as specified by IEC standard 61158-4-3, beginning with the start delimiter, ending with the end delimiter, and including all octets between them. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t5PKTAPE">
+<span id="_CPPv3N11libnokogiri11link_type_t5PKTAPE"></span><span id="_CPPv2N11libnokogiri11link_type_t5PKTAPE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca027ebdaa2b5e95bd0bc7d4b4e10a0227"></span><em class="property">enumerator </em><code class="sig-name descname">PKTAP</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t5PKTAPE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_PKTAP.html">Apple PKTAP capture encapsulation</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t5EoPONE">
+<span id="_CPPv3N11libnokogiri11link_type_t5EoPONE"></span><span id="_CPPv2N11libnokogiri11link_type_t5EoPONE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca0686a8f152fb3cc97f6603923b151988"></span><em class="property">enumerator </em><code class="sig-name descname">EoPON</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t5EoPONE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Ethernet-over-passive-optical-network packets, starting with the last 6 octets of the modified preamble as specified by 65.1.3.2 “Transmit” in Clause 65 of Section 5 of <a class="reference external" href="https://ieeexplore.ieee.org/document/7428776/">IEEE 802.3</a>, followed immediately by an Ethernet frame. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t10IPMI_hpm_2E">
+<span id="_CPPv3N11libnokogiri11link_type_t10IPMI_hpm_2E"></span><span id="_CPPv2N11libnokogiri11link_type_t10IPMI_hpm_2E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cab8db29f68dfea3eba1d429b7e9016971"></span><em class="property">enumerator </em><code class="sig-name descname">IPMI_hpm_2</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t10IPMI_hpm_2E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>IPMI trace packets, as specified by Table 3-20 “Trace Data Block Format” in the <a class="reference external" href="http://www.picmg.org/v2internal/specifications2.cfm?thetype=One&amp;thebusid=12">PICMG HPM.2 specification</a>. The time stamps for packets in this format must match the time stamps in the Trace Data Blocks. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t9ZWaveR1R2E">
+<span id="_CPPv3N11libnokogiri11link_type_t9ZWaveR1R2E"></span><span id="_CPPv2N11libnokogiri11link_type_t9ZWaveR1R2E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caa85fcec90fbf284ef3595aa9c8f13fa8"></span><em class="property">enumerator </em><code class="sig-name descname">ZWaveR1R2</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t9ZWaveR1R2E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_ZWAVE_R1_R2.html">Z-Wave RF profile R1 and R2 packets</a>, as specified by <a class="reference external" href="https://www.itu.int/rec/T-REC-G.9959/en">ITU-T Recommendation G.9959</a>, with some MAC layer fields moved. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t7ZWaveR3E">
+<span id="_CPPv3N11libnokogiri11link_type_t7ZWaveR3E"></span><span id="_CPPv2N11libnokogiri11link_type_t7ZWaveR3E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca97232cf173883fd05919b9d1c74eed9f"></span><em class="property">enumerator </em><code class="sig-name descname">ZWaveR3</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t7ZWaveR3E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_ZWAVE_R3.html">Z-Wave RF profile R3 packets</a>, as specified by <a class="reference external" href="https://www.itu.int/rec/T-REC-G.9959/en">ITU-T Recommendation G.9959</a>, with some MAC layer fields moved. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t14WattStopperDLME">
+<span id="_CPPv3N11libnokogiri11link_type_t14WattStopperDLME"></span><span id="_CPPv2N11libnokogiri11link_type_t14WattStopperDLME"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cabc6e33e44118469ddf8eb853ad2121a6"></span><em class="property">enumerator </em><code class="sig-name descname">WattStopperDLM</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t14WattStopperDLME" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Formats for <a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_WATTSTOPPER_DLM.html">WattStopper Digital Lighting Management</a> (DLM) and Legrand Nitoo Open protocol common packet structure captures. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t8ISO14443E">
+<span id="_CPPv3N11libnokogiri11link_type_t8ISO14443E"></span><span id="_CPPv2N11libnokogiri11link_type_t8ISO14443E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cae415f639d7abb45ad4c92391db5b3752"></span><em class="property">enumerator </em><code class="sig-name descname">ISO14443</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t8ISO14443E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Messages between ISO 14443 contactless smartcards (Proximity Integrated Circuit Card, PICC) and card readers (Proximity Coupling Device, PCD), with the message format specified by <a class="reference external" href="https://www.kaiser.cx/pcap-iso14443.html">the PCAP format for ISO14443 specification</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t3RDSE">
+<span id="_CPPv3N11libnokogiri11link_type_t3RDSE"></span><span id="_CPPv2N11libnokogiri11link_type_t3RDSE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca0f41d6f36f8eaee87ea08d9f4b1159e2"></span><em class="property">enumerator </em><code class="sig-name descname">RDS</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t3RDSE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Radio data system (RDS) groups, as per IEC 62106, encapsulated in <a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_RDS.html">this form</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t9USBDarwinE">
+<span id="_CPPv3N11libnokogiri11link_type_t9USBDarwinE"></span><span id="_CPPv2N11libnokogiri11link_type_t9USBDarwinE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca778725d23aceb02e058c9f76a34070d9"></span><em class="property">enumerator </em><code class="sig-name descname">USBDarwin</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t9USBDarwinE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>USB packets, beginning with a <a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_USB_DARWIN.html">Darwin (macOS, etc.) USB header</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t4SDLCE">
+<span id="_CPPv3N11libnokogiri11link_type_t4SDLCE"></span><span id="_CPPv2N11libnokogiri11link_type_t4SDLCE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca6fb20c4016a1efc028fcb5c917a1a9b5"></span><em class="property">enumerator </em><code class="sig-name descname">SDLC</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t4SDLCE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SDLC packets, as specified by Chapter 1, “DLC Links”, section “Synchronous Data Link Control (SDLC)” of <a class="reference external" href="https://publibfp.dhe.ibm.com/epubs/pdf/d50a5007.pdf">Systems Network Architecture Formats, GA27-3136-20</a>, without the flag fields, zero-bit insertion, or Frame Check Sequence field, containing SNA path information units (PIUs) as the payload. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t7LoRaTapE">
+<span id="_CPPv3N11libnokogiri11link_type_t7LoRaTapE"></span><span id="_CPPv2N11libnokogiri11link_type_t7LoRaTapE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caca3a75251fccad0da31de9231b0bfc15"></span><em class="property">enumerator </em><code class="sig-name descname">LoRaTap</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t7LoRaTapE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>https://github.com/eriknl/LoRaTap/blob/master/README.md “LoRaTap pseudo-header”, followed by the payload, which is typically the PHYPayload from the <a class="reference external" href="https://lora-alliance.org/lorawan-for-developers">LoRaWan specification</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t5VSOCKE">
+<span id="_CPPv3N11libnokogiri11link_type_t5VSOCKE"></span><span id="_CPPv2N11libnokogiri11link_type_t5VSOCKE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caf0d4d92c0a65338b9fcf5e44348b1a67"></span><em class="property">enumerator </em><code class="sig-name descname">VSOCK</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t5VSOCKE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_VSOCK.html">Protocol for communication between host and guest machines in VMware and KVM hypervisors</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t9NordicBLEE">
+<span id="_CPPv3N11libnokogiri11link_type_t9NordicBLEE"></span><span id="_CPPv2N11libnokogiri11link_type_t9NordicBLEE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca840904d082414a0e32ac5ff454ffb5ce"></span><em class="property">enumerator </em><code class="sig-name descname">NordicBLE</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t9NordicBLEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Messages to and from a Nordic Semiconductor nRF Sniffer for Bluetooth LE packets, beginning with a <a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_NORDIC_BLE.html">pseudo-header</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t14DOCSIS31_XRA31E">
+<span id="_CPPv3N11libnokogiri11link_type_t14DOCSIS31_XRA31E"></span><span id="_CPPv2N11libnokogiri11link_type_t14DOCSIS31_XRA31E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cac4fba23dc603000d41dc81f04d738a0a"></span><em class="property">enumerator </em><code class="sig-name descname">DOCSIS31_XRA31</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t14DOCSIS31_XRA31E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>DOCSIS packets and bursts, preceded by a <a class="reference external" href="https://support.excentis.com/index.php?/Knowledgebase/Article/View/159">pseudo-header giving metadata about the packet</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t16Ethernet_mpacketE">
+<span id="_CPPv3N11libnokogiri11link_type_t16Ethernet_mpacketE"></span><span id="_CPPv2N11libnokogiri11link_type_t16Ethernet_mpacketE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca5da683b6c47bb20b622734a94eab9032"></span><em class="property">enumerator </em><code class="sig-name descname">Ethernet_mpacket</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t16Ethernet_mpacketE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>mPackets, as specified by <a class="reference external" href="https://ieeexplore.ieee.org/document/7900321/">IEEE 802.3br</a> Figure 99-4, starting with the preamble and always ending with a CRC field. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t14DisplayportAuxE">
+<span id="_CPPv3N11libnokogiri11link_type_t14DisplayportAuxE"></span><span id="_CPPv2N11libnokogiri11link_type_t14DisplayportAuxE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca2aeecbad74ebbf1d74f6618b7f94b611"></span><em class="property">enumerator </em><code class="sig-name descname">DisplayportAux</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t14DisplayportAuxE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>DisplayPort AUX channel monitoring data as specified by VESA DisplayPort(DP) Standard preceded by a <a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_DISPLAYPORT_AUX.html">pseudo-header</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t9LinuxSLL2E">
+<span id="_CPPv3N11libnokogiri11link_type_t9LinuxSLL2E"></span><span id="_CPPv2N11libnokogiri11link_type_t9LinuxSLL2E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca26ad1e4ed538d0451c4cd1ef2df59e6c"></span><em class="property">enumerator </em><code class="sig-name descname">LinuxSLL2</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t9LinuxSLL2E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_LINUX_SLL2.html">Linux “cooked” capture encapsulation v2</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t10OpenvizslaE">
+<span id="_CPPv3N11libnokogiri11link_type_t10OpenvizslaE"></span><span id="_CPPv2N11libnokogiri11link_type_t10OpenvizslaE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caebf42d73579e7077bd638104ca726dca"></span><em class="property">enumerator </em><code class="sig-name descname">Openvizsla</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t10OpenvizslaE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_OPENVIZSLA.html">Openvizsla FPGA-based USB sniffer</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t6EBHSCRE">
+<span id="_CPPv3N11libnokogiri11link_type_t6EBHSCRE"></span><span id="_CPPv2N11libnokogiri11link_type_t6EBHSCRE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca6c825b604be0338072e5595ec412a2d2"></span><em class="property">enumerator </em><code class="sig-name descname">EBHSCR</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t6EBHSCRE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://web.archive.org/web/20200502132428/https://d23rjziej2pu9i.cloudfront.net/wp-content/uploads/2019/03/04164842/EB_High_Speed_Capture_Replay_protocol.pdf">Elektrobit High Speed Capture and Replay (EBHSCR) format</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t11VPPDispatchE">
+<span id="_CPPv3N11libnokogiri11link_type_t11VPPDispatchE"></span><span id="_CPPv2N11libnokogiri11link_type_t11VPPDispatchE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caefaa5f651e40b768d18da73ce37f90ca"></span><em class="property">enumerator </em><code class="sig-name descname">VPPDispatch</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t11VPPDispatchE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Records in traces from the <a class="reference external" href="https://fd.io/">http://fd.io</a> VPP graph dispatch tracer, in <a class="reference external" href="https://fdio-vpp.readthedocs.io/en/latest/gettingstarted/developers/vnet.html#graph-dispatcher-pcap-tracing">the the graph dispatcher trace format</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t10DSATagBRCME">
+<span id="_CPPv3N11libnokogiri11link_type_t10DSATagBRCME"></span><span id="_CPPv2N11libnokogiri11link_type_t10DSATagBRCME"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca7c37a1cd86f64026bf83fc95c53a07e3"></span><em class="property">enumerator </em><code class="sig-name descname">DSATagBRCM</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t10DSATagBRCME" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Ethernet frames, with a <a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_DSA_TAG_BRCM.html">switch tag</a> inserted between the source address field and the type/length field in the Ethernet header. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t17DSATagBRCMPrependE">
+<span id="_CPPv3N11libnokogiri11link_type_t17DSATagBRCMPrependE"></span><span id="_CPPv2N11libnokogiri11link_type_t17DSATagBRCMPrependE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca4f7bda36e1839555261643e540db937f"></span><em class="property">enumerator </em><code class="sig-name descname">DSATagBRCMPrepend</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t17DSATagBRCMPrependE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Ethernet frames, with a <a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_DSA_TAG_BRCM_PREPEND.html">switch tag</a> inserted before the destination address in the Ethernet header. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t16IEEE802_15_4_TapE">
+<span id="_CPPv3N11libnokogiri11link_type_t16IEEE802_15_4_TapE"></span><span id="_CPPv2N11libnokogiri11link_type_t16IEEE802_15_4_TapE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caa3825ed7eddddd1e848f09e4e69e868d"></span><em class="property">enumerator </em><code class="sig-name descname">IEEE802_15_4_Tap</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t16IEEE802_15_4_TapE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference external" href="https://ieeexplore.ieee.org/document/7460875/">IEEE 802.15.4</a> Low-Rate Wireless Networks, with a <a class="reference external" href="https://github.com/jkcko/ieee802.15.4-tap/blob/master/IEEE%20802.15.4%20TAP%20Link%20Type%20Specification.pdf">pseudo-header containing TLVs with metadata</a> preceding the 802.15.4 header. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t9DSATagDSAE">
+<span id="_CPPv3N11libnokogiri11link_type_t9DSATagDSAE"></span><span id="_CPPv2N11libnokogiri11link_type_t9DSATagDSAE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caa4c54848421e0d4a5045c3363d1a2d39"></span><em class="property">enumerator </em><code class="sig-name descname">DSATagDSA</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t9DSATagDSAE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Ethernet frames, with a <a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_DSA_TAG_DSA.html">switch tag</a> inserted between the source address field and the type/length field in the Ethernet header. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t10DSATagEDSAE">
+<span id="_CPPv3N11libnokogiri11link_type_t10DSATagEDSAE"></span><span id="_CPPv2N11libnokogiri11link_type_t10DSATagEDSAE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca7b0b6cb77fb43ba458c0536bed892546"></span><em class="property">enumerator </em><code class="sig-name descname">DSATagEDSA</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t10DSATagEDSAE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Ethernet frames, with a programmable Ethernet type <a class="reference external" href="https://www.tcpdump.org/linktypes/LINKTYPE_DSA_TAG_EDSA.html">switch tag</a> inserted between the source address field and the type/length field in the Ethernet header. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t4ELEEE">
+<span id="_CPPv3N11libnokogiri11link_type_t4ELEEE"></span><span id="_CPPv2N11libnokogiri11link_type_t4ELEEE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cab94e3ad43c049f248d5ef59491b6769e"></span><em class="property">enumerator </em><code class="sig-name descname">ELEE</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t4ELEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Payload of lawful intercept packets using <a class="reference external" href="http://xml2rfc.tools.ietf.org/cgi-bin/xml2rfc.cgi?url=http://socket.hr/draft-dfranusic-opsawg-elee-00.xml&amp;modeAsFormat=html/ascii">the ELEE protocol</a>. The packet begins with the ELEE header; it does not include any transport-layer or lower-layer headers for protcols used to transport ELEE packets. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t11ZWaveSerialE">
+<span id="_CPPv3N11libnokogiri11link_type_t11ZWaveSerialE"></span><span id="_CPPv2N11libnokogiri11link_type_t11ZWaveSerialE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca559ce66771b35bc8991e8f8c23f7b3c9"></span><em class="property">enumerator </em><code class="sig-name descname">ZWaveSerial</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t11ZWaveSerialE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Serial frames transmitted between a host and a Z-Wave chip over an RS-232 or USB serial connection, as described in section 5 of the <a class="reference external" href="https://www.silabs.com/documents/login/user-guides/INS12350-Serial-API-Host-Appl.-Prg.-Guide.pdf">Z-Wave Serial API Host Application Programming Guide</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t4USB2E">
+<span id="_CPPv3N11libnokogiri11link_type_t4USB2E"></span><span id="_CPPv2N11libnokogiri11link_type_t4USB2E"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cafd5b050088428465622343639cab1e8f"></span><em class="property">enumerator </em><code class="sig-name descname">USB2</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t4USB2E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>USB 2.0, 1.1, or 1.0 packet, beginning with a PID, as described by Chapter 8 “Protocol Layer” of the the <a class="reference external" href="https://www.usb.org/document-library/usb-20-specification">Universal Serial Bus Specification Revision 2.0</a>. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N11libnokogiri11link_type_t8ATSC_ALPE">
+<span id="_CPPv3N11libnokogiri11link_type_t8ATSC_ALPE"></span><span id="_CPPv2N11libnokogiri11link_type_t8ATSC_ALPE"></span><span class="target" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cad7ebf0a4a7bc1540003250f207386a78"></span><em class="property">enumerator </em><code class="sig-name descname">ATSC_ALP</code><a class="headerlink" href="#_CPPv4N11libnokogiri11link_type_t8ATSC_ALPE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ATSC Link-Layer Protocol frames, as described in section 5 of the A/330 Link-Layer Protocol specification, found at the <a class="reference external" href="https://www.atsc.org/atsc-documents/type/3-0-standards/">ATSC 3.0 standards page</a>, beginning with a Base Header. </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2020, Aki Van Ness.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/api/enum_namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

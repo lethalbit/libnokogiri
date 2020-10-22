@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacelibnokogiri_1_1pcapng_1_1options" kind="namespace" language="C++">
+    <compoundname>libnokogiri::pcapng::options</compoundname>
+    <innerclass refid="structlibnokogiri_1_1pcapng_1_1options_1_1end__of__options__t" prot="public">libnokogiri::pcapng::options::end_of_options_t</innerclass>
+    <briefdescription>
+<para>pcapng options that are defined as per the standard </para>    </briefdescription>
+    <detaileddescription>
+<para>This namespace contains all the pre-specified options as defined by the pcapng RFC.</para><para>For documentation on how to register new option types with libnokogiri see the <computeroutput>Adding Options</computeroutput> section in <computeroutput>Extending libnokogiri</computeroutput>. </para>    </detaileddescription>
+    <location file="libnokogiri.hh" line="40" column="1"/>
+  </compounddef>
+</doxygen>

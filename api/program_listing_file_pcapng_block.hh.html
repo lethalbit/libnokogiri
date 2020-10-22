@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Program Listing for File block.hh &#8212; libnokogiri 0.0.1 e1bf431 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+    <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">libnokogiri</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=lethalbit&repo=libnokogiri&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div><h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">libnokogiri API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending/index.html">Extending libnokogiri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">libnokogiri examples</a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="program-listing-for-file-block-hh">
+<span id="program-listing-file-pcapng-block-hh"></span><h1>Program Listing for File block.hh<a class="headerlink" href="#program-listing-for-file-block-hh" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="file_pcapng_block.hh.html#file-pcapng-block-hh"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">pcapng/block.hh</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// SPDX-License-Identifier: LGPL-3.0-or-later</span>
+<span class="cm">/* pcapng/block.hh - Base type for pcapng blocks */</span>
+<span class="cp">#if !defined(LIBNOKOGIRI_PCAPNG_BLOCK_HH)</span>
+<span class="cp">#define LIBNOKOGIRI_PCAPNG_BLOCK_HH</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;cstdint&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;optional&gt;</span><span class="cp"></span>
+
+<span class="k">namespace</span> <span class="n">libnokogiri</span><span class="o">::</span><span class="n">pcapng</span> <span class="p">{</span>
+    <span class="k">enum</span> <span class="k">struct</span> <span class="nl">block_type_t</span> <span class="p">:</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="p">{</span>
+        <span class="n">Reserved</span>                   <span class="o">=</span> <span class="mh">0x00000000U</span><span class="p">,</span>
+        <span class="n">InterfaceDescription</span>       <span class="o">=</span> <span class="mh">0x00000001U</span><span class="p">,</span>
+        <span class="n">Packet</span>                     <span class="o">=</span> <span class="mh">0x00000002U</span><span class="p">,</span>
+        <span class="n">SimplePacket</span>               <span class="o">=</span> <span class="mh">0x00000003U</span><span class="p">,</span>
+        <span class="n">NameResolution</span>             <span class="o">=</span> <span class="mh">0x00000004U</span><span class="p">,</span>
+        <span class="n">InterfaceStatistics</span>        <span class="o">=</span> <span class="mh">0x00000005U</span><span class="p">,</span>
+        <span class="n">EnhancedPacket</span>             <span class="o">=</span> <span class="mh">0x00000006U</span><span class="p">,</span>
+        <span class="n">SocketAggrigation</span>          <span class="o">=</span> <span class="mh">0x00000007U</span><span class="p">,</span>
+        <span class="n">ARINC429AFDXEncapsulation</span>  <span class="o">=</span> <span class="mh">0x00000008U</span><span class="p">,</span>
+        <span class="n">SystemdJournalExport</span>       <span class="o">=</span> <span class="mh">0x00000009U</span><span class="p">,</span>
+        <span class="n">DecryptionSecrets</span>          <span class="o">=</span> <span class="mh">0x0000000AU</span><span class="p">,</span>
+        <span class="cm">/* 0x0000000BU - 0x00000100U : Unallocated, presumed reserved */</span>
+        <span class="n">HoneProjectMachineInfo</span>     <span class="o">=</span> <span class="mh">0x00000101U</span><span class="p">,</span>
+        <span class="n">HoneProjectConnectionEvent</span> <span class="o">=</span> <span class="mh">0x00000102U</span><span class="p">,</span>
+        <span class="cm">/* 0x00000103U - 0x00000200U : Unallocated, presumed reserved */</span>
+        <span class="n">SysdigMachineInfo</span>          <span class="o">=</span> <span class="mh">0x00000201U</span><span class="p">,</span>
+        <span class="n">SysdigProcessInfoV1</span>        <span class="o">=</span> <span class="mh">0x00000202U</span><span class="p">,</span>
+        <span class="n">SysdigFDList</span>               <span class="o">=</span> <span class="mh">0x00000203U</span><span class="p">,</span>
+        <span class="n">SysdigEvent</span>                <span class="o">=</span> <span class="mh">0x00000204U</span><span class="p">,</span>
+        <span class="n">SysdigInterfaceList</span>        <span class="o">=</span> <span class="mh">0x00000205U</span><span class="p">,</span>
+        <span class="n">SysdigUserList</span>             <span class="o">=</span> <span class="mh">0x00000206U</span><span class="p">,</span>
+        <span class="n">SysdigProcessInfoV2</span>        <span class="o">=</span> <span class="mh">0x00000207U</span><span class="p">,</span>
+        <span class="n">SysdigEventWithFlags</span>       <span class="o">=</span> <span class="mh">0x00000208U</span><span class="p">,</span>
+        <span class="n">SysdigProcessInfoV3</span>        <span class="o">=</span> <span class="mh">0x00000209U</span><span class="p">,</span>
+        <span class="n">SysdigProcessInfoV4</span>        <span class="o">=</span> <span class="mh">0x00000210U</span><span class="p">,</span>
+        <span class="n">SysdigProcessInfoV5</span>        <span class="o">=</span> <span class="mh">0x00000211U</span><span class="p">,</span>
+        <span class="n">SysdigProcessInfoV6</span>        <span class="o">=</span> <span class="mh">0x00000212U</span><span class="p">,</span>
+        <span class="n">SysdigProcessInfoV7</span>        <span class="o">=</span> <span class="mh">0x00000213U</span><span class="p">,</span>
+        <span class="cm">/* 0x00000213U - 0x00000BACU : Unallocated, presumed reserved */</span>
+        <span class="n">CustomRewriteCopyable</span>      <span class="o">=</span> <span class="mh">0x00000BADU</span><span class="p">,</span>
+        <span class="cm">/* 0x00000BAEU - 0x40000BACU : Unallocated, presumed reserved */</span>
+        <span class="n">CustomRewriteUncopyable</span>    <span class="o">=</span> <span class="mh">0x40000BADU</span><span class="p">,</span>
+        <span class="cm">/* 0x40000BAEU - 0x0A0D0D09U : Unallocated, presumed reserved */</span>
+        <span class="n">SectionHeader</span>              <span class="o">=</span> <span class="mh">0x0A0D0D0AU</span><span class="p">,</span> <span class="cm">/* RFC Section 4.1 */</span>
+        <span class="cm">/* 0x0A0D0D0BU - 0x0A0D09FFU : Unallocated, presumed reserved */</span>
+        <span class="cm">/* 0x0A0D0A00U - 0x0A0D0AFFU : Reserved, Safegaurd range */</span>
+        <span class="cm">/* 0x80000000U - 0xFFFFFFFFU : Reserved for local use */</span>
+
+    <span class="p">};</span>
+
+    <span class="k">struct</span> <span class="n">block_t</span> <span class="p">{</span>
+    <span class="k">private</span><span class="o">:</span>
+        <span class="n">block_type_t</span> <span class="n">_type</span><span class="p">;</span>
+    <span class="k">protected</span><span class="o">:</span>
+        <span class="k">constexpr</span> <span class="n">block_t</span><span class="p">(</span><span class="n">block_type_t</span> <span class="n">type</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">:</span>
+            <span class="n">_type</span><span class="p">{</span><span class="n">type</span><span class="p">}</span>
+            <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="k">constexpr</span> <span class="n">block_t</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">:</span>
+            <span class="n">_type</span><span class="p">{</span><span class="n">block_type_t</span><span class="o">::</span><span class="n">Reserved</span><span class="p">}</span>
+            <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">block_type_t</span> <span class="n">type</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_type</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">};</span>
+
+    <span class="k">struct</span> <span class="n">block_storage_t</span> <span class="k">final</span> <span class="p">{</span>
+    <span class="k">private</span><span class="o">:</span>
+        <span class="n">block_type_t</span> <span class="n">_type</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">_length</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uintptr_t</span> <span class="n">_offset</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">block_t</span><span class="o">&gt;</span> <span class="n">_block_cache</span><span class="p">;</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="k">constexpr</span> <span class="n">block_storage_t</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">:</span>
+            <span class="n">_type</span><span class="p">{</span><span class="n">block_type_t</span><span class="o">::</span><span class="n">Reserved</span><span class="p">},</span> <span class="n">_length</span><span class="p">{</span><span class="mi">0U</span><span class="p">},</span> <span class="n">_offset</span><span class="p">{</span><span class="mi">0U</span><span class="p">},</span> <span class="n">_block_cache</span><span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">nullopt</span><span class="p">}</span>
+            <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
+
+        <span class="k">constexpr</span> <span class="n">block_storage_t</span><span class="p">(</span><span class="n">block_type_t</span> <span class="n">type</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">length</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">uintptr_t</span> <span class="n">offset</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">block_t</span><span class="o">&gt;</span> <span class="n">block</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">nullopt</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">:</span>
+            <span class="n">_type</span><span class="p">{</span><span class="n">type</span><span class="p">},</span> <span class="n">_length</span><span class="p">{</span><span class="n">length</span><span class="p">},</span> <span class="n">_offset</span><span class="p">{</span><span class="n">offset</span><span class="p">},</span> <span class="n">_block_cache</span><span class="p">{</span><span class="n">block</span><span class="p">}</span>
+            <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">block_type_t</span> <span class="n">type</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_type</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">length</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_length</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uintptr_t</span> <span class="n">offset</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_offset</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">block_t</span><span class="o">&gt;</span> <span class="n">get_block</span><span class="p">()</span> <span class="k">noexcept</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">_block_cache</span> <span class="o">==</span> <span class="n">std</span><span class="o">::</span><span class="n">nullopt</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">nullopt</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="n">_block_cache</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+    <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="cp">#endif </span><span class="cm">/* LIBNOKOGIRI_PCAPNG_BLOCK_HH */</span><span class="cp"></span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2020, Aki Van Ness.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/api/program_listing_file_pcapng_block.hh.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

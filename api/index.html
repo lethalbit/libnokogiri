@@ -1,0 +1,444 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>libnokogiri API &#8212; libnokogiri 0.0.1 e1bf431 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+    <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Namespace libnokogiri" href="namespace_libnokogiri.html" />
+    <link rel="prev" title="libnokogiri" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">libnokogiri</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=lethalbit&repo=libnokogiri&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../index.html" title="previous chapter">libnokogiri</a></li>
+      <li>Next: <a href="namespace_libnokogiri.html" title="next chapter">Namespace libnokogiri</a></li>
+  </ul></li>
+</ul>
+</div><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">libnokogiri API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#full-api">Full API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#namespaces">Namespaces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="namespace_libnokogiri.html">Namespace libnokogiri</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_libnokogiri__compiletime.html">Namespace libnokogiri::compiletime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_libnokogiri__pcap.html">Namespace libnokogiri::pcap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_libnokogiri__pcapng.html">Namespace libnokogiri::pcapng</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_libnokogiri__pcapng__blocks.html">Namespace libnokogiri::pcapng::blocks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_libnokogiri__pcapng__options.html">Namespace libnokogiri::pcapng::options</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#classes-and-structs">Classes and Structs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structlibnokogiri_1_1pcap_1_1file__header__t.html">Struct file_header_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structlibnokogiri_1_1pcap_1_1packet__header__modified__t.html">Struct packet_header_modified_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structlibnokogiri_1_1pcap_1_1packet__header__t.html">Struct packet_header_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structlibnokogiri_1_1pcap_1_1packet__t.html">Template Struct packet_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structlibnokogiri_1_1pcap_1_1pcap__t.html">Struct pcap_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1block__storage__t.html">Struct block_storage_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1block__t.html">Struct block_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1blocks_1_1interface__description__t.html">Struct interface_description_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t.html">Struct section_header_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1option__t.html">Struct option_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1options_1_1end__of__options__t.html">Struct end_of_options_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1pcapng__t.html">Struct pcapng_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1section__t.html">Struct section_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structlibnokogiri_1_1version__t.html">Struct version_t</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#enums">Enums</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c.html">Enum link_type_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656.html">Enum pcap_variant_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1.html">Enum block_type_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bd.html">Enum option_type_t</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#defines">Defines</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="define_common_8hh_1a64bed52b3a785c5f321627adaf782835.html">Define LIBNOKOGIRI_COMMON_HH</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#typedefs">Typedefs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="typedef_namespacelibnokogiri_1a6ae0f93f4f2ab00b34bc908c12b8a072.html">Typedef libnokogiri::file_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typedef_namespacelibnokogiri_1_1pcap_1a4ab33a63f40fd16d1dadad8d2c03c4c1.html">Typedef libnokogiri::pcap::generic_packet_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typedef_namespacelibnokogiri_1_1pcap_1a8ee510d6a9b5728597274839cf179381.html">Typedef libnokogiri::pcap::modified_packet_t</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../extending/index.html">Extending libnokogiri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">libnokogiri examples</a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="libnokogiri-api">
+<h1>libnokogiri API<a class="headerlink" href="#libnokogiri-api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="class-hierarchy">
+<h2>Class Hierarchy<a class="headerlink" href="#class-hierarchy" title="Permalink to this headline">¶</a></h2>
+<ul class="treeView" id="class-treeView">
+  <li>
+    <ul class="collapsibleList">
+      <li class="lastChild">Namespace <a href="namespace_libnokogiri.html#namespace-libnokogiri">libnokogiri</a><ul><li>Namespace <a href="namespace_libnokogiri__pcap.html#namespace-libnokogiri-pcap">libnokogiri::pcap</a><ul><li>Struct <a href="structlibnokogiri_1_1pcap_1_1packet__header__modified__t.html#exhale-struct-structlibnokogiri-1-1pcap-1-1packet-header-modified-t">packet_header_modified_t</a></li><li>Struct <a href="structlibnokogiri_1_1pcap_1_1packet__header__t.html#exhale-struct-structlibnokogiri-1-1pcap-1-1packet-header-t">packet_header_t</a></li><li>Template Struct <a href="structlibnokogiri_1_1pcap_1_1packet__t.html#exhale-struct-structlibnokogiri-1-1pcap-1-1packet-t">packet_t</a></li><li>Enum <a href="enum_namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656.html#exhale-enum-namespacelibnokogiri-1-1pcap-1a9b6ed66d560c22eb5ddb64f72aa6c656">pcap_variant_t</a></li><li>Struct <a href="structlibnokogiri_1_1pcap_1_1file__header__t.html#exhale-struct-structlibnokogiri-1-1pcap-1-1file-header-t">file_header_t</a></li><li class="lastChild">Struct <a href="structlibnokogiri_1_1pcap_1_1pcap__t.html#exhale-struct-structlibnokogiri-1-1pcap-1-1pcap-t">pcap_t</a></li></ul></li><li>Namespace <a href="namespace_libnokogiri__pcapng.html#namespace-libnokogiri-pcapng">libnokogiri::pcapng</a><ul><li>Namespace <a href="namespace_libnokogiri__pcapng__blocks.html#namespace-libnokogiri-pcapng-blocks">libnokogiri::pcapng::blocks</a><ul><li>Struct <a href="structlibnokogiri_1_1pcapng_1_1blocks_1_1interface__description__t.html#exhale-struct-structlibnokogiri-1-1pcapng-1-1blocks-1-1interface-description-t">interface_description_t</a></li><li class="lastChild">Struct <a href="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t.html#exhale-struct-structlibnokogiri-1-1pcapng-1-1blocks-1-1section-header-t">section_header_t</a></li></ul></li><li>Namespace <a href="namespace_libnokogiri__pcapng__options.html#namespace-libnokogiri-pcapng-options">libnokogiri::pcapng::options</a><ul><li class="lastChild">Struct <a href="structlibnokogiri_1_1pcapng_1_1options_1_1end__of__options__t.html#exhale-struct-structlibnokogiri-1-1pcapng-1-1options-1-1end-of-options-t">end_of_options_t</a></li></ul></li><li>Enum <a href="enum_namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bd.html#exhale-enum-namespacelibnokogiri-1-1pcapng-1a4480b6a2a138af8cbd0fe98ed4fab3bd">option_type_t</a></li><li>Struct <a href="structlibnokogiri_1_1pcapng_1_1block__storage__t.html#exhale-struct-structlibnokogiri-1-1pcapng-1-1block-storage-t">block_storage_t</a></li><li>Struct <a href="structlibnokogiri_1_1pcapng_1_1block__t.html#exhale-struct-structlibnokogiri-1-1pcapng-1-1block-t">block_t</a></li><li>Struct <a href="structlibnokogiri_1_1pcapng_1_1option__t.html#exhale-struct-structlibnokogiri-1-1pcapng-1-1option-t">option_t</a></li><li>Struct <a href="structlibnokogiri_1_1pcapng_1_1pcapng__t.html#exhale-struct-structlibnokogiri-1-1pcapng-1-1pcapng-t">pcapng_t</a></li><li>Struct <a href="structlibnokogiri_1_1pcapng_1_1section__t.html#exhale-struct-structlibnokogiri-1-1pcapng-1-1section-t">section_t</a></li><li class="lastChild">Enum <a href="enum_namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1.html#exhale-enum-namespacelibnokogiri-1-1pcapng-1a5bf1fab137cdd6f2ea0a0967cd6922b1">block_type_t</a></li></ul></li><li>Struct <a href="structlibnokogiri_1_1version__t.html#exhale-struct-structlibnokogiri-1-1version-t">version_t</a></li><li class="lastChild">Enum <a href="enum_namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c.html#exhale-enum-namespacelibnokogiri-1a2a757e6afcdf6b68678d6e0693eda59c">link_type_t</a></li></ul></li>
+    </ul>
+  </li><!-- only tree view element -->
+</ul><!-- /treeView class-treeView --></div>
+<div class="section" id="file-hierarchy">
+<h2>File Hierarchy<a class="headerlink" href="#file-hierarchy" title="Permalink to this headline">¶</a></h2>
+<ul class="treeView" id="file-treeView">
+  <li>
+    <ul class="collapsibleList">
+      <li>Directory <a href="dir_pcapng.html#dir-pcapng">pcapng</a><ul><li>Directory <a href="dir_pcapng_blocks.html#dir-pcapng-blocks">blocks</a><ul><li>File <a href="file_pcapng_blocks_interface_description.hh.html#file-pcapng-blocks-interface-description.hh">interface_description.hh</a></li><li class="lastChild">File <a href="file_pcapng_blocks_section_header.hh.html#file-pcapng-blocks-section-header.hh">section_header.hh</a></li></ul></li><li>Directory <a href="dir_pcapng_options.html#dir-pcapng-options">options</a><ul><li>File <a href="file_pcapng_options_interface_description.hh.html#file-pcapng-options-interface-description.hh">interface_description.hh</a></li><li class="lastChild">File <a href="file_pcapng_options_section_header.hh.html#file-pcapng-options-section-header.hh">section_header.hh</a></li></ul></li><li>File <a href="file_pcapng_block.hh.html#file-pcapng-block.hh">block.hh</a></li><li>File <a href="file_pcapng_blocks.hh.html#file-pcapng-blocks.hh">blocks.hh</a></li><li>File <a href="file_pcapng_option.hh.html#file-pcapng-option.hh">option.hh</a></li><li>File <a href="file_pcapng_options.hh.html#file-pcapng-options.hh">options.hh</a></li><li class="lastChild">File <a href="file_pcapng_section.hh.html#file-pcapng-section.hh">section.hh</a></li></ul></li><li>File <a href="file_common.hh.html#file-common.hh">common.hh</a></li><li>File <a href="file_libnokogiri.hh.html#file-libnokogiri.hh">libnokogiri.hh</a></li><li>File <a href="file_pcap.hh.html#file-pcap.hh">pcap.hh</a></li><li class="lastChild">File <a href="file_pcapng.hh.html#file-pcapng.hh">pcapng.hh</a></li>
+    </ul>
+  </li><!-- only tree view element -->
+</ul><!-- /treeView file-treeView --></div>
+<div class="section" id="full-api">
+<h2>Full API<a class="headerlink" href="#full-api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="namespaces">
+<h3>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_libnokogiri.html">Namespace libnokogiri</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_libnokogiri.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_libnokogiri.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_libnokogiri.html#enums">Enums</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_libnokogiri.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_libnokogiri__compiletime.html">Namespace libnokogiri::compiletime</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_libnokogiri__compiletime.html#detailed-description">Detailed Description</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_libnokogiri__pcap.html">Namespace libnokogiri::pcap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_libnokogiri__pcap.html#detailed-description">Detailed Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_libnokogiri__pcap.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_libnokogiri__pcap.html#enums">Enums</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_libnokogiri__pcap.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_libnokogiri__pcapng.html">Namespace libnokogiri::pcapng</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_libnokogiri__pcapng.html#detailed-description">Detailed Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_libnokogiri__pcapng.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_libnokogiri__pcapng.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_libnokogiri__pcapng.html#enums">Enums</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_libnokogiri__pcapng__blocks.html">Namespace libnokogiri::pcapng::blocks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_libnokogiri__pcapng__blocks.html#detailed-description">Detailed Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_libnokogiri__pcapng__blocks.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_libnokogiri__pcapng__options.html">Namespace libnokogiri::pcapng::options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_libnokogiri__pcapng__options.html#detailed-description">Detailed Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_libnokogiri__pcapng__options.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="classes-and-structs">
+<h3>Classes and Structs<a class="headerlink" href="#classes-and-structs" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structlibnokogiri_1_1pcap_1_1file__header__t.html">Struct file_header_t</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structlibnokogiri_1_1pcap_1_1file__header__t.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structlibnokogiri_1_1pcap_1_1packet__header__modified__t.html">Struct packet_header_modified_t</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structlibnokogiri_1_1pcap_1_1packet__header__modified__t.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structlibnokogiri_1_1pcap_1_1packet__header__t.html">Struct packet_header_t</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structlibnokogiri_1_1pcap_1_1packet__header__t.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structlibnokogiri_1_1pcap_1_1packet__t.html">Template Struct packet_t</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structlibnokogiri_1_1pcap_1_1packet__t.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structlibnokogiri_1_1pcap_1_1pcap__t.html">Struct pcap_t</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structlibnokogiri_1_1pcap_1_1pcap__t.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1block__storage__t.html">Struct block_storage_t</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1block__storage__t.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1block__t.html">Struct block_t</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1block__t.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1block__t.html#derived-types">Derived Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1block__t.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1blocks_1_1interface__description__t.html">Struct interface_description_t</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1blocks_1_1interface__description__t.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1blocks_1_1interface__description__t.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1blocks_1_1interface__description__t.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t.html">Struct section_header_t</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1option__t.html">Struct option_t</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1option__t.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1option__t.html#derived-type">Derived Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1option__t.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1options_1_1end__of__options__t.html">Struct end_of_options_t</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1options_1_1end__of__options__t.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1options_1_1end__of__options__t.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1options_1_1end__of__options__t.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1pcapng__t.html">Struct pcapng_t</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1pcapng__t.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1section__t.html">Struct section_t</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structlibnokogiri_1_1pcapng_1_1section__t.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structlibnokogiri_1_1version__t.html">Struct version_t</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structlibnokogiri_1_1version__t.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="enums">
+<h3>Enums<a class="headerlink" href="#enums" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c.html">Enum link_type_t</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c.html#enum-documentation">Enum Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656.html">Enum pcap_variant_t</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656.html#enum-documentation">Enum Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1.html">Enum block_type_t</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1.html#enum-documentation">Enum Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bd.html">Enum option_type_t</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bd.html#enum-documentation">Enum Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="defines">
+<h3>Defines<a class="headerlink" href="#defines" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_common_8hh_1a64bed52b3a785c5f321627adaf782835.html">Define LIBNOKOGIRI_COMMON_HH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_common_8hh_1a64bed52b3a785c5f321627adaf782835.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="typedefs">
+<h3>Typedefs<a class="headerlink" href="#typedefs" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespacelibnokogiri_1a6ae0f93f4f2ab00b34bc908c12b8a072.html">Typedef libnokogiri::file_t</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespacelibnokogiri_1a6ae0f93f4f2ab00b34bc908c12b8a072.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespacelibnokogiri_1_1pcap_1a4ab33a63f40fd16d1dadad8d2c03c4c1.html">Typedef libnokogiri::pcap::generic_packet_t</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespacelibnokogiri_1_1pcap_1a4ab33a63f40fd16d1dadad8d2c03c4c1.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespacelibnokogiri_1_1pcap_1a8ee510d6a9b5728597274839cf179381.html">Typedef libnokogiri::pcap::modified_packet_t</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespacelibnokogiri_1_1pcap_1a8ee510d6a9b5728597274839cf179381.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2020, Aki Van Ness.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/api/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

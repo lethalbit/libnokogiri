@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="options_2section__header_8hh" kind="file" language="C++">
+    <compoundname>section_header.hh</compoundname>
+    <includes local="no">cstdint</includes>
+    <includes refid="option_8hh" local="no">libnokogiri/pcapng/option.hh</includes>
+    <includedby refid="options_8hh" local="no">pcapng/options.hh</includedby>
+    <incdepgraph>
+      <node id="135">
+        <label>limits</label>
+      </node>
+      <node id="131">
+        <label>cstdint</label>
+      </node>
+      <node id="130">
+        <label>pcapng/options/section_header.hh</label>
+        <link refid="options_2section__header_8hh"/>
+        <childnode refid="131" relation="include">
+        </childnode>
+        <childnode refid="132" relation="include">
+        </childnode>
+      </node>
+      <node id="132">
+        <label>libnokogiri/pcapng/option.hh</label>
+        <link refid="option_8hh_source"/>
+        <childnode refid="131" relation="include">
+        </childnode>
+        <childnode refid="133" relation="include">
+        </childnode>
+        <childnode refid="134" relation="include">
+        </childnode>
+        <childnode refid="135" relation="include">
+        </childnode>
+      </node>
+      <node id="134">
+        <label>unordered_map</label>
+      </node>
+      <node id="133">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="136">
+        <label>pcapng/options/section_header.hh</label>
+        <link refid="options_2section__header_8hh"/>
+        <childnode refid="137" relation="include">
+        </childnode>
+      </node>
+      <node id="139">
+        <label>libnokogiri.hh</label>
+        <link refid="libnokogiri_8hh_source"/>
+      </node>
+      <node id="138">
+        <label>pcapng.hh</label>
+        <link refid="pcapng_8hh_source"/>
+        <childnode refid="139" relation="include">
+        </childnode>
+      </node>
+      <node id="137">
+        <label>pcapng/options.hh</label>
+        <link refid="options_8hh_source"/>
+        <childnode refid="138" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacelibnokogiri_1_1pcapng_1_1options">libnokogiri::pcapng::options</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>LGPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>pcapng/options/section_header.hh<sp/>-<sp/>pcapng<sp/>section<sp/>header<sp/>options<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(LIBNOKOGIRI_PCAPNG_OPTIONS_SECTION_HEADER_HH)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LIBNOKOGIRI_PCAPNG_OPTIONS_SECTION_HEADER_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;libnokogiri/pcapng/option.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacelibnokogiri_1_1pcapng_1_1options" kindref="compound">libnokogiri::pcapng::options</ref><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>LIBNOKOGIRI_PCAPNG_OPTIONS_SECTION_HEADER_HH<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="pcapng/options/section_header.hh"/>
+  </compounddef>
+</doxygen>

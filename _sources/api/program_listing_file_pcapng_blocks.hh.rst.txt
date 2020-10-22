@@ -1,0 +1,23 @@
+
+.. _program_listing_file_pcapng_blocks.hh:
+
+Program Listing for File blocks.hh
+==================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_pcapng_blocks.hh>` (``pcapng/blocks.hh``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   // SPDX-License-Identifier: LGPL-3.0-or-later
+   /* pcapng/blocks.hh - batch include for the files under pcapng/block/ */
+   #if !defined(LIBNOKOGIRI_PCAPNG_BLOCKS_HH)
+   #define LIBNOKOGIRI_PCAPNG_BLOCKS_HH
+   
+   #include <libnokogiri/pcapng/block.hh>
+   
+   #include <libnokogiri/pcapng/blocks/section_header.hh>
+   #include <libnokogiri/pcapng/blocks/interface_description.hh>
+   
+   #endif /* LIBNOKOGIRI_PCAPNG_BLOCKS_HH */

@@ -1,0 +1,13 @@
+.. _exhale_enum_namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656:
+
+Enum pcap_variant_t
+===================
+
+- Defined in :ref:`file_pcap.hh`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: libnokogiri::pcap::pcap_variant_t

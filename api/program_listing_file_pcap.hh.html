@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Program Listing for File pcap.hh &#8212; libnokogiri 0.0.1 e1bf431 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+    <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">libnokogiri</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=lethalbit&repo=libnokogiri&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div><h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">libnokogiri API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending/index.html">Extending libnokogiri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">libnokogiri examples</a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="program-listing-for-file-pcap-hh">
+<span id="program-listing-file-pcap-hh"></span><h1>Program Listing for File pcap.hh<a class="headerlink" href="#program-listing-for-file-pcap-hh" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="file_pcap.hh.html#file-pcap-hh"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">pcap.hh</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// SPDX-License-Identifier: LGPL-3.0-or-later</span>
+<span class="cm">/* pcap.hh - pcap file format interface for libnokogiri */</span>
+<span class="cp">#if !defined(LIBNOKOGIRI_PCAP_HH)</span>
+<span class="cp">#define LIBNOKOGIRI_PCAP_HH</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;cstdint&gt;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;libnokogiri/config.hh&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;libnokogiri/common.hh&gt;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;libnokogiri/internal/defs.hh&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;libnokogiri/internal/fs.hh&gt;</span><span class="cp"></span>
+
+<span class="k">namespace</span> <span class="n">libnokogiri</span><span class="o">::</span><span class="n">pcap</span> <span class="p">{</span>
+
+    <span class="k">enum</span> <span class="k">struct</span> <span class="nl">pcap_variant_t</span> <span class="p">:</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="p">{</span>
+        <span class="n">Standard</span>   <span class="o">=</span> <span class="mh">0xA1B2C3D4U</span><span class="p">,</span>
+        <span class="n">Modified</span>   <span class="o">=</span> <span class="mh">0xA1B2CD34U</span><span class="p">,</span>
+        <span class="n">IXIAHW</span>     <span class="o">=</span> <span class="mh">0x1C0001ACU</span><span class="p">,</span>
+        <span class="n">IXIASW</span>     <span class="o">=</span> <span class="mh">0x1C0001ABU</span><span class="p">,</span>
+        <span class="n">Nanosecond</span> <span class="o">=</span> <span class="mh">0x4D3CB2A1U</span><span class="p">,</span>
+    <span class="p">};</span>
+
+    <span class="k">struct</span> <span class="n">file_header_t</span> <span class="k">final</span> <span class="p">{</span>
+    <span class="k">private</span><span class="o">:</span>
+        <span class="n">pcap_variant_t</span> <span class="n">_variant</span><span class="p">;</span>
+        <span class="n">version_t</span> <span class="n">_version</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">int32_t</span> <span class="n">_tz_offset</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">_timestamp_figs</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">_pcklen_max</span><span class="p">;</span>
+        <span class="k">alignas</span><span class="p">(</span><span class="k">alignof</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span><span class="p">))</span> <span class="n">link_type_t</span> <span class="n">_network</span><span class="p">;</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="k">constexpr</span> <span class="n">file_header_t</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">:</span>
+            <span class="n">_variant</span><span class="p">{</span><span class="n">pcap_variant_t</span><span class="o">::</span><span class="n">Standard</span><span class="p">},</span> <span class="n">_version</span><span class="p">{</span><span class="mi">1U</span><span class="p">,</span> <span class="mi">0U</span><span class="p">},</span> <span class="n">_tz_offset</span><span class="p">{</span><span class="mi">0</span><span class="p">},</span>
+            <span class="n">_timestamp_figs</span><span class="p">{</span><span class="mi">0U</span><span class="p">},</span> <span class="n">_pcklen_max</span><span class="p">{</span><span class="mi">0U</span><span class="p">},</span> <span class="n">_network</span><span class="p">{</span><span class="n">link_type_t</span><span class="o">::</span><span class="n">User0</span><span class="p">}</span>
+            <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
+
+        <span class="k">constexpr</span> <span class="n">file_header_t</span><span class="p">(</span><span class="n">pcap_variant_t</span> <span class="n">variant</span><span class="p">,</span> <span class="n">version_t</span> <span class="n">version</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">int32_t</span> <span class="n">tz_offset</span><span class="p">,</span>
+                <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">ts_figs</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">pcklen</span><span class="p">,</span> <span class="n">link_type_t</span> <span class="n">network</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">:</span>
+            <span class="n">_variant</span><span class="p">{</span><span class="n">variant</span><span class="p">},</span> <span class="n">_version</span><span class="p">{</span><span class="n">version</span><span class="p">},</span> <span class="n">_tz_offset</span><span class="p">{</span><span class="n">tz_offset</span><span class="p">},</span>
+            <span class="n">_timestamp_figs</span><span class="p">{</span><span class="n">ts_figs</span><span class="p">},</span> <span class="n">_pcklen_max</span><span class="p">{</span><span class="n">pcklen</span><span class="p">},</span> <span class="n">_network</span><span class="p">{</span><span class="n">network</span><span class="p">}</span>
+            <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
+
+        <span class="n">file_header_t</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">nullptr_t</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">pcap_variant_t</span> <span class="n">variant</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_variant</span><span class="p">;</span> <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">variant</span><span class="p">(</span><span class="k">const</span> <span class="n">pcap_variant_t</span> <span class="n">variant</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="n">_variant</span> <span class="o">=</span> <span class="n">variant</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">version_t</span> <span class="n">version</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_version</span><span class="p">;</span> <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">version</span><span class="p">(</span><span class="k">const</span> <span class="n">version_t</span> <span class="n">version</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="n">_version</span> <span class="o">=</span> <span class="n">version</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">int32_t</span> <span class="n">timezone_offset</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_tz_offset</span><span class="p">;</span> <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">timezone_offset</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">int32_t</span> <span class="n">tz_offset</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="n">_tz_offset</span> <span class="o">=</span> <span class="n">tz_offset</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">timestamp_accuracy</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_timestamp_figs</span><span class="p">;</span> <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">timestamp_accuracy</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">ts_accuracy</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="n">_timestamp_figs</span> <span class="o">=</span> <span class="n">ts_accuracy</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">max_packet_length</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_pcklen_max</span><span class="p">;</span> <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">max_packet_length</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">length</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="n">_pcklen_max</span> <span class="o">=</span> <span class="n">length</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">link_type_t</span> <span class="n">link_type</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_network</span><span class="p">;</span> <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">link_type</span><span class="p">(</span><span class="k">const</span> <span class="n">link_type_t</span> <span class="n">type</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="n">_network</span> <span class="o">=</span> <span class="n">type</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">};</span>
+
+    <span class="k">struct</span> <span class="n">packet_header_t</span> <span class="k">final</span> <span class="p">{</span>
+    <span class="k">private</span><span class="o">:</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">_secs</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">_usecs</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">_have</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">_was</span><span class="p">;</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="k">constexpr</span> <span class="n">packet_header_t</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">:</span>
+            <span class="n">_secs</span><span class="p">{</span><span class="mi">0U</span><span class="p">},</span> <span class="n">_usecs</span><span class="p">{</span><span class="mi">0U</span><span class="p">},</span> <span class="n">_have</span><span class="p">{</span><span class="mi">0U</span><span class="p">},</span> <span class="n">_was</span><span class="p">{</span><span class="mi">0U</span><span class="p">}</span>
+            <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
+
+        <span class="k">constexpr</span> <span class="n">packet_header_t</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">seconds</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">useconds</span><span class="p">,</span>
+                <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">pkt_len_have</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">pkt_len_actual</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">:</span>
+            <span class="n">_secs</span><span class="p">{</span><span class="n">seconds</span><span class="p">},</span> <span class="n">_usecs</span><span class="p">{</span><span class="n">useconds</span><span class="p">},</span> <span class="n">_have</span><span class="p">{</span><span class="n">pkt_len_have</span><span class="p">},</span> <span class="n">_was</span><span class="p">{</span><span class="n">pkt_len_actual</span><span class="p">}</span>
+            <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
+
+        <span class="n">packet_header_t</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">nullptr_t</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
+
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">seconds</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_secs</span><span class="p">;</span> <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">seconds</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">seconds</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="n">_secs</span> <span class="o">=</span> <span class="n">seconds</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">useconds</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_usecs</span><span class="p">;</span> <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">useconds</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">useconds</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="n">_usecs</span> <span class="o">=</span> <span class="n">useconds</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">captured_len</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_have</span><span class="p">;</span> <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">captured_len</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">captured_len</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="n">_have</span> <span class="o">=</span> <span class="n">captured_len</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">actual_len</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_was</span><span class="p">;</span> <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">actual_len</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">actual_len</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="n">_was</span> <span class="o">=</span> <span class="n">actual_len</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="kt">bool</span> <span class="n">full_packet</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_was</span> <span class="o">==</span> <span class="n">_have</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">};</span>
+
+    <span class="k">struct</span> <span class="n">packet_header_modified_t</span> <span class="k">final</span> <span class="p">{</span>
+    <span class="k">private</span><span class="o">:</span>
+        <span class="n">packet_header_t</span> <span class="n">_base_header</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">_if_index</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint16_t</span> <span class="n">_proto</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint8_t</span> <span class="n">_type</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint8_t</span> <span class="n">_padding</span><span class="p">;</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="k">constexpr</span> <span class="n">packet_header_modified_t</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">:</span>
+            <span class="n">_base_header</span><span class="p">{},</span> <span class="n">_if_index</span><span class="p">{</span><span class="mi">0U</span><span class="p">},</span> <span class="n">_proto</span><span class="p">{</span><span class="mi">0U</span><span class="p">},</span> <span class="n">_type</span><span class="p">{</span><span class="mi">0U</span><span class="p">},</span> <span class="n">_padding</span><span class="p">{</span><span class="mi">0U</span><span class="p">}</span>
+            <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
+
+        <span class="k">constexpr</span> <span class="n">packet_header_modified_t</span><span class="p">(</span><span class="n">packet_header_t</span> <span class="n">base_header</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">if_index</span><span class="p">,</span>
+                <span class="n">std</span><span class="o">::</span><span class="kt">uint16_t</span> <span class="n">protocol</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint8_t</span> <span class="n">type</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">:</span>
+            <span class="n">_base_header</span><span class="p">{</span><span class="n">base_header</span><span class="p">},</span> <span class="n">_if_index</span><span class="p">{</span><span class="n">if_index</span><span class="p">},</span> <span class="n">_proto</span><span class="p">{</span><span class="n">protocol</span><span class="p">},</span> <span class="n">_type</span><span class="p">{</span><span class="n">type</span><span class="p">},</span>
+            <span class="n">_padding</span><span class="p">{</span><span class="mi">0U</span><span class="p">}</span> <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
+
+        <span class="n">packet_header_modified_t</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">nullptr_t</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
+
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">packet_header_t</span> <span class="n">base_header</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_base_header</span><span class="p">;</span> <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">base_header</span><span class="p">(</span><span class="n">packet_header_t</span> <span class="n">base_header</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="n">_base_header</span> <span class="o">=</span> <span class="n">base_header</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">interface_index</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_if_index</span><span class="p">;</span> <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">interface_index</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">interface_index</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="n">_if_index</span> <span class="o">=</span> <span class="n">interface_index</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint16_t</span> <span class="n">protocol</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_proto</span><span class="p">;</span> <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">protocol</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">uint16_t</span> <span class="n">protocol</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="n">_proto</span> <span class="o">=</span> <span class="n">protocol</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint8_t</span> <span class="n">type</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_type</span><span class="p">;</span> <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">type</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">uint8_t</span> <span class="n">type</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="n">_type</span> <span class="o">=</span> <span class="n">type</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="p">};</span>
+
+
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+    <span class="k">struct</span> <span class="n">packet_t</span> <span class="k">final</span> <span class="p">{</span>
+    <span class="k">private</span><span class="o">:</span>
+        <span class="n">T</span> <span class="n">_packet_header</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uintptr_t</span> <span class="n">offset</span><span class="p">;</span>
+    <span class="k">public</span><span class="o">:</span>
+
+    <span class="p">};</span>
+
+    <span class="k">using</span> <span class="n">generic_packet_t</span> <span class="o">=</span> <span class="n">packet_t</span><span class="o">&lt;</span><span class="n">packet_header_t</span><span class="o">&gt;</span><span class="p">;</span>
+    <span class="k">using</span> <span class="n">modified_packet_t</span> <span class="o">=</span> <span class="n">packet_t</span><span class="o">&lt;</span><span class="n">packet_header_modified_t</span><span class="o">&gt;</span><span class="p">;</span>
+
+    <span class="k">struct</span> <span class="n">pcap_t</span> <span class="k">final</span> <span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+
+    <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="cp">#endif </span><span class="cm">/* LIBNOKOGIRI_PCAP_HH */</span><span class="cp"></span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2020, Aki Van Ness.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/api/program_listing_file_pcap.hh.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

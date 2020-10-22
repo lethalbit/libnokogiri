@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t" kind="struct" language="C++" prot="public" final="yes">
+    <compoundname>libnokogiri::pcapng::blocks::section_header_t</compoundname>
+    <basecompoundref refid="structlibnokogiri_1_1pcapng_1_1block__t" prot="public" virt="non-virtual">libnokogiri::pcapng::block_t</basecompoundref>
+    <includes refid="blocks_2section__header_8hh" local="no">section_header.hh</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t_1aecb2f55474b49f32e39d7fca5f199642" prot="public" static="yes" mutable="no">
+        <type>constexpr std::uint32_t</type>
+        <definition>constexpr std::uint32_t libnokogiri::pcapng::blocks::section_header_t::magic</definition>
+        <argsstring></argsstring>
+        <name>magic</name>
+        <initializer>= 0x1A2B3C4D</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/blocks/section_header.hh" line="27" column="1" bodyfile="pcapng/blocks/section_header.hh" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t_1a8f48b05fbaeb85ddab61e3f37ddb3df1" prot="private" static="no" mutable="no">
+        <type>std::uint32_t</type>
+        <definition>std::uint32_t libnokogiri::pcapng::blocks::section_header_t::_bom</definition>
+        <argsstring></argsstring>
+        <name>_bom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/blocks/section_header.hh" line="29" column="1" bodyfile="pcapng/blocks/section_header.hh" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t_1a77ac62ac70bac1bcaefbe887b865b809" prot="private" static="no" mutable="no">
+        <type><ref refid="structlibnokogiri_1_1version__t" kindref="compound">version_t</ref></type>
+        <definition>version_t libnokogiri::pcapng::blocks::section_header_t::_version</definition>
+        <argsstring></argsstring>
+        <name>_version</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/blocks/section_header.hh" line="30" column="1" bodyfile="pcapng/blocks/section_header.hh" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t_1a71ec217a3b3ff0b9b54cc6b8ea3aad91" prot="private" static="no" mutable="no">
+        <type>std::int64_t</type>
+        <definition>std::int64_t libnokogiri::pcapng::blocks::section_header_t::_section_length</definition>
+        <argsstring></argsstring>
+        <name>_section_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/blocks/section_header.hh" line="31" column="1" bodyfile="pcapng/blocks/section_header.hh" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t_1ab62a6f8d821f536b4c97003741d4c08c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr libnokogiri::pcapng::blocks::section_header_t::section_header_t</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>section_header_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/blocks/section_header.hh" line="34" column="1" bodyfile="pcapng/blocks/section_header.hh" bodystart="34" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t_1aa368692f06831587b00641095904e381" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr libnokogiri::pcapng::blocks::section_header_t::section_header_t</definition>
+        <argsstring>(std::uint32_t bom, version_t version, std::int64_t length) noexcept</argsstring>
+        <name>section_header_t</name>
+        <param>
+          <type>std::uint32_t</type>
+          <declname>bom</declname>
+        </param>
+        <param>
+          <type><ref refid="structlibnokogiri_1_1version__t" kindref="compound">version_t</ref></type>
+          <declname>version</declname>
+        </param>
+        <param>
+          <type>std::int64_t</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/blocks/section_header.hh" line="39" column="1" bodyfile="pcapng/blocks/section_header.hh" bodystart="39" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t_1abb60264ca1ece569146f96443cb33331" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::uint32_t</type>
+        <definition>std::uint32_t libnokogiri::pcapng::blocks::section_header_t::bom</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>bom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the byte-order-mark, used for checking the endian of the file </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/blocks/section_header.hh" line="46" column="1" bodyfile="pcapng/blocks/section_header.hh" bodystart="46" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t_1aee2a4a54cff616ba700a29442aee2125" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structlibnokogiri_1_1version__t" kindref="compound">version_t</ref></type>
+        <definition>version_t libnokogiri::pcapng::blocks::section_header_t::version</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>version</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the version of the section </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/blocks/section_header.hh" line="49" column="1" bodyfile="pcapng/blocks/section_header.hh" bodystart="49" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t_1a2f3e0474089709a5a9f103de56295924" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::int64_t</type>
+        <definition>std::int64_t libnokogiri::pcapng::blocks::section_header_t::section_length</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>section_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the length of the section, if -1 is returned the section length must be calculated by scanning every block and totaling the sizes </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/blocks/section_header.hh" line="52" column="1" bodyfile="pcapng/blocks/section_header.hh" bodystart="52" bodyend="52"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Block that indicates the start of a section in a pcapng file. </para>    </briefdescription>
+    <detaileddescription>
+<para>The section header block is the only mandatory block type in pcapng files. It identifies the beginning of a section of the capture file.</para><para>This block does not contain capture data itself but rather it identifies a collection of blocks that are logically correlated.</para><para>There can be multiple of these blocks in the same pcapng file, however a section can not contain another section. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="30">
+        <label>libnokogiri::pcapng::block_t</label>
+        <link refid="structlibnokogiri_1_1pcapng_1_1block__t"/>
+      </node>
+      <node id="29">
+        <label>libnokogiri::pcapng::blocks::section_header_t</label>
+        <link refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t"/>
+        <childnode refid="30" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="32">
+        <label>libnokogiri::pcapng::block_t</label>
+        <link refid="structlibnokogiri_1_1pcapng_1_1block__t"/>
+      </node>
+      <node id="31">
+        <label>libnokogiri::pcapng::blocks::section_header_t</label>
+        <link refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="pcapng/blocks/section_header.hh" line="25" column="1" bodyfile="pcapng/blocks/section_header.hh" bodystart="25" bodyend="55"/>
+    <listofallmembers>
+      <member refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t_1a8f48b05fbaeb85ddab61e3f37ddb3df1" prot="private" virt="non-virtual"><scope>libnokogiri::pcapng::blocks::section_header_t</scope><name>_bom</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t_1a71ec217a3b3ff0b9b54cc6b8ea3aad91" prot="private" virt="non-virtual"><scope>libnokogiri::pcapng::blocks::section_header_t</scope><name>_section_length</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t_1a77ac62ac70bac1bcaefbe887b865b809" prot="private" virt="non-virtual"><scope>libnokogiri::pcapng::blocks::section_header_t</scope><name>_version</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1block__t_1a4e9e0237d79928f8a2aa1fbd68b2d30b" prot="protected" virt="non-virtual"><scope>libnokogiri::pcapng::blocks::section_header_t</scope><name>block_t</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1block__t_1acf163733b945bfd998b638fb5dea083b" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::blocks::section_header_t</scope><name>block_t</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t_1abb60264ca1ece569146f96443cb33331" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::blocks::section_header_t</scope><name>bom</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t_1aecb2f55474b49f32e39d7fca5f199642" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::blocks::section_header_t</scope><name>magic</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t_1ab62a6f8d821f536b4c97003741d4c08c" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::blocks::section_header_t</scope><name>section_header_t</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t_1aa368692f06831587b00641095904e381" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::blocks::section_header_t</scope><name>section_header_t</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t_1a2f3e0474089709a5a9f103de56295924" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::blocks::section_header_t</scope><name>section_length</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1block__t_1a4dcc5f61c022b2f64b1260808e2218e2" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::blocks::section_header_t</scope><name>type</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t_1aee2a4a54cff616ba700a29442aee2125" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::blocks::section_header_t</scope><name>version</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

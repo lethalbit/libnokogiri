@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structlibnokogiri_1_1pcap_1_1packet__t" kind="struct" language="C++" prot="public" final="yes">
+    <compoundname>libnokogiri::pcap::packet_t</compoundname>
+    <includes refid="pcap_8hh" local="no">pcap.hh</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1packet__t_1a440acd9c1b4d85571f51d52e4543a7d5" prot="private" static="no" mutable="no">
+        <type>T</type>
+        <definition>T libnokogiri::pcap::packet_t&lt; T &gt;::_packet_header</definition>
+        <argsstring></argsstring>
+        <name>_packet_header</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="249" column="1" bodyfile="pcap.hh" bodystart="249" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1packet__t_1aea585fef3b697cd5293404c26a83600f" prot="private" static="no" mutable="no">
+        <type>std::uintptr_t</type>
+        <definition>std::uintptr_t libnokogiri::pcap::packet_t&lt; T &gt;::offset</definition>
+        <argsstring></argsstring>
+        <name>offset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="250" column="1" bodyfile="pcap.hh" bodystart="250" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>pcap packet template </para>    </briefdescription>
+    <detaileddescription>
+<para>This template provides the framework for reading and writing packets.</para><para>They can have custom headers, but the two standardized packets are already specified as <ref refid="namespacelibnokogiri_1_1pcap_1a4ab33a63f40fd16d1dadad8d2c03c4c1" kindref="member">libnokogiri::pcap::generic_packet_t</ref> and <ref refid="namespacelibnokogiri_1_1pcap_1a8ee510d6a9b5728597274839cf179381" kindref="member">libnokogiri::pcap::modified_packet_t</ref> .</para><para>All this template does is change out the packet header type, the rest of the logic is identical. </para>    </detaileddescription>
+    <location file="pcap.hh" line="247" column="1" bodyfile="pcap.hh" bodystart="247" bodyend="253"/>
+    <listofallmembers>
+      <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a440acd9c1b4d85571f51d52e4543a7d5" prot="private" virt="non-virtual"><scope>libnokogiri::pcap::packet_t</scope><name>_packet_header</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1aea585fef3b697cd5293404c26a83600f" prot="private" virt="non-virtual"><scope>libnokogiri::pcap::packet_t</scope><name>offset</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

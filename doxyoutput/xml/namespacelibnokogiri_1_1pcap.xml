@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacelibnokogiri_1_1pcap" kind="namespace" language="C++">
+    <compoundname>libnokogiri::pcap</compoundname>
+    <innerclass refid="structlibnokogiri_1_1pcap_1_1file__header__t" prot="public">libnokogiri::pcap::file_header_t</innerclass>
+    <innerclass refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t" prot="public">libnokogiri::pcap::packet_header_modified_t</innerclass>
+    <innerclass refid="structlibnokogiri_1_1pcap_1_1packet__header__t" prot="public">libnokogiri::pcap::packet_header_t</innerclass>
+    <innerclass refid="structlibnokogiri_1_1pcap_1_1packet__t" prot="public">libnokogiri::pcap::packet_t</innerclass>
+    <innerclass refid="structlibnokogiri_1_1pcap_1_1pcap__t" prot="public">libnokogiri::pcap::pcap_t</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656" prot="public" static="no">
+        <name>pcap_variant_t</name>
+        <enumvalue id="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656aeb6d8ae6f20283755b339c0dc273988b" prot="public">
+          <name>Standard</name>
+          <initializer>= 0xA1B2C3D4U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a35e0c8c0b180c95d4e122e55ed62cc64" prot="public">
+          <name>Modified</name>
+          <initializer>= 0xA1B2CD34U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>&quot;Standard&quot; pcap file magic </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a8556cee2e2a5b5e735f3593dc348521a" prot="public">
+          <name>IXIAHW</name>
+          <initializer>= 0x1C0001ACU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Magic for the modified pcap format introduced by Alexey Kuznetsov&apos;s patches to some versions of libpcap </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a5cc3e33ec226f9b110878c1f197f298f" prot="public">
+          <name>IXIASW</name>
+          <initializer>= 0x1C0001ABU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Magic for IXIA&apos;s lcap format </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a4146c294bcc82b1723c65bdc64b55089" prot="public">
+          <name>Nanosecond</name>
+          <initializer>= 0x4D3CB2A1U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Magic for IXIA&apos;s lcap format </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Types of possible pcap formats. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="19" column="1" bodyfile="pcap.hh" bodystart="19" bodyend="25"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespacelibnokogiri_1_1pcap_1a4ab33a63f40fd16d1dadad8d2c03c4c1" prot="public" static="no">
+        <type><ref refid="structlibnokogiri_1_1pcap_1_1packet__t" kindref="compound">packet_t</ref>&lt; <ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t" kindref="compound">packet_header_t</ref> &gt;</type>
+        <definition>using libnokogiri::pcap::generic_packet_t = typedef packet_t&lt;packet_header_t&gt;</definition>
+        <argsstring></argsstring>
+        <name>generic_packet_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Type alias for generic conforming pcap packets with the standard header </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="256" column="1" bodyfile="pcap.hh" bodystart="256" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacelibnokogiri_1_1pcap_1a8ee510d6a9b5728597274839cf179381" prot="public" static="no">
+        <type><ref refid="structlibnokogiri_1_1pcap_1_1packet__t" kindref="compound">packet_t</ref>&lt; <ref refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t" kindref="compound">packet_header_modified_t</ref> &gt;</type>
+        <definition>using libnokogiri::pcap::modified_packet_t = typedef packet_t&lt;packet_header_modified_t&gt;</definition>
+        <argsstring></argsstring>
+        <name>modified_packet_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Type alias for packets from the modified pcap files </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="258" column="1" bodyfile="pcap.hh" bodystart="258" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>libnokogiri pcap interface </para>    </briefdescription>
+    <detaileddescription>
+<para>All of the objects and machinery in order to read and write legacy pcap files are located in this namespace. </para>    </detaileddescription>
+    <location file="libnokogiri.hh" line="15" column="1"/>
+  </compounddef>
+</doxygen>

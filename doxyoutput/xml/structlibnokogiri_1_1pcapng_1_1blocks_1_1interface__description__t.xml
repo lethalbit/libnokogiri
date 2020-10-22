@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structlibnokogiri_1_1pcapng_1_1blocks_1_1interface__description__t" kind="struct" language="C++" prot="public" final="yes">
+    <compoundname>libnokogiri::pcapng::blocks::interface_description_t</compoundname>
+    <basecompoundref refid="structlibnokogiri_1_1pcapng_1_1block__t" prot="public" virt="non-virtual">libnokogiri::pcapng::block_t</basecompoundref>
+    <includes refid="blocks_2interface__description_8hh" local="no">interface_description.hh</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcapng_1_1blocks_1_1interface__description__t_1a1369a4dd17e63dc9b02db0cef79fff3e" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c" kindref="member">link_type_t</ref></type>
+        <definition>link_type_t libnokogiri::pcapng::blocks::interface_description_t::_link_type</definition>
+        <argsstring></argsstring>
+        <name>_link_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/blocks/interface_description.hh" line="18" column="1" bodyfile="pcapng/blocks/interface_description.hh" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcapng_1_1blocks_1_1interface__description__t_1ac2c1d8bb1b8463619ce671f7734551d0" prot="public" static="no" mutable="no">
+        <type>std::array&lt; uint8_t, 16 &gt;</type>
+        <definition>std::array&lt;uint8_t, 16&gt; libnokogiri::pcapng::blocks::interface_description_t::_reserved</definition>
+        <argsstring></argsstring>
+        <name>_reserved</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/blocks/interface_description.hh" line="19" column="1" bodyfile="pcapng/blocks/interface_description.hh" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcapng_1_1blocks_1_1interface__description__t_1a1f8d65256469aaf964a4c6ac210e11f2" prot="public" static="no" mutable="no">
+        <type>std::uint32_t</type>
+        <definition>std::uint32_t libnokogiri::pcapng::blocks::interface_description_t::_snap_len</definition>
+        <argsstring></argsstring>
+        <name>_snap_len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcapng/blocks/interface_description.hh" line="20" column="1" bodyfile="pcapng/blocks/interface_description.hh" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A block that describes the interface on which the data was captured. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="13">
+        <label>libnokogiri::pcapng::block_t</label>
+        <link refid="structlibnokogiri_1_1pcapng_1_1block__t"/>
+      </node>
+      <node id="12">
+        <label>libnokogiri::pcapng::blocks::interface_description_t</label>
+        <link refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1interface__description__t"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="15">
+        <label>libnokogiri::pcapng::block_t</label>
+        <link refid="structlibnokogiri_1_1pcapng_1_1block__t"/>
+      </node>
+      <node id="14">
+        <label>libnokogiri::pcapng::blocks::interface_description_t</label>
+        <link refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1interface__description__t"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="pcapng/blocks/interface_description.hh" line="16" column="1" bodyfile="pcapng/blocks/interface_description.hh" bodystart="16" bodyend="21"/>
+    <listofallmembers>
+      <member refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1interface__description__t_1a1369a4dd17e63dc9b02db0cef79fff3e" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::blocks::interface_description_t</scope><name>_link_type</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1interface__description__t_1ac2c1d8bb1b8463619ce671f7734551d0" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::blocks::interface_description_t</scope><name>_reserved</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1interface__description__t_1a1f8d65256469aaf964a4c6ac210e11f2" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::blocks::interface_description_t</scope><name>_snap_len</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1block__t_1a4e9e0237d79928f8a2aa1fbd68b2d30b" prot="protected" virt="non-virtual"><scope>libnokogiri::pcapng::blocks::interface_description_t</scope><name>block_t</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1block__t_1acf163733b945bfd998b638fb5dea083b" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::blocks::interface_description_t</scope><name>block_t</name></member>
+      <member refid="structlibnokogiri_1_1pcapng_1_1block__t_1a4dcc5f61c022b2f64b1260808e2218e2" prot="public" virt="non-virtual"><scope>libnokogiri::pcapng::blocks::interface_description_t</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

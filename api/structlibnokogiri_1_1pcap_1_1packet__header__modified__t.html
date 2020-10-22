@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Struct packet_header_modified_t &#8212; libnokogiri 0.0.1 e1bf431 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+    <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Struct packet_header_t" href="structlibnokogiri_1_1pcap_1_1packet__header__t.html" />
+    <link rel="prev" title="Struct file_header_t" href="structlibnokogiri_1_1pcap_1_1file__header__t.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">libnokogiri</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=lethalbit&repo=libnokogiri&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">libnokogiri API</a><ul>
+      <li>Previous: <a href="structlibnokogiri_1_1pcap_1_1file__header__t.html" title="previous chapter">Struct file_header_t</a></li>
+      <li>Next: <a href="structlibnokogiri_1_1pcap_1_1packet__header__t.html" title="next chapter">Struct packet_header_t</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div><h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">libnokogiri API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending/index.html">Extending libnokogiri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">libnokogiri examples</a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="struct-packet-header-modified-t">
+<span id="exhale-struct-structlibnokogiri-1-1pcap-1-1packet-header-modified-t"></span><h1>Struct packet_header_modified_t<a class="headerlink" href="#struct-packet-header-modified-t" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_pcap.hh.html#file-pcap-hh"><span class="std std-ref">File pcap.hh</span></a></p></li>
+</ul>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp struct">
+<dt id="_CPPv4N11libnokogiri4pcap24packet_header_modified_tE">
+<span id="_CPPv3N11libnokogiri4pcap24packet_header_modified_tE"></span><span id="_CPPv2N11libnokogiri4pcap24packet_header_modified_tE"></span><span id="libnokogiri::pcap::packet_header_modified_t"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t"></span><em class="property">struct </em><code class="sig-prename descclassname">libnokogiri::pcap<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">packet_header_modified_t</code><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap24packet_header_modified_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The packet header for the patched version of libpcap. </p>
+<p>This header is an extension of the normal packet header, it adds four fields to the end of the traditional header.</p>
+<p>The packet headers have the following structure</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span> <span class="mi">0</span>               <span class="mi">1</span>               <span class="mi">2</span>               <span class="mi">3</span>
+ <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span>
+<span class="o">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span>
+<span class="o">|</span>                                                               <span class="o">|</span>
+<span class="o">+</span>                                                               <span class="o">+</span>
+<span class="o">|</span>                                                               <span class="o">|</span>
+<span class="o">+</span>                         <span class="n">Packet</span> <span class="n">Header</span>                         <span class="o">+</span>
+<span class="o">|</span>                                                               <span class="o">|</span>
+<span class="o">+</span>                                                               <span class="o">+</span>
+<span class="o">|</span>                                                               <span class="o">|</span>
+<span class="o">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span>
+<span class="o">|</span>                        <span class="n">Interface</span> <span class="n">Index</span>                        <span class="o">|</span>
+<span class="o">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span>
+<span class="o">|</span>           <span class="n">Protocol</span>            <span class="o">|</span>      <span class="n">Type</span>     <span class="o">|</span>    <span class="n">Padding</span>    <span class="o">|</span>
+<span class="o">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span>
+</pre></div>
+</div>
+ </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N11libnokogiri4pcap24packet_header_modified_t24packet_header_modified_tEv">
+<span id="_CPPv3N11libnokogiri4pcap24packet_header_modified_t24packet_header_modified_tEv"></span><span id="_CPPv2N11libnokogiri4pcap24packet_header_modified_t24packet_header_modified_tEv"></span><span id="libnokogiri::pcap::packet_header_modified_t::packet_header_modified_tCE"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a81aa37b1ef69e193ba56f51389f51936"></span><em class="property">constexpr</em> <code class="sig-name descname">packet_header_modified_t</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap24packet_header_modified_t24packet_header_modified_tEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N11libnokogiri4pcap24packet_header_modified_t24packet_header_modified_tE15packet_header_tNSt8uint32_tENSt8uint16_tENSt7uint8_tE">
+<span id="_CPPv3N11libnokogiri4pcap24packet_header_modified_t24packet_header_modified_tE15packet_header_tNSt8uint32_tENSt8uint16_tENSt7uint8_tE"></span><span id="_CPPv2N11libnokogiri4pcap24packet_header_modified_t24packet_header_modified_tE15packet_header_tNSt8uint32_tENSt8uint16_tENSt7uint8_tE"></span><span id="libnokogiri::pcap::packet_header_modified_t::packet_header_modified_t__packet_header_t.std::uint32_t.std::uint16_t.std::uint8_tCE"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a0f6abc81a93ba4737731f2dd783c5e6b"></span><em class="property">constexpr</em> <code class="sig-name descname">packet_header_modified_t</code><span class="sig-paren">(</span><a class="reference internal" href="structlibnokogiri_1_1pcap_1_1packet__header__t.html#_CPPv4N11libnokogiri4pcap15packet_header_tE" title="libnokogiri::pcap::packet_header_t">packet_header_t</a> <em>base_header</em>, std::uint32_t <em>if_index</em>, std::uint16_t <em>protocol</em>, std::uint8_t <em>type</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap24packet_header_modified_t24packet_header_modified_tE15packet_header_tNSt8uint32_tENSt8uint16_tENSt7uint8_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N11libnokogiri4pcap24packet_header_modified_t24packet_header_modified_tENSt9nullptr_tE">
+<span id="_CPPv3N11libnokogiri4pcap24packet_header_modified_t24packet_header_modified_tENSt9nullptr_tE"></span><span id="_CPPv2N11libnokogiri4pcap24packet_header_modified_t24packet_header_modified_tENSt9nullptr_tE"></span><span id="libnokogiri::pcap::packet_header_modified_t::packet_header_modified_t__std::nullptr_t"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a5b4aa06001df4e422366006d32c45dff"></span><code class="sig-name descname">packet_header_modified_t</code><span class="sig-paren">(</span>std::nullptr_t<span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap24packet_header_modified_t24packet_header_modified_tENSt9nullptr_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK11libnokogiri4pcap24packet_header_modified_t11base_headerEv">
+<span id="_CPPv3NK11libnokogiri4pcap24packet_header_modified_t11base_headerEv"></span><span id="_CPPv2NK11libnokogiri4pcap24packet_header_modified_t11base_headerEv"></span><span id="libnokogiri::pcap::packet_header_modified_t::base_headerC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1aebaa8e56ba6567bc279fad8204f81e47"></span><a class="reference internal" href="structlibnokogiri_1_1pcap_1_1packet__header__t.html#_CPPv4N11libnokogiri4pcap15packet_header_tE" title="libnokogiri::pcap::packet_header_t">packet_header_t</a> <code class="sig-name descname">base_header</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri4pcap24packet_header_modified_t11base_headerEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N11libnokogiri4pcap24packet_header_modified_t11base_headerE15packet_header_t">
+<span id="_CPPv3N11libnokogiri4pcap24packet_header_modified_t11base_headerE15packet_header_t"></span><span id="_CPPv2N11libnokogiri4pcap24packet_header_modified_t11base_headerE15packet_header_t"></span><span id="libnokogiri::pcap::packet_header_modified_t::base_header__packet_header_t"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1af79884c4df05bcd9fb4302277bccf59e"></span>void <code class="sig-name descname">base_header</code><span class="sig-paren">(</span><a class="reference internal" href="structlibnokogiri_1_1pcap_1_1packet__header__t.html#_CPPv4N11libnokogiri4pcap15packet_header_tE" title="libnokogiri::pcap::packet_header_t">packet_header_t</a> <em>base_header</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap24packet_header_modified_t11base_headerE15packet_header_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK11libnokogiri4pcap24packet_header_modified_t15interface_indexEv">
+<span id="_CPPv3NK11libnokogiri4pcap24packet_header_modified_t15interface_indexEv"></span><span id="_CPPv2NK11libnokogiri4pcap24packet_header_modified_t15interface_indexEv"></span><span id="libnokogiri::pcap::packet_header_modified_t::interface_indexC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1aecefe500478e0b79f1c34331f5362a7f"></span>std::uint32_t <code class="sig-name descname">interface_index</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri4pcap24packet_header_modified_t15interface_indexEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N11libnokogiri4pcap24packet_header_modified_t15interface_indexENSt8uint32_tE">
+<span id="_CPPv3N11libnokogiri4pcap24packet_header_modified_t15interface_indexENSt8uint32_tE"></span><span id="_CPPv2N11libnokogiri4pcap24packet_header_modified_t15interface_indexENSt8uint32_tE"></span><span id="libnokogiri::pcap::packet_header_modified_t::interface_index__std::uint32_t"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a23dbd8346862d11df3b1195ef8d77ccf"></span>void <code class="sig-name descname">interface_index</code><span class="sig-paren">(</span>std::uint32_t <em>interface_index</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap24packet_header_modified_t15interface_indexENSt8uint32_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK11libnokogiri4pcap24packet_header_modified_t8protocolEv">
+<span id="_CPPv3NK11libnokogiri4pcap24packet_header_modified_t8protocolEv"></span><span id="_CPPv2NK11libnokogiri4pcap24packet_header_modified_t8protocolEv"></span><span id="libnokogiri::pcap::packet_header_modified_t::protocolC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1afdc05fee90005200b34482b46eccb1f5"></span>std::uint16_t <code class="sig-name descname">protocol</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri4pcap24packet_header_modified_t8protocolEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N11libnokogiri4pcap24packet_header_modified_t8protocolENSt8uint16_tE">
+<span id="_CPPv3N11libnokogiri4pcap24packet_header_modified_t8protocolENSt8uint16_tE"></span><span id="_CPPv2N11libnokogiri4pcap24packet_header_modified_t8protocolENSt8uint16_tE"></span><span id="libnokogiri::pcap::packet_header_modified_t::protocol__std::uint16_t"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a8f52653583d599396e2cd33201184c09"></span>void <code class="sig-name descname">protocol</code><span class="sig-paren">(</span>std::uint16_t <em>protocol</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap24packet_header_modified_t8protocolENSt8uint16_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK11libnokogiri4pcap24packet_header_modified_t4typeEv">
+<span id="_CPPv3NK11libnokogiri4pcap24packet_header_modified_t4typeEv"></span><span id="_CPPv2NK11libnokogiri4pcap24packet_header_modified_t4typeEv"></span><span id="libnokogiri::pcap::packet_header_modified_t::typeC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1aaeb34ff208e5b5772e97675002901c31"></span>std::uint8_t <code class="sig-name descname">type</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri4pcap24packet_header_modified_t4typeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N11libnokogiri4pcap24packet_header_modified_t4typeENSt7uint8_tE">
+<span id="_CPPv3N11libnokogiri4pcap24packet_header_modified_t4typeENSt7uint8_tE"></span><span id="_CPPv2N11libnokogiri4pcap24packet_header_modified_t4typeENSt7uint8_tE"></span><span id="libnokogiri::pcap::packet_header_modified_t::type__std::uint8_t"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a52b308a8be3358f5c3db81f3b098b29b"></span>void <code class="sig-name descname">type</code><span class="sig-paren">(</span>std::uint8_t <em>type</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap24packet_header_modified_t4typeENSt7uint8_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2020, Aki Van Ness.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/api/structlibnokogiri_1_1pcap_1_1packet__header__modified__t.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

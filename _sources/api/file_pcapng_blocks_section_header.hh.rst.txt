@@ -1,0 +1,63 @@
+
+.. _file_pcapng_blocks_section_header.hh:
+
+File section_header.hh
+======================
+
+|exhale_lsh| :ref:`Parent directory <dir_pcapng_blocks>` (``pcapng/blocks``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``pcapng/blocks/section_header.hh``)
+------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_pcapng_blocks_section_header.hh.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``cstdint``
+
+- ``libnokogiri/common.hh``
+
+- ``libnokogiri/pcapng/block.hh``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_pcapng_blocks.hh`
+
+- :ref:`file_pcapng_section.hh`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_libnokogiri__pcapng__blocks`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t`
+

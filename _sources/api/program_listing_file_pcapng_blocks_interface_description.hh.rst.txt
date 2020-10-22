@@ -1,0 +1,31 @@
+
+.. _program_listing_file_pcapng_blocks_interface_description.hh:
+
+Program Listing for File interface_description.hh
+=================================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_pcapng_blocks_interface_description.hh>` (``pcapng/blocks/interface_description.hh``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   // SPDX-License-Identifier: LGPL-3.0-or-later
+   /* pcapng/blocks/section_header.hh - pcapng section header block */
+   #if !defined(LIBNOKOGIRI_PCAPNG_BLOCKS_INTERFACE_DESCRIPTION_HH)
+   #define LIBNOKOGIRI_PCAPNG_BLOCKS_INTERFACE_DESCRIPTION_HH
+   
+   #include <cstdint>
+   
+   #include <libnokogiri/pcapng/block.hh>
+   
+   namespace libnokogiri::pcapng::blocks {
+       struct interface_description_t final : public block_t {
+       public:
+           link_type_t _link_type;
+           std::array<uint8_t, 16> _reserved;
+           std::uint32_t _snap_len;
+       };
+   }
+   
+   #endif /* LIBNOKOGIRI_PCAPNG_BLOCKS_INTERFACE_DESCRIPTION_HH */

@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Namespace libnokogiri::pcap &#8212; libnokogiri 0.0.1 e1bf431 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+    <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Namespace libnokogiri::pcapng" href="namespace_libnokogiri__pcapng.html" />
+    <link rel="prev" title="Namespace libnokogiri::compiletime" href="namespace_libnokogiri__compiletime.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">libnokogiri</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=lethalbit&repo=libnokogiri&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">libnokogiri API</a><ul>
+      <li>Previous: <a href="namespace_libnokogiri__compiletime.html" title="previous chapter">Namespace libnokogiri::compiletime</a></li>
+      <li>Next: <a href="namespace_libnokogiri__pcapng.html" title="next chapter">Namespace libnokogiri::pcapng</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div><h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">libnokogiri API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending/index.html">Extending libnokogiri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">libnokogiri examples</a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="namespace-libnokogiri-pcap">
+<span id="id1"></span><h1>Namespace libnokogiri::pcap<a class="headerlink" href="#namespace-libnokogiri-pcap" title="Permalink to this headline">¶</a></h1>
+<p>libnokogiri pcap interface</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#detailed-description" id="id2">Detailed Description</a></p></li>
+<li><p><a class="reference internal" href="#classes" id="id3">Classes</a></p></li>
+<li><p><a class="reference internal" href="#enums" id="id4">Enums</a></p></li>
+<li><p><a class="reference internal" href="#typedefs" id="id5">Typedefs</a></p></li>
+</ul>
+</div>
+<div class="section" id="detailed-description">
+<h2>Detailed Description<a class="headerlink" href="#detailed-description" title="Permalink to this headline">¶</a></h2>
+<p>All of the objects and machinery in order to read and write legacy pcap files are located in this namespace.</p>
+</div>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="structlibnokogiri_1_1pcap_1_1file__header__t.html#exhale-struct-structlibnokogiri-1-1pcap-1-1file-header-t"><span class="std std-ref">Struct file_header_t</span></a></p></li>
+<li><p><a class="reference internal" href="structlibnokogiri_1_1pcap_1_1packet__header__modified__t.html#exhale-struct-structlibnokogiri-1-1pcap-1-1packet-header-modified-t"><span class="std std-ref">Struct packet_header_modified_t</span></a></p></li>
+<li><p><a class="reference internal" href="structlibnokogiri_1_1pcap_1_1packet__header__t.html#exhale-struct-structlibnokogiri-1-1pcap-1-1packet-header-t"><span class="std std-ref">Struct packet_header_t</span></a></p></li>
+<li><p><a class="reference internal" href="structlibnokogiri_1_1pcap_1_1packet__t.html#exhale-struct-structlibnokogiri-1-1pcap-1-1packet-t"><span class="std std-ref">Template Struct packet_t</span></a></p></li>
+<li><p><a class="reference internal" href="structlibnokogiri_1_1pcap_1_1pcap__t.html#exhale-struct-structlibnokogiri-1-1pcap-1-1pcap-t"><span class="std std-ref">Struct pcap_t</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="enums">
+<h2>Enums<a class="headerlink" href="#enums" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="enum_namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656.html#exhale-enum-namespacelibnokogiri-1-1pcap-1a9b6ed66d560c22eb5ddb64f72aa6c656"><span class="std std-ref">Enum pcap_variant_t</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="typedefs">
+<h2>Typedefs<a class="headerlink" href="#typedefs" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="typedef_namespacelibnokogiri_1_1pcap_1a4ab33a63f40fd16d1dadad8d2c03c4c1.html#exhale-typedef-namespacelibnokogiri-1-1pcap-1a4ab33a63f40fd16d1dadad8d2c03c4c1"><span class="std std-ref">Typedef libnokogiri::pcap::generic_packet_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_namespacelibnokogiri_1_1pcap_1a8ee510d6a9b5728597274839cf179381.html#exhale-typedef-namespacelibnokogiri-1-1pcap-1a8ee510d6a9b5728597274839cf179381"><span class="std std-ref">Typedef libnokogiri::pcap::modified_packet_t</span></a></p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2020, Aki Van Ness.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/api/namespace_libnokogiri__pcap.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

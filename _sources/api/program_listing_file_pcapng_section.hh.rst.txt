@@ -1,0 +1,35 @@
+
+.. _program_listing_file_pcapng_section.hh:
+
+Program Listing for File section.hh
+===================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_pcapng_section.hh>` (``pcapng/section.hh``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   // SPDX-License-Identifier: LGPL-3.0-or-later
+   /* pcapng/section.hh - Container for pcapng file sections */
+   #if !defined(LIBNOKOGIRI_PCAPNG_SECTION_HH)
+   #define LIBNOKOGIRI_PCAPNG_SECTION_HH
+   
+   #include <cstdint>
+   #include <vector>
+   
+   #include <libnokogiri/pcapng/block.hh>
+   #include <libnokogiri/pcapng/blocks/section_header.hh>
+   
+   namespace libnokogiri::pcapng {
+       struct section_t final {
+       private:
+           std::uint32_t _length;
+           std::uintptr_t _offset;
+           blocks::section_header_t _header;
+           std::vector<block_storage_t> _blocks;
+   
+       };
+   }
+   
+   #endif /* LIBNOKOGIRI_PCAPNG_SECTION_HH */

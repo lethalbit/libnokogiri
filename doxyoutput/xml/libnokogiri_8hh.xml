@@ -1,0 +1,228 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="libnokogiri_8hh" kind="file" language="C++">
+    <compoundname>libnokogiri.hh</compoundname>
+    <includes local="no">libnokogiri/config.hh</includes>
+    <includes refid="common_8hh" local="no">libnokogiri/common.hh</includes>
+    <includes refid="pcap_8hh" local="no">libnokogiri/pcap.hh</includes>
+    <includes refid="pcapng_8hh" local="no">libnokogiri/pcapng.hh</includes>
+    <incdepgraph>
+      <node id="30">
+        <label>limits</label>
+      </node>
+      <node id="18">
+        <label>cstdint</label>
+      </node>
+      <node id="33">
+        <label>libnokogiri/pcapng/options/section_header.hh</label>
+        <link refid="options_2section__header_8hh_source"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>libnokogiri/internal/mmap.hh</label>
+      </node>
+      <node id="27">
+        <label>libnokogiri/pcapng/option.hh</label>
+        <link refid="option_8hh_source"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>libnokogiri/pcapng/block.hh</label>
+        <link refid="block_8hh_source"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>libnokogiri/config.hh</label>
+      </node>
+      <node id="11">
+        <label>libnokogiri.hh</label>
+        <link refid="libnokogiri_8hh"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>libnokogiri/pcapng/blocks.hh</label>
+        <link refid="blocks_8hh_source"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>libnokogiri/pcapng/blocks/section_header.hh</label>
+        <link refid="blocks_2section__header_8hh_source"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>libnokogiri/common.hh</label>
+        <link refid="common_8hh_source"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>libnokogiri/internal/fd.hh</label>
+      </node>
+      <node id="14">
+        <label>libnokogiri/internal/defs.hh</label>
+      </node>
+      <node id="26">
+        <label>libnokogiri/pcapng/blocks/interface_description.hh</label>
+        <link refid="blocks_2interface__description_8hh_source"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>libnokogiri/internal/fs.hh</label>
+      </node>
+      <node id="23">
+        <label>optional</label>
+      </node>
+      <node id="35">
+        <label>vector</label>
+      </node>
+      <node id="22">
+        <label>utility</label>
+      </node>
+      <node id="20">
+        <label>libnokogiri/pcapng.hh</label>
+        <link refid="pcapng_8hh_source"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>libnokogiri/pcapng/options.hh</label>
+        <link refid="options_8hh_source"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>unordered_map</label>
+      </node>
+      <node id="17">
+        <label>libnokogiri/pcap.hh</label>
+        <link refid="pcap_8hh_source"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>libnokogiri/pcapng/options/interface_description.hh</label>
+        <link refid="options_2interface__description_8hh_source"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>libnokogiri/pcapng/section.hh</label>
+        <link refid="section_8hh_source"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacelibnokogiri">libnokogiri</innernamespace>
+    <innernamespace refid="namespacelibnokogiri_1_1pcap">libnokogiri::pcap</innernamespace>
+    <innernamespace refid="namespacelibnokogiri_1_1pcapng">libnokogiri::pcapng</innernamespace>
+    <innernamespace refid="namespacelibnokogiri_1_1pcapng_1_1blocks">libnokogiri::pcapng::blocks</innernamespace>
+    <innernamespace refid="namespacelibnokogiri_1_1pcapng_1_1options">libnokogiri::pcapng::options</innernamespace>
+    <innernamespace refid="namespacelibnokogiri_1_1compiletime">libnokogiri::compiletime</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>LGPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>libnokogiri.hh<sp/>-<sp/>libnokogiri<sp/>&quot;unity&quot;<sp/>include<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(LIBNOKOGIRI_HH)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LIBNOKOGIRI_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;libnokogiri/config.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;libnokogiri/common.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;libnokogiri/pcap.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;libnokogiri/pcapng.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacelibnokogiri" kindref="compound">libnokogiri</ref><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">pcap<sp/>{}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">pcapng<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">blocks<sp/>{}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">options<sp/>{}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">compiletime<sp/>{}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>LIBNOKOGIRI_HH<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="libnokogiri.hh"/>
+  </compounddef>
+</doxygen>

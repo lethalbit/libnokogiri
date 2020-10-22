@@ -1,0 +1,13 @@
+.. _exhale_enum_namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bd:
+
+Enum option_type_t
+==================
+
+- Defined in :ref:`file_pcapng_option.hh`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: libnokogiri::pcapng::option_type_t

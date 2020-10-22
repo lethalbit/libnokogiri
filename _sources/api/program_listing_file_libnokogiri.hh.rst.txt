@@ -1,0 +1,33 @@
+
+.. _program_listing_file_libnokogiri.hh:
+
+Program Listing for File libnokogiri.hh
+=======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_libnokogiri.hh>` (``libnokogiri.hh``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   // SPDX-License-Identifier: LGPL-3.0-or-later
+   /* libnokogiri.hh - libnokogiri "unity" include */
+   #if !defined(LIBNOKOGIRI_HH)
+   #define LIBNOKOGIRI_HH
+   
+   #include <libnokogiri/config.hh>
+   #include <libnokogiri/common.hh>
+   #include <libnokogiri/pcap.hh>
+   #include <libnokogiri/pcapng.hh>
+   
+   namespace libnokogiri {
+       namespace pcap {}
+       namespace pcapng {
+           namespace blocks {}
+   
+           namespace options {}
+       }
+       namespace compiletime {}
+   }
+   
+   #endif /* LIBNOKOGIRI_HH */

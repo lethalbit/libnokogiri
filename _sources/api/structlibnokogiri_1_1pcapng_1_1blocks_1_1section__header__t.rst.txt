@@ -1,0 +1,25 @@
+.. _exhale_struct_structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t:
+
+Struct section_header_t
+=======================
+
+- Defined in :ref:`file_pcapng_blocks_section_header.hh`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public libnokogiri::pcapng::block_t`` (:ref:`exhale_struct_structlibnokogiri_1_1pcapng_1_1block__t`)
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: libnokogiri::pcapng::blocks::section_header_t
+   :members:
+   :protected-members:
+   :undoc-members:

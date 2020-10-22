@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>libnokogiri &#8212; libnokogiri 0.0.1 e1bf431 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="_static/collapsible-lists/css/tree_view.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+    <script src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="libnokogiri API" href="api/index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">libnokogiri</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=lethalbit&repo=libnokogiri&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="api/index.html" title="next chapter">libnokogiri API</a></li>
+  </ul></li>
+</ul>
+</div><h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">libnokogiri API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending/index.html">Extending libnokogiri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/index.html">libnokogiri examples</a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="libnokogiri">
+<h1>libnokogiri<a class="headerlink" href="#libnokogiri" title="Permalink to this headline">¶</a></h1>
+<p>libnokogiri is a library for reading and writing <a class="reference external" href="https://wiki.wireshark.org/Development/LibpcapFileFormat">pcap</a> and <a class="reference external" href="https://github.com/pcapng/pcapng">pcapng</a> files for C++. It is designed to be as small and as light weight as possible, along with having an easy to use interface.</p>
+<p>libnokogiri does not support the parsing of any packet specific data, it only handles the raw file format. You either need handle that yourself, or use a more appropriate library such as <a class="reference external" href="https://github.com/the-tcpdump-group/libpcap">libpcap</a> which has support for such things.</p>
+<div class="section" id="configuring-and-building">
+<h2>Configuring and Building<a class="headerlink" href="#configuring-and-building" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>To build libnokogiri, ensure you have the following build time dependencies:</dt><dd><ul class="simple">
+<li><p>git</p></li>
+<li><p>meson</p></li>
+<li><p>ninja</p></li>
+<li><p>zlib &gt;= 1.1.130 (optional if building without compressed pcap support)</p></li>
+<li><p>g++ &gt;= 9 or clang++ &gt;= 9</p></li>
+</ul>
+</dd>
+<dt>If you wish to build the documentation, the you will also need the following:</dt><dd><ul class="simple">
+<li><p>sphinx-build</p></li>
+<li><p>python-breath</p></li>
+<li><p>python-exhale</p></li>
+<li><p>doxygen</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="configuring">
+<h3>Configuring<a class="headerlink" href="#configuring" title="Permalink to this headline">¶</a></h3>
+<p>You can build Nox with the default options, all of which can be found in <a class="reference external" href="https://github.com/lethalbit/libnokogiri/blob/main/meson_options.txt">meson_options.txt</a>. You can change these by specifying <code class="docutils literal notranslate"><span class="pre">-D&lt;OPTION_NAME&gt;=&lt;VALUE&gt;</span></code> at initial meson invocation time, or with <cite>meson configure</cite> in the build directory post initial configure.</p>
+<p>To change the install prefix, which is <code class="docutils literal notranslate"><span class="pre">/usr/local</span></code> by default ensure to pass <code class="docutils literal notranslate"><span class="pre">--prefix</span> <span class="pre">&lt;PREFIX&gt;</span></code> when running meson for the first time.</p>
+<p>In either case, simpling running <cite>meson build</cite> from the root of the repository will be sufficient and place all of the build files in the <cite>build</cite> subdirectory.</p>
+</div>
+<div class="section" id="building">
+<h3>Building<a class="headerlink" href="#building" title="Permalink to this headline">¶</a></h3>
+<p>Once you have configured libnokogiri appropriately, to simply build and install simply run the following::</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>$ ninja -c build
+$ ninja -c build install
+</pre></div>
+</div>
+<p>This will build and install libnokogiri into the default prefix which is <cite>/usr/local</cite>, to change that see the configuration steps above.</p>
+</div>
+<div class="section" id="notes-to-package-maintainers">
+<h3>Notes to Package Maintainers<a class="headerlink" href="#notes-to-package-maintainers" title="Permalink to this headline">¶</a></h3>
+<p>If you are building libnokogiri for inclusion in a distributions package system then ensure to set <cite>DESTDIR</cite> prior to running meson install.</p>
+<p>There is also a <cite>bugreport_url</cite> configuration option that is set to this repositories issues tracker by default, it is recommended to change it to your distributions bug tracking page.</p>
+</div>
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>libnokogiri is licensed under the LGPL v3 or later, you can find a full copy of the license text in the <a class="reference external" href="https://github.com/lethalbit/libnokogiri/blob/main/LICENSE">LICENSE</a> file .</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2020, Aki Van Ness.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

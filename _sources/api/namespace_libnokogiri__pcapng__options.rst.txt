@@ -1,0 +1,32 @@
+
+.. _namespace_libnokogiri__pcapng__options:
+
+Namespace libnokogiri::pcapng::options
+======================================
+
+
+pcapng options that are defined as per the standard 
+ 
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+Detailed Description
+--------------------
+
+This namespace contains all the pre-specified options as defined by the pcapng RFC.
+For documentation on how to register new option types with libnokogiri see the ``Adding Options`` section in ``Extending libnokogiri``. 
+ 
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structlibnokogiri_1_1pcapng_1_1options_1_1end__of__options__t`

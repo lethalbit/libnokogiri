@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Program Listing for File common.hh &#8212; libnokogiri 0.0.1 e1bf431 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+    <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">libnokogiri</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=lethalbit&repo=libnokogiri&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div><h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">libnokogiri API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending/index.html">Extending libnokogiri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">libnokogiri examples</a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="program-listing-for-file-common-hh">
+<span id="program-listing-file-common-hh"></span><h1>Program Listing for File common.hh<a class="headerlink" href="#program-listing-for-file-common-hh" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="file_common.hh.html#file-common-hh"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">common.hh</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// SPDX-License-Identifier: LGPL-3.0-or-later</span>
+<span class="cm">/* common.hh - Common templates and type definitions */</span>
+<span class="cp">#pragma once</span>
+<span class="cp">#if !defined(LIBNOKOGIRI_COMMON_HH)</span>
+<span class="cp">#define LIBNOKOGIRI_COMMON_HH</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;libnokogiri/internal/defs.hh&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;libnokogiri/internal/mmap.hh&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;libnokogiri/internal/fd.hh&gt;</span><span class="cp"></span>
+
+<span class="k">namespace</span> <span class="n">libnokogiri</span> <span class="p">{</span>
+    <span class="k">using</span> <span class="n">file_t</span> <span class="o">=</span> <span class="n">libnokogiri</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">optional_pair</span><span class="o">&lt;</span><span class="n">libnokogiri</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">fd_t</span><span class="o">&amp;</span><span class="p">,</span> <span class="n">libnokogiri</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">mmap_t</span><span class="o">&amp;&gt;</span><span class="p">;</span>
+
+    <span class="k">enum</span> <span class="k">class</span> <span class="nc">link_type_t</span> <span class="o">:</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint16_t</span> <span class="p">{</span>
+        <span class="n">BSDLoopback</span>                <span class="o">=</span> <span class="mh">0x0000U</span><span class="p">,</span>
+        <span class="n">Ethernet</span>                   <span class="o">=</span> <span class="mh">0x0001U</span><span class="p">,</span>
+        <span class="cm">/* 0x0002U : Undefined, presumed reserved */</span>
+        <span class="n">AX25</span>                       <span class="o">=</span> <span class="mh">0x0003U</span><span class="p">,</span>
+        <span class="cm">/* 0x0004U - 0x0005U : Undefined, presumed reserved */</span>
+        <span class="n">IEEE802_5</span>                  <span class="o">=</span> <span class="mh">0x0006U</span><span class="p">,</span>
+        <span class="n">ARCNET_BSD</span>                 <span class="o">=</span> <span class="mh">0x0007U</span><span class="p">,</span>
+        <span class="n">SLIP</span>                       <span class="o">=</span> <span class="mh">0x0008U</span><span class="p">,</span>
+        <span class="n">PPP</span>                        <span class="o">=</span> <span class="mh">0x0009U</span><span class="p">,</span>
+        <span class="n">FDDI</span>                       <span class="o">=</span> <span class="mh">0x000AU</span><span class="p">,</span>
+        <span class="cm">/* 0x000BU - 0x0031U : Undefined, presumed reserved */</span>
+        <span class="n">PPP_HDLC</span>                   <span class="o">=</span> <span class="mh">0x0032U</span><span class="p">,</span>
+        <span class="n">PPPoE</span>                      <span class="o">=</span> <span class="mh">0x0033U</span><span class="p">,</span>
+        <span class="cm">/* 0x0034U - 0x0063U : Undefined, presumed reserved */</span>
+        <span class="n">ATM_RFC1483</span>                <span class="o">=</span> <span class="mh">0x0064U</span><span class="p">,</span>
+        <span class="n">Raw</span>                        <span class="o">=</span> <span class="mh">0x0065U</span><span class="p">,</span>
+        <span class="cm">/* 0x0066U - 0x0067U : Undefined, presumed reserved */</span>
+        <span class="n">CiscoHDLC</span>                  <span class="o">=</span> <span class="mh">0x0068U</span><span class="p">,</span>
+        <span class="n">IEEE802_11</span>                 <span class="o">=</span> <span class="mh">0x0069U</span><span class="p">,</span>
+        <span class="cm">/* 0x0068U : Undefined, presumed reserved */</span>
+        <span class="n">LAPFFrameRelay</span>             <span class="o">=</span> <span class="mh">0x006BU</span><span class="p">,</span>
+        <span class="n">OpenBSDLoopback</span>            <span class="o">=</span> <span class="mh">0x006CU</span><span class="p">,</span>
+        <span class="cm">/* 0x006DU - 0x0070U : Undefined, presumed reserved */</span>
+        <span class="n">LinuxSLL</span>                   <span class="o">=</span> <span class="mh">0x0071U</span><span class="p">,</span>
+        <span class="n">AppleLocalTalk</span>             <span class="o">=</span> <span class="mh">0x0072U</span><span class="p">,</span>
+        <span class="cm">/* 0x0073U - 0x0074U : Undefined, presumed reserved */</span>
+        <span class="n">OpenBSDPFLog</span>               <span class="o">=</span> <span class="mh">0x0075U</span><span class="p">,</span>
+        <span class="cm">/* 0x0076U - 0x0067U : Undefined, presumed reserved */</span>
+        <span class="n">IEEE802_11_Prism</span>            <span class="o">=</span> <span class="mh">0x0077U</span><span class="p">,</span>
+        <span class="cm">/* 0x0078U - 0x0079U : Undefined, presumed reserved */</span>
+        <span class="n">IPOverFC</span>                   <span class="o">=</span> <span class="mh">0x007AU</span><span class="p">,</span>
+        <span class="n">SunATM</span>                     <span class="o">=</span> <span class="mh">0x007BU</span><span class="p">,</span>
+        <span class="cm">/* 0x007CU - 0x007EU : Undefined, presumed reserved */</span>
+        <span class="n">IEEE802_11_Radiotap</span>        <span class="o">=</span> <span class="mh">0x007FU</span><span class="p">,</span>
+        <span class="cm">/* 0x0080U : Undefined, presumed reserved */</span>
+        <span class="n">ARCNETLinux</span>                <span class="o">=</span> <span class="mh">0x0081U</span><span class="p">,</span>
+        <span class="cm">/* 0x0082U - 0x0089U : Undefined, presumed reserved */</span>
+        <span class="n">AppleIPOverIEEE1394</span>        <span class="o">=</span> <span class="mh">0x008AU</span><span class="p">,</span>
+        <span class="n">MTP2WithPHeader</span>            <span class="o">=</span> <span class="mh">0x008BU</span><span class="p">,</span>
+        <span class="n">MTP2</span>                       <span class="o">=</span> <span class="mh">0x008CU</span><span class="p">,</span>
+        <span class="n">MTP3</span>                       <span class="o">=</span> <span class="mh">0x008DU</span><span class="p">,</span>
+        <span class="n">SCCP</span>                       <span class="o">=</span> <span class="mh">0x008EU</span><span class="p">,</span>
+        <span class="n">DOCSIS</span>                     <span class="o">=</span> <span class="mh">0x008FU</span><span class="p">,</span>
+        <span class="n">LinuxIrDA</span>                  <span class="o">=</span> <span class="mh">0x0090U</span><span class="p">,</span>
+        <span class="cm">/* 0x0091U - 0x0092U : Undefined, presumed reserved */</span>
+        <span class="n">User0</span>                      <span class="o">=</span> <span class="mh">0x0093U</span><span class="p">,</span>
+        <span class="n">User1</span>                      <span class="o">=</span> <span class="mh">0x0094U</span><span class="p">,</span>
+        <span class="n">User2</span>                      <span class="o">=</span> <span class="mh">0x0095U</span><span class="p">,</span>
+        <span class="n">User3</span>                      <span class="o">=</span> <span class="mh">0x0096U</span><span class="p">,</span>
+        <span class="n">User4</span>                      <span class="o">=</span> <span class="mh">0x0097U</span><span class="p">,</span>
+        <span class="n">User5</span>                      <span class="o">=</span> <span class="mh">0x0098U</span><span class="p">,</span>
+        <span class="n">User6</span>                      <span class="o">=</span> <span class="mh">0x0099U</span><span class="p">,</span>
+        <span class="n">User7</span>                      <span class="o">=</span> <span class="mh">0x009AU</span><span class="p">,</span>
+        <span class="n">User8</span>                      <span class="o">=</span> <span class="mh">0x009BU</span><span class="p">,</span>
+        <span class="n">User9</span>                      <span class="o">=</span> <span class="mh">0x009CU</span><span class="p">,</span>
+        <span class="n">User10</span>                     <span class="o">=</span> <span class="mh">0x009DU</span><span class="p">,</span>
+        <span class="n">User11</span>                     <span class="o">=</span> <span class="mh">0x009EU</span><span class="p">,</span>
+        <span class="n">User12</span>                     <span class="o">=</span> <span class="mh">0x009FU</span><span class="p">,</span>
+        <span class="n">User13</span>                     <span class="o">=</span> <span class="mh">0x00A0U</span><span class="p">,</span>
+        <span class="n">User14</span>                     <span class="o">=</span> <span class="mh">0x00A1U</span><span class="p">,</span>
+        <span class="n">User15</span>                     <span class="o">=</span> <span class="mh">0x00A2U</span><span class="p">,</span>
+        <span class="n">IEEE802_11_AVS</span>             <span class="o">=</span> <span class="mh">0x00A3U</span><span class="p">,</span>
+        <span class="cm">/* 0x00A4U : Undefined, presumed reserved */</span>
+        <span class="n">BACNet_MS_TP</span>               <span class="o">=</span> <span class="mh">0x00A5U</span><span class="p">,</span>
+        <span class="n">PPP_PPPD</span>                   <span class="o">=</span> <span class="mh">0x00A6U</span><span class="p">,</span>
+        <span class="cm">/* 0x00A7U - 0x00A8U : Undefined, presumed reserved */</span>
+        <span class="n">GPRS_LLC</span>                   <span class="o">=</span> <span class="mh">0x00A9U</span><span class="p">,</span>
+        <span class="n">GPF_T</span>                      <span class="o">=</span> <span class="mh">0x00AAU</span><span class="p">,</span>
+        <span class="n">GPF_F</span>                      <span class="o">=</span> <span class="mh">0x00ABU</span><span class="p">,</span>
+        <span class="cm">/* 0x00ACU - 0x00B0U : Undefined, presumed reserved */</span>
+        <span class="n">LinuxLAPD</span>                  <span class="o">=</span> <span class="mh">0x00B1U</span><span class="p">,</span>
+        <span class="cm">/* 0x00B2U - 0x00B5U : Undefined, presumed reserved */</span>
+        <span class="n">MFR</span>                        <span class="o">=</span> <span class="mh">0x00B6U</span><span class="p">,</span>
+        <span class="cm">/* 0x00B7U - 0x00BAU : Undefined, presumed reserved */</span>
+        <span class="n">BluetoothHCI_H4</span>            <span class="o">=</span> <span class="mh">0x00BBU</span><span class="p">,</span>
+        <span class="cm">/* 0x00BC : Undefined, presumed reserved */</span>
+        <span class="n">USBLinux</span>                   <span class="o">=</span> <span class="mh">0x00BDU</span><span class="p">,</span>
+        <span class="cm">/* 0x00BEU - 0x00BFU : Undefined, presumed reserved */</span>
+        <span class="n">PPI</span>                        <span class="o">=</span> <span class="mh">0x00C0U</span><span class="p">,</span>
+        <span class="cm">/* 0x00C1U - 0x00C2U : Undefined, presumed reserved */</span>
+        <span class="n">IEEE802_15_4_WithFCS</span>       <span class="o">=</span> <span class="mh">0x00C3U</span><span class="p">,</span>
+        <span class="n">SITA</span>                       <span class="o">=</span> <span class="mh">0x00C4U</span><span class="p">,</span>
+        <span class="n">ERF</span>                        <span class="o">=</span> <span class="mh">0x00C5U</span><span class="p">,</span>
+        <span class="cm">/* 0x00C6U - 0x00C8U : Undefined, presumed reserved */</span>
+        <span class="n">BluetoothHCI_H4WithPhdr</span>    <span class="o">=</span> <span class="mh">0x00C9U</span><span class="p">,</span>
+        <span class="n">AX25_KIDD</span>                  <span class="o">=</span> <span class="mh">0x00CAU</span><span class="p">,</span>
+        <span class="n">LAPD</span>                       <span class="o">=</span> <span class="mh">0x00CBU</span><span class="p">,</span>
+        <span class="n">PPPWithDir</span>                 <span class="o">=</span> <span class="mh">0x00CCU</span><span class="p">,</span>
+        <span class="n">CiscoHDLCWithDir</span>           <span class="o">=</span> <span class="mh">0x00CDU</span><span class="p">,</span>
+        <span class="n">FrameRelayWithDir</span>          <span class="o">=</span> <span class="mh">0x00CEU</span><span class="p">,</span>
+        <span class="n">LAPBWithDir</span>                <span class="o">=</span> <span class="mh">0x00CFU</span><span class="p">,</span>
+        <span class="cm">/* 0x00D0U : Undefined, presumed reserved */</span>
+        <span class="n">Ipmb_linux</span>                 <span class="o">=</span> <span class="mh">0x00D1U</span><span class="p">,</span>
+        <span class="cm">/* 0x00D2U - 0x00D6U : Undefined, presumed reserved */</span>
+        <span class="n">IEEE802_15_4_nonask_phy</span>    <span class="o">=</span> <span class="mh">0x00D7U</span><span class="p">,</span>
+        <span class="cm">/* 0x00D9U - 0x00DBU : Undefined, presumed reserved */</span>
+        <span class="n">UUSBLinuxMmapped</span>           <span class="o">=</span> <span class="mh">0x00DCU</span><span class="p">,</span>
+        <span class="cm">/* 0x00DDU - 0x00DFU : Undefined, presumed reserved */</span>
+        <span class="n">FC2</span>                        <span class="o">=</span> <span class="mh">0x00E0U</span><span class="p">,</span>
+        <span class="n">FC2WithFrameDelims</span>         <span class="o">=</span> <span class="mh">0x00E1U</span><span class="p">,</span>
+        <span class="n">IPNET</span>                      <span class="o">=</span> <span class="mh">0x00E2U</span><span class="p">,</span>
+        <span class="n">CANSocketCan</span>               <span class="o">=</span> <span class="mh">0x00E3U</span><span class="p">,</span>
+        <span class="n">IpV4</span>                       <span class="o">=</span> <span class="mh">0x00E4U</span><span class="p">,</span>
+        <span class="n">IpV6</span>                       <span class="o">=</span> <span class="mh">0x00E5U</span><span class="p">,</span>
+        <span class="n">IEEE802_15_4_nofcs</span>         <span class="o">=</span> <span class="mh">0x00E6U</span><span class="p">,</span>
+        <span class="n">DBus</span>                       <span class="o">=</span> <span class="mh">0x00E7U</span><span class="p">,</span>
+        <span class="cm">/* 0x00E8U - 0x00EAU : Undefined, presumed reserved */</span>
+        <span class="n">DVB_CI</span>                     <span class="o">=</span> <span class="mh">0x00EBU</span><span class="p">,</span>
+        <span class="n">Mux27010</span>                   <span class="o">=</span> <span class="mh">0x00ECU</span><span class="p">,</span>
+        <span class="n">Stanag5066DPDU</span>             <span class="o">=</span> <span class="mh">0x00EDU</span><span class="p">,</span>
+        <span class="cm">/* 0x00EEU : Undefined, presumed reserved */</span>
+        <span class="n">NFLog</span>                      <span class="o">=</span> <span class="mh">0x00EFU</span><span class="p">,</span>
+        <span class="n">NetAnalyzer</span>                <span class="o">=</span> <span class="mh">0x00F0U</span><span class="p">,</span>
+        <span class="n">NetAnalyzerTransparent</span>     <span class="o">=</span> <span class="mh">0x00F1U</span><span class="p">,</span>
+        <span class="n">IPoIB</span>                      <span class="o">=</span> <span class="mh">0x00F2U</span><span class="p">,</span>
+        <span class="n">MPEG2Transport</span>             <span class="o">=</span> <span class="mh">0x00F3U</span><span class="p">,</span>
+        <span class="n">NG40</span>                       <span class="o">=</span> <span class="mh">0x00F4U</span><span class="p">,</span>
+        <span class="n">NFC_LLCP</span>                   <span class="o">=</span> <span class="mh">0x00F5U</span><span class="p">,</span>
+        <span class="cm">/* 0x00F6U : Undefined, presumed reserved */</span>
+        <span class="n">InfiniBand</span>                 <span class="o">=</span> <span class="mh">0x00F7U</span><span class="p">,</span>
+        <span class="n">SCTP</span>                       <span class="o">=</span> <span class="mh">0x00F8U</span><span class="p">,</span>
+        <span class="n">USBPcap</span>                    <span class="o">=</span> <span class="mh">0x00F9U</span><span class="p">,</span>
+        <span class="n">RTACSerial</span>                 <span class="o">=</span> <span class="mh">0x00FAU</span><span class="p">,</span>
+        <span class="n">BluetoothLELL</span>              <span class="o">=</span> <span class="mh">0x00FBU</span><span class="p">,</span>
+        <span class="cm">/* 0x00FCU : Undefined, presumed reserved */</span>
+        <span class="n">Netlink</span>                    <span class="o">=</span> <span class="mh">0x00FDU</span><span class="p">,</span>
+        <span class="n">BluetoothLinuxMonitor</span>     <span class="o">=</span> <span class="mh">0x00FEU</span><span class="p">,</span>
+        <span class="n">Bluetooth_bredr_bb</span>         <span class="o">=</span> <span class="mh">0x00FFU</span><span class="p">,</span>
+        <span class="n">BluetoothLELLWithPHDR</span>      <span class="o">=</span> <span class="mh">0x0100U</span><span class="p">,</span>
+        <span class="n">PROFIBUSDatalink</span>           <span class="o">=</span> <span class="mh">0x0101U</span><span class="p">,</span>
+        <span class="n">PKTAP</span>                      <span class="o">=</span> <span class="mh">0x0102U</span><span class="p">,</span>
+        <span class="n">EoPON</span>                      <span class="o">=</span> <span class="mh">0x0103U</span><span class="p">,</span>
+        <span class="n">IPMI_hpm_2</span>                 <span class="o">=</span> <span class="mh">0x0104U</span><span class="p">,</span>
+        <span class="n">ZWaveR1R2</span>                  <span class="o">=</span> <span class="mh">0x0105U</span><span class="p">,</span>
+        <span class="n">ZWaveR3</span>                    <span class="o">=</span> <span class="mh">0x0106U</span><span class="p">,</span>
+        <span class="n">WattStopperDLM</span>             <span class="o">=</span> <span class="mh">0x0107U</span><span class="p">,</span>
+        <span class="n">ISO14443</span>                   <span class="o">=</span> <span class="mh">0x0108U</span><span class="p">,</span>
+        <span class="n">RDS</span>                        <span class="o">=</span> <span class="mh">0x0109U</span><span class="p">,</span>
+        <span class="n">USBDarwin</span>                  <span class="o">=</span> <span class="mh">0x010AU</span><span class="p">,</span>
+        <span class="cm">/* 0x010BU : Undefined, presumed reserved */</span>
+        <span class="n">SDLC</span>                       <span class="o">=</span> <span class="mh">0x010CU</span><span class="p">,</span>
+        <span class="cm">/* 0x010DU : Undefined, presumed reserved */</span>
+        <span class="n">LoRaTap</span>                    <span class="o">=</span> <span class="mh">0x010EU</span><span class="p">,</span>
+        <span class="n">VSOCK</span>                      <span class="o">=</span> <span class="mh">0x010FU</span><span class="p">,</span>
+        <span class="n">NordicBLE</span>                  <span class="o">=</span> <span class="mh">0x0110U</span><span class="p">,</span>
+        <span class="n">DOCSIS31_XRA31</span>             <span class="o">=</span> <span class="mh">0x0111U</span><span class="p">,</span>
+        <span class="n">Ethernet_mpacket</span>           <span class="o">=</span> <span class="mh">0x0112U</span><span class="p">,</span>
+        <span class="n">DisplayportAux</span>             <span class="o">=</span> <span class="mh">0x0113U</span><span class="p">,</span>
+        <span class="n">LinuxSLL2</span>                  <span class="o">=</span> <span class="mh">0x0114U</span><span class="p">,</span>
+        <span class="cm">/* 0x0115U : Undefined, presumed reserved */</span>
+        <span class="n">Openvizsla</span>                 <span class="o">=</span> <span class="mh">0x0116U</span><span class="p">,</span>
+        <span class="n">EBHSCR</span>                     <span class="o">=</span> <span class="mh">0x0117U</span><span class="p">,</span>
+        <span class="n">VPPDispatch</span>                <span class="o">=</span> <span class="mh">0x0118U</span><span class="p">,</span>
+        <span class="n">DSATagBRCM</span>                 <span class="o">=</span> <span class="mh">0x0119U</span><span class="p">,</span>
+        <span class="n">DSATagBRCMPrepend</span>          <span class="o">=</span> <span class="mh">0x011AU</span><span class="p">,</span>
+        <span class="n">IEEE802_15_4_Tap</span>           <span class="o">=</span> <span class="mh">0x011BU</span><span class="p">,</span>
+        <span class="n">DSATagDSA</span>                  <span class="o">=</span> <span class="mh">0x011CU</span><span class="p">,</span>
+        <span class="n">DSATagEDSA</span>                 <span class="o">=</span> <span class="mh">0x011DU</span><span class="p">,</span>
+        <span class="n">ELEE</span>                       <span class="o">=</span> <span class="mh">0x011EU</span><span class="p">,</span>
+        <span class="n">ZWaveSerial</span>                <span class="o">=</span> <span class="mh">0x011FU</span><span class="p">,</span>
+        <span class="n">USB2</span>                       <span class="o">=</span> <span class="mh">0x0120U</span><span class="p">,</span>
+        <span class="n">ATSC_ALP</span>                   <span class="o">=</span> <span class="mh">0x0121U</span><span class="p">,</span>
+    <span class="p">};</span>
+
+    <span class="k">struct</span> <span class="n">version_t</span> <span class="k">final</span> <span class="p">{</span>
+    <span class="k">private</span><span class="o">:</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint16_t</span> <span class="n">_major</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint16_t</span> <span class="n">_minor</span><span class="p">;</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="k">constexpr</span> <span class="n">version_t</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">:</span>
+            <span class="n">_major</span><span class="p">{</span><span class="mi">0U</span><span class="p">},</span> <span class="n">_minor</span><span class="p">{</span><span class="mi">0U</span><span class="p">}</span>
+            <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
+
+        <span class="k">constexpr</span> <span class="n">version_t</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">uint16_t</span> <span class="n">major</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint16_t</span> <span class="n">minor</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">:</span>
+            <span class="n">_major</span><span class="p">{</span><span class="n">major</span><span class="p">},</span> <span class="n">_minor</span><span class="p">{</span><span class="n">minor</span><span class="p">}</span>
+            <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
+
+        <span class="n">version_t</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">nullptr_t</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">major</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_major</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">minor</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_minor</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span> <span class="n">version_t</span><span class="o">&amp;</span> <span class="n">ver</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">_major</span> <span class="o">==</span> <span class="n">ver</span><span class="p">.</span><span class="n">major</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">_minor</span> <span class="o">==</span> <span class="n">ver</span><span class="p">.</span><span class="n">minor</span><span class="p">());</span>
+        <span class="p">}</span>
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="kt">bool</span> <span class="k">operator</span><span class="o">!=</span><span class="p">(</span><span class="k">const</span> <span class="n">version_t</span><span class="o">&amp;</span> <span class="n">ver</span><span class="p">)</span>  <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="o">!</span><span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="n">ver</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="kt">bool</span> <span class="k">operator</span><span class="o">&gt;</span><span class="p">(</span><span class="k">const</span> <span class="n">version_t</span><span class="o">&amp;</span> <span class="n">ver</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">(</span>
+                <span class="p">(</span><span class="n">_major</span> <span class="o">&gt;</span> <span class="n">ver</span><span class="p">.</span><span class="n">major</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">_minor</span> <span class="o">&gt;=</span> <span class="n">ver</span><span class="p">.</span><span class="n">minor</span><span class="p">())</span> <span class="o">||</span>
+                <span class="p">(</span><span class="n">_major</span> <span class="o">&gt;=</span> <span class="n">ver</span><span class="p">.</span><span class="n">major</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">_minor</span> <span class="o">&gt;</span> <span class="n">ver</span><span class="p">.</span><span class="n">minor</span><span class="p">()));</span>
+        <span class="p">}</span>
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="kt">bool</span> <span class="k">operator</span><span class="o">&gt;=</span><span class="p">(</span><span class="k">const</span> <span class="n">version_t</span><span class="o">&amp;</span> <span class="n">ver</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">(</span><span class="k">operator</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ver</span><span class="p">)</span> <span class="o">||</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="n">ver</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="kt">bool</span> <span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="k">const</span> <span class="n">version_t</span><span class="o">&amp;</span> <span class="n">ver</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">(</span>
+                <span class="p">(</span><span class="n">_major</span> <span class="o">&lt;</span> <span class="n">ver</span><span class="p">.</span><span class="n">major</span><span class="p">()</span> <span class="o">&amp;&amp;</span>  <span class="n">_minor</span> <span class="o">&lt;=</span> <span class="n">ver</span><span class="p">.</span><span class="n">minor</span><span class="p">())</span> <span class="o">||</span>
+                <span class="p">(</span><span class="n">_minor</span> <span class="o">&lt;=</span> <span class="n">ver</span><span class="p">.</span><span class="n">major</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">_minor</span> <span class="o">&lt;</span> <span class="n">ver</span><span class="p">.</span><span class="n">minor</span><span class="p">()));</span>
+        <span class="p">}</span>
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="kt">bool</span> <span class="k">operator</span><span class="o">&lt;=</span><span class="p">(</span><span class="k">const</span> <span class="n">version_t</span><span class="o">&amp;</span> <span class="n">ver</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">(</span><span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="n">ver</span><span class="p">)</span> <span class="o">||</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="n">ver</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="cp">#endif </span><span class="cm">/* LIBNOKOGIRI_COMMON_HH */</span><span class="cp"></span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2020, Aki Van Ness.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/api/program_listing_file_common.hh.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

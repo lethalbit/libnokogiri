@@ -1,0 +1,80 @@
+
+.. _file_pcapng_option.hh:
+
+File option.hh
+==============
+
+|exhale_lsh| :ref:`Parent directory <dir_pcapng>` (``pcapng``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``pcapng/option.hh``)
+---------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_pcapng_option.hh.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``cstdint``
+
+- ``limits``
+
+- ``memory``
+
+- ``unordered_map``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_pcapng_options_interface_description.hh`
+
+- :ref:`file_pcapng_options_section_header.hh`
+
+- :ref:`file_pcapng_options.hh`
+
+- :ref:`file_pcapng.hh`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_libnokogiri__pcapng`
+
+- :ref:`namespace_libnokogiri__pcapng__options`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structlibnokogiri_1_1pcapng_1_1option__t`
+
+- :ref:`exhale_struct_structlibnokogiri_1_1pcapng_1_1options_1_1end__of__options__t`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bd`
+

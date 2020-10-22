@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_4cab430cc10e3c93fde8e9a5e7f4c5b7" kind="dir">
+    <compoundname>pcapng</compoundname>
+    <innerdir refid="dir_b56735cfad0d8174a0fc0dc42e28bac8">pcapng/blocks</innerdir>
+    <innerdir refid="dir_44783a566ae8cb6c3d1129f135b0e9a8">pcapng/options</innerdir>
+    <innerfile refid="block_8hh">block.hh</innerfile>
+    <innerfile refid="blocks_8hh">blocks.hh</innerfile>
+    <innerfile refid="option_8hh">option.hh</innerfile>
+    <innerfile refid="options_8hh">options.hh</innerfile>
+    <innerfile refid="section_8hh">section.hh</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pcapng/"/>
+  </compounddef>
+</doxygen>

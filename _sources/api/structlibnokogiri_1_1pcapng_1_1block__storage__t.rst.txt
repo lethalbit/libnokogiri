@@ -1,0 +1,16 @@
+.. _exhale_struct_structlibnokogiri_1_1pcapng_1_1block__storage__t:
+
+Struct block_storage_t
+======================
+
+- Defined in :ref:`file_pcapng_block.hh`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: libnokogiri::pcapng::block_storage_t
+   :members:
+   :protected-members:
+   :undoc-members:

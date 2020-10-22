@@ -1,0 +1,25 @@
+.. _exhale_struct_structlibnokogiri_1_1pcapng_1_1option__t:
+
+Struct option_t
+===============
+
+- Defined in :ref:`file_pcapng_option.hh`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Type
+************
+
+- ``public libnokogiri::pcapng::options::end_of_options_t`` (:ref:`exhale_struct_structlibnokogiri_1_1pcapng_1_1options_1_1end__of__options__t`)
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: libnokogiri::pcapng::option_t
+   :members:
+   :protected-members:
+   :undoc-members:

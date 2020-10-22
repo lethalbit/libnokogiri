@@ -1,0 +1,34 @@
+
+.. _namespace_libnokogiri__pcapng__blocks:
+
+Namespace libnokogiri::pcapng::blocks
+=====================================
+
+
+pcapng blocks that are defined as per the standard 
+ 
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+Detailed Description
+--------------------
+
+This namespace contains all the pre-specified blocks as defined by the pcapng RFC.
+For documentation on how to add new blocks to libnokogiri see the ``Adding Blocks`` section in ``Extending libnokogiri`` 
+ 
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structlibnokogiri_1_1pcapng_1_1blocks_1_1interface__description__t`
+
+- :ref:`exhale_struct_structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t`

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacelibnokogiri_1_1pcapng_1_1blocks" kind="namespace" language="C++">
+    <compoundname>libnokogiri::pcapng::blocks</compoundname>
+    <innerclass refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1interface__description__t" prot="public">libnokogiri::pcapng::blocks::interface_description_t</innerclass>
+    <innerclass refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t" prot="public">libnokogiri::pcapng::blocks::section_header_t</innerclass>
+    <briefdescription>
+<para>pcapng blocks that are defined as per the standard </para>    </briefdescription>
+    <detaileddescription>
+<para>This namespace contains all the pre-specified blocks as defined by the pcapng RFC.</para><para>For documentation on how to add new blocks to libnokogiri see the <computeroutput>Adding Blocks</computeroutput> section in <computeroutput>Extending libnokogiri</computeroutput> </para>    </detaileddescription>
+    <location file="libnokogiri.hh" line="29" column="1"/>
+  </compounddef>
+</doxygen>

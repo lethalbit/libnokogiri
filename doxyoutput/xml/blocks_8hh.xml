@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="blocks_8hh" kind="file" language="C++">
+    <compoundname>blocks.hh</compoundname>
+    <includes refid="block_8hh" local="no">libnokogiri/pcapng/block.hh</includes>
+    <includes refid="blocks_2section__header_8hh" local="no">libnokogiri/pcapng/blocks/section_header.hh</includes>
+    <includes refid="blocks_2interface__description_8hh" local="no">libnokogiri/pcapng/blocks/interface_description.hh</includes>
+    <includedby refid="pcapng_8hh" local="no">pcapng.hh</includedby>
+    <incdepgraph>
+      <node id="85">
+        <label>cstdint</label>
+      </node>
+      <node id="91">
+        <label>libnokogiri/internal/mmap.hh</label>
+      </node>
+      <node id="84">
+        <label>libnokogiri/pcapng/block.hh</label>
+        <link refid="block_8hh_source"/>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+      </node>
+      <node id="83">
+        <label>pcapng/blocks.hh</label>
+        <link refid="blocks_8hh"/>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+      </node>
+      <node id="88">
+        <label>libnokogiri/pcapng/blocks/section_header.hh</label>
+        <link refid="blocks_2section__header_8hh_source"/>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+      </node>
+      <node id="89">
+        <label>libnokogiri/common.hh</label>
+        <link refid="common_8hh_source"/>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+      </node>
+      <node id="92">
+        <label>libnokogiri/internal/fd.hh</label>
+      </node>
+      <node id="90">
+        <label>libnokogiri/internal/defs.hh</label>
+      </node>
+      <node id="93">
+        <label>libnokogiri/pcapng/blocks/interface_description.hh</label>
+        <link refid="blocks_2interface__description_8hh_source"/>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+      </node>
+      <node id="87">
+        <label>optional</label>
+      </node>
+      <node id="86">
+        <label>utility</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="96">
+        <label>libnokogiri.hh</label>
+        <link refid="libnokogiri_8hh_source"/>
+      </node>
+      <node id="94">
+        <label>pcapng/blocks.hh</label>
+        <link refid="blocks_8hh"/>
+        <childnode refid="95" relation="include">
+        </childnode>
+      </node>
+      <node id="95">
+        <label>pcapng.hh</label>
+        <link refid="pcapng_8hh_source"/>
+        <childnode refid="96" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>LGPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>pcapng/blocks.hh<sp/>-<sp/>batch<sp/>include<sp/>for<sp/>the<sp/>files<sp/>under<sp/>pcapng/block/<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(LIBNOKOGIRI_PCAPNG_BLOCKS_HH)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LIBNOKOGIRI_PCAPNG_BLOCKS_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;libnokogiri/pcapng/block.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;libnokogiri/pcapng/blocks/section_header.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;libnokogiri/pcapng/blocks/interface_description.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>LIBNOKOGIRI_PCAPNG_BLOCKS_HH<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="pcapng/blocks.hh"/>
+  </compounddef>
+</doxygen>

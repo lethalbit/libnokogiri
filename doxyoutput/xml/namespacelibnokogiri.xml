@@ -1,0 +1,1066 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacelibnokogiri" kind="namespace" language="C++">
+    <compoundname>libnokogiri</compoundname>
+    <innerclass refid="structlibnokogiri_1_1version__t" prot="public">libnokogiri::version_t</innerclass>
+    <innernamespace refid="namespacelibnokogiri_1_1compiletime">libnokogiri::compiletime</innernamespace>
+    <innernamespace refid="namespacelibnokogiri_1_1pcap">libnokogiri::pcap</innernamespace>
+    <innernamespace refid="namespacelibnokogiri_1_1pcapng">libnokogiri::pcapng</innernamespace>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c" prot="public" static="no">
+        <name>link_type_t</name>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cae5b6b0a6dbe9bcb19027b161b42521a2" prot="public">
+          <name>BSDLoopback</name>
+          <initializer>= 0x0000U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>BSD loopback encapsulation; the link layer header is a 4-byte field, in host byte order, containing a value of 2 for IPv4 packets, a value of either 24, 28, or 30 for IPv6 packets, a value of 7 for OSI packets, or a value of 23 for IPX packets. All of the IPv6 values correspond to IPv6 packets; code reading files should check for all of them. Note that <computeroutput>host byte order</computeroutput> is the byte order of the machine on which the packets are captured; if a live capture is being done, <computeroutput>host byte order</computeroutput> is the byte order of the machine capturing the packets, but if a <computeroutput>savefile</computeroutput> is being read, the byte order is not necessarily that of the machine reading the capture file. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cabe2ae05fb04ddcf6efa31e63e0f0e111" prot="public">
+          <name>Ethernet</name>
+          <initializer>= 0x0001U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://ieeexplore.ieee.org/document/7428776/">IEEE 802.3</ulink> Ethernet (10Mb, 100Mb, 1000Mb, and up). </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca2dee3025b92d805b29b31502b291c8b5" prot="public">
+          <name>AX25</name>
+          <initializer>= 0x0003U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="http://www.ax25.net/AX25.2.2-Jul%2098-2.pdf">AX.25</ulink> packet, with nothing preceding it. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca336b84f7003c52b860da0a6b227035de" prot="public">
+          <name>IEEE802_5</name>
+          <initializer>= 0x0006U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>IEEE 802.5 Token Ring. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca58fd303e9d811ce808d0f2d75f2c3a4b" prot="public">
+          <name>ARCNET_BSD</name>
+          <initializer>= 0x0007U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>ARCNET Data Packets, as described by the ARCNET Trade Association standard <ulink url="https://web.archive.org/web/20100414154838/http://www.arcnet.com/resources/ata8781.pdf">ATA 878.1-1999</ulink>, but without the Starting Delimiter, Information Length, or Frame Check Sequence fields, and with only the first ISU of the Destination Identifier. For most packet types, ARCNET Trade Association draft standard <ulink url="https://web.archive.org/web/20100414154914/http://www.arcnet.com/resources/ata8782.pdf">ATA 878.2</ulink> is also used. See also <ulink url="https://tools.ietf.org/html/rfc1051">RFC 1051</ulink> and <ulink url="https://tools.ietf.org/html/rfc1201">RFC 1201</ulink>; for RFC 1051 frames, ATA 878.2 is not used. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca967f286a09dc85f538b86aa7138b77f4" prot="public">
+          <name>SLIP</name>
+          <initializer>= 0x0008U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>SLIP, encapsulated with a <ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_SLIP.html">LINKTYPE_SLIP header</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cab55e74d4007b674b329d70f5550028ba" prot="public">
+          <name>PPP</name>
+          <initializer>= 0x0009U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>PPP, as per <ulink url="https://tools.ietf.org/html/rfc1661">RFC 1661</ulink> and <ulink url="https://tools.ietf.org/html/rfc1662">RFC 1662</ulink>; if the first 2 bytes are 0xff and 0x03, it&apos;s PPP in HDLC-like framing, with the PPP header following those two bytes, otherwise it&apos;s PPP without framing, and the packet begins with the PPP header. The data in the frame is not octet-stuffed or bit-stuffed. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caf7c404d255e5da7e6626c691335a5dba" prot="public">
+          <name>FDDI</name>
+          <initializer>= 0x000AU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>FDDI, as specified by ANSI INCITS 239-1994. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caf8c29a969b7b67d8f6d5a86dc75e0b6c" prot="public">
+          <name>PPP_HDLC</name>
+          <initializer>= 0x0032U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>PPP in HDLC-like framing, as per <ulink url="https://tools.ietf.org/html/rfc1662">RFC 1662</ulink>, or Cisco PPP with HDLC framing, as per <ulink url="https://tools.ietf.org/html/rfc1547#section-4.3.1">section 4.3.1 of RFC 1547</ulink>; the first byte will be 0xFF for PPP in HDLC-like framing, and will be 0x0F or 0x8F for Cisco PPP with HDLC framing. The data in the frame is not octet-stuffed or bit-stuffed. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca69c9d8b039f2ad8d2b0472d46964f648" prot="public">
+          <name>PPPoE</name>
+          <initializer>= 0x0033U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>PPPoE; the packet begins with a PPPoE header, as per <ulink url="https://tools.ietf.org/html/rfc2516">RFC 2516</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cab6480060aefcfd68f7990a7541e46e68" prot="public">
+          <name>ATM_RFC1483</name>
+          <initializer>= 0x0064U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://tools.ietf.org/html/rfc1483">RFC 1483</ulink> LLC/SNAP-encapsulated ATM; the packet begins with an <ulink url="https://www.iso.org/standard/30174.html">ISO 8802-2</ulink> (formerly known as IEEE 802.2) LLC header. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca65e65c8ab0d8609ce12fc68a03cb8e00" prot="public">
+          <name>Raw</name>
+          <initializer>= 0x0065U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Raw IP; the packet begins with an IPv4 or IPv6 header, with the <computeroutput>version</computeroutput> field of the header indicating whether it&apos;s an IPv4 or IPv6 header. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cab68995019372b622fc06c29b52ab3815" prot="public">
+          <name>CiscoHDLC</name>
+          <initializer>= 0x0068U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Cisco PPP with HDLC framing, as per <ulink url="https://tools.ietf.org/html/rfc1547#section-4.3.1">section 4.3.1 of RFC 1547</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca49608cbdd79bd9596601f1f68d11ff01" prot="public">
+          <name>IEEE802_11</name>
+          <initializer>= 0x0069U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://ieeexplore.ieee.org/document/7786995/">IEEE 802.11</ulink> wireless LAN. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca1884dca6cdade4d9b9ac6a9bf64e1752" prot="public">
+          <name>LAPFFrameRelay</name>
+          <initializer>= 0x006BU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Frame Relay LAPF frames, beginning with a <ulink url="https://www.itu.int/rec/T-REC-Q.922/en/">ITU-T Recommendation Q.922</ulink> LAPF header starting with the address field, and without an FCS at the end of the frame. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca3bd489e4b80355f319b6ebc2cd236946" prot="public">
+          <name>OpenBSDLoopback</name>
+          <initializer>= 0x006CU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>OpenBSD loopback encapsulation; the link-layer header is a 4-byte field, in network byte order, containing a value of 2 for IPv4 packets, a value of either 24, 28, or 30 for IPv6 packets, a value of 7 for OSI packets, or a value of 23 for IPX packets. All of the IPv6 values correspond to IPv6 packets; code reading files should check for all of them. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cab1b49589cab763561da80acd0f8c82b1" prot="public">
+          <name>LinuxSLL</name>
+          <initializer>= 0x0071U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_LINUX_SLL.html">Linux &quot;cooked&quot; capture encapsulation</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cafa0fe6cb80a0ea9f7434217b151ab4ec" prot="public">
+          <name>AppleLocalTalk</name>
+          <initializer>= 0x0072U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Apple LocalTalk; the packet begins with an AppleTalk LocalTalk Link Access Protocol header, as described in chapter 1 of <ulink url="https://web.archive.org/web/20040719034527/http://developer.apple.com:80/macos/opentransport/docs/dev/Inside_AppleTalk.pdf">Inside AppleTalk, Second Edition</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca35aadc8d64ba1244fe11a5df240c01a5" prot="public">
+          <name>OpenBSDPFLog</name>
+          <initializer>= 0x0075U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>OpenBSD pflog; the link-layer header contains a <computeroutput>struct pfloghdr</computeroutput> structure, as defined by the host on which the file was saved. (This differs from operating system to operating system and release to release; there is nothing in the file to indicate what the layout of that structure is.) </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca9c2efb46a9a189a48ebba61d4e4b0739" prot="public">
+          <name>IEEE802_11_Prism</name>
+          <initializer>= 0x0077U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_IEEE802_11_PRISM.html">Prism monitor mode information</ulink> followed by an 802.11 header. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca79b460bc500316bea2e8e846aa6dca53" prot="public">
+          <name>IPOverFC</name>
+          <initializer>= 0x007AU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://tools.ietf.org/html/rfc2625">RFC 2625</ulink> IP-over-Fibre Channel, with the link-layer header being the Network_Header as described in that RFC. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca4c365a12736ec215a2bd031a67bd9983" prot="public">
+          <name>SunATM</name>
+          <initializer>= 0x007BU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>ATM traffic, encapsulated as per <ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_SUNATM.html">the scheme used by SunATM devices</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca2318341c0031baa0fda4ced1a7ad09f0" prot="public">
+          <name>IEEE802_11_Radiotap</name>
+          <initializer>= 0x007FU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="http://www.radiotap.org/">Radiotap link-layer information</ulink> followed by an 802.11 header. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca4c239252aa0eacae66e442846dd8cafe" prot="public">
+          <name>ARCNETLinux</name>
+          <initializer>= 0x0081U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>ARCNET Data Packets, as described by the ARCNET Trade Association standard <ulink url="https://web.archive.org/web/20100414154838/http://www.arcnet.com/resources/ata8781.pdf">ATA 878.1-1999</ulink>, but without the Starting Delimiter, Information Length, or Frame Check Sequence fields, with only the first ISU of the Destination Identifier, and with an extra two-ISU <computeroutput>offset</computeroutput> field following the Destination Identifier. For most packet types, ARCNET Trade Association draft standard <ulink url="https://web.archive.org/web/20100414154914/http://www.arcnet.com/resources/ata8782.pdf">ATA 878.2</ulink> is also used; however, no exception frames are supplied, and reassembled frames, rather than fragments, are supplied. See also <ulink url="https://tools.ietf.org/html/rfc1051">RFC 1051</ulink> and <ulink url="https://tools.ietf.org/html/rfc1201">RFC 1201</ulink>; for RFC 1051 frames, ATA 878.2 is not used. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caee2416f4569d79383bdbfc5ac664720f" prot="public">
+          <name>AppleIPOverIEEE1394</name>
+          <initializer>= 0x008AU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_APPLE_IP_OVER_IEEE1394.html">Apple IP-over-IEEE 1394 cooked header</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caa1750c99a1c4abbfd5800c5909747b54" prot="public">
+          <name>MTP2WithPHeader</name>
+          <initializer>= 0x008BU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Signaling System 7 Message Transfer Part Level 2, as specified by <ulink url="https://www.itu.int/rec/T-REC-Q.703/en/">ITU-T Recommendation Q.703</ulink>, preceded by a pseudo-header. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca393e2acfec653476370b147f4a3988db" prot="public">
+          <name>MTP2</name>
+          <initializer>= 0x008CU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Signaling System 7 Message Transfer Part Level 2, as specified by <ulink url="https://www.itu.int/rec/T-REC-Q.703/en/">ITU-T Recommendation Q.703</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cac5d77c5f51aa68081a065de0cacff009" prot="public">
+          <name>MTP3</name>
+          <initializer>= 0x008DU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Signaling System 7 Message Transfer Part Level 3, as specified by <ulink url="https://www.itu.int/rec/T-REC-Q.704/en/">ITU-T Recommendation Q.704</ulink>, with no MTP2 header preceding the MTP3 packet. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cad5a4fb9284ab1549fb5086f755357755" prot="public">
+          <name>SCCP</name>
+          <initializer>= 0x008EU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Signaling System 7 Signaling Connection Control Part, as specified by <ulink url="https://www.itu.int/rec/T-REC-Q.711/en/">ITU-T Recommendation Q.711</ulink>, <ulink url="https://www.itu.int/rec/T-REC-Q.712/en/">ITU-T Recommendation Q.712</ulink>, <ulink url="https://www.itu.int/rec/T-REC-Q.713/en/">ITU-T Recommendation Q.713</ulink>, and <ulink url="https://www.itu.int/rec/T-REC-Q.714/en/">ITU-T Recommendation Q.714</ulink>, with no MTP3 or MTP2 headers preceding the SCCP packet. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cad29a162f47a9b43f1d249d373292aed0" prot="public">
+          <name>DOCSIS</name>
+          <initializer>= 0x008FU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>DOCSIS MAC frames, as described by the <ulink url="https://apps.cablelabs.com/specification/CM-SP-MULPIv3.1">DOCSIS 3.1 MAC and Upper Layer Protocols Interface Specification</ulink> or earlier specifications for MAC frames. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caf29599cf9ff0307232d253feb447dd2c" prot="public">
+          <name>LinuxIrDA</name>
+          <initializer>= 0x0090U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Linux-IrDA packets, with a <ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_LINUX_IRDA.html">LINKTYPE_LINUX_IRDA header</ulink>, with the payload for IrDA frames beginning with by the IrLAP header as defined by <ulink url="https://www.irda.org/library-of-specs">IrDA Data Specifications</ulink>, including the IrDA Link Access Protocol specification. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cafc461ac8b6e3f19a9f64800389e202fe" prot="public">
+          <name>User0</name>
+          <initializer>= 0x0093U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Reserved for private use; See note above. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca6b908b785fdba05a6446347dae08d8c5" prot="public">
+          <name>User1</name>
+          <initializer>= 0x0094U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Reserved for private use; See note above. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caa09bccf2b2963982b34dc0e08d8b582a" prot="public">
+          <name>User2</name>
+          <initializer>= 0x0095U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Reserved for private use; See note above. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cae5d2ad241ec44cf155bc78ae8d11f715" prot="public">
+          <name>User3</name>
+          <initializer>= 0x0096U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Reserved for private use; See note above. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca5ad55d96abf0e50647d6de116530d6df" prot="public">
+          <name>User4</name>
+          <initializer>= 0x0097U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Reserved for private use; See note above. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca50c22602b70659dde2893f3a2ba0ab82" prot="public">
+          <name>User5</name>
+          <initializer>= 0x0098U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Reserved for private use; See note above. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca10ddead5bb8bcfaa4d62090acd7cdfb2" prot="public">
+          <name>User6</name>
+          <initializer>= 0x0099U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Reserved for private use; See note above. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca98cd5d17f0660baca7d652995f0d17b6" prot="public">
+          <name>User7</name>
+          <initializer>= 0x009AU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Reserved for private use; See note above. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cad306313ac03787c5f5f41641773bfb9a" prot="public">
+          <name>User8</name>
+          <initializer>= 0x009BU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Reserved for private use; See note above. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca2a19bc085beedfd33873400cb9249e4f" prot="public">
+          <name>User9</name>
+          <initializer>= 0x009CU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Reserved for private use; See note above. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca31b083bc7281321ea98d3c1bc9701627" prot="public">
+          <name>User10</name>
+          <initializer>= 0x009DU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Reserved for private use; See note above. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca8189d5d4551ef7c14034917663cdedf7" prot="public">
+          <name>User11</name>
+          <initializer>= 0x009EU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Reserved for private use; See note above. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca33b564a1370a1c48f07d6f89074bdf1f" prot="public">
+          <name>User12</name>
+          <initializer>= 0x009FU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Reserved for private use; See note above. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca85f10a42777948fc9b135cfb54cfce89" prot="public">
+          <name>User13</name>
+          <initializer>= 0x00A0U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Reserved for private use; See note above. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca92c843669b9da5ac3267d0fe2f927da9" prot="public">
+          <name>User14</name>
+          <initializer>= 0x00A1U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Reserved for private use; See note above. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca3e98cb5941d48a70df0c8cdf76c127b0" prot="public">
+          <name>User15</name>
+          <initializer>= 0x00A2U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Reserved for private use; See note above. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca75c3e36e178a9c5b70c7a95b040c6cbd" prot="public">
+          <name>IEEE802_11_AVS</name>
+          <initializer>= 0x00A3U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="http://web.archive.org/web/20040803232023/http://www.shaftnet.org/~pizza/software/capturefrm.txt">AVS monitor mode information</ulink> followed by an 802.11 header. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cae63fce1dc02f85924a89073b9b2cd434" prot="public">
+          <name>BACNet_MS_TP</name>
+          <initializer>= 0x00A5U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>BACnet MS/TP frames, as specified by section 9.3 MS/TP Frame Format of <ulink url="http://www.ashrae.org/resources--publications/bookstore/standard-135">ANSI/ASHRAE Standard 135, BACnet® - A Data Communication Protocol for Building Automation and Control Networks</ulink>, including the preamble and, if present, the Data CRC. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca01e22ecbfc793a3c281dec4835c41df2" prot="public">
+          <name>PPP_PPPD</name>
+          <initializer>= 0x00A6U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>PPP in HDLC-like encapsulation, like LINKTYPE_PPP_HDLC, but with the 0xff address byte replaced by a direction indication - 0x00 for incoming and 0x01 for outgoing. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca0173e924ec3c8141fc7cc09e64ae641a" prot="public">
+          <name>GPRS_LLC</name>
+          <initializer>= 0x00A9U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>General Packet Radio Service Logical Link Control, as defined by <ulink url="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=224">3GPP TS 04.64</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca18d8291edc211aff4aac938fd44788a8" prot="public">
+          <name>GPF_T</name>
+          <initializer>= 0x00AAU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Transparent-mapped generic framing procedure, as specified by <ulink url="https://www.itu.int/rec/T-REC-G.7041/en">ITU-T Recommendation G.7041/Y.1303</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca208cf8bedf3461b1160d47797e795219" prot="public">
+          <name>GPF_F</name>
+          <initializer>= 0x00ABU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Frame-mapped generic framing procedure, as specified by <ulink url="https://www.itu.int/rec/T-REC-G.7041/en">ITU-T Recommendation G.7041/Y.1303</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca8538eb88694a1b6c0e9f8891344a9f75" prot="public">
+          <name>LinuxLAPD</name>
+          <initializer>= 0x00B1U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Link Access Procedures on the D Channel (LAPD) frames, as specified by <ulink url="https://www.itu.int/rec/T-REC-Q.920/en">ITU-T Recommendation Q.920</ulink> and <ulink url="https://www.itu.int/rec/T-REC-Q.921/en">ITU-T Recommendation Q.921</ulink>, captured via vISDN, with a <ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_LINUX_LAPD.html">LINKTYPE_LINUX_LAPD header</ulink>, followed by the Q.921 frame, starting with the address field. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caffc2af63e0deedb77f8a5b9b310333a4" prot="public">
+          <name>MFR</name>
+          <initializer>= 0x00B6U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://web.archive.org/web/20160427004354/https://www.broadband-forum.org/technical/download/FRF.16/frf16.1.pdf">FRF.16.1</ulink> Multi-Link Frame Relay frames, beginning with an <ulink url="https://web.archive.org/web/20181021041543/https://www.broadband-forum.org/technical/download/FRF.12/frf12.pdf">FRF.12</ulink> Interface fragmentation format fragmentation header. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caff8e6211a66d019eda013ff67ac7c028" prot="public">
+          <name>BluetoothHCI_H4</name>
+          <initializer>= 0x00BBU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Bluetooth HCI UART transport layer; the frame contains an HCI packet indicator byte, as specified by the UART Transport Layer portion of the most recent Bluetooth Core specification, followed by an HCI packet of the specified packet type, as specified by the Host Controller Interface Functional Specification portion of the most recent Bluetooth Core Specification. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca451393c043dff7b4170903607a769506" prot="public">
+          <name>USBLinux</name>
+          <initializer>= 0x00BDU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>USB packets, beginning with a Linux USB header, as specified by the struct usbmon_packet in the Documentation/usb/usbmon.txt file in the Linux source tree. Only the first 48 bytes of that header are present. All fields in the header are in host byte order. When performing a live capture, the host byte order is the byte order of the machine on which the packets are captured. When reading a pcap file, the byte order is the byte order for the file, as specified by the file&apos;s magic number; when reading a pcapng file, the byte order is the byte order for the section of the pcapng file, as specified by the Section Header Block. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cada388f5a4dd69f102143b581d2b1b4d8" prot="public">
+          <name>PPI</name>
+          <initializer>= 0x00C0U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Per-Packet Information information, as specified by the Per-Packet Information Header Specification, followed by a packet with the LINKTYPE_ value specified by the pph_dlt field of that header. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca3d1aab6d9c89e09fda36bd0bc49e05b6" prot="public">
+          <name>IEEE802_15_4_WithFCS</name>
+          <initializer>= 0x00C3U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>IEEE 802.15.4 Low-Rate Wireless Networks, with each packet having the FCS at the end of the frame. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cacb6fe47339d6e36801bc175626c8fc82" prot="public">
+          <name>SITA</name>
+          <initializer>= 0x00C4U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Various link-layer types, with a pseudo-header, for SITA. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca37a5fe612ac8fe5cc64e84d2d10694e6" prot="public">
+          <name>ERF</name>
+          <initializer>= 0x00C5U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Various link-layer types, with a pseudo-header, for Endace DAG cards; encapsulates Endace ERF records. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cae9da339092bda485404e5a0799cf80bb" prot="public">
+          <name>BluetoothHCI_H4WithPhdr</name>
+          <initializer>= 0x00C9U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Bluetooth HCI UART transport layer; the frame contains a 4-byte direction field, in network byte order (big-endian), the low-order bit of which is set if the frame was sent from the host to the controller and clear if the frame was received by the host from the controller, followed by an HCI packet indicator byte, as specified by the UART Transport Layer portion of the most recent <ulink url="https://web.archive.org/web/20130314201541/https://www.bluetooth.org/Technical/Specifications/adopted.htm">Bluetooth Core specification</ulink>, followed by an HCI packet of the specified packet type, as specified by the Host Controller Interface Functional Specification portion of the most recent Bluetooth Core Specification. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca9bdad89049a00d729c7fbf61f4170419" prot="public">
+          <name>AX25_KIDD</name>
+          <initializer>= 0x00CAU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="http://www.ax25.net/AX25.2.2-Jul%2098-2.pdf">AX.25</ulink> packet, with a 1-byte <ulink url="http://www.ax25.net/kiss.aspx">KISS</ulink> header containing a type indicator. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca353b816a8df4221a725eaa648901e170" prot="public">
+          <name>LAPD</name>
+          <initializer>= 0x00CBU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Link Access Procedures on the D Channel (LAPD) frames, as specified by <ulink url="https://www.itu.int/rec/T-REC-Q.920/en">ITU-T Recommendation Q.920</ulink> and <ulink url="https://www.itu.int/rec/T-REC-Q.921/en">ITU-T Recommendation Q.921</ulink>, starting with the address field, with no pseudo-header. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cae44dab6aebca13d4b2ae15a65e031acd" prot="public">
+          <name>PPPWithDir</name>
+          <initializer>= 0x00CCU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>PPP, as per <ulink url="https://tools.ietf.org/html/rfc1661">RFC 1661</ulink> and <ulink url="https://tools.ietf.org/html/rfc1662">RFC 1662</ulink>, preceded with a one-byte pseudo-header with a zero value meaning &quot;received by this host&quot; and a non-zero value meaning &quot;sent by this host&quot;; if the first 2 bytes are 0xff and 0x03, it&apos;s PPP in HDLC-like framing, with the PPP header following those two bytes, otherwise it&apos;s PPP without framing, and the packet begins with the PPP header. The data in the frame is not octet-stuffed or bit-stuffed. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca07a8b867bb8ee7cd6868d4e3e88bfe48" prot="public">
+          <name>CiscoHDLCWithDir</name>
+          <initializer>= 0x00CDU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Cisco PPP with HDLC framing, as per <ulink url="https://tools.ietf.org/html/rfc1547#section-4.3.1">section 4.3.1 of RFC 1547</ulink>, preceded with a one-byte pseudo-header with a zero value meaning &quot;received by this host&quot; and a non-zero value meaning &quot;sent by this host&quot;. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca4f50b894418c8bc927a8124948d4cd18" prot="public">
+          <name>FrameRelayWithDir</name>
+          <initializer>= 0x00CEU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Frame Relay LAPF frames, beginning with a one-byte pseudo-header with a zero value meaning &quot;received by this host&quot; (DCE-&gt;DTE) and a non-zero value meaning &quot;sent by this host&quot; (DTE-&gt;DCE), followed by an <ulink url="https://www.itu.int/rec/T-REC-Q.922/en/">ITU-T Recommendation Q.922</ulink> LAPF header starting with the address field, and without an FCS at the end of the frame. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca400f91751d881fc10f3bf506471d1e44" prot="public">
+          <name>LAPBWithDir</name>
+          <initializer>= 0x00CFU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Link Access Procedure, Balanced (LAPB), as specified by <ulink url="https://www.itu.int/rec/T-REC-X.25/en">ITU-T Recommendation X.25</ulink>, preceded with a one-byte pseudo-header with a zero value meaning &quot;received by this host&quot; (DCE-&gt;DTE) and a non-zero value meaning &quot;sent by this host&quot; (DTE-&gt;DCE). </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caf6cc6409ad34b13b1d909d665f92762e" prot="public">
+          <name>Ipmb_linux</name>
+          <initializer>= 0x00D1U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://www.intel.com/content/www/us/en/products/docs/servers/ipmi/ipmi-second-gen-interface-spec-v2-rev1-1.html">IPMB</ulink> over an <ulink url="https://www.nxp.com/docs/en/user-guide/UM10204.pdf">I2C</ulink> circuit, with a <ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_IPMB_LINUX.html">Linux-specific pseudo-header</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca557f26c82c27b1e69048847d36181ca1" prot="public">
+          <name>IEEE802_15_4_nonask_phy</name>
+          <initializer>= 0x00D7U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://ieeexplore.ieee.org/document/7460875/">IEEE 802.15.4</ulink> Low-Rate Wireless Networks, with each packet having the FCS at the end of the frame, and with the PHY-level data for the O-QPSK, BPSK, GFSK, MSK, and RCC DSS BPSK PHYs (4 octets of 0 as preamble, one octet of SFD, one octet of frame length + reserved bit) preceding the MAC-layer data (starting with the frame control field). </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca144d0cc28a0a76bf85a0a260f1fa628a" prot="public">
+          <name>UUSBLinuxMmapped</name>
+          <initializer>= 0x00DCU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>USB packets, beginning with a Linux USB header, as specified by the struct usbmon_packet in the Documentation/usb/usbmon.txt file in the Linux source tree. All 64 bytes of the header are present. All fields in the header are in host byte order. When performing a live capture, the host byte order is the byte order of the machine on which the packets are captured. When reading a pcap file, the byte order is the byte order for the file, as specified by the file&apos;s magic number; when reading a pcapng file, the byte order is the byte order for the section of the pcapng file, as specified by the Section Header Block. For isochronous transfers, the ndesc field specifies the number of isochronous descriptors that follow. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caff9971710c5b208a0619e9b58d986c82" prot="public">
+          <name>FC2</name>
+          <initializer>= 0x00E0U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Fibre Channel FC-2 frames, beginning with a Frame_Header. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca4d28d7b324e7d7deca269aa6264a1a24" prot="public">
+          <name>FC2WithFrameDelims</name>
+          <initializer>= 0x00E1U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Fibre Channel FC-2 frames, beginning an encoding of the SOF, followed by a Frame_Header, and ending with an encoding of the SOF. The encodings represent the frame delimiters as 4-byte sequences representing the corresponding ordered sets, with K28.5 represented as 0xBC, and the D symbols as the corresponding byte values; for example, SOFi2, which is K28.5 - D21.5 - D1.2 - D21.2, is represented as 0xBC 0xB5 0x55 0x55. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cae3d0f095cad170bbae8544296a54828e" prot="public">
+          <name>IPNET</name>
+          <initializer>= 0x00E2U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_IPNET.html">Solaris ipnet pseudo-header</ulink>, followed by an IPv4 or IPv6 datagram. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cac7d9ff912f35ff0ac494c1dcc16fde90" prot="public">
+          <name>CANSocketCan</name>
+          <initializer>= 0x00E3U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>CAN (Controller Area Network) frames, with <ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_CAN_SOCKETCAN.html">a pseudo-header</ulink> followed by the frame payload. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca47ac86b4ef084e23d564acf75b2f729d" prot="public">
+          <name>IpV4</name>
+          <initializer>= 0x00E4U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Raw IPv4; the packet begins with an IPv4 header. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cac959746aaa3cfb32b00307eb89094227" prot="public">
+          <name>IpV6</name>
+          <initializer>= 0x00E5U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Raw IPv6; the packet begins with an IPv6 header. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca3770e6b0ad13d2a34035a4aa50980f81" prot="public">
+          <name>IEEE802_15_4_nofcs</name>
+          <initializer>= 0x00E6U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://ieeexplore.ieee.org/document/7460875/">IEEE 802.15.4</ulink> Low-Rate Wireless Network, without the FCS at the end of the frame. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cabcc879868ab9d6e92dc80e84a75ddbc2" prot="public">
+          <name>DBus</name>
+          <initializer>= 0x00E7U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Raw <ulink url="http://www.freedesktop.org/wiki/Software/dbus">D-Bus</ulink> <ulink url="https://dbus.freedesktop.org/doc/dbus-specification.html#message-protocol-messages">messages</ulink>, starting with the endianness flag, followed by the message type, etc., but without the <ulink url="https://dbus.freedesktop.org/doc/dbus-specification.html#auth-protocol">authentication handshake</ulink> before the message sequence. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca262f1df53d2cf33abc77db69643db8a9" prot="public">
+          <name>DVB_CI</name>
+          <initializer>= 0x00EBU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>DVB-CI (DVB Common Interface for communication between a PC Card module and a DVB receiver), with the message format specified by the <ulink url="https://www.kaiser.cx/pcap-dvbci.html">PCAP format for DVB-CI specification</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca49afefe8249f659f4dcd173b283331b0" prot="public">
+          <name>Mux27010</name>
+          <initializer>= 0x00ECU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_MUX27010.html">Variant of 3GPP TS 27.010 multiplexing protocol</ulink> (similar to, but not the same as, 27.010). </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca84f2a8382eadb2dd5ba54f2b5116b210" prot="public">
+          <name>Stanag5066DPDU</name>
+          <initializer>= 0x00EDU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>D_PDUs as described by NATO standard STANAG 5066, starting with the synchronization sequence, and including both header and data CRCs. The current version of STANAG 5066 is backwards-compatible with <ulink url="https://web.archive.org/web/20051004082010/http://www.armymars.net/ArmyMARS/HF-Email/resources/stanag5066.pdf">the 1.0.2 version</ulink>, although newer versions are classified. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca1d3f02b06d144a73fa862497b5cb7ff0" prot="public">
+          <name>NFLog</name>
+          <initializer>= 0x00EFU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_NFLOG.html">Linux netlink NETLINK NFLOG socket log messages</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca1d0f230d7cf77f98faec585ad8aa7778" prot="public">
+          <name>NetAnalyzer</name>
+          <initializer>= 0x00F0U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_NETANALYZER.html">Pseudo-header for Hilscher Gesellschaft für Systemautomation mbH netANALYZER devices</ulink>, followed by an Ethernet frame, beginning with the MAC header and ending with the FCS. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca82d60156ffb662adbf086577b554662b" prot="public">
+          <name>NetAnalyzerTransparent</name>
+          <initializer>= 0x00F1U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_NETANALYZER.html">Pseudo-header for Hilscher Gesellschaft für Systemautomation mbH netANALYZER devices</ulink>, followed by an Ethernet frame, beginning with the preamble, SFD, and MAC header, and ending with the FCS. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cafeec5b89d5c456f17c00ab1d3b0e3f39" prot="public">
+          <name>IPoIB</name>
+          <initializer>= 0x00F2U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>IP-over-InfiniBand, as specified by <ulink url="https://tools.ietf.org/html/rfc4391#section-6">RFC 4391 section 6</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cac2e70ecfc34ff0668002bd392084d4bf" prot="public">
+          <name>MPEG2Transport</name>
+          <initializer>= 0x00F3U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>MPEG-2 Transport Stream transport packets, as specified by ISO 13818-1/<ulink url="https://www.itu.int/rec/T-REC-H.222.0">ITU-T Recommendation H.222.0</ulink> (see table 2-2 of section 2.4.3.2 &quot;Transport Stream packet layer&quot;). </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cad90b6a71fd29b43afac07497c4571da2" prot="public">
+          <name>NG40</name>
+          <initializer>= 0x00F4U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_NG40.html">Pseudo-header for ng4T GmbH&apos;s UMTS Iub/Iur-over-ATM and Iub/Iur-over-IP format as used by their ng40 protocol tester</ulink>, followed by frames for the Frame Protocol as specified by <ulink url="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1201">3GPP TS 25.427</ulink> for dedicated channels and <ulink url="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1207">3GPP TS 25.435</ulink> for common/shared channels in the case of ATM AAL2 or UDP traffic, by SSCOP packets as specified by <ulink url="https://www.itu.int/rec/T-REC-Q.2110-199407-I/en">ITU-T Recommendation Q.2110</ulink> for ATM AAL5 traffic, and by NBAP packets for SCTP traffic. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca87862db2e9f1e85b94034318a0671854" prot="public">
+          <name>NFC_LLCP</name>
+          <initializer>= 0x00F5U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_NFC_LLCP.html">Pseudo-header for NFC LLCP packet captures</ulink>, followed by frame data for the LLCP Protocol as specified by <ulink url="http://www.nfc-forum.org/specs/spec_list/">NFCForum-TS-LLCP_1.1</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cae80aa7eb4d97de6f81e145e9aac80506" prot="public">
+          <name>InfiniBand</name>
+          <initializer>= 0x00F7U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Raw InfiniBand frames, starting with the Local Routing Header, as specified in Chapter 5 &quot;Data packet format&quot; of <ulink url="https://www.afs.enea.it/asantoro/V1r1_2_1.Release_12062007.pdf">InfiniBand™ Architectural Specification Release 1.2.1 Volume 1 - General Specifications</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca74096394e1dbe6f5b2ac4d54d4e88c97" prot="public">
+          <name>SCTP</name>
+          <initializer>= 0x00F8U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>SCTP packets, as defined by <ulink url="https://tools.ietf.org/html/rfc4960">RFC 4960</ulink>, with no lower-level protocols such as IPv4 or IPv6. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caf069a8444572295f4e7faeb08ee14ba7" prot="public">
+          <name>USBPcap</name>
+          <initializer>= 0x00F9U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>USB packets, beginning with a <ulink url="https://desowin.org/usbpcap/captureformat.html">USBPcap header</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca46c8e857dfe2b1f053a124a93777ad82" prot="public">
+          <name>RTACSerial</name>
+          <initializer>= 0x00FAU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_RTAC_SERIAL.html">Serial-line packet header for the Schweitzer Engineering Laboratories &quot;RTAC&quot; product</ulink>, followed by a payload for one of a number of industrial control protocols. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca5f1ee75f16c678c9531f5faf137e6078" prot="public">
+          <name>BluetoothLELL</name>
+          <initializer>= 0x00FBU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Bluetooth Low Energy air interface Link Layer packets, in the format described in section 2.1 &quot;PACKET FORMAT&quot; of volume 6 of the <ulink url="https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=229737">Bluetooth Specification Version 4.0</ulink> (see PDF page 2200), but without the Preamble. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca66a4eb423eb37cfabd21e784ac6bb6e6" prot="public">
+          <name>Netlink</name>
+          <initializer>= 0x00FDU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_NETLINK.html">Linux Netlink capture encapsulation</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca3bcd73e42d1bfe8c35b928277644dba0" prot="public">
+          <name>BluetoothLinuxMonitor</name>
+          <initializer>= 0x00FEU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_BLUETOOTH_LINUX_MONITOR.html">Bluetooth Linux Monitor encapsulation of traffic for the BlueZ stack</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca5af1189110bce28a460fc7c8e9ac1bac" prot="public">
+          <name>Bluetooth_bredr_bb</name>
+          <initializer>= 0x00FFU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="http://www.whiterocker.com/bt/LINKTYPE_BLUETOOTH_BREDR_BB.html">Bluetooth Basic Rate and Enhanced Data Rate baseband packets</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca66c59c0d1a154c15e7ac8805dedb21c1" prot="public">
+          <name>BluetoothLELLWithPHDR</name>
+          <initializer>= 0x0100U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_BLUETOOTH_LE_LL_WITH_PHDR.html">Bluetooth Low Energy link-layer packets</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca3ceb4dfb3735204c8af460d6236abba1" prot="public">
+          <name>PROFIBUSDatalink</name>
+          <initializer>= 0x0101U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>PROFIBUS data link layer packets, as specified by IEC standard 61158-4-3, beginning with the start delimiter, ending with the end delimiter, and including all octets between them. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca027ebdaa2b5e95bd0bc7d4b4e10a0227" prot="public">
+          <name>PKTAP</name>
+          <initializer>= 0x0102U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_PKTAP.html">Apple PKTAP capture encapsulation</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca0686a8f152fb3cc97f6603923b151988" prot="public">
+          <name>EoPON</name>
+          <initializer>= 0x0103U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Ethernet-over-passive-optical-network packets, starting with the last 6 octets of the modified preamble as specified by 65.1.3.2 &quot;Transmit&quot; in Clause 65 of Section 5 of <ulink url="https://ieeexplore.ieee.org/document/7428776/">IEEE 802.3</ulink>, followed immediately by an Ethernet frame. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cab8db29f68dfea3eba1d429b7e9016971" prot="public">
+          <name>IPMI_hpm_2</name>
+          <initializer>= 0x0104U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>IPMI trace packets, as specified by Table 3-20 &quot;Trace Data Block Format&quot; in the <ulink url="http://www.picmg.org/v2internal/specifications2.cfm?thetype=One&amp;thebusid=12">PICMG HPM.2 specification</ulink>. The time stamps for packets in this format must match the time stamps in the Trace Data Blocks. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caa85fcec90fbf284ef3595aa9c8f13fa8" prot="public">
+          <name>ZWaveR1R2</name>
+          <initializer>= 0x0105U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_ZWAVE_R1_R2.html">Z-Wave RF profile R1 and R2 packets</ulink>, as specified by <ulink url="https://www.itu.int/rec/T-REC-G.9959/en">ITU-T Recommendation G.9959</ulink>, with some MAC layer fields moved. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca97232cf173883fd05919b9d1c74eed9f" prot="public">
+          <name>ZWaveR3</name>
+          <initializer>= 0x0106U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_ZWAVE_R3.html">Z-Wave RF profile R3 packets</ulink>, as specified by <ulink url="https://www.itu.int/rec/T-REC-G.9959/en">ITU-T Recommendation G.9959</ulink>, with some MAC layer fields moved. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cabc6e33e44118469ddf8eb853ad2121a6" prot="public">
+          <name>WattStopperDLM</name>
+          <initializer>= 0x0107U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Formats for <ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_WATTSTOPPER_DLM.html">WattStopper Digital Lighting Management</ulink> (DLM) and Legrand Nitoo Open protocol common packet structure captures. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cae415f639d7abb45ad4c92391db5b3752" prot="public">
+          <name>ISO14443</name>
+          <initializer>= 0x0108U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Messages between ISO 14443 contactless smartcards (Proximity Integrated Circuit Card, PICC) and card readers (Proximity Coupling Device, PCD), with the message format specified by <ulink url="https://www.kaiser.cx/pcap-iso14443.html">the PCAP format for ISO14443 specification</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca0f41d6f36f8eaee87ea08d9f4b1159e2" prot="public">
+          <name>RDS</name>
+          <initializer>= 0x0109U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Radio data system (RDS) groups, as per IEC 62106, encapsulated in <ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_RDS.html">this form</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca778725d23aceb02e058c9f76a34070d9" prot="public">
+          <name>USBDarwin</name>
+          <initializer>= 0x010AU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>USB packets, beginning with a <ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_USB_DARWIN.html">Darwin (macOS, etc.) USB header</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca6fb20c4016a1efc028fcb5c917a1a9b5" prot="public">
+          <name>SDLC</name>
+          <initializer>= 0x010CU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>SDLC packets, as specified by Chapter 1, &quot;DLC Links&quot;, section &quot;Synchronous Data Link Control (SDLC)&quot; of <ulink url="https://publibfp.dhe.ibm.com/epubs/pdf/d50a5007.pdf">Systems Network Architecture Formats, GA27-3136-20</ulink>, without the flag fields, zero-bit insertion, or Frame Check Sequence field, containing SNA path information units (PIUs) as the payload. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caca3a75251fccad0da31de9231b0bfc15" prot="public">
+          <name>LoRaTap</name>
+          <initializer>= 0x010EU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>https://github.com/eriknl/LoRaTap/blob/master/README.md &quot;LoRaTap pseudo-header&quot;, followed by the payload, which is typically the PHYPayload from the <ulink url="https://lora-alliance.org/lorawan-for-developers">LoRaWan specification</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caf0d4d92c0a65338b9fcf5e44348b1a67" prot="public">
+          <name>VSOCK</name>
+          <initializer>= 0x010FU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_VSOCK.html">Protocol for communication between host and guest machines in VMware and KVM hypervisors</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca840904d082414a0e32ac5ff454ffb5ce" prot="public">
+          <name>NordicBLE</name>
+          <initializer>= 0x0110U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Messages to and from a Nordic Semiconductor nRF Sniffer for Bluetooth LE packets, beginning with a <ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_NORDIC_BLE.html">pseudo-header</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cac4fba23dc603000d41dc81f04d738a0a" prot="public">
+          <name>DOCSIS31_XRA31</name>
+          <initializer>= 0x0111U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>DOCSIS packets and bursts, preceded by a <ulink url="https://support.excentis.com/index.php?/Knowledgebase/Article/View/159">pseudo-header giving metadata about the packet</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca5da683b6c47bb20b622734a94eab9032" prot="public">
+          <name>Ethernet_mpacket</name>
+          <initializer>= 0x0112U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>mPackets, as specified by <ulink url="https://ieeexplore.ieee.org/document/7900321/">IEEE 802.3br</ulink> Figure 99-4, starting with the preamble and always ending with a CRC field. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca2aeecbad74ebbf1d74f6618b7f94b611" prot="public">
+          <name>DisplayportAux</name>
+          <initializer>= 0x0113U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>DisplayPort AUX channel monitoring data as specified by VESA DisplayPort(DP) Standard preceded by a <ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_DISPLAYPORT_AUX.html">pseudo-header</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca26ad1e4ed538d0451c4cd1ef2df59e6c" prot="public">
+          <name>LinuxSLL2</name>
+          <initializer>= 0x0114U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_LINUX_SLL2.html">Linux &quot;cooked&quot; capture encapsulation v2</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caebf42d73579e7077bd638104ca726dca" prot="public">
+          <name>Openvizsla</name>
+          <initializer>= 0x0116U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_OPENVIZSLA.html">Openvizsla FPGA-based USB sniffer</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca6c825b604be0338072e5595ec412a2d2" prot="public">
+          <name>EBHSCR</name>
+          <initializer>= 0x0117U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://web.archive.org/web/20200502132428/https://d23rjziej2pu9i.cloudfront.net/wp-content/uploads/2019/03/04164842/EB_High_Speed_Capture_Replay_protocol.pdf">Elektrobit High Speed Capture and Replay (EBHSCR) format</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caefaa5f651e40b768d18da73ce37f90ca" prot="public">
+          <name>VPPDispatch</name>
+          <initializer>= 0x0118U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Records in traces from the <ulink url="https://fd.io/">http://fd.io</ulink> VPP graph dispatch tracer, in <ulink url="https://fdio-vpp.readthedocs.io/en/latest/gettingstarted/developers/vnet.html#graph-dispatcher-pcap-tracing">the the graph dispatcher trace format</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca7c37a1cd86f64026bf83fc95c53a07e3" prot="public">
+          <name>DSATagBRCM</name>
+          <initializer>= 0x0119U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Ethernet frames, with a <ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_DSA_TAG_BRCM.html">switch tag</ulink> inserted between the source address field and the type/length field in the Ethernet header. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca4f7bda36e1839555261643e540db937f" prot="public">
+          <name>DSATagBRCMPrepend</name>
+          <initializer>= 0x011AU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Ethernet frames, with a <ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_DSA_TAG_BRCM_PREPEND.html">switch tag</ulink> inserted before the destination address in the Ethernet header. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caa3825ed7eddddd1e848f09e4e69e868d" prot="public">
+          <name>IEEE802_15_4_Tap</name>
+          <initializer>= 0x011BU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ulink url="https://ieeexplore.ieee.org/document/7460875/">IEEE 802.15.4</ulink> Low-Rate Wireless Networks, with a <ulink url="https://github.com/jkcko/ieee802.15.4-tap/blob/master/IEEE%20802.15.4%20TAP%20Link%20Type%20Specification.pdf">pseudo-header containing TLVs with metadata</ulink> preceding the 802.15.4 header. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59caa4c54848421e0d4a5045c3363d1a2d39" prot="public">
+          <name>DSATagDSA</name>
+          <initializer>= 0x011CU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Ethernet frames, with a <ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_DSA_TAG_DSA.html">switch tag</ulink> inserted between the source address field and the type/length field in the Ethernet header. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca7b0b6cb77fb43ba458c0536bed892546" prot="public">
+          <name>DSATagEDSA</name>
+          <initializer>= 0x011DU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Ethernet frames, with a programmable Ethernet type <ulink url="https://www.tcpdump.org/linktypes/LINKTYPE_DSA_TAG_EDSA.html">switch tag</ulink> inserted between the source address field and the type/length field in the Ethernet header. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cab94e3ad43c049f248d5ef59491b6769e" prot="public">
+          <name>ELEE</name>
+          <initializer>= 0x011EU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Payload of lawful intercept packets using <ulink url="http://xml2rfc.tools.ietf.org/cgi-bin/xml2rfc.cgi?url=http://socket.hr/draft-dfranusic-opsawg-elee-00.xml&amp;modeAsFormat=html/ascii">the ELEE protocol</ulink>. The packet begins with the ELEE header; it does not include any transport-layer or lower-layer headers for protcols used to transport ELEE packets. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca559ce66771b35bc8991e8f8c23f7b3c9" prot="public">
+          <name>ZWaveSerial</name>
+          <initializer>= 0x011FU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Serial frames transmitted between a host and a Z-Wave chip over an RS-232 or USB serial connection, as described in section 5 of the <ulink url="https://www.silabs.com/documents/login/user-guides/INS12350-Serial-API-Host-Appl.-Prg.-Guide.pdf">Z-Wave Serial API Host Application Programming Guide</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cafd5b050088428465622343639cab1e8f" prot="public">
+          <name>USB2</name>
+          <initializer>= 0x0120U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>USB 2.0, 1.1, or 1.0 packet, beginning with a PID, as described by Chapter 8 &quot;Protocol Layer&quot; of the the <ulink url="https://www.usb.org/document-library/usb-20-specification">Universal Serial Bus Specification Revision 2.0</ulink>. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cad7ebf0a4a7bc1540003250f207386a78" prot="public">
+          <name>ATSC_ALP</name>
+          <initializer>= 0x0121U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>ATSC Link-Layer Protocol frames, as described in section 5 of the A/330 Link-Layer Protocol specification, found at the <ulink url="https://www.atsc.org/atsc-documents/type/3-0-standards/">ATSC 3.0 standards page</ulink>, beginning with a Base Header. </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Defines the link layer of the interface. </para>        </briefdescription>
+        <detaileddescription>
+<para>This table and the descriptions of each link type has been directly lifted from <ulink url="https://www.tcpdump.org/linktypes.html">https://www.tcpdump.org/linktypes.html</ulink>.</para><para>Note: See the site linked above for details on the <computeroutput><ref refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cafc461ac8b6e3f19a9f64800389e202fe" kindref="member">link_type_t::User0</ref></computeroutput> through <computeroutput><ref refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca3e98cb5941d48a70df0c8cdf76c127b0" kindref="member">link_type_t::User15</ref></computeroutput> values and other notes about reserved ranges. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common.hh" line="22" column="1" bodyfile="common.hh" bodystart="22" bodyend="185"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespacelibnokogiri_1a6ae0f93f4f2ab00b34bc908c12b8a072" prot="public" static="no">
+        <type>libnokogiri::internal::optional_pair&lt; libnokogiri::internal::fd_t &amp;, libnokogiri::internal::mmap_t &amp; &gt;</type>
+        <definition>using libnokogiri::file_t = typedef libnokogiri::internal::optional_pair&lt;libnokogiri::internal::fd_t&amp;, libnokogiri::internal::mmap_t&amp;&gt;</definition>
+        <argsstring></argsstring>
+        <name>file_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A type alias to make things easier </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common.hh" line="13" column="1" bodyfile="common.hh" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Overarching libnokogiri namespace. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="common.hh" line="11" column="1"/>
+  </compounddef>
+</doxygen>
