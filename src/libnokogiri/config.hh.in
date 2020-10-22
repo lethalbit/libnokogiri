@@ -1,0 +1,36 @@
+// SPDX-License-Identifier: LGPL-3.0-or-later
+/* config.hh - Build-time configuration and runtime configuration defaults */
+@AUTOGEN_HEADER@
+#if !defined(LIBNOKOGIRI_CONFIG_HH)
+#define LIBNOKOGIRI_CONFIG_HH
+
+#include <string_view>
+
+using namespace std::literals::string_view_literals;
+
+#mesondefine LIBNOKOGIRI_CPPFS_EXPERIMENTAL
+#mesondefine LIBNOKOGIRI_COMPRESSED_PCAP_SUPPORTED
+
+namespace libnokogiri::compiletime {
+	/* Version information */
+	static constexpr std::string_view version{"@VERSION_NUMBER@"sv};
+	static constexpr std::string_view compiler{"@COMPILER@"sv};
+	static constexpr std::string_view compiler_version{"@COMPILER_VERSION@"sv};
+	static constexpr std::string_view git_hash{"@GIT_HASH@"sv};
+
+	/* Platform information */
+	static constexpr std::string_view target_system{"@TARGET_SYS@"sv};
+	static constexpr std::string_view target_arch{"@TARGET_ARCH@"sv};
+
+	static constexpr std::string_view build_system{"@BUILD_SYS@"sv};
+	static constexpr std::string_view build_arch{"@BUILD_ARCH@"sv};
+
+	/* Directories */
+	static constexpr std::string_view prefix_dir{"@PREFIX@"sv};
+
+	/* Misc */
+	static constexpr std::string_view bugreport_url{"@BUGREPORT_URL@"sv};
+	static constexpr bool compressed_pcap_support{@COMPRESSED_PCAP_SUPPORT@};
+}
+
+#endif /* LIBNOKOGIRI_CONFIG_HH */

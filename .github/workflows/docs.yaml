@@ -1,0 +1,51 @@
+name: "libnokogiri documentation generation and publication"
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Initialize Envrionment
+        shell: bash
+        env:
+          WORKSPACE: ${{ github.workspace }}
+        run: |
+          echo ::set-env name=PATH::"$HOME/.local/bin:$PATH"
+          echo ::set-env name=GITHUB_WORKSPACE::"`pwd`"
+      - name: Setup
+        shell: bash
+        run: |
+          sudo apt-add-repository ppa:ubuntu-toolchain-r/test
+          sudo apt-get update
+          sudo apt-get install gcc-10 g++-10 doxygen graphviz
+          echo ::set-env name=CC::$CC
+          echo ::set-env name=CXX::$CXX
+          wget https://github.com/ninja-build/ninja/releases/download/v1.9.0/ninja-linux.zip
+          sudo pip3 install --upgrade pip setuptools wheel
+          pip3 install --user meson Sphinx exhale breathe
+          unzip ninja-linux.zip -d ~/.local/bin
+          rm ninja-linux.zip
+      - name: Checkout libnokogiri
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+          submodules: true
+      - name: Configure
+        shell: bash
+        run: meson build --prefix=$HOME/.local -Dbuild_docs=true
+      - name: Build
+        shell: bash
+        run: ninja -C build
+      - name: Build Docs
+        shell: bash
+        run: ninja -C build build_docs
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: docs
+          FOLDER: build/docs
+          CLEAN: true

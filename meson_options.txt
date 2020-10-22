@@ -1,0 +1,34 @@
+option(
+	'compressed_pcap_support',
+	type: 'boolean',
+	value: true,
+	description: 'Build libnokogiri with support for compressed pcap files'
+)
+
+option(
+	'enable_tests',
+	type: 'boolean',
+	value: true,
+	description: 'Enable and build the libnokogiri test suite'
+)
+
+option(
+	'build_docs',
+	type: 'boolean',
+	value: false,
+	description: 'Build the documentation for libnokogiri'
+)
+
+option(
+	'build_examples',
+	type: 'boolean',
+	value: true,
+	description: 'Builds the example applications'
+)
+
+option(
+	'bugreport_url',
+	type: 'string',
+	value: 'https://github.com/lethalbit/libnokogiri/issues',
+	description: 'URL for bug report submissions'
+)
