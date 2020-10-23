@@ -32,3 +32,10 @@ option(
 	value: 'https://github.com/lethalbit/libnokogiri/issues',
 	description: 'URL for bug report submissions'
 )
+
+option(
+	'enable_fuzzing',
+	type: 'boolean',
+	value: false,
+	description: 'This will assume that CC and CXX are using AFL and will build the fuzzing targets'
+)
