@@ -1,5 +1,4 @@
 
-subdir('libnokogiri')
 
 libnokogiri_inc = [
 	include_directories('.')
@@ -9,6 +8,7 @@ libnokogiri_srcs = [
 	'libnokogiri.cc',
 ]
 
+subdir('libnokogiri')
 
 libnokogiri = library(
 	'nokogiri',

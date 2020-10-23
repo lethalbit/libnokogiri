@@ -61,6 +61,11 @@ configure_file(
 	output: 'config.hh'
 )
 
+libnokogiri_srcs += files([
+	'pcap.cc',
+	'pcapng.cc',
+])
+
 
 if not meson.is_subproject()
 	install_headers(
