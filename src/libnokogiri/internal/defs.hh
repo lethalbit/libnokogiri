@@ -66,6 +66,16 @@
 #	endif
 #endif
 
+#if defined(_WINDOWS)
+#	define LIBNOKOGIRI_SWAP16(x) _byteswap_ushort(x)
+#	define LIBNOKOGIRI_SWAP32(x) _byteswap_ulong(x)
+#	define LIBNOKOGIRI_SWAP64(x) _byteswap_uint64(x)
+#else
+#	define LIBNOKOGIRI_SWAP16(x) __builtin_bswap16(x)
+#	define LIBNOKOGIRI_SWAP32(x) __builtin_bswap32(x)
+#	define LIBNOKOGIRI_SWAP64(x) __builtin_bswap64(x)
+#endif
+
 namespace libnokogiri::internal {
 	template<typename T>
 	struct has_nullable_ctor final {
