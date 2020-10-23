@@ -22,6 +22,8 @@ namespace libnokogiri::pcapng {
 	/*! \struct libnokogiri::pcapng::pcapng_t
 		\brief pcapng file container
 
+		The working draft for the pcapng format is specified in [pcapng/pcapng](https://github.com/pcapng/pcapng) repo.
+
 		This structure contains the machinery to read, write, and edit pcapng files.
 	*/
 	struct pcapng_t final {
