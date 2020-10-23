@@ -9,9 +9,6 @@
 #include <libnokogiri/internal/fd.hh>
 
 namespace libnokogiri {
-	/*! A type alias to make things easier*/
-	using file_t = libnokogiri::internal::optional_pair<libnokogiri::internal::fd_t&, libnokogiri::internal::mmap_t&>;
-
 	/*! \enum libnokogiri::link_type_t
 		\brief Defines the link layer of the interface
 
