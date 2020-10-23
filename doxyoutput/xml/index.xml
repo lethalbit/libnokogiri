@@ -276,7 +276,6 @@
     <member refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca559ce66771b35bc8991e8f8c23f7b3c9" kind="enumvalue"><name>ZWaveSerial</name></member>
     <member refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cafd5b050088428465622343639cab1e8f" kind="enumvalue"><name>USB2</name></member>
     <member refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cad7ebf0a4a7bc1540003250f207386a78" kind="enumvalue"><name>ATSC_ALP</name></member>
-    <member refid="namespacelibnokogiri_1a6ae0f93f4f2ab00b34bc908c12b8a072" kind="typedef"><name>file_t</name></member>
   </compound>
   <compound refid="namespacelibnokogiri_1_1compiletime" kind="namespace"><name>libnokogiri::compiletime</name>
   </compound>
@@ -341,7 +340,11 @@
   </compound>
   <compound refid="libnokogiri_8hh" kind="file"><name>libnokogiri.hh</name>
   </compound>
+  <compound refid="pcap_8cc" kind="file"><name>pcap.cc</name>
+  </compound>
   <compound refid="pcap_8hh" kind="file"><name>pcap.hh</name>
+  </compound>
+  <compound refid="pcapng_8cc" kind="file"><name>pcapng.cc</name>
   </compound>
   <compound refid="pcapng_8hh" kind="file"><name>pcapng.hh</name>
   </compound>

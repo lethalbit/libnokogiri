@@ -21,8 +21,6 @@ Program Listing for File common.hh
    #include <libnokogiri/internal/fd.hh>
    
    namespace libnokogiri {
-       using file_t = libnokogiri::internal::optional_pair<libnokogiri::internal::fd_t&, libnokogiri::internal::mmap_t&>;
-   
        enum class link_type_t : std::uint16_t {
            BSDLoopback                = 0x0000U, 
            Ethernet                   = 0x0001U, 

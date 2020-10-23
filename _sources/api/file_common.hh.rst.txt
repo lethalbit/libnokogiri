@@ -75,10 +75,3 @@ Defines
 
 - :ref:`exhale_define_common_8hh_1a64bed52b3a785c5f321627adaf782835`
 
-
-Typedefs
---------
-
-
-- :ref:`exhale_typedef_namespacelibnokogiri_1a6ae0f93f4f2ab00b34bc908c12b8a072`
-

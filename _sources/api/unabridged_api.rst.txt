@@ -150,11 +150,6 @@ Typedefs
 .. toctree::
    :maxdepth: 5
 
-   typedef_namespacelibnokogiri_1a6ae0f93f4f2ab00b34bc908c12b8a072.rst
-
-.. toctree::
-   :maxdepth: 5
-
    typedef_namespacelibnokogiri_1_1pcap_1a965b52b3bfb8d95a3dbcaadb074c5589.rst
 
 .. toctree::

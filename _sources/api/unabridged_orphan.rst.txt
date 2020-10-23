@@ -70,7 +70,17 @@ Files
 .. toctree::
    :maxdepth: 5
 
+   file_pcap.cc.rst
+
+.. toctree::
+   :maxdepth: 5
+
    file_pcap.hh.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_pcapng.cc.rst
 
 .. toctree::
    :maxdepth: 5
