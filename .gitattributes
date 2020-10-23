@@ -1,0 +1,3 @@
+*.pcap binary
+*.pcapng binary
+*.gz binary
