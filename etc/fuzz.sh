@@ -7,8 +7,10 @@ TEST_DATA_DIR=$MESON_SOURCE_ROOT/tests/test_data
 if [ ! -d $AFL_DIR  ]; then
 		mkdir -p $AFL_DIR $AFL_SYNC_DIR $AFL_TESTCASE_DIR
 fi
-echo "Copying initial test case data for $2"
+echo "Cleaning up last seed test files"
+rm $AFL_TESTCASE_DIR/*
 
+echo "Copying initial test case data for $2"
 case $2 in
 	pcapng)
 		cp $TEST_DATA_DIR/pcapng/*.pcapng $AFL_TESTCASE_DIR/
