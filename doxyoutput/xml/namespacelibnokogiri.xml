@@ -1036,10 +1036,10 @@
         <briefdescription>
 <para>Defines the link layer of the interface. </para>        </briefdescription>
         <detaileddescription>
-<para>This table and the descriptions of each link type has been directly lifted from <ulink url="https://www.tcpdump.org/linktypes.html">https://www.tcpdump.org/linktypes.html</ulink>.</para><para>Note: See the site linked above for details on the <computeroutput><ref refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cafc461ac8b6e3f19a9f64800389e202fe" kindref="member">link_type_t::User0</ref></computeroutput> through <computeroutput><ref refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca3e98cb5941d48a70df0c8cdf76c127b0" kindref="member">link_type_t::User15</ref></computeroutput> values and other notes about reserved ranges. </para>        </detaileddescription>
+<para>This table and the descriptions of each link type has been directly lifted from <ulink url="https://www.tcpdump.org/linktypes.html">https://www.tcpdump.org/linktypes.html</ulink>.</para><para>Note: See the site linked above for details on the <computeroutput><ref refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cafc461ac8b6e3f19a9f64800389e202fe" kindref="member">link_type_t::User0</ref></computeroutput> through <computeroutput><ref refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca3e98cb5941d48a70df0c8cdf76c127b0" kindref="member">link_type_t::User15</ref></computeroutput> values and other notes about reserved ranges.</para><para>TODO: Waiting on the tcpdump mailing list to respond to <ulink url="https://lists.sandelman.ca/pipermail/tcpdump-workers/2020-October/001548.html">https://lists.sandelman.ca/pipermail/tcpdump-workers/2020-October/001548.html</ulink> to see if we can add needed link types. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="22" column="1" bodyfile="common.hh" bodystart="22" bodyend="185"/>
+        <location file="common.hh" line="25" column="1" bodyfile="common.hh" bodystart="25" bodyend="188"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">

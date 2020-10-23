@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Struct packet_header_modified_t &#8212; libnokogiri 0.0.1 e1bf431 documentation</title>
+    <title>Struct packet_header_modified_t &#8212; libnokogiri 0.0.1 225f2b0 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -105,7 +105,14 @@
 <span class="o">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span>
 </pre></div>
 </div>
- </p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Packet</span> <span class="pre">Header</span></code> - The standard pcap packet header represented by the <a class="reference internal" href="structlibnokogiri_1_1pcap_1_1packet__header__t.html#structlibnokogiri_1_1pcap_1_1packet__header__t"><span class="std std-ref">libnokogiri::pcap::packet_header_t</span></a> structure.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Interface</span> <span class="pre">Index</span></code> - An unsigned 32-bit integer representing the index of the interface on which the capturing machine this packet came from.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Protocol</span></code> - An unsigned 16-bit value representing the Ethernet packet type. Not to be confused with <code class="docutils literal notranslate"><span class="pre">Type</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Type</span></code> - An unsigned 8-bit value representing if the packet was broadcast/multicast/etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Padding</span></code> - 8-bits of padding to pad the structure to a 32-bit boundary. </p></li>
+</ul>
+</p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="cpp function">
@@ -126,42 +133,50 @@
 <dl class="cpp function">
 <dt id="_CPPv4NK11libnokogiri4pcap24packet_header_modified_t11base_headerEv">
 <span id="_CPPv3NK11libnokogiri4pcap24packet_header_modified_t11base_headerEv"></span><span id="_CPPv2NK11libnokogiri4pcap24packet_header_modified_t11base_headerEv"></span><span id="libnokogiri::pcap::packet_header_modified_t::base_headerC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1aebaa8e56ba6567bc279fad8204f81e47"></span><a class="reference internal" href="structlibnokogiri_1_1pcap_1_1packet__header__t.html#_CPPv4N11libnokogiri4pcap15packet_header_tE" title="libnokogiri::pcap::packet_header_t">packet_header_t</a> <code class="sig-name descname">base_header</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri4pcap24packet_header_modified_t11base_headerEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Retrieve the base packet header </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N11libnokogiri4pcap24packet_header_modified_t11base_headerE15packet_header_t">
 <span id="_CPPv3N11libnokogiri4pcap24packet_header_modified_t11base_headerE15packet_header_t"></span><span id="_CPPv2N11libnokogiri4pcap24packet_header_modified_t11base_headerE15packet_header_t"></span><span id="libnokogiri::pcap::packet_header_modified_t::base_header__packet_header_t"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1af79884c4df05bcd9fb4302277bccf59e"></span>void <code class="sig-name descname">base_header</code><span class="sig-paren">(</span><a class="reference internal" href="structlibnokogiri_1_1pcap_1_1packet__header__t.html#_CPPv4N11libnokogiri4pcap15packet_header_tE" title="libnokogiri::pcap::packet_header_t">packet_header_t</a> <em>base_header</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap24packet_header_modified_t11base_headerE15packet_header_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Set the base packet header </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK11libnokogiri4pcap24packet_header_modified_t15interface_indexEv">
 <span id="_CPPv3NK11libnokogiri4pcap24packet_header_modified_t15interface_indexEv"></span><span id="_CPPv2NK11libnokogiri4pcap24packet_header_modified_t15interface_indexEv"></span><span id="libnokogiri::pcap::packet_header_modified_t::interface_indexC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1aecefe500478e0b79f1c34331f5362a7f"></span>std::uint32_t <code class="sig-name descname">interface_index</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri4pcap24packet_header_modified_t15interface_indexEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Retrieve the interface index for this packet </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N11libnokogiri4pcap24packet_header_modified_t15interface_indexENSt8uint32_tE">
 <span id="_CPPv3N11libnokogiri4pcap24packet_header_modified_t15interface_indexENSt8uint32_tE"></span><span id="_CPPv2N11libnokogiri4pcap24packet_header_modified_t15interface_indexENSt8uint32_tE"></span><span id="libnokogiri::pcap::packet_header_modified_t::interface_index__std::uint32_t"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a23dbd8346862d11df3b1195ef8d77ccf"></span>void <code class="sig-name descname">interface_index</code><span class="sig-paren">(</span>std::uint32_t <em>interface_index</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap24packet_header_modified_t15interface_indexENSt8uint32_tE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Set the interface index for this packet </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK11libnokogiri4pcap24packet_header_modified_t8protocolEv">
 <span id="_CPPv3NK11libnokogiri4pcap24packet_header_modified_t8protocolEv"></span><span id="_CPPv2NK11libnokogiri4pcap24packet_header_modified_t8protocolEv"></span><span id="libnokogiri::pcap::packet_header_modified_t::protocolC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1afdc05fee90005200b34482b46eccb1f5"></span>std::uint16_t <code class="sig-name descname">protocol</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri4pcap24packet_header_modified_t8protocolEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Retrieve protocol type for this packet </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N11libnokogiri4pcap24packet_header_modified_t8protocolENSt8uint16_tE">
 <span id="_CPPv3N11libnokogiri4pcap24packet_header_modified_t8protocolENSt8uint16_tE"></span><span id="_CPPv2N11libnokogiri4pcap24packet_header_modified_t8protocolENSt8uint16_tE"></span><span id="libnokogiri::pcap::packet_header_modified_t::protocol__std::uint16_t"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a8f52653583d599396e2cd33201184c09"></span>void <code class="sig-name descname">protocol</code><span class="sig-paren">(</span>std::uint16_t <em>protocol</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap24packet_header_modified_t8protocolENSt8uint16_tE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Set protocol type for this packet </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK11libnokogiri4pcap24packet_header_modified_t4typeEv">
 <span id="_CPPv3NK11libnokogiri4pcap24packet_header_modified_t4typeEv"></span><span id="_CPPv2NK11libnokogiri4pcap24packet_header_modified_t4typeEv"></span><span id="libnokogiri::pcap::packet_header_modified_t::typeC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1aaeb34ff208e5b5772e97675002901c31"></span>std::uint8_t <code class="sig-name descname">type</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri4pcap24packet_header_modified_t4typeEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Retrieve the type of this packet </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N11libnokogiri4pcap24packet_header_modified_t4typeENSt7uint8_tE">
 <span id="_CPPv3N11libnokogiri4pcap24packet_header_modified_t4typeENSt7uint8_tE"></span><span id="_CPPv2N11libnokogiri4pcap24packet_header_modified_t4typeENSt7uint8_tE"></span><span id="libnokogiri::pcap::packet_header_modified_t::type__std::uint8_t"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a52b308a8be3358f5c3db81f3b098b29b"></span>void <code class="sig-name descname">type</code><span class="sig-paren">(</span>std::uint8_t <em>type</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap24packet_header_modified_t4typeENSt7uint8_tE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Set the type of this packet </p>
+</dd></dl>
 
 </div>
 </dd></dl>

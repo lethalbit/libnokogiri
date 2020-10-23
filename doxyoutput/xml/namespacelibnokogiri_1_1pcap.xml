@@ -56,13 +56,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="19" column="1" bodyfile="pcap.hh" bodystart="19" bodyend="25"/>
+        <location file="pcap.hh" line="21" column="1" bodyfile="pcap.hh" bodystart="21" bodyend="27"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="namespacelibnokogiri_1_1pcap_1a4ab33a63f40fd16d1dadad8d2c03c4c1" prot="public" static="no">
-        <type><ref refid="structlibnokogiri_1_1pcap_1_1packet__t" kindref="compound">packet_t</ref>&lt; <ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t" kindref="compound">packet_header_t</ref> &gt;</type>
-        <definition>using libnokogiri::pcap::generic_packet_t = typedef packet_t&lt;packet_header_t&gt;</definition>
+      <memberdef kind="typedef" id="namespacelibnokogiri_1_1pcap_1a965b52b3bfb8d95a3dbcaadb074c5589" prot="public" static="no">
+        <type><ref refid="structlibnokogiri_1_1pcap_1_1packet__t" kindref="compound">packet_t</ref>&lt; <ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t" kindref="compound">packet_header_t</ref>, T &gt;</type>
+        <definition>using libnokogiri::pcap::generic_packet_t = typedef packet_t&lt;packet_header_t, T&gt;</definition>
         <argsstring></argsstring>
         <name>generic_packet_t</name>
         <briefdescription>
@@ -71,11 +71,11 @@
 <para>Type alias for generic conforming pcap packets with the standard header </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="256" column="1" bodyfile="pcap.hh" bodystart="256" bodyend="-1"/>
+        <location file="pcap.hh" line="330" column="1" bodyfile="pcap.hh" bodystart="330" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="namespacelibnokogiri_1_1pcap_1a8ee510d6a9b5728597274839cf179381" prot="public" static="no">
-        <type><ref refid="structlibnokogiri_1_1pcap_1_1packet__t" kindref="compound">packet_t</ref>&lt; <ref refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t" kindref="compound">packet_header_modified_t</ref> &gt;</type>
-        <definition>using libnokogiri::pcap::modified_packet_t = typedef packet_t&lt;packet_header_modified_t&gt;</definition>
+      <memberdef kind="typedef" id="namespacelibnokogiri_1_1pcap_1a826df232831a75e6a2d4cf4693dccee1" prot="public" static="no">
+        <type><ref refid="structlibnokogiri_1_1pcap_1_1packet__t" kindref="compound">packet_t</ref>&lt; <ref refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t" kindref="compound">packet_header_modified_t</ref>, T &gt;</type>
+        <definition>using libnokogiri::pcap::modified_packet_t = typedef packet_t&lt;packet_header_modified_t, T&gt;</definition>
         <argsstring></argsstring>
         <name>modified_packet_t</name>
         <briefdescription>
@@ -84,7 +84,7 @@
 <para>Type alias for packets from the modified pcap files </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="258" column="1" bodyfile="pcap.hh" bodystart="258" bodyend="-1"/>
+        <location file="pcap.hh" line="333" column="1" bodyfile="pcap.hh" bodystart="333" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

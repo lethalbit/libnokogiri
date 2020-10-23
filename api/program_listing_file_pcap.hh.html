@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Program Listing for File pcap.hh &#8212; libnokogiri 0.0.1 e1bf431 documentation</title>
+    <title>Program Listing for File pcap.hh &#8212; libnokogiri 0.0.1 225f2b0 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -78,6 +78,8 @@
 <span class="cp">#define LIBNOKOGIRI_PCAP_HH</span>
 
 <span class="cp">#include</span> <span class="cpf">&lt;cstdint&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;optional&gt;</span><span class="cp"></span>
 
 <span class="cp">#include</span> <span class="cpf">&lt;libnokogiri/config.hh&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;libnokogiri/common.hh&gt;</span><span class="cp"></span>
@@ -144,26 +146,26 @@
 
     <span class="k">struct</span> <span class="n">packet_header_t</span> <span class="k">final</span> <span class="p">{</span>
     <span class="k">private</span><span class="o">:</span>
-        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">_secs</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">_timestamp</span><span class="p">;</span>
         <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">_usecs</span><span class="p">;</span>
         <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">_have</span><span class="p">;</span>
         <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">_was</span><span class="p">;</span>
     <span class="k">public</span><span class="o">:</span>
         <span class="k">constexpr</span> <span class="n">packet_header_t</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">:</span>
-            <span class="n">_secs</span><span class="p">{</span><span class="mi">0U</span><span class="p">},</span> <span class="n">_usecs</span><span class="p">{</span><span class="mi">0U</span><span class="p">},</span> <span class="n">_have</span><span class="p">{</span><span class="mi">0U</span><span class="p">},</span> <span class="n">_was</span><span class="p">{</span><span class="mi">0U</span><span class="p">}</span>
+            <span class="n">_timestamp</span><span class="p">{</span><span class="mi">0U</span><span class="p">},</span> <span class="n">_usecs</span><span class="p">{</span><span class="mi">0U</span><span class="p">},</span> <span class="n">_have</span><span class="p">{</span><span class="mi">0U</span><span class="p">},</span> <span class="n">_was</span><span class="p">{</span><span class="mi">0U</span><span class="p">}</span>
             <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
 
-        <span class="k">constexpr</span> <span class="n">packet_header_t</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">seconds</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">useconds</span><span class="p">,</span>
+        <span class="k">constexpr</span> <span class="n">packet_header_t</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">timestamp</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">useconds</span><span class="p">,</span>
                 <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">pkt_len_have</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">pkt_len_actual</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">:</span>
-            <span class="n">_secs</span><span class="p">{</span><span class="n">seconds</span><span class="p">},</span> <span class="n">_usecs</span><span class="p">{</span><span class="n">useconds</span><span class="p">},</span> <span class="n">_have</span><span class="p">{</span><span class="n">pkt_len_have</span><span class="p">},</span> <span class="n">_was</span><span class="p">{</span><span class="n">pkt_len_actual</span><span class="p">}</span>
+            <span class="n">_timestamp</span><span class="p">{</span><span class="n">timestamp</span><span class="p">},</span> <span class="n">_usecs</span><span class="p">{</span><span class="n">useconds</span><span class="p">},</span> <span class="n">_have</span><span class="p">{</span><span class="n">pkt_len_have</span><span class="p">},</span> <span class="n">_was</span><span class="p">{</span><span class="n">pkt_len_actual</span><span class="p">}</span>
             <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
 
         <span class="n">packet_header_t</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">nullptr_t</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
 
 
         <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
-        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">seconds</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_secs</span><span class="p">;</span> <span class="p">}</span>
-        <span class="kt">void</span> <span class="n">seconds</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">seconds</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="n">_secs</span> <span class="o">=</span> <span class="n">seconds</span><span class="p">;</span> <span class="p">}</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">timestamp</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_timestamp</span><span class="p">;</span> <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">timestamp</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">timestamp</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="n">_timestamp</span> <span class="o">=</span> <span class="n">timestamp</span><span class="p">;</span> <span class="p">}</span>
 
         <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
         <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">useconds</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_usecs</span><span class="p">;</span> <span class="p">}</span>
@@ -220,17 +222,40 @@
     <span class="p">};</span>
 
 
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">U</span><span class="o">&gt;</span>
     <span class="k">struct</span> <span class="n">packet_t</span> <span class="k">final</span> <span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="k">using</span> <span class="n">data_t</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">U</span><span class="o">&gt;&gt;</span><span class="p">;</span>
     <span class="k">private</span><span class="o">:</span>
         <span class="n">T</span> <span class="n">_packet_header</span><span class="p">;</span>
-        <span class="n">std</span><span class="o">::</span><span class="kt">uintptr_t</span> <span class="n">offset</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uintptr_t</span> <span class="n">_offset</span><span class="p">;</span>
+        <span class="n">data_t</span> <span class="n">_data</span><span class="p">;</span>
     <span class="k">public</span><span class="o">:</span>
+        <span class="k">constexpr</span> <span class="n">packet_t</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">:</span>
+            <span class="n">_packet_header</span><span class="p">{},</span> <span class="n">_offset</span><span class="p">{</span><span class="mi">0U</span><span class="p">},</span> <span class="n">_data</span><span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">nullopt</span><span class="p">}</span>
+            <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
 
+        <span class="k">constexpr</span> <span class="n">packet_t</span><span class="p">(</span><span class="n">T</span> <span class="n">header</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">uintptr_t</span> <span class="n">offset</span><span class="p">,</span> <span class="n">data_t</span> <span class="n">data</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">:</span>
+            <span class="n">_packet_header</span><span class="p">{</span><span class="n">header</span><span class="p">},</span> <span class="n">_offset</span><span class="p">{</span><span class="n">offset</span><span class="p">},</span> <span class="n">_data</span><span class="p">{</span><span class="n">data</span><span class="p">}</span>
+            <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">T</span> <span class="n">header</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_packet_header</span><span class="p">;</span> <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">header</span><span class="p">(</span><span class="n">T</span> <span class="n">header</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="n">_packet_header</span> <span class="o">=</span> <span class="n">header</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uintptr_t</span> <span class="n">packet_offset</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_offset</span><span class="p">;</span> <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">packet_offset</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">uintptr_t</span> <span class="n">packet_offset</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="n">_offset</span> <span class="o">=</span> <span class="n">packet_offset</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">data_t</span> <span class="n">packet_data</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_data</span><span class="p">;</span> <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">packet_data</span><span class="p">(</span><span class="n">data_t</span> <span class="n">packet_data</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="n">_data</span> <span class="o">=</span> <span class="n">packet_data</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">};</span>
 
-    <span class="k">using</span> <span class="n">generic_packet_t</span> <span class="o">=</span> <span class="n">packet_t</span><span class="o">&lt;</span><span class="n">packet_header_t</span><span class="o">&gt;</span><span class="p">;</span>
-    <span class="k">using</span> <span class="n">modified_packet_t</span> <span class="o">=</span> <span class="n">packet_t</span><span class="o">&lt;</span><span class="n">packet_header_modified_t</span><span class="o">&gt;</span><span class="p">;</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+    <span class="k">using</span> <span class="n">generic_packet_t</span> <span class="o">=</span> <span class="n">packet_t</span><span class="o">&lt;</span><span class="n">packet_header_t</span><span class="p">,</span> <span class="n">T</span><span class="o">&gt;</span><span class="p">;</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+    <span class="k">using</span> <span class="n">modified_packet_t</span> <span class="o">=</span> <span class="n">packet_t</span><span class="o">&lt;</span><span class="n">packet_header_modified_t</span><span class="p">,</span> <span class="n">T</span><span class="o">&gt;</span><span class="p">;</span>
 
     <span class="k">struct</span> <span class="n">pcap_t</span> <span class="k">final</span> <span class="p">{</span>
     <span class="k">public</span><span class="o">:</span>

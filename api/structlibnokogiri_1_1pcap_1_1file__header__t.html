@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Struct file_header_t &#8212; libnokogiri 0.0.1 e1bf431 documentation</title>
+    <title>Struct file_header_t &#8212; libnokogiri 0.0.1 225f2b0 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -86,9 +86,8 @@
 <dt id="_CPPv4N11libnokogiri4pcap13file_header_tE">
 <span id="_CPPv3N11libnokogiri4pcap13file_header_tE"></span><span id="_CPPv2N11libnokogiri4pcap13file_header_tE"></span><span id="libnokogiri::pcap::file_header_t"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1file__header__t"></span><em class="property">struct </em><code class="sig-prename descclassname">libnokogiri::pcap<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">file_header_t</code><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap13file_header_tE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>pcap file header </p>
-<p>This structure represents the header of a pcap file.</p>
-<p>It contains a magic number which helps identify both the type of pcap file as well as which endian it is; The version of the file; The timezone offset relative to GMT used by the timestamps; The accuracy of the timestamps; The maximum length of the captured packets in octets; And the type of Link the capture corresponds to.</p>
-<p>The structure of this block in the file is as follows:</p>
+<p>This is the header that is at the very beginning of a pcap file. It contains the magic numbers as well as various information related to the contents of the capture.</p>
+<p>It’s organized as follows:</p>
 <p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span> <span class="mi">0</span>               <span class="mi">1</span>               <span class="mi">2</span>               <span class="mi">3</span>
  <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span>
 <span class="o">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span>
@@ -100,11 +99,23 @@
 <span class="o">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span>
 <span class="o">|</span>                      <span class="n">Time</span><span class="o">-</span><span class="n">stamp</span> <span class="n">Accuracy</span>                      <span class="o">|</span>
 <span class="o">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span>
+<span class="o">|</span>                       <span class="n">Max</span> <span class="n">Packet</span> <span class="n">Length</span>                       <span class="o">|</span>
+<span class="o">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span>
 <span class="o">|</span>                        <span class="n">Data</span> <span class="n">Link</span> <span class="n">Type</span>                         <span class="o">|</span>
 <span class="o">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span>
 </pre></div>
 </div>
- </p>
+</p>
+<p><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PCAP</span> <span class="pre">Magic</span> <span class="pre">Number</span></code> - The 32-bit unsigned value is used to identify the type of pcap file and its endianness.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Major</span> <span class="pre">Version</span> <span class="pre">Number</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">Minor</span> <span class="pre">Version</span> <span class="pre">Number</span></code> Two unsigned 16-bit values to indicate the version of the pcap</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Timezone</span> <span class="pre">GMT</span> <span class="pre">Offset</span></code> - A signed 32-bit value which describes the timezone offset in seconds from GMT that this capture was taken at. (normally set to <code class="docutils literal notranslate"><span class="pre">0</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Time-stamp</span> <span class="pre">Accuracy</span></code> - An unsigned 32-bit value describing the number of significant figures the timestamps have (normally <code class="docutils literal notranslate"><span class="pre">0</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Max</span> <span class="pre">Packet</span> <span class="pre">Length</span></code> - An unsigned 32-bit value that represents the maximum number of octets saved per packet in this file. Packets larger than this value will be truncated.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Link</span> <span class="pre">Type</span></code> - Am unsigned 32-bit value describing the link layer. See <a class="reference internal" href="enum_namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c.html#namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c"><span class="std std-ref">libnokogiri::link_type_t</span></a> for possible values.</p></li>
+</ul>
+</p>
+<p>The most recent version for pcap is 2.4. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="cpp function">
@@ -125,62 +136,74 @@
 <dl class="cpp function">
 <dt id="_CPPv4NK11libnokogiri4pcap13file_header_t7variantEv">
 <span id="_CPPv3NK11libnokogiri4pcap13file_header_t7variantEv"></span><span id="_CPPv2NK11libnokogiri4pcap13file_header_t7variantEv"></span><span id="libnokogiri::pcap::file_header_t::variantC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a52c221285b6e40d34e785561bbef8f63"></span><a class="reference internal" href="enum_namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656.html#_CPPv4N11libnokogiri4pcap14pcap_variant_tE" title="libnokogiri::pcap::pcap_variant_t">pcap_variant_t</a> <code class="sig-name descname">variant</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri4pcap13file_header_t7variantEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Retrieve the type of pcap file this is. This is also the magic number for the file </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N11libnokogiri4pcap13file_header_t7variantEK14pcap_variant_t">
 <span id="_CPPv3N11libnokogiri4pcap13file_header_t7variantEK14pcap_variant_t"></span><span id="_CPPv2N11libnokogiri4pcap13file_header_t7variantEK14pcap_variant_t"></span><span id="libnokogiri::pcap::file_header_t::variant__pcap_variant_tC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1file__header__t_1ab2b308414f764685b36eccd48545bfff"></span>void <code class="sig-name descname">variant</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="enum_namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656.html#_CPPv4N11libnokogiri4pcap14pcap_variant_tE" title="libnokogiri::pcap::pcap_variant_t">pcap_variant_t</a> <em>variant</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap13file_header_t7variantEK14pcap_variant_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Set the type of pcap file this is. This is also the magic number for the file </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK11libnokogiri4pcap13file_header_t7versionEv">
 <span id="_CPPv3NK11libnokogiri4pcap13file_header_t7versionEv"></span><span id="_CPPv2NK11libnokogiri4pcap13file_header_t7versionEv"></span><span id="libnokogiri::pcap::file_header_t::versionC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a8f5d56e0c357dd9a8d4148c331e5223e"></span><a class="reference internal" href="structlibnokogiri_1_1version__t.html#_CPPv4N11libnokogiri9version_tE" title="libnokogiri::version_t">version_t</a> <code class="sig-name descname">version</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri4pcap13file_header_t7versionEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Retrieve the pcap file version. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N11libnokogiri4pcap13file_header_t7versionEK9version_t">
 <span id="_CPPv3N11libnokogiri4pcap13file_header_t7versionEK9version_t"></span><span id="_CPPv2N11libnokogiri4pcap13file_header_t7versionEK9version_t"></span><span id="libnokogiri::pcap::file_header_t::version__version_tC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a4158712947e8adb2936fa17ea0333187"></span>void <code class="sig-name descname">version</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="structlibnokogiri_1_1version__t.html#_CPPv4N11libnokogiri9version_tE" title="libnokogiri::version_t">version_t</a> <em>version</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap13file_header_t7versionEK9version_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Set the pcap file version. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK11libnokogiri4pcap13file_header_t15timezone_offsetEv">
 <span id="_CPPv3NK11libnokogiri4pcap13file_header_t15timezone_offsetEv"></span><span id="_CPPv2NK11libnokogiri4pcap13file_header_t15timezone_offsetEv"></span><span id="libnokogiri::pcap::file_header_t::timezone_offsetC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a82e65553181db7fbb1d6d38fb7ab91d1"></span>std::int32_t <code class="sig-name descname">timezone_offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri4pcap13file_header_t15timezone_offsetEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Retrieve the offset for the timezone in seconds relative to GMT. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N11libnokogiri4pcap13file_header_t15timezone_offsetEKNSt7int32_tE">
 <span id="_CPPv3N11libnokogiri4pcap13file_header_t15timezone_offsetEKNSt7int32_tE"></span><span id="_CPPv2N11libnokogiri4pcap13file_header_t15timezone_offsetEKNSt7int32_tE"></span><span id="libnokogiri::pcap::file_header_t::timezone_offset__std::int32_tC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a4547526b226ca8a10b1539b59133ce3b"></span>void <code class="sig-name descname">timezone_offset</code><span class="sig-paren">(</span><em class="property">const</em> std::int32_t <em>tz_offset</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap13file_header_t15timezone_offsetEKNSt7int32_tE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Set the offset for the timezone in seconds relative to GMT. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK11libnokogiri4pcap13file_header_t18timestamp_accuracyEv">
 <span id="_CPPv3NK11libnokogiri4pcap13file_header_t18timestamp_accuracyEv"></span><span id="_CPPv2NK11libnokogiri4pcap13file_header_t18timestamp_accuracyEv"></span><span id="libnokogiri::pcap::file_header_t::timestamp_accuracyC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a847b846fa2e02698b81d490378752e4a"></span>std::uint32_t <code class="sig-name descname">timestamp_accuracy</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri4pcap13file_header_t18timestamp_accuracyEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Retrieve the accuracy of the timestamps </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N11libnokogiri4pcap13file_header_t18timestamp_accuracyEKNSt8uint32_tE">
 <span id="_CPPv3N11libnokogiri4pcap13file_header_t18timestamp_accuracyEKNSt8uint32_tE"></span><span id="_CPPv2N11libnokogiri4pcap13file_header_t18timestamp_accuracyEKNSt8uint32_tE"></span><span id="libnokogiri::pcap::file_header_t::timestamp_accuracy__std::uint32_tC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a2286c25c16b34cab79cd6cecf8a22b18"></span>void <code class="sig-name descname">timestamp_accuracy</code><span class="sig-paren">(</span><em class="property">const</em> std::uint32_t <em>ts_accuracy</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap13file_header_t18timestamp_accuracyEKNSt8uint32_tE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Set the accuracy of the timestamps </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK11libnokogiri4pcap13file_header_t17max_packet_lengthEv">
 <span id="_CPPv3NK11libnokogiri4pcap13file_header_t17max_packet_lengthEv"></span><span id="_CPPv2NK11libnokogiri4pcap13file_header_t17max_packet_lengthEv"></span><span id="libnokogiri::pcap::file_header_t::max_packet_lengthC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a0785987b4eacff38c639e2b6b0746dd9"></span>std::uint32_t <code class="sig-name descname">max_packet_length</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri4pcap13file_header_t17max_packet_lengthEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Retrieve the maximum length a packet can be in this pcap file. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N11libnokogiri4pcap13file_header_t17max_packet_lengthEKNSt8uint32_tE">
 <span id="_CPPv3N11libnokogiri4pcap13file_header_t17max_packet_lengthEKNSt8uint32_tE"></span><span id="_CPPv2N11libnokogiri4pcap13file_header_t17max_packet_lengthEKNSt8uint32_tE"></span><span id="libnokogiri::pcap::file_header_t::max_packet_length__std::uint32_tC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a246411e8af5b5bf72db3af082f9843c1"></span>void <code class="sig-name descname">max_packet_length</code><span class="sig-paren">(</span><em class="property">const</em> std::uint32_t <em>length</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap13file_header_t17max_packet_lengthEKNSt8uint32_tE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Set the maximum length a packet can be in this pcap file. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK11libnokogiri4pcap13file_header_t9link_typeEv">
 <span id="_CPPv3NK11libnokogiri4pcap13file_header_t9link_typeEv"></span><span id="_CPPv2NK11libnokogiri4pcap13file_header_t9link_typeEv"></span><span id="libnokogiri::pcap::file_header_t::link_typeC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1file__header__t_1ac96e39eb2628892ad874907b6ba9c85b"></span><a class="reference internal" href="enum_namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c.html#_CPPv4N11libnokogiri11link_type_tE" title="libnokogiri::link_type_t">link_type_t</a> <code class="sig-name descname">link_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri4pcap13file_header_t9link_typeEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Retrieve the link type for the packets that this pcap file contain. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N11libnokogiri4pcap13file_header_t9link_typeEK11link_type_t">
 <span id="_CPPv3N11libnokogiri4pcap13file_header_t9link_typeEK11link_type_t"></span><span id="_CPPv2N11libnokogiri4pcap13file_header_t9link_typeEK11link_type_t"></span><span id="libnokogiri::pcap::file_header_t::link_type__link_type_tC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a3cfc12e8f5c82ca93168acf12925a6e7"></span>void <code class="sig-name descname">link_type</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="enum_namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c.html#_CPPv4N11libnokogiri11link_type_tE" title="libnokogiri::link_type_t">link_type_t</a> <em>type</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap13file_header_t9link_typeEK11link_type_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Set the link type for the packets that this pcap file contain. </p>
+</dd></dl>
 
 </div>
 </dd></dl>

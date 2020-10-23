@@ -50,6 +50,6 @@ Typedefs
 --------
 
 
-- :ref:`exhale_typedef_namespacelibnokogiri_1_1pcap_1a4ab33a63f40fd16d1dadad8d2c03c4c1`
+- :ref:`exhale_typedef_namespacelibnokogiri_1_1pcap_1a965b52b3bfb8d95a3dbcaadb074c5589`
 
-- :ref:`exhale_typedef_namespacelibnokogiri_1_1pcap_1a8ee510d6a9b5728597274839cf179381`
+- :ref:`exhale_typedef_namespacelibnokogiri_1_1pcap_1a826df232831a75e6a2d4cf4693dccee1`

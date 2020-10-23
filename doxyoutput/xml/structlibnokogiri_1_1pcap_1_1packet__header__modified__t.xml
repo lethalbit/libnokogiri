@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="199" column="1" bodyfile="pcap.hh" bodystart="199" bodyend="-1"/>
+        <location file="pcap.hh" line="237" column="1" bodyfile="pcap.hh" bodystart="237" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1ada3918260c161dfe7b19ce926d300f35" prot="private" static="no" mutable="no">
         <type>std::uint32_t</type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="200" column="1" bodyfile="pcap.hh" bodystart="200" bodyend="-1"/>
+        <location file="pcap.hh" line="238" column="1" bodyfile="pcap.hh" bodystart="238" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a912d68bb189f4ff6d274ea52167c8999" prot="private" static="no" mutable="no">
         <type>std::uint16_t</type>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="201" column="1" bodyfile="pcap.hh" bodystart="201" bodyend="-1"/>
+        <location file="pcap.hh" line="239" column="1" bodyfile="pcap.hh" bodystart="239" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1abb5ae280e1c9085f246422481f266dfa" prot="private" static="no" mutable="no">
         <type>std::uint8_t</type>
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="202" column="1" bodyfile="pcap.hh" bodystart="202" bodyend="-1"/>
+        <location file="pcap.hh" line="240" column="1" bodyfile="pcap.hh" bodystart="240" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a8fd4a09d97337f1d1d91fd82b7c04a42" prot="private" static="no" mutable="no">
         <type>std::uint8_t</type>
@@ -67,7 +67,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="203" column="1" bodyfile="pcap.hh" bodystart="203" bodyend="-1"/>
+        <location file="pcap.hh" line="241" column="1" bodyfile="pcap.hh" bodystart="241" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -82,7 +82,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="205" column="1" bodyfile="pcap.hh" bodystart="205" bodyend="207"/>
+        <location file="pcap.hh" line="243" column="1" bodyfile="pcap.hh" bodystart="243" bodyend="245"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a0f6abc81a93ba4737731f2dd783c5e6b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -111,7 +111,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="209" column="1" bodyfile="pcap.hh" bodystart="209" bodyend="212"/>
+        <location file="pcap.hh" line="247" column="1" bodyfile="pcap.hh" bodystart="247" bodyend="250"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a5b4aa06001df4e422366006d32c45dff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -127,7 +127,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="214" column="1" bodyfile="pcap.hh" bodystart="214" bodyend="214"/>
+        <location file="pcap.hh" line="252" column="1" bodyfile="pcap.hh" bodystart="252" bodyend="252"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1aebaa8e56ba6567bc279fad8204f81e47" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t" kindref="compound">packet_header_t</ref></type>
@@ -137,10 +137,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Retrieve the base packet header </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="218" column="1" bodyfile="pcap.hh" bodystart="218" bodyend="218"/>
+        <location file="pcap.hh" line="257" column="1" bodyfile="pcap.hh" bodystart="257" bodyend="257"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1af79884c4df05bcd9fb4302277bccf59e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -154,10 +154,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Set the base packet header </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="219" column="1" bodyfile="pcap.hh" bodystart="219" bodyend="219"/>
+        <location file="pcap.hh" line="259" column="1" bodyfile="pcap.hh" bodystart="259" bodyend="259"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1aecefe500478e0b79f1c34331f5362a7f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::uint32_t</type>
@@ -167,10 +167,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Retrieve the interface index for this packet </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="222" column="1" bodyfile="pcap.hh" bodystart="222" bodyend="222"/>
+        <location file="pcap.hh" line="263" column="1" bodyfile="pcap.hh" bodystart="263" bodyend="263"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a23dbd8346862d11df3b1195ef8d77ccf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -184,10 +184,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Set the interface index for this packet </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="223" column="1" bodyfile="pcap.hh" bodystart="223" bodyend="223"/>
+        <location file="pcap.hh" line="265" column="1" bodyfile="pcap.hh" bodystart="265" bodyend="265"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1afdc05fee90005200b34482b46eccb1f5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::uint16_t</type>
@@ -197,10 +197,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Retrieve protocol type for this packet </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="226" column="1" bodyfile="pcap.hh" bodystart="226" bodyend="226"/>
+        <location file="pcap.hh" line="269" column="1" bodyfile="pcap.hh" bodystart="269" bodyend="269"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a8f52653583d599396e2cd33201184c09" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -214,10 +214,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Set protocol type for this packet </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="227" column="1" bodyfile="pcap.hh" bodystart="227" bodyend="227"/>
+        <location file="pcap.hh" line="271" column="1" bodyfile="pcap.hh" bodystart="271" bodyend="271"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1aaeb34ff208e5b5772e97675002901c31" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::uint8_t</type>
@@ -227,10 +227,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Retrieve the type of this packet </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="230" column="1" bodyfile="pcap.hh" bodystart="230" bodyend="230"/>
+        <location file="pcap.hh" line="275" column="1" bodyfile="pcap.hh" bodystart="275" bodyend="275"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a52b308a8be3358f5c3db81f3b098b29b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -244,10 +244,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Set the type of this packet </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="231" column="1" bodyfile="pcap.hh" bodystart="231" bodyend="231"/>
+        <location file="pcap.hh" line="277" column="1" bodyfile="pcap.hh" bodystart="277" bodyend="277"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -268,8 +268,10 @@
 <codeline><highlight class="normal">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</highlight></codeline>
 <codeline><highlight class="normal">|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Protocol<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>Type<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/>Padding<sp/><sp/><sp/><sp/>|</highlight></codeline>
 <codeline><highlight class="normal">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</highlight></codeline>
-</programlisting> </para>    </detaileddescription>
-    <location file="pcap.hh" line="197" column="1" bodyfile="pcap.hh" bodystart="197" bodyend="233"/>
+</programlisting><itemizedlist>
+<listitem><para><computeroutput>Packet Header</computeroutput> - The standard pcap packet header represented by the <ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t" kindref="compound">libnokogiri::pcap::packet_header_t</ref> structure.</para></listitem><listitem><para><computeroutput>Interface Index</computeroutput> - An unsigned 32-bit integer representing the index of the interface on which the capturing machine this packet came from.</para></listitem><listitem><para><computeroutput>Protocol</computeroutput> - An unsigned 16-bit value representing the Ethernet packet type. Not to be confused with <computeroutput>Type</computeroutput>.</para></listitem><listitem><para><computeroutput>Type</computeroutput> - An unsigned 8-bit value representing if the packet was broadcast/multicast/etc.</para></listitem><listitem><para><computeroutput>Padding</computeroutput> - 8-bits of padding to pad the structure to a 32-bit boundary. </para></listitem></itemizedlist>
+</para>    </detaileddescription>
+    <location file="pcap.hh" line="235" column="1" bodyfile="pcap.hh" bodystart="235" bodyend="279"/>
     <listofallmembers>
       <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a0f1f768038691355390858ed0684886e" prot="private" virt="non-virtual"><scope>libnokogiri::pcap::packet_header_modified_t</scope><name>_base_header</name></member>
       <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1ada3918260c161dfe7b19ce926d300f35" prot="private" virt="non-virtual"><scope>libnokogiri::pcap::packet_header_modified_t</scope><name>_if_index</name></member>

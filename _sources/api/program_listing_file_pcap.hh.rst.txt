@@ -16,6 +16,8 @@ Program Listing for File pcap.hh
    #define LIBNOKOGIRI_PCAP_HH
    
    #include <cstdint>
+   #include <memory>
+   #include <optional>
    
    #include <libnokogiri/config.hh>
    #include <libnokogiri/common.hh>
@@ -82,26 +84,26 @@ Program Listing for File pcap.hh
    
        struct packet_header_t final {
        private:
-           std::uint32_t _secs;
+           std::uint32_t _timestamp;
            std::uint32_t _usecs;
            std::uint32_t _have;
            std::uint32_t _was;
        public:
            constexpr packet_header_t() noexcept :
-               _secs{0U}, _usecs{0U}, _have{0U}, _was{0U}
+               _timestamp{0U}, _usecs{0U}, _have{0U}, _was{0U}
                { /* NOP */ }
    
-           constexpr packet_header_t(std::uint32_t seconds, std::uint32_t useconds,
+           constexpr packet_header_t(std::uint32_t timestamp, std::uint32_t useconds,
                    std::uint32_t pkt_len_have, std::uint32_t pkt_len_actual) noexcept :
-               _secs{seconds}, _usecs{useconds}, _have{pkt_len_have}, _was{pkt_len_actual}
+               _timestamp{timestamp}, _usecs{useconds}, _have{pkt_len_have}, _was{pkt_len_actual}
                { /* NOP */ }
    
            packet_header_t(std::nullptr_t) noexcept { /* NOP */ }
    
    
            [[nodiscard]]
-           std::uint32_t seconds() const noexcept { return _secs; }
-           void seconds(const std::uint32_t seconds) noexcept { _secs = seconds; }
+           std::uint32_t timestamp() const noexcept { return _timestamp; }
+           void timestamp(const std::uint32_t timestamp) noexcept { _timestamp = timestamp; }
    
            [[nodiscard]]
            std::uint32_t useconds() const noexcept { return _usecs; }
@@ -158,17 +160,40 @@ Program Listing for File pcap.hh
        };
    
    
-       template<typename T>
+       template<typename T, typename U>
        struct packet_t final {
+       public:
+           using data_t = std::optional<std::unique_ptr<U>>;
        private:
            T _packet_header;
-           std::uintptr_t offset;
+           std::uintptr_t _offset;
+           data_t _data;
        public:
+           constexpr packet_t() noexcept :
+               _packet_header{}, _offset{0U}, _data{std::nullopt}
+               { /* NOP */ }
    
+           constexpr packet_t(T header, std::uintptr_t offset, data_t data) noexcept :
+               _packet_header{header}, _offset{offset}, _data{data}
+               { /* NOP */ }
+   
+           [[nodiscard]]
+           T header() const noexcept { return _packet_header; }
+           void header(T header) noexcept { _packet_header = header; }
+   
+           [[nodiscard]]
+           std::uintptr_t packet_offset() const noexcept { return _offset; }
+           void packet_offset(std::uintptr_t packet_offset) noexcept { _offset = packet_offset; }
+   
+           [[nodiscard]]
+           data_t packet_data() const noexcept { return _data; }
+           void packet_data(data_t packet_data) noexcept { _data = packet_data; }
        };
    
-       using generic_packet_t = packet_t<packet_header_t>;
-       using modified_packet_t = packet_t<packet_header_modified_t>;
+       template<typename T>
+       using generic_packet_t = packet_t<packet_header_t, T>;
+       template<typename T>
+       using modified_packet_t = packet_t<packet_header_modified_t, T>;
    
        struct pcap_t final {
        public:

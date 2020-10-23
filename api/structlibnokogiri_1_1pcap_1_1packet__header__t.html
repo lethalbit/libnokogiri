@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Struct packet_header_t &#8212; libnokogiri 0.0.1 e1bf431 documentation</title>
+    <title>Struct packet_header_t &#8212; libnokogiri 0.0.1 225f2b0 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -102,6 +102,13 @@
 </pre></div>
 </div>
 </p>
+<p><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Seconds</span></code> - An unsigned 32-bit unix timestamp when the packet was captured. This can be adjusted to GMT with the timezone offset in the file header.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Microseconds</span></code> - An unsigned 32-bit value representing either the microseconds when the packet was captured if standard, or the nanoseconds when captured if using the modified format.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Captured</span> <span class="pre">Length</span></code> - An unsigned 32-bit value representing the number of octets captured that have been saved to the file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Full</span> <span class="pre">Packet</span> <span class="pre">Length</span></code> - An unsigned 32-bit value representing the total number of octets in the packet.</p></li>
+</ul>
+</p>
 <p>Due to resource limitations, it is possible for a packet capture to not have the complete contents of the packet, therefore the packet headers keep track of how big the packet was, as well as how much of that was actually written to the capture. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
@@ -112,7 +119,7 @@
 
 <dl class="cpp function">
 <dt id="_CPPv4N11libnokogiri4pcap15packet_header_t15packet_header_tENSt8uint32_tENSt8uint32_tENSt8uint32_tENSt8uint32_tE">
-<span id="_CPPv3N11libnokogiri4pcap15packet_header_t15packet_header_tENSt8uint32_tENSt8uint32_tENSt8uint32_tENSt8uint32_tE"></span><span id="_CPPv2N11libnokogiri4pcap15packet_header_t15packet_header_tENSt8uint32_tENSt8uint32_tENSt8uint32_tENSt8uint32_tE"></span><span id="libnokogiri::pcap::packet_header_t::packet_header_t__std::uint32_t.std::uint32_t.std::uint32_t.std::uint32_tCE"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__t_1a25e15220cc04d9c81859e2efec29a756"></span><em class="property">constexpr</em> <code class="sig-name descname">packet_header_t</code><span class="sig-paren">(</span>std::uint32_t <em>seconds</em>, std::uint32_t <em>useconds</em>, std::uint32_t <em>pkt_len_have</em>, std::uint32_t <em>pkt_len_actual</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap15packet_header_t15packet_header_tENSt8uint32_tENSt8uint32_tENSt8uint32_tENSt8uint32_tE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N11libnokogiri4pcap15packet_header_t15packet_header_tENSt8uint32_tENSt8uint32_tENSt8uint32_tENSt8uint32_tE"></span><span id="_CPPv2N11libnokogiri4pcap15packet_header_t15packet_header_tENSt8uint32_tENSt8uint32_tENSt8uint32_tENSt8uint32_tE"></span><span id="libnokogiri::pcap::packet_header_t::packet_header_t__std::uint32_t.std::uint32_t.std::uint32_t.std::uint32_tCE"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__t_1a9d349d11b68074cb627431a8d7367e14"></span><em class="property">constexpr</em> <code class="sig-name descname">packet_header_t</code><span class="sig-paren">(</span>std::uint32_t <em>timestamp</em>, std::uint32_t <em>useconds</em>, std::uint32_t <em>pkt_len_have</em>, std::uint32_t <em>pkt_len_actual</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap15packet_header_t15packet_header_tENSt8uint32_tENSt8uint32_tENSt8uint32_tENSt8uint32_tE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -121,44 +128,52 @@
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK11libnokogiri4pcap15packet_header_t7secondsEv">
-<span id="_CPPv3NK11libnokogiri4pcap15packet_header_t7secondsEv"></span><span id="_CPPv2NK11libnokogiri4pcap15packet_header_t7secondsEv"></span><span id="libnokogiri::pcap::packet_header_t::secondsC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__t_1a8490be19b04d71c2b3394cc5969b8287"></span>std::uint32_t <code class="sig-name descname">seconds</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri4pcap15packet_header_t7secondsEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dt id="_CPPv4NK11libnokogiri4pcap15packet_header_t9timestampEv">
+<span id="_CPPv3NK11libnokogiri4pcap15packet_header_t9timestampEv"></span><span id="_CPPv2NK11libnokogiri4pcap15packet_header_t9timestampEv"></span><span id="libnokogiri::pcap::packet_header_t::timestampC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__t_1a9cd419a7db50fb2599573cf9b6c92a76"></span>std::uint32_t <code class="sig-name descname">timestamp</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri4pcap15packet_header_t9timestampEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Retrieve the packets timestamp </p>
+</dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N11libnokogiri4pcap15packet_header_t7secondsEKNSt8uint32_tE">
-<span id="_CPPv3N11libnokogiri4pcap15packet_header_t7secondsEKNSt8uint32_tE"></span><span id="_CPPv2N11libnokogiri4pcap15packet_header_t7secondsEKNSt8uint32_tE"></span><span id="libnokogiri::pcap::packet_header_t::seconds__std::uint32_tC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__t_1a71cf9ad516010b335dd12c9b36de3e53"></span>void <code class="sig-name descname">seconds</code><span class="sig-paren">(</span><em class="property">const</em> std::uint32_t <em>seconds</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap15packet_header_t7secondsEKNSt8uint32_tE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dt id="_CPPv4N11libnokogiri4pcap15packet_header_t9timestampEKNSt8uint32_tE">
+<span id="_CPPv3N11libnokogiri4pcap15packet_header_t9timestampEKNSt8uint32_tE"></span><span id="_CPPv2N11libnokogiri4pcap15packet_header_t9timestampEKNSt8uint32_tE"></span><span id="libnokogiri::pcap::packet_header_t::timestamp__std::uint32_tC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__t_1a3cc64e6e0a591efbacf1a2cc99738fee"></span>void <code class="sig-name descname">timestamp</code><span class="sig-paren">(</span><em class="property">const</em> std::uint32_t <em>timestamp</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap15packet_header_t9timestampEKNSt8uint32_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the packet timestamp </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK11libnokogiri4pcap15packet_header_t8usecondsEv">
 <span id="_CPPv3NK11libnokogiri4pcap15packet_header_t8usecondsEv"></span><span id="_CPPv2NK11libnokogiri4pcap15packet_header_t8usecondsEv"></span><span id="libnokogiri::pcap::packet_header_t::usecondsC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__t_1a4fc89050bbdc58c0bed871de2054df80"></span>std::uint32_t <code class="sig-name descname">useconds</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri4pcap15packet_header_t8usecondsEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Retrieve the micro/nano second value for the packet </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N11libnokogiri4pcap15packet_header_t8usecondsEKNSt8uint32_tE">
 <span id="_CPPv3N11libnokogiri4pcap15packet_header_t8usecondsEKNSt8uint32_tE"></span><span id="_CPPv2N11libnokogiri4pcap15packet_header_t8usecondsEKNSt8uint32_tE"></span><span id="libnokogiri::pcap::packet_header_t::useconds__std::uint32_tC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__t_1aca62c83d1041af332dbeec0a84493255"></span>void <code class="sig-name descname">useconds</code><span class="sig-paren">(</span><em class="property">const</em> std::uint32_t <em>useconds</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap15packet_header_t8usecondsEKNSt8uint32_tE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Set the micro/nano second value for the packet </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK11libnokogiri4pcap15packet_header_t12captured_lenEv">
 <span id="_CPPv3NK11libnokogiri4pcap15packet_header_t12captured_lenEv"></span><span id="_CPPv2NK11libnokogiri4pcap15packet_header_t12captured_lenEv"></span><span id="libnokogiri::pcap::packet_header_t::captured_lenC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__t_1a03cb5d9a6130e49093cfc4cc0d9b8cf3"></span>std::uint32_t <code class="sig-name descname">captured_len</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri4pcap15packet_header_t12captured_lenEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Retrieve the captured length of the packet </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N11libnokogiri4pcap15packet_header_t12captured_lenEKNSt8uint32_tE">
 <span id="_CPPv3N11libnokogiri4pcap15packet_header_t12captured_lenEKNSt8uint32_tE"></span><span id="_CPPv2N11libnokogiri4pcap15packet_header_t12captured_lenEKNSt8uint32_tE"></span><span id="libnokogiri::pcap::packet_header_t::captured_len__std::uint32_tC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__t_1a9b3b72b9c7ffc8020d2c21eb5d97d4e2"></span>void <code class="sig-name descname">captured_len</code><span class="sig-paren">(</span><em class="property">const</em> std::uint32_t <em>captured_len</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap15packet_header_t12captured_lenEKNSt8uint32_tE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Set the captured length of the packet </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK11libnokogiri4pcap15packet_header_t10actual_lenEv">
 <span id="_CPPv3NK11libnokogiri4pcap15packet_header_t10actual_lenEv"></span><span id="_CPPv2NK11libnokogiri4pcap15packet_header_t10actual_lenEv"></span><span id="libnokogiri::pcap::packet_header_t::actual_lenC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__t_1ae0d03678cf71fbfccf6d1fa8b52d4be2"></span>std::uint32_t <code class="sig-name descname">actual_len</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri4pcap15packet_header_t10actual_lenEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Retrieve the actual length of the packet </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N11libnokogiri4pcap15packet_header_t10actual_lenEKNSt8uint32_tE">
 <span id="_CPPv3N11libnokogiri4pcap15packet_header_t10actual_lenEKNSt8uint32_tE"></span><span id="_CPPv2N11libnokogiri4pcap15packet_header_t10actual_lenEKNSt8uint32_tE"></span><span id="libnokogiri::pcap::packet_header_t::actual_len__std::uint32_tC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__header__t_1ab6ff365c35ec8a80e5bc768d2ea5046e"></span>void <code class="sig-name descname">actual_len</code><span class="sig-paren">(</span><em class="property">const</em> std::uint32_t <em>actual_len</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap15packet_header_t10actual_lenEKNSt8uint32_tE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Set the actual length of the packet </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK11libnokogiri4pcap15packet_header_t11full_packetEv">
