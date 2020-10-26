@@ -8,10 +8,7 @@
 
 #include <libnokogiri/internal/defs.hh>
 #include <libnokogiri/internal/fs.hh>
-
-#if defined(LIBNOKOGIRI_COMPRESSED_PCAP_SUPPORTED)
-#	include <libnokogiri/internal/zlib.hh>
-#endif
+#include <libnokogiri/internal/zlib.hh>
 
 #include <libnokogiri/pcapng/block.hh>
 #include <libnokogiri/pcapng/blocks.hh>

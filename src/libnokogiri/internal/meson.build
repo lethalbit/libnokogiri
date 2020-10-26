@@ -3,12 +3,8 @@ libnokogiri_headers_internal = files([
 	'fs.hh',
 	'mmap.hh',
 	'fd.hh',
+	'zlib.hh',
 ])
-
-if get_option('compressed_pcap_support')
-	libnokogiri_headers_internal += files('zlib.hh')
-	libnokogiri_srcs += files('zlib.cc')
-endif
 
 if not meson.is_subproject()
 	install_headers(

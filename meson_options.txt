@@ -1,11 +1,4 @@
 option(
-	'compressed_pcap_support',
-	type: 'boolean',
-	value: true,
-	description: 'Build libnokogiri with support for compressed pcap files'
-)
-
-option(
 	'enable_tests',
 	type: 'boolean',
 	value: true,

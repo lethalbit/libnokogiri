@@ -9,7 +9,6 @@
 using namespace std::literals::string_view_literals;
 
 #mesondefine LIBNOKOGIRI_CPPFS_EXPERIMENTAL
-#mesondefine LIBNOKOGIRI_COMPRESSED_PCAP_SUPPORTED
 
 namespace libnokogiri::compiletime {
 	/* Version information */

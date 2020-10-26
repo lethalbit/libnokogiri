@@ -22,11 +22,9 @@ add_project_arguments(
 	language: 'cpp'
 )
 
-libnokogiri_deps = []
-
-if get_option('compressed_pcap_support')
-	libnokogiri_deps += dependency('zlib', version: '>=1.1.130', required: true)
-endif
+libnokogiri_deps = [
+	dependency('zlib', version: '>=1.1.130', required: true)
+]
 
 subdir('src')
 

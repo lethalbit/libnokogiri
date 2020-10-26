@@ -12,10 +12,8 @@
 
 #include <libnokogiri/internal/defs.hh>
 #include <libnokogiri/internal/fs.hh>
+#include <libnokogiri/internal/zlib.hh>
 
-#if defined(LIBNOKOGIRI_COMPRESSED_PCAP_SUPPORTED)
-#	include <libnokogiri/internal/zlib.hh>
-#endif
 
 namespace libnokogiri::pcap {
 

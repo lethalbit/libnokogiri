@@ -14,7 +14,7 @@ To build libnokogiri, ensure you have the following build time dependencies:
  * git
  * meson
  * ninja
- * zlib >= 1.1.130 (optional if building without compressed pcap support)
+ * zlib >= 1.1.130
  * g++ >= 9 or clang++ >= 9
 
 If you wish to build the documentation, the you will also need the following:
