@@ -213,38 +213,68 @@ namespace libnokogiri {
 		[[nodiscard]]
 		std::uint32_t minor() const noexcept { return _minor; }
 
+		/*! Check if two versions are equal */
 		[[nodiscard]]
 		bool operator==(const version_t& ver) const noexcept {
 			return (_major == ver.major() && _minor == ver.minor());
 		}
+		/*! Check if two versions are not equal */
 		[[nodiscard]]
 		bool operator!=(const version_t& ver)  const noexcept {
 			return !operator==(ver);
 		}
 
+		/*! Check if one version is greater than another */
 		[[nodiscard]]
 		bool operator>(const version_t& ver) const noexcept {
 			return (
 				(_major > ver.major() && _minor >= ver.minor()) ||
 				(_major >= ver.major() && _minor > ver.minor()));
 		}
+		/*! Check if one version is greater than or equal to another */
 		[[nodiscard]]
 		bool operator>=(const version_t& ver) const noexcept {
 			return (operator>(ver) || operator==(ver));
 		}
 
+		/*! Check if one version is less than another */
 		[[nodiscard]]
 		bool operator<(const version_t& ver) const noexcept {
 			return (
 				(_major < ver.major() &&  _minor <= ver.minor()) ||
 				(_minor <= ver.major() && _minor < ver.minor()));
 		}
-
+		/*! Check if one version is less than or equal to another */
 		[[nodiscard]]
 		bool operator<=(const version_t& ver) const noexcept {
 			return (operator<(ver) || operator==(ver));
 		}
 	};
+
+
+	/* IEC Units*/
+	/*! Expand value to Kibibytes (n * 1024) */
+	constexpr uint64_t operator ""_KiB(const unsigned long long value) noexcept { return uint64_t(value) * 1024; }
+	/*! Expand value to Mebibytes (n * 1024^2) */
+	constexpr uint64_t operator ""_MiB(const unsigned long long value) noexcept { return uint64_t(value) * 1048576; }
+	/*! Expand value to Gibibytes (n * 1024^3) */
+	constexpr uint64_t operator ""_GiB(const unsigned long long value) noexcept { return uint64_t(value) * 1073741824; }
+	/*! Expand value to Tebibytes (n * 1024^4) */
+	constexpr uint64_t operator ""_TiB(const unsigned long long value) noexcept { return uint64_t(value) * 1099511627776; }
+	/*! Expand value to Pebibytes (n * 1024^5) */
+	constexpr uint64_t operator ""_PiB(const unsigned long long value) noexcept { return uint64_t(value) * 1125899906842624; }
+
+	/* SI Units */
+	/*! Expand value to Kilobytes (n * 1000) */
+	constexpr uint64_t operator ""_KB(const unsigned long long value) noexcept { return uint64_t(value) * 1000; }
+	/*! Expand value to Megabytes (n * 1000^2) */
+	constexpr uint64_t operator ""_MB(const unsigned long long value) noexcept { return uint64_t(value) * 1000000; }
+	/*! Expand value to Gigabytes (n * 1000^3) */
+	constexpr uint64_t operator ""_GB(const unsigned long long value) noexcept { return uint64_t(value) * 1000000000; }
+	/*! Expand value to Terabytes (n * 1000^4) */
+	constexpr uint64_t operator ""_TB(const unsigned long long value) noexcept { return uint64_t(value) * 1000000000000; }
+	/*! Expand value to Petabytes (n * 1000^5) */
+	constexpr uint64_t operator ""_PB(const unsigned long long value) noexcept { return uint64_t(value) * 1000000000000000; }
 }
 
 #endif /* LIBNOKOGIRI_COMMON_HH */
