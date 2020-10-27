@@ -122,7 +122,6 @@ namespace libnokogiri::internal {
 		[[nodiscard]]
 		bool valid() const noexcept { return _file.valid() && _gz_file != nullptr; }
 
-		/* TODO: Endian-correct R/W rather than host endian R/W only */
 		template<typename T, std::size_t len>
 		[[nodiscard]]
 		bool read(std::array<T, len>& data) noexcept {
