@@ -7,6 +7,7 @@
 #include <cstdint>
 #include <memory>
 #include <optional>
+#include <string>
 
 #include <libnokogiri/config.hh>
 #include <libnokogiri/common.hh>
@@ -103,11 +104,10 @@ namespace libnokogiri::internal {
 	// 	bool eos() const noexcept { return _eos; }
 	// };
 
-
 	struct gzfile_t final {
 		fd_t _file;
 		std::unique_ptr<gzFile_s, decltype(&gzclose)> _gz_file;
-
+		std::int32_t _error{Z_OK};
 	public:
 
 		gzfile_t(fd_t& file) noexcept :
@@ -121,30 +121,31 @@ namespace libnokogiri::internal {
 		[[nodiscard]]
 		bool valid() const noexcept { return _file.valid() && _gz_file != nullptr; }
 
+		/* TODO: Endian-correct R/W rather than host endian R/W only */
 		template<typename T, std::size_t len>
 		[[nodiscard]]
 		bool read(std::array<T, len>& data) noexcept {
-			return gzread(_gz_file.get(), data.data(), len * sizeof(T)) == Z_OK;
+			return (_error = gzread(_gz_file.get(), data.data(), len * sizeof(T))) == Z_OK;
 		}
 
 		template<typename T>
 		[[nodiscard]]
 		std::optional<T> read() noexcept {
 			T tmp{};
-			auto ret = gzread(_gz_file.get(), &tmp, sizeof(T));
-			return (ret == Z_OK) ? std::optional<T>{tmp} : std::nullopt;
+			_error = gzread(_gz_file.get(), &tmp, sizeof(T));
+			return (_error == Z_OK) ? std::optional<T>{tmp} : std::nullopt;
 		}
 
 		template<typename T, std::size_t len>
 		[[nodiscard]]
 		bool write(std::array<T, len>& data) noexcept {
-			return gzwrite(_gz_file.get(), data.data(), len * sizeof(T)) == Z_OK;
+			return (_error = gzwrite(_gz_file.get(), data.data(), len * sizeof(T))) == Z_OK;
 		}
 
 		template<typename T>
 		[[nodiscard]]
 		bool write(T& data) noexcept {
-			return gzwrite(_gz_file.get(), &data, sizeof(T)) == Z_OK;
+			return (_error = gzwrite(_gz_file.get(), &data, sizeof(T))) == Z_OK;
 		}
 
 		[[nodiscard]]
@@ -154,6 +155,23 @@ namespace libnokogiri::internal {
 
 		[[nodiscard]]
 		std::size_t tell() noexcept { return static_cast<std::size_t>(gztell(_gz_file.get())); }
+
+		[[nodiscard]]
+		bool eof() noexcept { return gzeof(_gz_file.get()); }
+
+		[[nodiscard]]
+		bool flush(std::int32_t flush_mode) noexcept { return (_error = gzflush(_gz_file.get(), flush_mode)) == Z_OK; }
+
+		[[nodiscard]]
+		std::size_t length() noexcept { return _file.length(); }
+
+		[[nodiscard]]
+		const std::string last_error_str() noexcept { return std::string(gzerror(_gz_file.get(), &_error)); }
+
+		[[nodiscard]]
+		std::int32_t last_error() noexcept { return _error; }
+
+		void clear_error() noexcept { gzclearerr(_gz_file.get()); _error = 0; }
 	};
 }
 
