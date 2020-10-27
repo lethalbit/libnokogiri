@@ -8,6 +8,7 @@
 #include <memory>
 #include <optional>
 #include <string>
+#include <type_traits>
 
 #include <libnokogiri/config.hh>
 #include <libnokogiri/common.hh>
@@ -131,9 +132,27 @@ namespace libnokogiri::internal {
 		template<typename T>
 		[[nodiscard]]
 		std::optional<T> read() noexcept {
-			T tmp{};
-			_error = gzread(_gz_file.get(), &tmp, sizeof(T));
-			return (_error == Z_OK) ? std::optional<T>{tmp} : std::nullopt;
+			T local_storage{};
+			_error = gzread(_gz_file.get(), &local_storage, sizeof(T));
+			return (_error == Z_OK) ? std::optional<T>{local_storage} : std::nullopt;
+		}
+
+		template<typename T>
+		[[nodiscard]]
+		std::enable_if_t<std::is_integral_v<T>, std::optional<T>>
+		bswap_read() noexcept {
+			T local_storage{};
+			_error = gzread(_gz_file.get(), &local_storage, sizeof(T));
+
+			if constexpr (sizeof(T) == sizeof(std::uint16_t)) {
+				local_storage = LIBNOKOGIRI_SWAP16(local_storage);
+			} else if constexpr (sizeof(T) == sizeof(std::uint32_t)) {
+				local_storage = LIBNOKOGIRI_SWAP32(local_storage);
+			} else if constexpr (sizeof(T) == sizeof(std::uint64_t)) {
+				local_storage = LIBNOKOGIRI_SWAP64(local_storage);
+			}
+
+			return (_error == Z_OK) ? std::optional<T>{local_storage} : std::nullopt;
 		}
 
 		template<typename T, std::size_t len>
@@ -146,6 +165,23 @@ namespace libnokogiri::internal {
 		[[nodiscard]]
 		bool write(T& data) noexcept {
 			return (_error = gzwrite(_gz_file.get(), &data, sizeof(T))) == Z_OK;
+		}
+
+		template<typename T>
+		[[nodiscard]]
+		std::enable_if_t<std::is_integral_v<T>, bool>
+		bswap_write(T& data) noexcept {
+			T local_storage{};
+
+			if constexpr (sizeof(T) == sizeof(std::uint16_t)) {
+				local_storage = LIBNOKOGIRI_SWAP16(data);
+			} else if constexpr (sizeof(T) == sizeof(std::uint32_t)) {
+				local_storage = LIBNOKOGIRI_SWAP32(data);
+			} else if constexpr (sizeof(T) == sizeof(std::uint64_t)) {
+				local_storage = LIBNOKOGIRI_SWAP64(data);
+			}
+
+			return (_error = gzwrite(_gz_file.get(), &local_storage, sizeof(T))) == Z_OK;
 		}
 
 		[[nodiscard]]
