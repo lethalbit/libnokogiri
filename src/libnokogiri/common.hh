@@ -184,6 +184,17 @@ namespace libnokogiri {
 		ATSC_ALP                   = 0x0121U, /*!< ATSC Link-Layer Protocol frames, as described in section 5 of the A/330 Link-Layer Protocol specification, found at the [ATSC 3.0 standards page](https://www.atsc.org/atsc-documents/type/3-0-standards/), beginning with a Base Header. */
 	};
 
+	/*! \enum libnokogiri::capture_compression_t
+		\brief Type of compression the capture file is under
+
+		This dictates how capture files are read and written, with or without compression.
+	*/
+	enum struct captrue_compression_t : std::uint8_t {
+		Uncompressed = 0x00, /*!< Indicates that the capture is uncompressed */
+		Compressed   = 0x01, /*!< Indicates that the capture is compressed */
+		Autodetect   = 0x02, /*!< When opening a file auto detect the file compression, when writing it defaults to Uncompressed */
+	};
+
 	/*! \struct libnokogiri::version_t
 		\brief pcap version information
 
