@@ -64,6 +64,7 @@ configure_file(
 libnokogiri_srcs += files([
 	'pcap.cc',
 	'pcapng.cc',
+	'common.cc',
 ])
 
 

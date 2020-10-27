@@ -190,10 +190,21 @@ namespace libnokogiri {
 		This dictates how capture files are read and written, with or without compression.
 	*/
 	enum struct captrue_compression_t : std::uint8_t {
-		Uncompressed = 0x00, /*!< Indicates that the capture is uncompressed */
-		Compressed   = 0x01, /*!< Indicates that the capture is compressed */
-		Autodetect   = 0x02, /*!< When opening a file auto detect the file compression, when writing it defaults to Uncompressed */
+		Uncompressed = 0x00U, /*!< Indicates that the capture is uncompressed */
+		Compressed   = 0x01U, /*!< Indicates that the capture is compressed */
+		Autodetect   = 0x02U, /*!< When opening a file auto detect the file compression, when writing it defaults to Uncompressed */
+		Unknown      = 0xFFU, /*!< Unknown compression or invalid file */
 	};
+
+	namespace internal {
+		[[nodiscard]]
+		LIBNOKOGIRI_API captrue_compression_t detect_captrue_compression(fd_t& file);
+
+		template<typename... Ts>
+		struct overload_t : Ts... { using Ts::operator()...; };
+		template<typename... Ts>
+		overload_t(Ts...) -> overload_t<Ts...>;
+	}
 
 	/*! \struct libnokogiri::version_t
 		\brief pcap version information
