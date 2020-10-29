@@ -32,7 +32,7 @@ if get_option('build_docs')
 	subdir('docs')
 endif
 
-if get_option('enable_tests')
+if get_option('enable_tests') and not meson.is_subproject()
 	subdir('tests')
 endif
 
