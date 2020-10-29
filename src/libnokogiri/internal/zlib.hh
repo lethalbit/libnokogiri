@@ -17,7 +17,6 @@
 #include <libnokogiri/internal/fs.hh>
 #include <libnokogiri/internal/fd.hh>
 
-
 extern "C" {
 	#include <zlib.h>
 	#include <zconf.h>
@@ -35,11 +34,11 @@ namespace libnokogiri::internal {
 			{ /* NOP */ }
 
 		gzfile_t(fd_t& file) noexcept :
-			_file{std::move(file)}, _gz_file(gzdopen(_file, "r+b"), gzclose)
+			_file{std::move(file)}, _gz_file(gzdopen(_file, "r"), gzclose)
 			{ /* NOP */ }
 
 		gzfile_t(const fs::path& file, std::int32_t flags = O_RDONLY, mode_t mode = S_IWUSR | S_IRUSR | S_IRGRP | S_IROTH) noexcept :
-			_file{file, flags, mode}, _gz_file(gzdopen(_file, "r+b"), gzclose)
+			_file{file, flags, mode}, _gz_file(gzdopen(_file, "r"), gzclose)
 			{ /* NOP */ }
 
 		gzfile_t(gzfile_t&& gz_file) noexcept : _file{}, _gz_file{nullptr, nullptr} { swap(gz_file); }
@@ -54,15 +53,15 @@ namespace libnokogiri::internal {
 		template<typename T, std::size_t len>
 		[[nodiscard]]
 		bool read(std::array<T, len>& data) noexcept {
-			return (_error = gzread(_gz_file.get(), data.data(), len * sizeof(T))) == Z_OK;
+			return gzread(_gz_file.get(), data.data(), len * sizeof(T)) != -1;
 		}
 
 		template<typename T>
 		[[nodiscard]]
 		std::optional<T> read() noexcept {
 			T local_storage{};
-			_error = gzread(_gz_file.get(), &local_storage, sizeof(T));
-			return (_error == Z_OK) ? std::optional<T>{local_storage} : std::nullopt;
+			const auto res = gzread(_gz_file.get(), &local_storage, sizeof(T));
+			return (res != -1) ? std::optional<T>{local_storage} : std::nullopt;
 		}
 
 		template<typename T>
@@ -70,7 +69,7 @@ namespace libnokogiri::internal {
 		std::enable_if_t<std::is_integral_v<T>, std::optional<T>>
 		bswap_read() noexcept {
 			T local_storage{};
-			_error = gzread(_gz_file.get(), &local_storage, sizeof(T));
+			const auto res = gzread(_gz_file.get(), &local_storage, sizeof(T));
 
 			if constexpr (sizeof(T) == sizeof(std::uint16_t)) {
 				local_storage = LIBNOKOGIRI_SWAP16(local_storage);
@@ -80,19 +79,19 @@ namespace libnokogiri::internal {
 				local_storage = LIBNOKOGIRI_SWAP64(local_storage);
 			}
 
-			return (_error == Z_OK) ? std::optional<T>{local_storage} : std::nullopt;
+			return (res != -1) ? std::optional<T>{local_storage} : std::nullopt;
 		}
 
 		template<typename T, std::size_t len>
 		[[nodiscard]]
 		bool write(const std::array<T, len>& data) noexcept {
-			return (_error = gzwrite(_gz_file.get(), data.data(), len * sizeof(T))) == Z_OK;
+			return gzwrite(_gz_file.get(), data.data(), len * sizeof(T)) != 0;
 		}
 
 		template<typename T>
 		[[nodiscard]]
 		bool write(const T& data) noexcept {
-			return (_error = gzwrite(_gz_file.get(), &data, sizeof(T))) == Z_OK;
+			return gzwrite(_gz_file.get(), &data, sizeof(T)) != 0;
 		}
 
 		template<typename T>
@@ -109,7 +108,7 @@ namespace libnokogiri::internal {
 				local_storage = LIBNOKOGIRI_SWAP64(data);
 			}
 
-			return (_error = gzwrite(_gz_file.get(), &local_storage, sizeof(T))) == Z_OK;
+			return write(local_storage);
 		}
 
 		[[nodiscard]]
@@ -130,10 +129,41 @@ namespace libnokogiri::internal {
 		std::size_t length() noexcept { return _file.length(); }
 
 		[[nodiscard]]
-		const std::string last_error_str() noexcept { return std::string(gzerror(_gz_file.get(), &_error)); }
+		const char* last_error_str() noexcept { return gzerror(_gz_file.get(), nullptr); }
 
 		[[nodiscard]]
 		std::int32_t last_error() noexcept { return _error; }
+
+		std::int32_t decompress_to(fs::path& filename) {
+			auto file = libnokogiri::internal::fd_t{filename, O_CREAT | O_RDWR, S_IWUSR | S_IRUSR | S_IRGRP | S_IROTH};
+			std::int32_t decmpressed{};
+			std::int32_t gzread_ret{};
+			std::array<uint8_t, 8_KiB> tmp{};
+
+			while ((gzread_ret = gzread(_gz_file.get(), tmp.data(), 8_KiB)) == 8_KiB) {
+				const auto ret = file.write(tmp);
+				if (!ret) {
+					return -1;
+				}
+				decmpressed += gzread_ret;
+				tmp.fill(0x00U);
+			}
+
+			if (gzread_ret == -1) {
+				return -1;
+			}
+
+			for (std::size_t idx{}; idx < gzread_ret; ++idx) {
+				const auto ret = file.write(tmp[idx]);
+				if (!ret) {
+					return -1;
+				}
+			}
+
+			decmpressed += gzread_ret;
+
+			return decmpressed;
+		}
 
 		void clear_error() noexcept { gzclearerr(_gz_file.get()); _error = 0; }
 
