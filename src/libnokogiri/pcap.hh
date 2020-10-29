@@ -5,7 +5,6 @@
 
 #include <cstdint>
 #include <memory>
-#include <optional>
 
 #include <libnokogiri/config.hh>
 #include <libnokogiri/common.hh>
@@ -13,6 +12,7 @@
 #include <libnokogiri/internal/defs.hh>
 #include <libnokogiri/internal/fs.hh>
 #include <libnokogiri/internal/zlib.hh>
+#include <libnokogiri/internal/file_wrapper.hh>
 
 
 namespace libnokogiri::pcap {

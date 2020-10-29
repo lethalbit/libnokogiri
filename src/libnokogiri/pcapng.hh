@@ -3,12 +3,18 @@
 #if !defined(LIBNOKOGIRI_PCAPNG_HH)
 #define LIBNOKOGIRI_PCAPNG_HH
 
+#include <cstdint>
+#include <memory>
+#include <optional>
+#include <variant>
+
 #include <libnokogiri/config.hh>
 #include <libnokogiri/common.hh>
 
 #include <libnokogiri/internal/defs.hh>
 #include <libnokogiri/internal/fs.hh>
 #include <libnokogiri/internal/zlib.hh>
+#include <libnokogiri/internal/file_wrapper.hh>
 
 #include <libnokogiri/pcapng/block.hh>
 #include <libnokogiri/pcapng/blocks.hh>
