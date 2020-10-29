@@ -110,6 +110,9 @@ namespace libnokogiri::internal {
 		std::unique_ptr<gzFile_s, decltype(&gzclose)> _gz_file;
 		std::int32_t _error{Z_OK};
 	public:
+		gzfile_t() noexcept :
+			_file{-1}, _gz_file{nullptr, nullptr}
+			{ /* NOP */ }
 
 		gzfile_t(fd_t& file) noexcept :
 			_file{std::move(file)}, _gz_file(gzdopen(_file, "r+b"), gzclose)
@@ -118,6 +121,12 @@ namespace libnokogiri::internal {
 		gzfile_t(const fs::path& file, std::int32_t flags = O_RDONLY, mode_t mode = S_IWUSR | S_IRUSR | S_IRGRP | S_IROTH) noexcept :
 			_file{file, flags, mode}, _gz_file(gzdopen(_file, "r+b"), gzclose)
 			{ /* NOP */ }
+
+		gzfile_t(gzfile_t&& gz_file) noexcept : _file{}, _gz_file{nullptr, nullptr} { swap(gz_file); }
+		void operator=(gzfile_t &&gz_file) noexcept { swap(gz_file); }
+
+		gzfile_t(const gzfile_t&) = delete;
+		gzfile_t& operator=(const gzfile_t&) = delete;
 
 		[[nodiscard]]
 		bool valid() const noexcept { return _file.valid() && _gz_file != nullptr; }
@@ -156,20 +165,20 @@ namespace libnokogiri::internal {
 
 		template<typename T, std::size_t len>
 		[[nodiscard]]
-		bool write(std::array<T, len>& data) noexcept {
+		bool write(const std::array<T, len>& data) noexcept {
 			return (_error = gzwrite(_gz_file.get(), data.data(), len * sizeof(T))) == Z_OK;
 		}
 
 		template<typename T>
 		[[nodiscard]]
-		bool write(T& data) noexcept {
+		bool write(const T& data) noexcept {
 			return (_error = gzwrite(_gz_file.get(), &data, sizeof(T))) == Z_OK;
 		}
 
 		template<typename T>
 		[[nodiscard]]
 		std::enable_if_t<std::is_integral_v<T>, bool>
-		bswap_write(T& data) noexcept {
+		bswap_write(const T& data) noexcept {
 			T local_storage{};
 
 			if constexpr (sizeof(T) == sizeof(std::uint16_t)) {
@@ -184,15 +193,15 @@ namespace libnokogiri::internal {
 		}
 
 		[[nodiscard]]
-		std::size_t seek(std::size_t offset, std::int32_t mode = SEEK_SET) noexcept {
+		std::size_t seek(const std::size_t offset, const std::int32_t mode = SEEK_SET) noexcept {
 			return static_cast<std::size_t>(gzseek(_gz_file.get(), offset, mode));
 		}
 
 		[[nodiscard]]
-		std::size_t tell() noexcept { return static_cast<std::size_t>(gztell(_gz_file.get())); }
+		std::size_t tell() const noexcept { return static_cast<std::size_t>(gztell(_gz_file.get())); }
 
 		[[nodiscard]]
-		bool eof() noexcept { return gzeof(_gz_file.get()); }
+		bool eof() const noexcept { return gzeof(_gz_file.get()); }
 
 		[[nodiscard]]
 		bool flush(std::int32_t flush_mode) noexcept { return (_error = gzflush(_gz_file.get(), flush_mode)) == Z_OK; }
@@ -207,7 +216,16 @@ namespace libnokogiri::internal {
 		std::int32_t last_error() noexcept { return _error; }
 
 		void clear_error() noexcept { gzclearerr(_gz_file.get()); _error = 0; }
+
+		void swap(gzfile_t &desc) noexcept {
+			std::swap(_file, desc._file);
+			std::swap(_gz_file, desc._gz_file);
+			std::swap(_error, desc._error);
+		}
+
 	};
+
+	inline void swap(gzfile_t &a, gzfile_t &b) noexcept { a.swap(b); }
 }
 
 #endif /* LIBNOKOGIRI_INTERNAL_ZLIB_HH */
