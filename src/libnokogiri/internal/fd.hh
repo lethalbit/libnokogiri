@@ -6,7 +6,6 @@
 
 #include <libnokogiri/internal/defs.hh>
 #include <libnokogiri/internal/fs.hh>
-#include <libnokogiri/internal/mmap.hh>
 
 #include <cstdint>
 #include <cstddef>
@@ -377,17 +376,6 @@ namespace libnokogiri::internal {
 			if (currentPos == -1 || currentPos + offset < 0)
 				return false;
 			return seek(offset, SEEK_CUR) == currentPos + offset;
-		}
-
-		LIBNOKOGIRI_NO_DISCARD(mmap_t map(const int32_t prot, const int flags = MAP_SHARED) noexcept)
-			{ return map(prot, length(), flags); }
-
-		LIBNOKOGIRI_NO_DISCARD(mmap_t map(const int32_t prot, const off_t len, const int flags, void* map_addr = nullptr) noexcept) {
-			if (!valid())
-				return {};
-			const int32_t file = fd;
-			invalidate();
-			return {file, len, prot, flags, map_addr};
 		}
 
 		fd_t(const fd_t &) = delete;
