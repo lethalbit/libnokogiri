@@ -26,6 +26,13 @@ namespace libnokogiri::pcap {
 		IXIAHW     = 0x1C0001ACU, /*! Magic for IXIA's lcap format */
 		IXIASW     = 0x1C0001ABU, /*! Magic for IXIA's lcap format */
 		Nanosecond = 0x4D3CB2A1U, /*! Magic for the modified pcap format introduced by Ulf Lamping's patches. It's identical to the standard but the timestamps are in nanoseconds. */
+
+		/* Swapped versions of the magic, so it's easy to detect */
+		SwappedStantard   = 0xD4C3B2A1U,
+		SwappedModified   = 0x34CDB2A1U,
+		SwappedIXIAHW     = 0xAC01001CU,
+		SwappedIXIASW     = 0xAB01001CU,
+		SwappedNanosecond = 0x4D3CB2A1U,
 	};
 
 	/*! \struct libnokogiri::pcap::file_header_t
