@@ -14,29 +14,29 @@
 #include <libnokogiri/internal/zlib.hh>
 
 namespace libnokogiri::internal {
+		using capture_file_t = std::variant<libnokogiri::internal::fd_t, libnokogiri::internal::gzfile_t>;
+
 		template<typename... Ts>
 		struct overload_t : Ts... { using Ts::operator()...; };
 		template<typename... Ts>
 		overload_t(Ts...) -> overload_t<Ts...>;
 
-		using capture_file_t = std::variant<libnokogiri::internal::fd_t, libnokogiri::internal::gzfile_t>;
-
 		template<typename T>
 		[[nodiscard]]
-		LIBNOKOGIRI_API bool write(T& data, capture_file_t& file) noexcept;
+		LIBNOKOGIRI_API bool write(const T& data, capture_file_t& file) noexcept;
 		template<typename T>
 		[[nodiscard]]
 		LIBNOKOGIRI_API std::optional<T> read(capture_file_t& file) noexcept;
 
 		template<typename T, std::size_t len>
 		[[nodiscard]]
-		LIBNOKOGIRI_API bool write(std::array<T, len>& data, capture_file_t& file) noexcept;
+		LIBNOKOGIRI_API bool write(const std::array<T, len>& data, capture_file_t& file) noexcept;
 		template<typename T, std::size_t len>
 		[[nodiscard]]
 		LIBNOKOGIRI_API bool read(std::array<T, len>& data, capture_file_t& file) noexcept;
 
 		[[nodiscard]]
-		LIBNOKOGIRI_API std::size_t seek(capture_file_t& file, std::size_t offset, std::int32_t mode) noexcept;
+		LIBNOKOGIRI_API std::size_t seek(const std::size_t offset, const std::int32_t mode, capture_file_t& file) noexcept;
 
 		[[nodiscard]]
 		LIBNOKOGIRI_API bool eof(capture_file_t& file) noexcept;
