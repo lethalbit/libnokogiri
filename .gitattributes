@@ -1,3 +1,5 @@
 *.pcap binary
 *.pcapng binary
 *.gz binary
+
+tests/catch2/* linguist-vendored
