@@ -4,8 +4,10 @@
 #if !defined(LIBNOKOGIRI_COMMON_HH)
 #define LIBNOKOGIRI_COMMON_HH
 
+#include <cstddef>
+#include <cstdint>
+
 #include <libnokogiri/internal/defs.hh>
-#include <libnokogiri/internal/mmap.hh>
 #include <libnokogiri/internal/fd.hh>
 
 namespace libnokogiri {
@@ -199,11 +201,6 @@ namespace libnokogiri {
 	namespace internal {
 		[[nodiscard]]
 		LIBNOKOGIRI_API captrue_compression_t detect_captrue_compression(fd_t& file);
-
-		template<typename... Ts>
-		struct overload_t : Ts... { using Ts::operator()...; };
-		template<typename... Ts>
-		overload_t(Ts...) -> overload_t<Ts...>;
 	}
 
 	/*! \struct libnokogiri::version_t

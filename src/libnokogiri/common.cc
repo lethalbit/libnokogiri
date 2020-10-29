@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 /* common.cc - Common templates and type definitions */
 
+#include <cstddef>
 #include <cstdint>
 #include <algorithm>
 
 #include <libnokogiri/common.hh>
-
 
 namespace libnokogiri::internal {
 	[[nodiscard]]
