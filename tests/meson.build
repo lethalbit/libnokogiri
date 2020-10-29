@@ -127,3 +127,18 @@ foreach f : pcap_test_files
 		]
 	)
 endforeach
+
+libnokogiri_unit_srcs = files([
+	# Catch test runner
+	'catch2/catch_amalgamated.cpp'
+])
+
+libnokogiri_unit_test = executable(
+	'libnokogiri-unit-tests',
+	libnokogiri_unit_srcs,
+	include_directories: [ libnokogiri_inc, include_directories('catch2') ],
+	dependencies: [ libnokogiri_deps ],
+	link_with: libnokogiri,
+)
+
+test('libnokogiri catch tests', libnokogiri_unit_test)
