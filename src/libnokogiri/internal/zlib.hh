@@ -134,8 +134,7 @@ namespace libnokogiri::internal {
 		[[nodiscard]]
 		std::int32_t last_error() noexcept { return _error; }
 
-		std::int32_t decompress_to(fs::path& filename) {
-			auto file = libnokogiri::internal::fd_t{filename, O_CREAT | O_RDWR, S_IWUSR | S_IRUSR | S_IRGRP | S_IROTH};
+		std::int32_t decompress_to(fd_t& file) {
 			std::int32_t decmpressed{};
 			std::int32_t gzread_ret{};
 			std::array<uint8_t, 8_KiB> tmp{};

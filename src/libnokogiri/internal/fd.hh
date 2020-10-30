@@ -24,10 +24,14 @@
 #include <array>
 #include <string>
 #include <string_view>
+#include <random>
+#include <algorithm>
 
 #if defined(_MSC_VER) && !defined(_WINDOWS)
 #define _WINDOWS 1
 #endif
+
+using namespace std::literals::string_view_literals;
 
 namespace libnokogiri::internal {
 #ifndef _WINDOWS
@@ -72,32 +76,73 @@ namespace libnokogiri::internal {
 
 	struct fd_t final {
 	private:
+		constexpr static std::array<std::int8_t, 62> alphanum{
+			/* Lowercase ASCII */
+			'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+			'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+			/* Capital ASCII */
+			'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+			'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+			/* Decimal Digits */
+			'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
+		};
+
+		[[nodiscard]]
+		static std::string random_string(std::size_t len) noexcept {
+			static std::mt19937 rand{std::random_device{}()};
+			static std::uniform_int_distribution<std::size_t> rndchar(0, alphanum.size() - 1);
+
+			std::string str(len, 0);
+			std::generate_n(str.begin(), len, []() { return alphanum[rndchar(rand)]; });
+			return str;
+		}
+
 		int32_t fd{-1};
 		mutable bool eof{false};
 		mutable off_t _length{-1};
-
+		bool _temp{false};
+		fs::path _filename{""sv};
 	public:
 		constexpr fd_t() noexcept = default;
-		constexpr fd_t(const int32_t fd_) noexcept : fd{fd_} { }
-		fd_t(const char *const file, const int flags, const mode_t mode = 0) noexcept :
-			fd{::open(file, flags, mode)} { }
-		fd_t(const std::string& file, const int flags, const mode_t mode = 0) noexcept :
-			fd{::open(file.c_str(), flags, mode)} { }
-		fd_t(const fs::path& file, const int flags, const mode_t mode = 0) noexcept :
-			fd{::open(file.c_str(), flags, mode)} { }
+		fd_t(const int32_t fd_) noexcept : fd{fd_} { }
+		fd_t(const char *const file, const int flags, const mode_t mode = 0, bool temp = false) noexcept :
+			fd{::open(file, flags, mode)}, _temp{temp}, _filename{file} { }
+		fd_t(const std::string& file, const int flags, const mode_t mode = 0, bool temp = false) noexcept :
+			fd{::open(file.c_str(), flags, mode)}, _temp{temp}, _filename{file} { }
+		fd_t(const fs::path& file, const int flags, const mode_t mode = 0, bool temp = false) noexcept :
+			fd{::open(file.c_str(), flags, mode)}, _temp{temp}, _filename{file} { }
 		fd_t(fd_t &&fd_) noexcept : fd_t{} { swap(fd_); }
-		~fd_t() noexcept { if (fd != -1) close(fd); }
+		~fd_t() noexcept {
+			if (fd != -1) {
+				close(fd);
+				if (_temp) {
+					fs::remove(_filename);
+				}
+			}
+		}
+
+		[[nodiscard]]
+		static fd_t maketemp(const int flags, const mode_t mode = 0, const std::string_view& ext = ".tmp"sv) noexcept {
+			auto filepath = fs::temp_directory_path() / fs::path{fd_t::random_string(16)};
+			filepath  += ext;
+			return std::move(fd_t{filepath, flags | O_CREAT, mode, true});
+		}
+
 		void operator =(fd_t &&fd_) noexcept { swap(fd_); }
 		LIBNOKOGIRI_NO_DISCARD(operator int32_t() const noexcept) { return fd; }
 		LIBNOKOGIRI_NO_DISCARD(bool operator ==(const int32_t desc) const noexcept) { return fd == desc; }
 		LIBNOKOGIRI_NO_DISCARD(bool valid() const noexcept) { return fd != -1; }
 		LIBNOKOGIRI_NO_DISCARD(bool isEOF() const noexcept) { return eof; }
+		LIBNOKOGIRI_NO_DISCARD(fs::path filename() const noexcept) { return _filename; }
+
 		void invalidate() noexcept { fd = -1; }
 
 		void swap(fd_t &desc) noexcept {
 			std::swap(fd, desc.fd);
 			std::swap(eof, desc.eof);
 			std::swap(_length, desc._length);
+			std::swap(_temp, desc._temp);
+			std::swap(_filename, desc._filename);
 		}
 
 		LIBNOKOGIRI_NO_DISCARD(ssize_t read(void *const bufferPtr, const size_t bufferLen, std::nullptr_t) const noexcept) {
