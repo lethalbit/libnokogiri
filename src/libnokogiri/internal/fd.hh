@@ -103,7 +103,8 @@ namespace libnokogiri::internal {
 		bool _temp{false};
 		fs::path _filename{""sv};
 	public:
-		fd_t() noexcept = default;
+		constexpr fd_t() = default;
+
 		fd_t(const int32_t fd_) noexcept : fd{fd_} { }
 		fd_t(const char *const file, const int flags, const mode_t mode = 0, bool temp = false) noexcept :
 			fd{::open(file, flags, mode)}, _temp{temp}, _filename{file} { }
