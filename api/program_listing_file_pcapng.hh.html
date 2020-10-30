@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Program Listing for File pcapng.hh &#8212; libnokogiri 0.0.1 3648191 documentation</title>
+    <title>Program Listing for File pcapng.hh &#8212; libnokogiri 0.0.1 272c964 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -77,11 +77,17 @@
 <span class="cp">#if !defined(LIBNOKOGIRI_PCAPNG_HH)</span>
 <span class="cp">#define LIBNOKOGIRI_PCAPNG_HH</span>
 
+<span class="cp">#include</span> <span class="cpf">&lt;cstdint&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;optional&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;variant&gt;</span><span class="cp"></span>
+
 <span class="cp">#include</span> <span class="cpf">&lt;libnokogiri/config.hh&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;libnokogiri/common.hh&gt;</span><span class="cp"></span>
 
 <span class="cp">#include</span> <span class="cpf">&lt;libnokogiri/internal/defs.hh&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;libnokogiri/internal/fs.hh&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;libnokogiri/internal/zlib.hh&gt;</span><span class="cp"></span>
 
 <span class="cp">#include</span> <span class="cpf">&lt;libnokogiri/pcapng/block.hh&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;libnokogiri/pcapng/blocks.hh&gt;</span><span class="cp"></span>
@@ -93,7 +99,7 @@
 
 <span class="k">namespace</span> <span class="n">libnokogiri</span><span class="o">::</span><span class="n">pcapng</span> <span class="p">{</span>
 
-    <span class="k">struct</span> <span class="n">pcapng_t</span> <span class="k">final</span> <span class="p">{</span>
+    <span class="k">struct</span> <span class="n">LIBNOKOGIRI_CLS_API</span> <span class="n">pcapng_t</span> <span class="k">final</span> <span class="p">{</span>
     <span class="k">public</span><span class="o">:</span>
 
     <span class="p">};</span>

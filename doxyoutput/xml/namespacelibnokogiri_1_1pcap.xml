@@ -44,11 +44,51 @@
         </enumvalue>
         <enumvalue id="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a4146c294bcc82b1723c65bdc64b55089" prot="public">
           <name>Nanosecond</name>
-          <initializer>= 0x4D3CB2A1U</initializer>
+          <initializer>= 0xA1B23C4D</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
 <para>Magic for IXIA&apos;s lcap format </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656af50b33a9beb0122f09f5dac7fe32517b" prot="public">
+          <name>SwappedStantard</name>
+          <initializer>= 0xD4C3B2A1U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Magic for the modified pcap format introduced by Ulf Lamping&apos;s patches. It&apos;s identical to the standard but the timestamps are in nanoseconds. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656aae99b9c57b1bfe6a4d657eded0de17f2" prot="public">
+          <name>SwappedModified</name>
+          <initializer>= 0x34CDB2A1U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a768c05c9a2c12abc1ad9244a7ccb9013" prot="public">
+          <name>SwappedIXIAHW</name>
+          <initializer>= 0xAC01001CU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656acd100172ee368cbf65e108865bdbae70" prot="public">
+          <name>SwappedIXIASW</name>
+          <initializer>= 0xAB01001CU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a6b63e2e1dc6b29aa7aa1f3a9d07271c7" prot="public">
+          <name>SwappedNanosecond</name>
+          <initializer>= 0x4D3CB2A1U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
         </enumvalue>
         <briefdescription>
 <para>Types of possible pcap formats. </para>        </briefdescription>
@@ -56,7 +96,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="21" column="1" bodyfile="pcap.hh" bodystart="21" bodyend="27"/>
+        <location file="pcap.hh" line="21" column="1" bodyfile="pcap.hh" bodystart="21" bodyend="34"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -71,7 +111,7 @@
 <para>Type alias for generic conforming pcap packets with the standard header </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="330" column="1" bodyfile="pcap.hh" bodystart="330" bodyend="-1"/>
+        <location file="pcap.hh" line="335" column="1" bodyfile="pcap.hh" bodystart="335" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacelibnokogiri_1_1pcap_1a826df232831a75e6a2d4cf4693dccee1" prot="public" static="no">
         <type><ref refid="structlibnokogiri_1_1pcap_1_1packet__t" kindref="compound">packet_t</ref>&lt; <ref refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t" kindref="compound">packet_header_modified_t</ref>, T &gt;</type>
@@ -84,7 +124,30 @@
 <para>Type alias for packets from the modified pcap files </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="333" column="1" bodyfile="pcap.hh" bodystart="333" bodyend="-1"/>
+        <location file="pcap.hh" line="338" column="1" bodyfile="pcap.hh" bodystart="338" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacelibnokogiri_1_1pcap_1a76032896386673aa5c89e72b674a6097" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void libnokogiri::pcap::swap</definition>
+        <argsstring>(pcap_t &amp;a, pcap_t &amp;b) noexcept</argsstring>
+        <name>swap</name>
+        <param>
+          <type><ref refid="structlibnokogiri_1_1pcap_1_1pcap__t" kindref="compound">pcap_t</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="structlibnokogiri_1_1pcap_1_1pcap__t" kindref="compound">pcap_t</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="398" column="1" bodyfile="pcap.hh" bodystart="398" bodyend="398"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

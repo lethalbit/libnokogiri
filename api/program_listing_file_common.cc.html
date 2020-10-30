@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Program Listing for File common.cc &#8212; libnokogiri 0.0.1 272c964 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+    <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">libnokogiri</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=lethalbit&repo=libnokogiri&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div><h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">libnokogiri API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending/index.html">Extending libnokogiri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">libnokogiri examples</a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="program-listing-for-file-common-cc">
+<span id="program-listing-file-common-cc"></span><h1>Program Listing for File common.cc<a class="headerlink" href="#program-listing-for-file-common-cc" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="file_common.cc.html#file-common-cc"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">common.cc</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// SPDX-License-Identifier: LGPL-3.0-or-later</span>
+<span class="cm">/* common.cc - Common templates and type definitions */</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;cstddef&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;cstdint&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;libnokogiri/common.hh&gt;</span><span class="cp"></span>
+
+<span class="k">namespace</span> <span class="n">libnokogiri</span><span class="o">::</span><span class="n">internal</span> <span class="p">{</span>
+    <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+    <span class="n">captrue_compression_t</span> <span class="n">detect_captrue_compression</span><span class="p">(</span><span class="n">fd_t</span><span class="o">&amp;</span> <span class="n">file</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">constexpr</span> <span class="k">static</span> <span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">uint8_t</span><span class="p">,</span> <span class="mi">2</span><span class="o">&gt;</span> <span class="n">gzip_header</span><span class="p">{</span><span class="mh">0x1FU</span><span class="p">,</span> <span class="mh">0x8BU</span><span class="p">};</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">uint8_t</span><span class="p">,</span> <span class="mi">2</span><span class="o">&gt;</span> <span class="n">read_bytes</span><span class="p">{};</span>
+        <span class="k">const</span> <span class="k">auto</span> <span class="n">res</span><span class="p">{</span><span class="n">file</span><span class="p">.</span><span class="n">read</span><span class="o">&lt;</span><span class="mi">2</span><span class="o">&gt;</span><span class="p">(</span><span class="n">read_bytes</span><span class="p">)};</span>
+        <span class="n">file</span><span class="p">.</span><span class="n">head</span><span class="p">();</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">res</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">captrue_compression_t</span><span class="o">::</span><span class="n">Unknown</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">const</span> <span class="k">auto</span> <span class="n">is_gzip</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">equal</span><span class="p">(</span>
+            <span class="n">gzip_header</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">gzip_header</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span>
+            <span class="n">read_bytes</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">read_bytes</span><span class="p">.</span><span class="n">end</span><span class="p">()</span>
+        <span class="p">);</span>
+
+        <span class="k">return</span> <span class="n">is_gzip</span> <span class="o">?</span> <span class="n">captrue_compression_t</span><span class="o">::</span><span class="nl">Compressed</span> <span class="p">:</span> <span class="n">captrue_compression_t</span><span class="o">::</span><span class="n">Uncompressed</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2020, Aki Van Ness.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/api/program_listing_file_common.cc.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

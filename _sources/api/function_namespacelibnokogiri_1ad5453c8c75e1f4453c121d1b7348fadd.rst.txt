@@ -1,0 +1,13 @@
+.. _exhale_function_namespacelibnokogiri_1ad5453c8c75e1f4453c121d1b7348fadd:
+
+Function libnokogiri::operator""_TiB
+====================================
+
+- Defined in :ref:`file_common.hh`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: libnokogiri::operator""_TiB(const unsigned long long)

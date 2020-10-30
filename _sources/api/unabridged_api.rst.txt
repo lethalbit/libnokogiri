@@ -19,6 +19,11 @@ Namespaces
 .. toctree::
    :maxdepth: 5
 
+   namespace_libnokogiri__internal.rst
+
+.. toctree::
+   :maxdepth: 5
+
    namespace_libnokogiri__pcap.rst
 
 .. toctree::
@@ -117,6 +122,11 @@ Enums
 .. toctree::
    :maxdepth: 5
 
+   enum_namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44.rst
+
+.. toctree::
+   :maxdepth: 5
+
    enum_namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c.rst
 
 .. toctree::
@@ -133,6 +143,70 @@ Enums
    :maxdepth: 5
 
    enum_namespacelibnokogiri_1_1pcapng_1a4480b6a2a138af8cbd0fe98ed4fab3bd.rst
+
+Functions
+*********
+
+
+.. toctree::
+   :maxdepth: 5
+
+   function_common_8cc_1a9146f34c23b427106b3ea7dc478c1ce6.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespacelibnokogiri_1ab292b31a51076eaf2584c41ad1881611.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespacelibnokogiri_1a3cad4ef8bce758b5aae48fa79a62c37c.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespacelibnokogiri_1a617c8b7745989d35228424a3588025ef.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespacelibnokogiri_1a26e3f6267e224ffe89ca57d57260dd99.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespacelibnokogiri_1ab628e220aef659b9e9432384eeec8c02.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespacelibnokogiri_1a3e74466721b0e2a285799b414c6500c6.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespacelibnokogiri_1a66d321564b7eef4cfb1e78e8b495b392.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespacelibnokogiri_1a8d5c3b9bac9fe50f543ebe0f7ee59c5f.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespacelibnokogiri_1aa1b601204d808065a7bd6861a72732ae.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespacelibnokogiri_1ad5453c8c75e1f4453c121d1b7348fadd.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespacelibnokogiri_1_1pcap_1a76032896386673aa5c89e72b674a6097.rst
 
 Defines
 *******

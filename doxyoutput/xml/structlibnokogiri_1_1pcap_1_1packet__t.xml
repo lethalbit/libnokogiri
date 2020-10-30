@@ -23,7 +23,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="295" column="1" bodyfile="pcap.hh" bodystart="295" bodyend="-1"/>
+        <location file="pcap.hh" line="300" column="1" bodyfile="pcap.hh" bodystart="300" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -38,7 +38,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="297" column="1" bodyfile="pcap.hh" bodystart="297" bodyend="-1"/>
+        <location file="pcap.hh" line="302" column="1" bodyfile="pcap.hh" bodystart="302" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1packet__t_1a0faf1413f1724c9b9a2d6e1f298dc910" prot="private" static="no" mutable="no">
         <type>std::uintptr_t</type>
@@ -51,7 +51,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="298" column="1" bodyfile="pcap.hh" bodystart="298" bodyend="-1"/>
+        <location file="pcap.hh" line="303" column="1" bodyfile="pcap.hh" bodystart="303" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1packet__t_1ac5558579daf495af7840225ea4f6bb19" prot="private" static="no" mutable="no">
         <type>data_t</type>
@@ -64,7 +64,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="299" column="1" bodyfile="pcap.hh" bodystart="299" bodyend="-1"/>
+        <location file="pcap.hh" line="304" column="1" bodyfile="pcap.hh" bodystart="304" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -79,7 +79,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="301" column="1" bodyfile="pcap.hh" bodystart="301" bodyend="303"/>
+        <location file="pcap.hh" line="306" column="1" bodyfile="pcap.hh" bodystart="306" bodyend="308"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__t_1aa10295eebf01fa9d13e1647034e8bd33" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -104,7 +104,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="305" column="1" bodyfile="pcap.hh" bodystart="305" bodyend="307"/>
+        <location file="pcap.hh" line="310" column="1" bodyfile="pcap.hh" bodystart="310" bodyend="312"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__t_1ad56bdf16c44b986cb77f076d40926f2d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>T</type>
@@ -117,7 +117,7 @@
 <para>Retrieve the packet header </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="311" column="1" bodyfile="pcap.hh" bodystart="311" bodyend="311"/>
+        <location file="pcap.hh" line="316" column="1" bodyfile="pcap.hh" bodystart="316" bodyend="316"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__t_1a805d73e5f3d12d79904595634b264a73" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -134,7 +134,7 @@
 <para>Set the packet header </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="313" column="1" bodyfile="pcap.hh" bodystart="313" bodyend="313"/>
+        <location file="pcap.hh" line="318" column="1" bodyfile="pcap.hh" bodystart="318" bodyend="318"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__t_1aa984222ae3505097aeb4a1325ce23e7e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::uintptr_t</type>
@@ -147,7 +147,7 @@
 <para>Retrieve the offset in the file the packet is located at </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="317" column="1" bodyfile="pcap.hh" bodystart="317" bodyend="317"/>
+        <location file="pcap.hh" line="322" column="1" bodyfile="pcap.hh" bodystart="322" bodyend="322"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__t_1a9540cc1ada7e66c68618eda85d875e76" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -164,7 +164,7 @@
 <para>Set the offset in the file the packet is located at </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="319" column="1" bodyfile="pcap.hh" bodystart="319" bodyend="319"/>
+        <location file="pcap.hh" line="324" column="1" bodyfile="pcap.hh" bodystart="324" bodyend="324"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__t_1a83f8998f80456797e453abd7016b6ca2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>data_t</type>
@@ -177,7 +177,7 @@
 <para>Retrieve the packet data </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="323" column="1" bodyfile="pcap.hh" bodystart="323" bodyend="323"/>
+        <location file="pcap.hh" line="328" column="1" bodyfile="pcap.hh" bodystart="328" bodyend="328"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__t_1aac5616a323ad92d29a0613f3c85c0a83" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -194,14 +194,14 @@
 <para>Set the packet data </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="325" column="1" bodyfile="pcap.hh" bodystart="325" bodyend="325"/>
+        <location file="pcap.hh" line="330" column="1" bodyfile="pcap.hh" bodystart="330" bodyend="330"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>pcap packet template </para>    </briefdescription>
     <detaileddescription>
 <para>This template provides the framework for reading and writing packets.</para><para>They can have custom headers, but the two standardized packets are already specified as <ref refid="namespacelibnokogiri_1_1pcap_1a965b52b3bfb8d95a3dbcaadb074c5589" kindref="member">libnokogiri::pcap::generic_packet_t</ref> and <ref refid="namespacelibnokogiri_1_1pcap_1a826df232831a75e6a2d4cf4693dccee1" kindref="member">libnokogiri::pcap::modified_packet_t</ref> .</para><para>All this template does is change out the packet header type, the rest of the logic is identical. </para>    </detaileddescription>
-    <location file="pcap.hh" line="293" column="1" bodyfile="pcap.hh" bodystart="293" bodyend="326"/>
+    <location file="pcap.hh" line="298" column="1" bodyfile="pcap.hh" bodystart="298" bodyend="331"/>
     <listofallmembers>
       <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1ac5558579daf495af7840225ea4f6bb19" prot="private" virt="non-virtual"><scope>libnokogiri::pcap::packet_t</scope><name>_data</name></member>
       <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a0faf1413f1724c9b9a2d6e1f298dc910" prot="private" virt="non-virtual"><scope>libnokogiri::pcap::packet_t</scope><name>_offset</name></member>

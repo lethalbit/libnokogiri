@@ -81,6 +81,13 @@ Enums
 - :ref:`exhale_enum_namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656`
 
 
+Functions
+---------
+
+
+- :ref:`exhale_function_namespacelibnokogiri_1_1pcap_1a76032896386673aa5c89e72b674a6097`
+
+
 Typedefs
 --------
 

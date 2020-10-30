@@ -1,0 +1,13 @@
+.. _exhale_function_namespacelibnokogiri_1a66d321564b7eef4cfb1e78e8b495b392:
+
+Function libnokogiri::operator""_PB
+===================================
+
+- Defined in :ref:`file_common.hh`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: libnokogiri::operator""_PB(const unsigned long long)

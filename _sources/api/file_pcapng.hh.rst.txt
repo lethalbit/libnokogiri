@@ -25,6 +25,8 @@ Includes
 --------
 
 
+- ``cstdint``
+
 - ``libnokogiri/common.hh``
 
 - ``libnokogiri/config.hh``
@@ -32,6 +34,8 @@ Includes
 - ``libnokogiri/internal/defs.hh``
 
 - ``libnokogiri/internal/fs.hh``
+
+- ``libnokogiri/internal/zlib.hh``
 
 - ``libnokogiri/pcapng/block.hh``
 
@@ -42,6 +46,12 @@ Includes
 - ``libnokogiri/pcapng/options.hh``
 
 - ``libnokogiri/pcapng/section.hh``
+
+- ``memory``
+
+- ``optional``
+
+- ``variant``
 
 
 

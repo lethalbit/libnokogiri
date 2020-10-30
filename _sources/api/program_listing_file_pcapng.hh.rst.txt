@@ -15,11 +15,17 @@ Program Listing for File pcapng.hh
    #if !defined(LIBNOKOGIRI_PCAPNG_HH)
    #define LIBNOKOGIRI_PCAPNG_HH
    
+   #include <cstdint>
+   #include <memory>
+   #include <optional>
+   #include <variant>
+   
    #include <libnokogiri/config.hh>
    #include <libnokogiri/common.hh>
    
    #include <libnokogiri/internal/defs.hh>
    #include <libnokogiri/internal/fs.hh>
+   #include <libnokogiri/internal/zlib.hh>
    
    #include <libnokogiri/pcapng/block.hh>
    #include <libnokogiri/pcapng/blocks.hh>
@@ -31,7 +37,7 @@ Program Listing for File pcapng.hh
    
    namespace libnokogiri::pcapng {
    
-       struct pcapng_t final {
+       struct LIBNOKOGIRI_CLS_API pcapng_t final {
        public:
    
        };

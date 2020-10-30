@@ -4,6 +4,7 @@
     <compoundname>libnokogiri</compoundname>
     <innerclass refid="structlibnokogiri_1_1version__t" prot="public">libnokogiri::version_t</innerclass>
     <innernamespace refid="namespacelibnokogiri_1_1compiletime">libnokogiri::compiletime</innernamespace>
+    <innernamespace refid="namespacelibnokogiri_1_1internal">libnokogiri::internal</innernamespace>
     <innernamespace refid="namespacelibnokogiri_1_1pcap">libnokogiri::pcap</innernamespace>
     <innernamespace refid="namespacelibnokogiri_1_1pcapng">libnokogiri::pcapng</innernamespace>
       <sectiondef kind="enum">
@@ -1039,13 +1040,227 @@
 <para>This table and the descriptions of each link type has been directly lifted from <ulink url="https://www.tcpdump.org/linktypes.html">https://www.tcpdump.org/linktypes.html</ulink>.</para><para>Note: See the site linked above for details on the <computeroutput><ref refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cafc461ac8b6e3f19a9f64800389e202fe" kindref="member">link_type_t::User0</ref></computeroutput> through <computeroutput><ref refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca3e98cb5941d48a70df0c8cdf76c127b0" kindref="member">link_type_t::User15</ref></computeroutput> values and other notes about reserved ranges.</para><para>TODO: Waiting on the tcpdump mailing list to respond to <ulink url="https://lists.sandelman.ca/pipermail/tcpdump-workers/2020-October/001548.html">https://lists.sandelman.ca/pipermail/tcpdump-workers/2020-October/001548.html</ulink> to see if we can add needed link types. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="22" column="1" bodyfile="common.hh" bodystart="22" bodyend="185"/>
+        <location file="common.hh" line="24" column="1" bodyfile="common.hh" bodystart="24" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44" prot="public" static="no">
+        <name>captrue_compression_t</name>
+        <enumvalue id="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44aadf6b3d6508faa5f47e983c09bf39f5a" prot="public">
+          <name>Uncompressed</name>
+          <initializer>= 0x00U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Indicates that the capture is uncompressed </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44a4d602abc0c0f2f7c1a5156d964517e4e" prot="public">
+          <name>Compressed</name>
+          <initializer>= 0x01U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Indicates that the capture is compressed </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44aa0f56afccfad0701bc1076f838655233" prot="public">
+          <name>Autodetect</name>
+          <initializer>= 0x02U</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>When opening a file auto detect the file compression, when writing it defaults to Uncompressed </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44a88183b946cc5f0e8c96b2e66e1c74a7e" prot="public">
+          <name>Unknown</name>
+          <initializer>= 0xFFU</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Unknown compression or invalid file </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common.hh" line="194" column="1" bodyfile="common.hh" bodystart="194" bodyend="199"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacelibnokogiri_1a26e3f6267e224ffe89ca57d57260dd99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>constexpr uint64_t</type>
+        <definition>constexpr uint64_t libnokogiri::operator&quot;&quot;_KiB</definition>
+        <argsstring>(const unsigned long long value) noexcept</argsstring>
+        <name>operator&quot;&quot;_KiB</name>
+        <param>
+          <type>const unsigned long long</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Expand value to Kibibytes (n * 1024) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common.hh" line="276" column="1" bodyfile="common.hh" bodystart="276" bodyend="276"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacelibnokogiri_1a3e74466721b0e2a285799b414c6500c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>constexpr uint64_t</type>
+        <definition>constexpr uint64_t libnokogiri::operator&quot;&quot;_MiB</definition>
+        <argsstring>(const unsigned long long value) noexcept</argsstring>
+        <name>operator&quot;&quot;_MiB</name>
+        <param>
+          <type>const unsigned long long</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Expand value to Mebibytes (n * 1024^2) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common.hh" line="278" column="1" bodyfile="common.hh" bodystart="278" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacelibnokogiri_1a3cad4ef8bce758b5aae48fa79a62c37c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>constexpr uint64_t</type>
+        <definition>constexpr uint64_t libnokogiri::operator&quot;&quot;_GiB</definition>
+        <argsstring>(const unsigned long long value) noexcept</argsstring>
+        <name>operator&quot;&quot;_GiB</name>
+        <param>
+          <type>const unsigned long long</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Expand value to Gibibytes (n * 1024^3) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common.hh" line="280" column="1" bodyfile="common.hh" bodystart="280" bodyend="280"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacelibnokogiri_1ad5453c8c75e1f4453c121d1b7348fadd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>constexpr uint64_t</type>
+        <definition>constexpr uint64_t libnokogiri::operator&quot;&quot;_TiB</definition>
+        <argsstring>(const unsigned long long value) noexcept</argsstring>
+        <name>operator&quot;&quot;_TiB</name>
+        <param>
+          <type>const unsigned long long</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Expand value to Tebibytes (n * 1024^4) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common.hh" line="282" column="1" bodyfile="common.hh" bodystart="282" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacelibnokogiri_1a8d5c3b9bac9fe50f543ebe0f7ee59c5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>constexpr uint64_t</type>
+        <definition>constexpr uint64_t libnokogiri::operator&quot;&quot;_PiB</definition>
+        <argsstring>(const unsigned long long value) noexcept</argsstring>
+        <name>operator&quot;&quot;_PiB</name>
+        <param>
+          <type>const unsigned long long</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Expand value to Pebibytes (n * 1024^5) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common.hh" line="284" column="1" bodyfile="common.hh" bodystart="284" bodyend="284"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacelibnokogiri_1a617c8b7745989d35228424a3588025ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>constexpr uint64_t</type>
+        <definition>constexpr uint64_t libnokogiri::operator&quot;&quot;_KB</definition>
+        <argsstring>(const unsigned long long value) noexcept</argsstring>
+        <name>operator&quot;&quot;_KB</name>
+        <param>
+          <type>const unsigned long long</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Expand value to Kilobytes (n * 1000) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common.hh" line="288" column="1" bodyfile="common.hh" bodystart="288" bodyend="288"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacelibnokogiri_1ab628e220aef659b9e9432384eeec8c02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>constexpr uint64_t</type>
+        <definition>constexpr uint64_t libnokogiri::operator&quot;&quot;_MB</definition>
+        <argsstring>(const unsigned long long value) noexcept</argsstring>
+        <name>operator&quot;&quot;_MB</name>
+        <param>
+          <type>const unsigned long long</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Expand value to Megabytes (n * 1000^2) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common.hh" line="290" column="1" bodyfile="common.hh" bodystart="290" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacelibnokogiri_1ab292b31a51076eaf2584c41ad1881611" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>constexpr uint64_t</type>
+        <definition>constexpr uint64_t libnokogiri::operator&quot;&quot;_GB</definition>
+        <argsstring>(const unsigned long long value) noexcept</argsstring>
+        <name>operator&quot;&quot;_GB</name>
+        <param>
+          <type>const unsigned long long</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Expand value to Gigabytes (n * 1000^3) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common.hh" line="292" column="1" bodyfile="common.hh" bodystart="292" bodyend="292"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacelibnokogiri_1aa1b601204d808065a7bd6861a72732ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>constexpr uint64_t</type>
+        <definition>constexpr uint64_t libnokogiri::operator&quot;&quot;_TB</definition>
+        <argsstring>(const unsigned long long value) noexcept</argsstring>
+        <name>operator&quot;&quot;_TB</name>
+        <param>
+          <type>const unsigned long long</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Expand value to Terabytes (n * 1000^4) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common.hh" line="294" column="1" bodyfile="common.hh" bodystart="294" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacelibnokogiri_1a66d321564b7eef4cfb1e78e8b495b392" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>constexpr uint64_t</type>
+        <definition>constexpr uint64_t libnokogiri::operator&quot;&quot;_PB</definition>
+        <argsstring>(const unsigned long long value) noexcept</argsstring>
+        <name>operator&quot;&quot;_PB</name>
+        <param>
+          <type>const unsigned long long</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Expand value to Petabytes (n * 1000^5) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common.hh" line="296" column="1" bodyfile="common.hh" bodystart="296" bodyend="296"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Overarching libnokogiri namespace. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="common.hh" line="11" column="1"/>
+    <location file="[generated]" line="1" column="1"/>
   </compounddef>
 </doxygen>

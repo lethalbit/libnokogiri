@@ -25,7 +25,15 @@ Includes
 --------
 
 
+- ``cstdio``
+
+- ``libnokogiri/internal/zlib.hh``
+
 - ``libnokogiri/pcap.hh``
+
+- ``optional``
+
+- ``string``
 
 
 

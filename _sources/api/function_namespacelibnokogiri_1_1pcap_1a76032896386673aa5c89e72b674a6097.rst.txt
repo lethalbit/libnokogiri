@@ -1,0 +1,13 @@
+.. _exhale_function_namespacelibnokogiri_1_1pcap_1a76032896386673aa5c89e72b674a6097:
+
+Function libnokogiri::pcap::swap
+================================
+
+- Defined in :ref:`file_pcap.hh`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: libnokogiri::pcap::swap(pcap_t&, pcap_t&)

@@ -25,17 +25,21 @@ Includes
 --------
 
 
+- ``cstddef``
+
+- ``cstdint``
+
 - ``libnokogiri/internal/defs.hh``
 
 - ``libnokogiri/internal/fd.hh``
-
-- ``libnokogiri/internal/mmap.hh``
 
 
 
 Included By
 -----------
 
+
+- :ref:`file_common.cc`
 
 - :ref:`file_libnokogiri.hh`
 
@@ -54,6 +58,8 @@ Namespaces
 
 - :ref:`namespace_libnokogiri`
 
+- :ref:`namespace_libnokogiri__internal`
+
 
 Classes
 -------
@@ -66,7 +72,34 @@ Enums
 -----
 
 
+- :ref:`exhale_enum_namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44`
+
 - :ref:`exhale_enum_namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespacelibnokogiri_1ab292b31a51076eaf2584c41ad1881611`
+
+- :ref:`exhale_function_namespacelibnokogiri_1a3cad4ef8bce758b5aae48fa79a62c37c`
+
+- :ref:`exhale_function_namespacelibnokogiri_1a617c8b7745989d35228424a3588025ef`
+
+- :ref:`exhale_function_namespacelibnokogiri_1a26e3f6267e224ffe89ca57d57260dd99`
+
+- :ref:`exhale_function_namespacelibnokogiri_1ab628e220aef659b9e9432384eeec8c02`
+
+- :ref:`exhale_function_namespacelibnokogiri_1a3e74466721b0e2a285799b414c6500c6`
+
+- :ref:`exhale_function_namespacelibnokogiri_1a66d321564b7eef4cfb1e78e8b495b392`
+
+- :ref:`exhale_function_namespacelibnokogiri_1a8d5c3b9bac9fe50f543ebe0f7ee59c5f`
+
+- :ref:`exhale_function_namespacelibnokogiri_1aa1b601204d808065a7bd6861a72732ae`
+
+- :ref:`exhale_function_namespacelibnokogiri_1ad5453c8c75e1f4453c121d1b7348fadd`
 
 
 Defines

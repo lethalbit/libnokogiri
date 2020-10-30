@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Program Listing for File common.hh &#8212; libnokogiri 0.0.1 3648191 documentation</title>
+    <title>Program Listing for File common.hh &#8212; libnokogiri 0.0.1 272c964 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -78,8 +78,10 @@
 <span class="cp">#if !defined(LIBNOKOGIRI_COMMON_HH)</span>
 <span class="cp">#define LIBNOKOGIRI_COMMON_HH</span>
 
+<span class="cp">#include</span> <span class="cpf">&lt;cstddef&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;cstdint&gt;</span><span class="cp"></span>
+
 <span class="cp">#include</span> <span class="cpf">&lt;libnokogiri/internal/defs.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;libnokogiri/internal/mmap.hh&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;libnokogiri/internal/fd.hh&gt;</span><span class="cp"></span>
 
 <span class="k">namespace</span> <span class="n">libnokogiri</span> <span class="p">{</span>
@@ -248,6 +250,18 @@
         <span class="n">ATSC_ALP</span>                   <span class="o">=</span> <span class="mh">0x0121U</span><span class="p">,</span>
     <span class="p">};</span>
 
+    <span class="k">enum</span> <span class="k">struct</span> <span class="nl">captrue_compression_t</span> <span class="p">:</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint8_t</span> <span class="p">{</span>
+        <span class="n">Uncompressed</span> <span class="o">=</span> <span class="mh">0x00U</span><span class="p">,</span>
+        <span class="n">Compressed</span>   <span class="o">=</span> <span class="mh">0x01U</span><span class="p">,</span>
+        <span class="n">Autodetect</span>   <span class="o">=</span> <span class="mh">0x02U</span><span class="p">,</span>
+        <span class="n">Unknown</span>      <span class="o">=</span> <span class="mh">0xFFU</span><span class="p">,</span>
+    <span class="p">};</span>
+
+    <span class="k">namespace</span> <span class="n">internal</span> <span class="p">{</span>
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">LIBNOKOGIRI_API</span> <span class="n">captrue_compression_t</span> <span class="n">detect_captrue_compression</span><span class="p">(</span><span class="n">fd_t</span><span class="o">&amp;</span> <span class="n">file</span><span class="p">);</span>
+    <span class="p">}</span>
+
     <span class="k">struct</span> <span class="n">version_t</span> <span class="k">final</span> <span class="p">{</span>
     <span class="k">private</span><span class="o">:</span>
         <span class="n">std</span><span class="o">::</span><span class="kt">uint16_t</span> <span class="n">_major</span><span class="p">;</span>
@@ -257,20 +271,20 @@
             <span class="n">_major</span><span class="p">{</span><span class="mi">0U</span><span class="p">},</span> <span class="n">_minor</span><span class="p">{</span><span class="mi">0U</span><span class="p">}</span>
             <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
 
-        <span class="k">constexpr</span> <span class="n">version_t</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">uint16_t</span> <span class="n">major</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint16_t</span> <span class="n">minor</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">:</span>
-            <span class="n">_major</span><span class="p">{</span><span class="n">major</span><span class="p">},</span> <span class="n">_minor</span><span class="p">{</span><span class="n">minor</span><span class="p">}</span>
+        <span class="k">constexpr</span> <span class="n">version_t</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">uint16_t</span> <span class="n">vmajor</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint16_t</span> <span class="n">vminor</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">:</span>
+            <span class="n">_major</span><span class="p">{</span><span class="n">vmajor</span><span class="p">},</span> <span class="n">_minor</span><span class="p">{</span><span class="n">vminor</span><span class="p">}</span>
             <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
 
         <span class="n">version_t</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">nullptr_t</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
 
         <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
-        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">major</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_major</span><span class="p">;</span> <span class="p">}</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">major_version</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_major</span><span class="p">;</span> <span class="p">}</span>
         <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
-        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">minor</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_minor</span><span class="p">;</span> <span class="p">}</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">minor_version</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_minor</span><span class="p">;</span> <span class="p">}</span>
 
         <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
         <span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span> <span class="n">version_t</span><span class="o">&amp;</span> <span class="n">ver</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="p">(</span><span class="n">_major</span> <span class="o">==</span> <span class="n">ver</span><span class="p">.</span><span class="n">major</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">_minor</span> <span class="o">==</span> <span class="n">ver</span><span class="p">.</span><span class="n">minor</span><span class="p">());</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">_major</span> <span class="o">==</span> <span class="n">ver</span><span class="p">.</span><span class="n">major_version</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">_minor</span> <span class="o">==</span> <span class="n">ver</span><span class="p">.</span><span class="n">minor_version</span><span class="p">());</span>
         <span class="p">}</span>
         <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
         <span class="kt">bool</span> <span class="k">operator</span><span class="o">!=</span><span class="p">(</span><span class="k">const</span> <span class="n">version_t</span><span class="o">&amp;</span> <span class="n">ver</span><span class="p">)</span>  <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span>
@@ -280,8 +294,8 @@
         <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
         <span class="kt">bool</span> <span class="k">operator</span><span class="o">&gt;</span><span class="p">(</span><span class="k">const</span> <span class="n">version_t</span><span class="o">&amp;</span> <span class="n">ver</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span>
             <span class="k">return</span> <span class="p">(</span>
-                <span class="p">(</span><span class="n">_major</span> <span class="o">&gt;</span> <span class="n">ver</span><span class="p">.</span><span class="n">major</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">_minor</span> <span class="o">&gt;=</span> <span class="n">ver</span><span class="p">.</span><span class="n">minor</span><span class="p">())</span> <span class="o">||</span>
-                <span class="p">(</span><span class="n">_major</span> <span class="o">&gt;=</span> <span class="n">ver</span><span class="p">.</span><span class="n">major</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">_minor</span> <span class="o">&gt;</span> <span class="n">ver</span><span class="p">.</span><span class="n">minor</span><span class="p">()));</span>
+                <span class="p">(</span><span class="n">_major</span> <span class="o">&gt;</span> <span class="n">ver</span><span class="p">.</span><span class="n">major_version</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">_minor</span> <span class="o">&gt;=</span> <span class="n">ver</span><span class="p">.</span><span class="n">minor_version</span><span class="p">())</span> <span class="o">||</span>
+                <span class="p">(</span><span class="n">_major</span> <span class="o">&gt;=</span> <span class="n">ver</span><span class="p">.</span><span class="n">major_version</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">_minor</span> <span class="o">&gt;</span> <span class="n">ver</span><span class="p">.</span><span class="n">minor_version</span><span class="p">()));</span>
         <span class="p">}</span>
         <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
         <span class="kt">bool</span> <span class="k">operator</span><span class="o">&gt;=</span><span class="p">(</span><span class="k">const</span> <span class="n">version_t</span><span class="o">&amp;</span> <span class="n">ver</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span>
@@ -291,15 +305,29 @@
         <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
         <span class="kt">bool</span> <span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="k">const</span> <span class="n">version_t</span><span class="o">&amp;</span> <span class="n">ver</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span>
             <span class="k">return</span> <span class="p">(</span>
-                <span class="p">(</span><span class="n">_major</span> <span class="o">&lt;</span> <span class="n">ver</span><span class="p">.</span><span class="n">major</span><span class="p">()</span> <span class="o">&amp;&amp;</span>  <span class="n">_minor</span> <span class="o">&lt;=</span> <span class="n">ver</span><span class="p">.</span><span class="n">minor</span><span class="p">())</span> <span class="o">||</span>
-                <span class="p">(</span><span class="n">_minor</span> <span class="o">&lt;=</span> <span class="n">ver</span><span class="p">.</span><span class="n">major</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">_minor</span> <span class="o">&lt;</span> <span class="n">ver</span><span class="p">.</span><span class="n">minor</span><span class="p">()));</span>
+                <span class="p">(</span><span class="n">_major</span> <span class="o">&lt;</span> <span class="n">ver</span><span class="p">.</span><span class="n">major_version</span><span class="p">()</span> <span class="o">&amp;&amp;</span>  <span class="n">_minor</span> <span class="o">&lt;=</span> <span class="n">ver</span><span class="p">.</span><span class="n">minor_version</span><span class="p">())</span> <span class="o">||</span>
+                <span class="p">(</span><span class="n">_minor</span> <span class="o">&lt;=</span> <span class="n">ver</span><span class="p">.</span><span class="n">major_version</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">_minor</span> <span class="o">&lt;</span> <span class="n">ver</span><span class="p">.</span><span class="n">minor_version</span><span class="p">()));</span>
         <span class="p">}</span>
-
         <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
         <span class="kt">bool</span> <span class="k">operator</span><span class="o">&lt;=</span><span class="p">(</span><span class="k">const</span> <span class="n">version_t</span><span class="o">&amp;</span> <span class="n">ver</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span>
             <span class="k">return</span> <span class="p">(</span><span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="n">ver</span><span class="p">)</span> <span class="o">||</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="n">ver</span><span class="p">));</span>
         <span class="p">}</span>
     <span class="p">};</span>
+
+
+    <span class="cm">/* IEC Units*/</span>
+    <span class="k">constexpr</span> <span class="kt">uint64_t</span> <span class="k">operator</span> <span class="s">&quot;&quot;</span><span class="n">_KiB</span><span class="p">(</span><span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">value</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="kt">uint64_t</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">constexpr</span> <span class="kt">uint64_t</span> <span class="k">operator</span> <span class="s">&quot;&quot;</span><span class="n">_MiB</span><span class="p">(</span><span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">value</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="kt">uint64_t</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1048576</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">constexpr</span> <span class="kt">uint64_t</span> <span class="k">operator</span> <span class="s">&quot;&quot;</span><span class="n">_GiB</span><span class="p">(</span><span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">value</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="kt">uint64_t</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1073741824</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">constexpr</span> <span class="kt">uint64_t</span> <span class="k">operator</span> <span class="s">&quot;&quot;</span><span class="n">_TiB</span><span class="p">(</span><span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">value</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="kt">uint64_t</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1099511627776</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">constexpr</span> <span class="kt">uint64_t</span> <span class="k">operator</span> <span class="s">&quot;&quot;</span><span class="n">_PiB</span><span class="p">(</span><span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">value</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="kt">uint64_t</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1125899906842624</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="cm">/* SI Units */</span>
+    <span class="k">constexpr</span> <span class="kt">uint64_t</span> <span class="k">operator</span> <span class="s">&quot;&quot;</span><span class="n">_KB</span><span class="p">(</span><span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">value</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="kt">uint64_t</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">constexpr</span> <span class="kt">uint64_t</span> <span class="k">operator</span> <span class="s">&quot;&quot;</span><span class="n">_MB</span><span class="p">(</span><span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">value</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="kt">uint64_t</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000000</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">constexpr</span> <span class="kt">uint64_t</span> <span class="k">operator</span> <span class="s">&quot;&quot;</span><span class="n">_GB</span><span class="p">(</span><span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">value</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="kt">uint64_t</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000000000</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">constexpr</span> <span class="kt">uint64_t</span> <span class="k">operator</span> <span class="s">&quot;&quot;</span><span class="n">_TB</span><span class="p">(</span><span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">value</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="kt">uint64_t</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000000000000</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">constexpr</span> <span class="kt">uint64_t</span> <span class="k">operator</span> <span class="s">&quot;&quot;</span><span class="n">_PB</span><span class="p">(</span><span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">value</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="kt">uint64_t</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000000000000000</span><span class="p">;</span> <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="cp">#endif </span><span class="cm">/* LIBNOKOGIRI_COMMON_HH */</span><span class="cp"></span>

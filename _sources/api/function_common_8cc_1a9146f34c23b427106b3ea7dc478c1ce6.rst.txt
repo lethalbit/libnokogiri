@@ -1,0 +1,13 @@
+.. _exhale_function_common_8cc_1a9146f34c23b427106b3ea7dc478c1ce6:
+
+Function libnokogiri::internal::detect_captrue_compression
+==========================================================
+
+- Defined in :ref:`file_common.cc`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: libnokogiri::internal::detect_captrue_compression(fd_t&)

@@ -16,8 +16,10 @@ Program Listing for File common.hh
    #if !defined(LIBNOKOGIRI_COMMON_HH)
    #define LIBNOKOGIRI_COMMON_HH
    
+   #include <cstddef>
+   #include <cstdint>
+   
    #include <libnokogiri/internal/defs.hh>
-   #include <libnokogiri/internal/mmap.hh>
    #include <libnokogiri/internal/fd.hh>
    
    namespace libnokogiri {
@@ -186,6 +188,18 @@ Program Listing for File common.hh
            ATSC_ALP                   = 0x0121U, 
        };
    
+       enum struct captrue_compression_t : std::uint8_t {
+           Uncompressed = 0x00U, 
+           Compressed   = 0x01U, 
+           Autodetect   = 0x02U, 
+           Unknown      = 0xFFU, 
+       };
+   
+       namespace internal {
+           [[nodiscard]]
+           LIBNOKOGIRI_API captrue_compression_t detect_captrue_compression(fd_t& file);
+       }
+   
        struct version_t final {
        private:
            std::uint16_t _major;
@@ -195,20 +209,20 @@ Program Listing for File common.hh
                _major{0U}, _minor{0U}
                { /* NOP */ }
    
-           constexpr version_t(std::uint16_t major, std::uint16_t minor) noexcept :
-               _major{major}, _minor{minor}
+           constexpr version_t(std::uint16_t vmajor, std::uint16_t vminor) noexcept :
+               _major{vmajor}, _minor{vminor}
                { /* NOP */ }
    
            version_t(std::nullptr_t) noexcept { /* NOP */ }
    
            [[nodiscard]]
-           std::uint32_t major() const noexcept { return _major; }
+           std::uint32_t major_version() const noexcept { return _major; }
            [[nodiscard]]
-           std::uint32_t minor() const noexcept { return _minor; }
+           std::uint32_t minor_version() const noexcept { return _minor; }
    
            [[nodiscard]]
            bool operator==(const version_t& ver) const noexcept {
-               return (_major == ver.major() && _minor == ver.minor());
+               return (_major == ver.major_version() && _minor == ver.minor_version());
            }
            [[nodiscard]]
            bool operator!=(const version_t& ver)  const noexcept {
@@ -218,8 +232,8 @@ Program Listing for File common.hh
            [[nodiscard]]
            bool operator>(const version_t& ver) const noexcept {
                return (
-                   (_major > ver.major() && _minor >= ver.minor()) ||
-                   (_major >= ver.major() && _minor > ver.minor()));
+                   (_major > ver.major_version() && _minor >= ver.minor_version()) ||
+                   (_major >= ver.major_version() && _minor > ver.minor_version()));
            }
            [[nodiscard]]
            bool operator>=(const version_t& ver) const noexcept {
@@ -229,15 +243,29 @@ Program Listing for File common.hh
            [[nodiscard]]
            bool operator<(const version_t& ver) const noexcept {
                return (
-                   (_major < ver.major() &&  _minor <= ver.minor()) ||
-                   (_minor <= ver.major() && _minor < ver.minor()));
+                   (_major < ver.major_version() &&  _minor <= ver.minor_version()) ||
+                   (_minor <= ver.major_version() && _minor < ver.minor_version()));
            }
-   
            [[nodiscard]]
            bool operator<=(const version_t& ver) const noexcept {
                return (operator<(ver) || operator==(ver));
            }
        };
+   
+   
+       /* IEC Units*/
+       constexpr uint64_t operator ""_KiB(const unsigned long long value) noexcept { return uint64_t(value) * 1024; }
+       constexpr uint64_t operator ""_MiB(const unsigned long long value) noexcept { return uint64_t(value) * 1048576; }
+       constexpr uint64_t operator ""_GiB(const unsigned long long value) noexcept { return uint64_t(value) * 1073741824; }
+       constexpr uint64_t operator ""_TiB(const unsigned long long value) noexcept { return uint64_t(value) * 1099511627776; }
+       constexpr uint64_t operator ""_PiB(const unsigned long long value) noexcept { return uint64_t(value) * 1125899906842624; }
+   
+       /* SI Units */
+       constexpr uint64_t operator ""_KB(const unsigned long long value) noexcept { return uint64_t(value) * 1000; }
+       constexpr uint64_t operator ""_MB(const unsigned long long value) noexcept { return uint64_t(value) * 1000000; }
+       constexpr uint64_t operator ""_GB(const unsigned long long value) noexcept { return uint64_t(value) * 1000000000; }
+       constexpr uint64_t operator ""_TB(const unsigned long long value) noexcept { return uint64_t(value) * 1000000000000; }
+       constexpr uint64_t operator ""_PB(const unsigned long long value) noexcept { return uint64_t(value) * 1000000000000000; }
    }
    
    #endif /* LIBNOKOGIRI_COMMON_HH */

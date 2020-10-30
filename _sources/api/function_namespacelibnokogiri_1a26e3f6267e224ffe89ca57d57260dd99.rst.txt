@@ -1,0 +1,13 @@
+.. _exhale_function_namespacelibnokogiri_1a26e3f6267e224ffe89ca57d57260dd99:
+
+Function libnokogiri::operator""_KiB
+====================================
+
+- Defined in :ref:`file_common.hh`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: libnokogiri::operator""_KiB(const unsigned long long)

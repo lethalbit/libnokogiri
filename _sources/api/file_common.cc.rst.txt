@@ -1,0 +1,53 @@
+
+.. _file_common.cc:
+
+File common.cc
+==============
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``common.cc``)
+--------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_common.cc.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``algorithm``
+
+- ``cstddef``
+
+- ``cstdint``
+
+- ``libnokogiri/common.hh``
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_libnokogiri__internal`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_common_8cc_1a9146f34c23b427106b3ea7dc478c1ce6`
+

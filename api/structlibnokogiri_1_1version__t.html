@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Struct version_t &#8212; libnokogiri 0.0.1 3648191 documentation</title>
+    <title>Struct version_t &#8212; libnokogiri 0.0.1 272c964 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -19,7 +19,7 @@
     <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Enum link_type_t" href="enum_namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c.html" />
+    <link rel="next" title="Enum captrue_compression_t" href="enum_namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44.html" />
     <link rel="prev" title="Struct section_t" href="structlibnokogiri_1_1pcapng_1_1section__t.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -54,7 +54,7 @@
   <li><a href="../index.html">Documentation overview</a><ul>
   <li><a href="index.html">libnokogiri API</a><ul>
       <li>Previous: <a href="structlibnokogiri_1_1pcapng_1_1section__t.html" title="previous chapter">Struct section_t</a></li>
-      <li>Next: <a href="enum_namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c.html" title="next chapter">Enum link_type_t</a></li>
+      <li>Next: <a href="enum_namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44.html" title="next chapter">Enum captrue_compression_t</a></li>
   </ul></li>
   </ul></li>
 </ul>
@@ -97,7 +97,7 @@
 
 <dl class="cpp function">
 <dt id="_CPPv4N11libnokogiri9version_t9version_tENSt8uint16_tENSt8uint16_tE">
-<span id="_CPPv3N11libnokogiri9version_t9version_tENSt8uint16_tENSt8uint16_tE"></span><span id="_CPPv2N11libnokogiri9version_t9version_tENSt8uint16_tENSt8uint16_tE"></span><span id="libnokogiri::version_t::version_t__std::uint16_t.std::uint16_tCE"></span><span class="target" id="structlibnokogiri_1_1version__t_1a26cbb55a7d7118c1ad6b5cbd4cb78138"></span><em class="property">constexpr</em> <code class="sig-name descname">version_t</code><span class="sig-paren">(</span>std::uint16_t <em>major</em>, std::uint16_t <em>minor</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri9version_t9version_tENSt8uint16_tENSt8uint16_tE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N11libnokogiri9version_t9version_tENSt8uint16_tENSt8uint16_tE"></span><span id="_CPPv2N11libnokogiri9version_t9version_tENSt8uint16_tENSt8uint16_tE"></span><span id="libnokogiri::version_t::version_t__std::uint16_t.std::uint16_tCE"></span><span class="target" id="structlibnokogiri_1_1version__t_1af4c37e6f3be36f9bfd4fcac25d27adcc"></span><em class="property">constexpr</em> <code class="sig-name descname">version_t</code><span class="sig-paren">(</span>std::uint16_t <em>vmajor</em>, std::uint16_t <em>vminor</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri9version_t9version_tENSt8uint16_tENSt8uint16_tE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -106,46 +106,52 @@
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK11libnokogiri9version_t5majorEv">
-<span id="_CPPv3NK11libnokogiri9version_t5majorEv"></span><span id="_CPPv2NK11libnokogiri9version_t5majorEv"></span><span id="libnokogiri::version_t::majorC"></span><span class="target" id="structlibnokogiri_1_1version__t_1ad259aec67db41868c7f5ccfa40584866"></span>std::uint32_t <code class="sig-name descname">major</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri9version_t5majorEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4NK11libnokogiri9version_t13major_versionEv">
+<span id="_CPPv3NK11libnokogiri9version_t13major_versionEv"></span><span id="_CPPv2NK11libnokogiri9version_t13major_versionEv"></span><span id="libnokogiri::version_t::major_versionC"></span><span class="target" id="structlibnokogiri_1_1version__t_1a0fa586017d79f8f3bedca85ea64a236d"></span>std::uint32_t <code class="sig-name descname">major_version</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri9version_t13major_versionEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Gets the major version of the section header </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK11libnokogiri9version_t5minorEv">
-<span id="_CPPv3NK11libnokogiri9version_t5minorEv"></span><span id="_CPPv2NK11libnokogiri9version_t5minorEv"></span><span id="libnokogiri::version_t::minorC"></span><span class="target" id="structlibnokogiri_1_1version__t_1ac3d90780dca5bc7ca7870a18a966d20c"></span>std::uint32_t <code class="sig-name descname">minor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri9version_t5minorEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4NK11libnokogiri9version_t13minor_versionEv">
+<span id="_CPPv3NK11libnokogiri9version_t13minor_versionEv"></span><span id="_CPPv2NK11libnokogiri9version_t13minor_versionEv"></span><span id="libnokogiri::version_t::minor_versionC"></span><span class="target" id="structlibnokogiri_1_1version__t_1afb76a90bf8bd42a3e3fbbdb496f01080"></span>std::uint32_t <code class="sig-name descname">minor_version</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri9version_t13minor_versionEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Gets the minor version of the section header </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK11libnokogiri9version_teqERK9version_t">
 <span id="_CPPv3NK11libnokogiri9version_teqERK9version_t"></span><span id="_CPPv2NK11libnokogiri9version_teqERK9version_t"></span><span id="libnokogiri::version_t::eq-operator__version_tCRC"></span><span class="target" id="structlibnokogiri_1_1version__t_1a86244cf61a82a01cb2aac4856c2dbee1"></span>bool <code class="sig-name descname">operator==</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N11libnokogiri9version_tE" title="libnokogiri::version_t">version_t</a> &amp;<em>ver</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri9version_teqERK9version_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Check if two versions are equal </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK11libnokogiri9version_tneERK9version_t">
 <span id="_CPPv3NK11libnokogiri9version_tneERK9version_t"></span><span id="_CPPv2NK11libnokogiri9version_tneERK9version_t"></span><span id="libnokogiri::version_t::neq-operator__version_tCRC"></span><span class="target" id="structlibnokogiri_1_1version__t_1a00041c87d504e820f876fe1a4420feec"></span>bool <code class="sig-name descname">operator!=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N11libnokogiri9version_tE" title="libnokogiri::version_t">version_t</a> &amp;<em>ver</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri9version_tneERK9version_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Check if two versions are not equal </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK11libnokogiri9version_tgtERK9version_t">
 <span id="_CPPv3NK11libnokogiri9version_tgtERK9version_t"></span><span id="_CPPv2NK11libnokogiri9version_tgtERK9version_t"></span><span id="libnokogiri::version_t::gt-operator__version_tCRC"></span><span class="target" id="structlibnokogiri_1_1version__t_1a4f3852486d82d3d25ed424cf288169a2"></span>bool <code class="sig-name descname">operator&gt;</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N11libnokogiri9version_tE" title="libnokogiri::version_t">version_t</a> &amp;<em>ver</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri9version_tgtERK9version_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Check if one version is greater than another </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK11libnokogiri9version_tgeERK9version_t">
 <span id="_CPPv3NK11libnokogiri9version_tgeERK9version_t"></span><span id="_CPPv2NK11libnokogiri9version_tgeERK9version_t"></span><span id="libnokogiri::version_t::gte-operator__version_tCRC"></span><span class="target" id="structlibnokogiri_1_1version__t_1a2e71556f18e992b6178aa12258ef7c26"></span>bool <code class="sig-name descname">operator&gt;=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N11libnokogiri9version_tE" title="libnokogiri::version_t">version_t</a> &amp;<em>ver</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri9version_tgeERK9version_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Check if one version is greater than or equal to another </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK11libnokogiri9version_tltERK9version_t">
 <span id="_CPPv3NK11libnokogiri9version_tltERK9version_t"></span><span id="_CPPv2NK11libnokogiri9version_tltERK9version_t"></span><span id="libnokogiri::version_t::lt-operator__version_tCRC"></span><span class="target" id="structlibnokogiri_1_1version__t_1ae26daa9a60766ad133b6278357e60f86"></span>bool <code class="sig-name descname">operator&lt;</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N11libnokogiri9version_tE" title="libnokogiri::version_t">version_t</a> &amp;<em>ver</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri9version_tltERK9version_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Check if one version is less than another </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK11libnokogiri9version_tleERK9version_t">
 <span id="_CPPv3NK11libnokogiri9version_tleERK9version_t"></span><span id="_CPPv2NK11libnokogiri9version_tleERK9version_t"></span><span id="libnokogiri::version_t::lte-operator__version_tCRC"></span><span class="target" id="structlibnokogiri_1_1version__t_1a417d91818a690b84dec43214c1b22328"></span>bool <code class="sig-name descname">operator&lt;=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N11libnokogiri9version_tE" title="libnokogiri::version_t">version_t</a> &amp;<em>ver</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri9version_tleERK9version_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Check if one version is less than or equal to another </p>
+</dd></dl>
 
 </div>
 </dd></dl>

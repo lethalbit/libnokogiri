@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacelibnokogiri_1_1internal" kind="namespace" language="C++">
+    <compoundname>libnokogiri::internal</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="common_8cc_1a9146f34c23b427106b3ea7dc478c1ce6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44" kindref="member">captrue_compression_t</ref></type>
+        <definition>LIBNOKOGIRI_API captrue_compression_t libnokogiri::internal::detect_captrue_compression</definition>
+        <argsstring>(fd_t &amp;file)</argsstring>
+        <name>detect_captrue_compression</name>
+        <param>
+          <type>fd_t &amp;</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common.cc" line="12" column="1" bodyfile="common.cc" bodystart="12" bodyend="28"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="common.cc" line="10" column="1"/>
+  </compounddef>
+</doxygen>

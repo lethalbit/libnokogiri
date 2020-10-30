@@ -3,12 +3,335 @@
   <compounddef id="structlibnokogiri_1_1pcap_1_1pcap__t" kind="struct" language="C++" prot="public" final="yes">
     <compoundname>libnokogiri::pcap::pcap_t</compoundname>
     <includes refid="pcap_8hh" local="no">pcap.hh</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1pcap__t_1a21eda2811ed97c1437cdd2db858b59a9" prot="private" static="no" mutable="no">
+        <type>libnokogiri::internal::fd_t</type>
+        <definition>libnokogiri::internal::fd_t libnokogiri::pcap::pcap_t::_file</definition>
+        <argsstring></argsstring>
+        <name>_file</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="352" column="1" bodyfile="pcap.hh" bodystart="352" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1pcap__t_1a9843f899dab18585fd7b9803370877f8" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44" kindref="member">captrue_compression_t</ref></type>
+        <definition>captrue_compression_t libnokogiri::pcap::pcap_t::_compression</definition>
+        <argsstring></argsstring>
+        <name>_compression</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="353" column="1" bodyfile="pcap.hh" bodystart="353" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1pcap__t_1a9f5a71d33263eca2b67448f3494ad804" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool libnokogiri::pcap::pcap_t::_readonly</definition>
+        <argsstring></argsstring>
+        <name>_readonly</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="354" column="1" bodyfile="pcap.hh" bodystart="354" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1pcap__t_1aca9062af7560e0c273ffbfa0fdd61a51" prot="private" static="no" mutable="no">
+        <type><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref></type>
+        <definition>file_header_t libnokogiri::pcap::pcap_t::_header</definition>
+        <argsstring></argsstring>
+        <name>_header</name>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="355" column="1" bodyfile="pcap.hh" bodystart="355" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1pcap__t_1aea045ebb59fb3384f414bdd1be8be611" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool libnokogiri::pcap::pcap_t::_valid</definition>
+        <argsstring></argsstring>
+        <name>_valid</name>
+        <initializer>{false}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="356" column="1" bodyfile="pcap.hh" bodystart="356" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1pcap__t_1a6d86f1142aee33d6430a7ca7a2029e00" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool libnokogiri::pcap::pcap_t::_needs_swapping</definition>
+        <argsstring></argsstring>
+        <name>_needs_swapping</name>
+        <initializer>{false}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="357" column="1" bodyfile="pcap.hh" bodystart="357" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1pcap__t_1a7d47e094eb8ce5fe4496eefbbc460ec1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool libnokogiri::pcap::pcap_t::read_header</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>read_header</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="359" column="1" bodyfile="pcap.cc" bodystart="44" bodyend="120"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1pcap__t_1a4c093bdcb1662933a63ab64a984b5b3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr libnokogiri::pcap::pcap_t::pcap_t</definition>
+        <argsstring>()=delete</argsstring>
+        <name>pcap_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="361" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1pcap__t_1a73e96e9d3e68a48d6a8c8bd0527b2827" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>libnokogiri::pcap::pcap_t::pcap_t</definition>
+        <argsstring>(libnokogiri::internal::fs::path &amp;file, captrue_compression_t compression, bool read_only) noexcept</argsstring>
+        <name>pcap_t</name>
+        <param>
+          <type>libnokogiri::internal::fs::path &amp;</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44" kindref="member">captrue_compression_t</ref></type>
+          <declname>compression</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>read_only</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="363" column="1" bodyfile="pcap.cc" bodystart="17" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1pcap__t_1af60e88a1b11c9b140a8734e44dd23af1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>libnokogiri::pcap::pcap_t::pcap_t</definition>
+        <argsstring>(const pcap_t &amp;)=delete</argsstring>
+        <name>pcap_t</name>
+        <param>
+          <type>const <ref refid="structlibnokogiri_1_1pcap_1_1pcap__t" kindref="compound">pcap_t</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="365" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1pcap__t_1aa558e8a88c4b13a6549a291bc773d7ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlibnokogiri_1_1pcap_1_1pcap__t" kindref="compound">pcap_t</ref> &amp;</type>
+        <definition>pcap_t&amp; libnokogiri::pcap::pcap_t::operator=</definition>
+        <argsstring>(const pcap_t &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="structlibnokogiri_1_1pcap_1_1pcap__t" kindref="compound">pcap_t</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="366" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1pcap__t_1ab56e568272155aa141cbf918cf7b11c5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>libnokogiri::pcap::pcap_t::pcap_t</definition>
+        <argsstring>(pcap_t &amp;&amp;capture) noexcept</argsstring>
+        <name>pcap_t</name>
+        <param>
+          <type><ref refid="structlibnokogiri_1_1pcap_1_1pcap__t" kindref="compound">pcap_t</ref> &amp;&amp;</type>
+          <declname>capture</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="368" column="1" bodyfile="pcap.hh" bodystart="368" bodyend="370"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1pcap__t_1a13a350c072d00bef3cb6217cfafddadf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void libnokogiri::pcap::pcap_t::operator=</definition>
+        <argsstring>(pcap_t &amp;&amp;capture) noexcept</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="structlibnokogiri_1_1pcap_1_1pcap__t" kindref="compound">pcap_t</ref> &amp;&amp;</type>
+          <declname>capture</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="371" column="1" bodyfile="pcap.hh" bodystart="371" bodyend="371"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1pcap__t_1a7d94420f48cf3ab6a19a0108fe3952d0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool libnokogiri::pcap::pcap_t::needs_swapping</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>needs_swapping</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="374" column="1" bodyfile="pcap.hh" bodystart="374" bodyend="374"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1pcap__t_1a48698606d7c3241c8020dd42e17b205f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref></type>
+        <definition>file_header_t libnokogiri::pcap::pcap_t::header</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>header</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="377" column="1" bodyfile="pcap.hh" bodystart="377" bodyend="377"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1pcap__t_1a2fa934e4752d85344e4e98471cfe5200" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void libnokogiri::pcap::pcap_t::header</definition>
+        <argsstring>(file_header_t header) noexcept</argsstring>
+        <name>header</name>
+        <param>
+          <type><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref></type>
+          <declname>header</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="378" column="1" bodyfile="pcap.hh" bodystart="378" bodyend="378"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1pcap__t_1a389ae2788440f4de58a4c4283dbd5189" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44" kindref="member">captrue_compression_t</ref></type>
+        <definition>captrue_compression_t libnokogiri::pcap::pcap_t::compression_type</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>compression_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="381" column="1" bodyfile="pcap.hh" bodystart="381" bodyend="381"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1pcap__t_1a624508a386dee71fc91d38fa4f91838f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool libnokogiri::pcap::pcap_t::valid</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>valid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="384" column="1" bodyfile="pcap.hh" bodystart="384" bodyend="384"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1pcap__t_1ae6d03862d6946c388d2034c6a925b094" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool libnokogiri::pcap::pcap_t::save</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>save</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="387" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1pcap__t_1a4ff30ae42107430821aa438774716ca1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void libnokogiri::pcap::pcap_t::swap</definition>
+        <argsstring>(pcap_t &amp;desc) noexcept</argsstring>
+        <name>swap</name>
+        <param>
+          <type><ref refid="structlibnokogiri_1_1pcap_1_1pcap__t" kindref="compound">pcap_t</ref> &amp;</type>
+          <declname>desc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.hh" line="389" column="1" bodyfile="pcap.hh" bodystart="389" bodyend="395"/>
+      </memberdef>
+      </sectiondef>
     <briefdescription>
 <para>pcap file container </para>    </briefdescription>
     <detaileddescription>
 <para>This structure contains the machinery to read, write, and edit pcap files.</para><para>The structure of a pcap file is a file header (pcap_header_t) followed by a collection of packet header and packet data pairs. This is all optionally gz compressed. </para>    </detaileddescription>
-    <location file="pcap.hh" line="345" column="1" bodyfile="pcap.hh" bodystart="345" bodyend="348"/>
+    <location file="pcap.hh" line="350" column="1" bodyfile="pcap.hh" bodystart="350" bodyend="396"/>
     <listofallmembers>
+      <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a9843f899dab18585fd7b9803370877f8" prot="private" virt="non-virtual"><scope>libnokogiri::pcap::pcap_t</scope><name>_compression</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a21eda2811ed97c1437cdd2db858b59a9" prot="private" virt="non-virtual"><scope>libnokogiri::pcap::pcap_t</scope><name>_file</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1aca9062af7560e0c273ffbfa0fdd61a51" prot="private" virt="non-virtual"><scope>libnokogiri::pcap::pcap_t</scope><name>_header</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a6d86f1142aee33d6430a7ca7a2029e00" prot="private" virt="non-virtual"><scope>libnokogiri::pcap::pcap_t</scope><name>_needs_swapping</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a9f5a71d33263eca2b67448f3494ad804" prot="private" virt="non-virtual"><scope>libnokogiri::pcap::pcap_t</scope><name>_readonly</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1aea045ebb59fb3384f414bdd1be8be611" prot="private" virt="non-virtual"><scope>libnokogiri::pcap::pcap_t</scope><name>_valid</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a389ae2788440f4de58a4c4283dbd5189" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::pcap_t</scope><name>compression_type</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a48698606d7c3241c8020dd42e17b205f" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::pcap_t</scope><name>header</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a2fa934e4752d85344e4e98471cfe5200" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::pcap_t</scope><name>header</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a7d94420f48cf3ab6a19a0108fe3952d0" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::pcap_t</scope><name>needs_swapping</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1aa558e8a88c4b13a6549a291bc773d7ea" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::pcap_t</scope><name>operator=</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a13a350c072d00bef3cb6217cfafddadf" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::pcap_t</scope><name>operator=</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a4c093bdcb1662933a63ab64a984b5b3d" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::pcap_t</scope><name>pcap_t</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a73e96e9d3e68a48d6a8c8bd0527b2827" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::pcap_t</scope><name>pcap_t</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1af60e88a1b11c9b140a8734e44dd23af1" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::pcap_t</scope><name>pcap_t</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1ab56e568272155aa141cbf918cf7b11c5" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::pcap_t</scope><name>pcap_t</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a7d47e094eb8ce5fe4496eefbbc460ec1" prot="private" virt="non-virtual"><scope>libnokogiri::pcap::pcap_t</scope><name>read_header</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1ae6d03862d6946c388d2034c6a925b094" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::pcap_t</scope><name>save</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a4ff30ae42107430821aa438774716ca1" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::pcap_t</scope><name>swap</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a624508a386dee71fc91d38fa4f91838f" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::pcap_t</scope><name>valid</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

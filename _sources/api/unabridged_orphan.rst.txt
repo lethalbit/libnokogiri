@@ -40,6 +40,11 @@ Files
 .. toctree::
    :maxdepth: 5
 
+   file_common.cc.rst
+
+.. toctree::
+   :maxdepth: 5
+
    file_common.hh.rst
 
 .. toctree::

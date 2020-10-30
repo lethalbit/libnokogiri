@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="158" column="1" bodyfile="pcap.hh" bodystart="158" bodyend="-1"/>
+        <location file="pcap.hh" line="165" column="1" bodyfile="pcap.hh" bodystart="165" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1packet__header__t_1ae2f0441abcde10c7448062ba24693c07" prot="private" static="no" mutable="no">
         <type>std::uint32_t</type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="159" column="1" bodyfile="pcap.hh" bodystart="159" bodyend="-1"/>
+        <location file="pcap.hh" line="166" column="1" bodyfile="pcap.hh" bodystart="166" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1packet__header__t_1a2aa97456b3fdc78bc29e90a860892e66" prot="private" static="no" mutable="no">
         <type>std::uint32_t</type>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="160" column="1" bodyfile="pcap.hh" bodystart="160" bodyend="-1"/>
+        <location file="pcap.hh" line="167" column="1" bodyfile="pcap.hh" bodystart="167" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1packet__header__t_1a302e31323881cd7a9ab81f4142e6042d" prot="private" static="no" mutable="no">
         <type>std::uint32_t</type>
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="161" column="1" bodyfile="pcap.hh" bodystart="161" bodyend="-1"/>
+        <location file="pcap.hh" line="168" column="1" bodyfile="pcap.hh" bodystart="168" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -69,7 +69,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="163" column="1" bodyfile="pcap.hh" bodystart="163" bodyend="165"/>
+        <location file="pcap.hh" line="170" column="1" bodyfile="pcap.hh" bodystart="170" bodyend="172"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__t_1a9d349d11b68074cb627431a8d7367e14" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -98,7 +98,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="167" column="1" bodyfile="pcap.hh" bodystart="167" bodyend="170"/>
+        <location file="pcap.hh" line="174" column="1" bodyfile="pcap.hh" bodystart="174" bodyend="177"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__t_1a4a7858b061f010f1dc09f8bbb1c7fee1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -114,7 +114,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="172" column="1" bodyfile="pcap.hh" bodystart="172" bodyend="172"/>
+        <location file="pcap.hh" line="179" column="1" bodyfile="pcap.hh" bodystart="179" bodyend="179"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__t_1a9cd419a7db50fb2599573cf9b6c92a76" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::uint32_t</type>
@@ -127,7 +127,7 @@
 <para>Retrieve the packets timestamp </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="177" column="1" bodyfile="pcap.hh" bodystart="177" bodyend="177"/>
+        <location file="pcap.hh" line="184" column="1" bodyfile="pcap.hh" bodystart="184" bodyend="184"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__t_1a3cc64e6e0a591efbacf1a2cc99738fee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -144,7 +144,7 @@
 <para>Set the packet timestamp </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="179" column="1" bodyfile="pcap.hh" bodystart="179" bodyend="179"/>
+        <location file="pcap.hh" line="186" column="1" bodyfile="pcap.hh" bodystart="186" bodyend="186"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__t_1a4fc89050bbdc58c0bed871de2054df80" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::uint32_t</type>
@@ -157,7 +157,7 @@
 <para>Retrieve the micro/nano second value for the packet </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="183" column="1" bodyfile="pcap.hh" bodystart="183" bodyend="183"/>
+        <location file="pcap.hh" line="190" column="1" bodyfile="pcap.hh" bodystart="190" bodyend="190"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__t_1aca62c83d1041af332dbeec0a84493255" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -174,7 +174,7 @@
 <para>Set the micro/nano second value for the packet </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="185" column="1" bodyfile="pcap.hh" bodystart="185" bodyend="185"/>
+        <location file="pcap.hh" line="192" column="1" bodyfile="pcap.hh" bodystart="192" bodyend="192"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__t_1a03cb5d9a6130e49093cfc4cc0d9b8cf3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::uint32_t</type>
@@ -187,7 +187,7 @@
 <para>Retrieve the captured length of the packet </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="189" column="1" bodyfile="pcap.hh" bodystart="189" bodyend="189"/>
+        <location file="pcap.hh" line="196" column="1" bodyfile="pcap.hh" bodystart="196" bodyend="196"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__t_1a9b3b72b9c7ffc8020d2c21eb5d97d4e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -204,7 +204,7 @@
 <para>Set the captured length of the packet </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="191" column="1" bodyfile="pcap.hh" bodystart="191" bodyend="191"/>
+        <location file="pcap.hh" line="198" column="1" bodyfile="pcap.hh" bodystart="198" bodyend="198"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__t_1ae0d03678cf71fbfccf6d1fa8b52d4be2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::uint32_t</type>
@@ -217,7 +217,7 @@
 <para>Retrieve the actual length of the packet </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="195" column="1" bodyfile="pcap.hh" bodystart="195" bodyend="195"/>
+        <location file="pcap.hh" line="202" column="1" bodyfile="pcap.hh" bodystart="202" bodyend="202"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__t_1ab6ff365c35ec8a80e5bc768d2ea5046e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -234,7 +234,7 @@
 <para>Set the actual length of the packet </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="197" column="1" bodyfile="pcap.hh" bodystart="197" bodyend="197"/>
+        <location file="pcap.hh" line="204" column="1" bodyfile="pcap.hh" bodystart="204" bodyend="204"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__header__t_1a6a765377ff1a056fd5c84e3d935d710c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -247,7 +247,7 @@
 <para>Checks if the packet represented by this header is a full packet </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="201" column="1" bodyfile="pcap.hh" bodystart="201" bodyend="201"/>
+        <location file="pcap.hh" line="208" column="1" bodyfile="pcap.hh" bodystart="208" bodyend="208"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -267,7 +267,7 @@
 </programlisting></para><para><itemizedlist>
 <listitem><para><computeroutput>Seconds</computeroutput> - An unsigned 32-bit unix timestamp when the packet was captured. This can be adjusted to GMT with the timezone offset in the file header.</para></listitem><listitem><para><computeroutput>Microseconds</computeroutput> - An unsigned 32-bit value representing either the microseconds when the packet was captured if standard, or the nanoseconds when captured if using the modified format.</para></listitem><listitem><para><computeroutput>Captured Length</computeroutput> - An unsigned 32-bit value representing the number of octets captured that have been saved to the file.</para></listitem><listitem><para><computeroutput>Full Packet Length</computeroutput> - An unsigned 32-bit value representing the total number of octets in the packet.</para></listitem></itemizedlist>
 </para><para>Due to resource limitations, it is possible for a packet capture to not have the complete contents of the packet, therefore the packet headers keep track of how big the packet was, as well as how much of that was actually written to the capture. </para>    </detaileddescription>
-    <location file="pcap.hh" line="156" column="1" bodyfile="pcap.hh" bodystart="156" bodyend="202"/>
+    <location file="pcap.hh" line="163" column="1" bodyfile="pcap.hh" bodystart="163" bodyend="209"/>
     <listofallmembers>
       <member refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a2aa97456b3fdc78bc29e90a860892e66" prot="private" virt="non-virtual"><scope>libnokogiri::pcap::packet_header_t</scope><name>_have</name></member>
       <member refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a02c1523a85e0365ef563d0ea183fa0a9" prot="private" virt="non-virtual"><scope>libnokogiri::pcap::packet_header_t</scope><name>_timestamp</name></member>
