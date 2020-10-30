@@ -14,7 +14,6 @@
 #include <libnokogiri/internal/defs.hh>
 #include <libnokogiri/internal/fs.hh>
 #include <libnokogiri/internal/zlib.hh>
-#include <libnokogiri/internal/file_wrapper.hh>
 
 #include <libnokogiri/pcapng/block.hh>
 #include <libnokogiri/pcapng/blocks.hh>
@@ -33,7 +32,7 @@ namespace libnokogiri::pcapng {
 
 		This structure contains the machinery to read, write, and edit pcapng files.
 	*/
-	struct pcapng_t final {
+	struct LIBNOKOGIRI_CLS_API pcapng_t final {
 	public:
 
 	};

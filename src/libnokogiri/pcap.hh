@@ -5,15 +5,13 @@
 
 #include <cstdint>
 #include <memory>
+#include <optional>
 
 #include <libnokogiri/config.hh>
 #include <libnokogiri/common.hh>
 
 #include <libnokogiri/internal/defs.hh>
 #include <libnokogiri/internal/fs.hh>
-#include <libnokogiri/internal/zlib.hh>
-#include <libnokogiri/internal/file_wrapper.hh>
-
 
 namespace libnokogiri::pcap {
 
@@ -253,17 +251,16 @@ namespace libnokogiri::pcap {
 			_base_header{}, _if_index{0U}, _proto{0U}, _type{0U}, _padding{0U}
 			{ /* NOP */ }
 
-		constexpr packet_header_modified_t(packet_header_t base_header, std::uint32_t if_index,
+		constexpr packet_header_modified_t(packet_header_t&& base_header, std::uint32_t if_index,
 				std::uint16_t protocol, std::uint8_t type) noexcept :
 			_base_header{base_header}, _if_index{if_index}, _proto{protocol}, _type{type},
 			_padding{0U} { /* NOP */ }
 
 		packet_header_modified_t(std::nullptr_t) noexcept { /* NOP */ }
 
-
 		/*! Retrieve the base packet header */
 		[[nodiscard]]
-		packet_header_t base_header() const noexcept { return _base_header; }
+		const packet_header_t base_header() const noexcept { return _base_header; }
 		/*! Set the base packet header */
 		void base_header(packet_header_t base_header) noexcept { _base_header = base_header; }
 
@@ -284,7 +281,6 @@ namespace libnokogiri::pcap {
 		std::uint8_t type() const noexcept { return _type; }
 		/*! Set the type of this packet */
 		void type(std::uint8_t type) noexcept { _type = type; }
-
 	};
 
 
@@ -351,10 +347,55 @@ namespace libnokogiri::pcap {
 		gz compressed.
 
 	*/
-	struct pcap_t final {
-	public:
+	struct LIBNOKOGIRI_CLS_API pcap_t final {
+	private:
+		libnokogiri::internal::fd_t _file;
+		captrue_compression_t _compression;
+		bool _readonly;
+		file_header_t _header{};
+		bool _valid{false};
+		bool _needs_swapping{false};
 
+		bool read_header() noexcept;
+	public:
+		constexpr pcap_t() = delete;
+
+		pcap_t(libnokogiri::internal::fs::path& file, captrue_compression_t compression, bool read_only) noexcept;
+
+		pcap_t(const pcap_t&) = delete;
+		pcap_t& operator=(const pcap_t&) = delete;
+
+		pcap_t(pcap_t&& capture) noexcept :
+			_file{},_compression{}, _readonly{true}
+			{ swap(capture); }
+		void operator=(pcap_t&& capture) noexcept { swap(capture); }
+
+		[[nodiscard]]
+		bool needs_swapping() const noexcept { return _needs_swapping; }
+
+		[[nodiscard]]
+		file_header_t header() const noexcept { return _header; }
+		void header(file_header_t header) noexcept { _header = header; }
+
+		[[nodiscard]]
+		captrue_compression_t compression_type() const noexcept { return _compression; }
+
+		[[nodiscard]]
+		bool valid() const noexcept { return _valid; }
+
+		[[nodiscard]]
+		bool save() const noexcept;
+
+		void swap(pcap_t& desc) noexcept {
+			std::swap(_file, desc._file);
+			std::swap(_compression, desc._compression);
+			std::swap(_readonly, desc._readonly);
+			std::swap(_header, desc._header);
+			std::swap(_valid, desc._valid);
+		}
 	};
+
+	inline void swap(pcap_t& a, pcap_t& b) noexcept { a.swap(b); }
 }
 
 #endif /* LIBNOKOGIRI_PCAP_HH */
