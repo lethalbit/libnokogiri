@@ -29,7 +29,6 @@ namespace libnokogiri::compiletime {
 
 	/* Misc */
 	static constexpr std::string_view bugreport_url{"@BUGREPORT_URL@"sv};
-	static constexpr bool compressed_pcap_support{@COMPRESSED_PCAP_SUPPORT@};
 }
 
 #endif /* LIBNOKOGIRI_CONFIG_HH */

@@ -46,15 +46,6 @@ config.set('PREFIX', get_option('prefix'))
 
 config.set('BUGREPORT_URL', get_option('bugreport_url'))
 
-if get_option('compressed_pcap_support')
-	compressed_pcaps = 'true'
-	config.set('LIBNOKOGIRI_COMPRESSED_PCAP_SUPPORTED', 1)
-else
-	compressed_pcaps = 'false'
-endif
-
-config.set('COMPRESSED_PCAP_SUPPORT', compressed_pcaps)
-
 configure_file(
 	configuration: config,
 	input: 'config.hh.in',

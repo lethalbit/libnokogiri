@@ -125,7 +125,7 @@ namespace libnokogiri::internal {
 		static fd_t maketemp(const int flags, const mode_t mode = 0, const std::string_view& ext = ".tmp"sv) noexcept {
 			auto filepath = fs::temp_directory_path() / fs::path{fd_t::random_string(16)};
 			filepath  += ext;
-			return std::move(fd_t{filepath, flags | O_CREAT, mode, true});
+			return fd_t{filepath, flags | O_CREAT, mode, true};
 		}
 
 		void operator =(fd_t &&fd_) noexcept { swap(fd_); }
