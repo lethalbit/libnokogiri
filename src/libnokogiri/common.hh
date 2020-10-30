@@ -219,23 +219,23 @@ namespace libnokogiri {
 			_major{0U}, _minor{0U}
 			{ /* NOP */ }
 
-		constexpr version_t(std::uint16_t major, std::uint16_t minor) noexcept :
-			_major{major}, _minor{minor}
+		constexpr version_t(std::uint16_t vmajor, std::uint16_t vminor) noexcept :
+			_major{vmajor}, _minor{vminor}
 			{ /* NOP */ }
 
 		version_t(std::nullptr_t) noexcept { /* NOP */ }
 
 		/*! Gets the major version of the section header */
 		[[nodiscard]]
-		std::uint32_t major() const noexcept { return _major; }
+		std::uint32_t major_version() const noexcept { return _major; }
 		/*! Gets the minor version of the section header */
 		[[nodiscard]]
-		std::uint32_t minor() const noexcept { return _minor; }
+		std::uint32_t minor_version() const noexcept { return _minor; }
 
 		/*! Check if two versions are equal */
 		[[nodiscard]]
 		bool operator==(const version_t& ver) const noexcept {
-			return (_major == ver.major() && _minor == ver.minor());
+			return (_major == ver.major_version() && _minor == ver.minor_version());
 		}
 		/*! Check if two versions are not equal */
 		[[nodiscard]]
@@ -247,8 +247,8 @@ namespace libnokogiri {
 		[[nodiscard]]
 		bool operator>(const version_t& ver) const noexcept {
 			return (
-				(_major > ver.major() && _minor >= ver.minor()) ||
-				(_major >= ver.major() && _minor > ver.minor()));
+				(_major > ver.major_version() && _minor >= ver.minor_version()) ||
+				(_major >= ver.major_version() && _minor > ver.minor_version()));
 		}
 		/*! Check if one version is greater than or equal to another */
 		[[nodiscard]]
@@ -260,8 +260,8 @@ namespace libnokogiri {
 		[[nodiscard]]
 		bool operator<(const version_t& ver) const noexcept {
 			return (
-				(_major < ver.major() &&  _minor <= ver.minor()) ||
-				(_minor <= ver.major() && _minor < ver.minor()));
+				(_major < ver.major_version() &&  _minor <= ver.minor_version()) ||
+				(_minor <= ver.major_version() && _minor < ver.minor_version()));
 		}
 		/*! Check if one version is less than or equal to another */
 		[[nodiscard]]
