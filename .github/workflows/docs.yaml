@@ -13,16 +13,16 @@ jobs:
         env:
           WORKSPACE: ${{ github.workspace }}
         run: |
-          echo ::set-env name=PATH::"$HOME/.local/bin:$PATH"
-          echo ::set-env name=GITHUB_WORKSPACE::"`pwd`"
+          echo -n "PATH=\"$HOME/.local/bin:$PATH\"" >> $GITHUB_ENV
+          echo -n "GITHUB_WORKSPACE=\"`pwd`\"" >> $GITHUB_ENV
       - name: Setup
         shell: bash
         run: |
           sudo apt-add-repository ppa:ubuntu-toolchain-r/test
           sudo apt-get update
           sudo apt-get install gcc-10 g++-10 doxygen graphviz
-          echo ::set-env name=CC::$CC
-          echo ::set-env name=CXX::$CXX
+          echo -n "CC=$CC" >> $GITHUB_ENV
+          echo -n "CXX=$CXX" >> $GITHUB_ENV
           wget https://github.com/ninja-build/ninja/releases/download/v1.9.0/ninja-linux.zip
           sudo pip3 install --upgrade pip setuptools wheel
           pip3 install --user meson Sphinx exhale breathe

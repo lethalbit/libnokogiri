@@ -29,8 +29,8 @@ jobs:
         env:
           WORKSPACE: ${{ github.workspace }}
         run: |
-          echo ::set-env name=PATH::"$HOME/.local/bin:$PATH"
-          echo ::set-env name=GITHUB_WORKSPACE::"`pwd`"
+          echo -n "PATH=\"$HOME/.local/bin:$PATH\"" >> $GITHUB_ENV
+          echo -n "GITHUB_WORKSPACE=\"`pwd`\"" >> $GITHUB_ENV
       - name: Setup GCC
         if: startsWith(matrix.compiler, 'gcc')
         shell: bash
@@ -39,8 +39,8 @@ jobs:
           sudo apt-add-repository ppa:ubuntu-toolchain-r/test
           sudo apt-get update
           sudo apt-get install $CC $CXX
-          echo ::set-env name=CC::$CC
-          echo ::set-env name=CXX::$CXX
+          echo -n "CC=$CC" >> $GITHUB_ENV
+          echo -n "CXX=$CXX" >> $GITHUB_ENV
         env:
           CC: ${{ matrix.compiler }}
       - name: Setup Clang
@@ -51,8 +51,8 @@ jobs:
           sudo apt-get update
           CXX=${CC/#clang/clang++}
           sudo apt-get install $CC $CXX
-          echo ::set-env name=CC::$CC
-          echo ::set-env name=CXX::$CXX
+          echo -n "CC=$CC" >> $GITHUB_ENV
+          echo -n "CXX=$CXX" >> $GITHUB_ENV
         env:
           CC: ${{ matrix.compiler }}
       - name: Checkout libnokogiri
