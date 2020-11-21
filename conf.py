@@ -16,7 +16,7 @@ project = 'libnokogiri'
 copyright = '2020, Aki Van Ness'
 author = 'Aki Van Ness'
 
-release = '0.0.1 272c964'
+release = '0.0.1 8324b2b'
 
 
 # -- General configuration ---------------------------------------------------
