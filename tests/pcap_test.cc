@@ -36,17 +36,18 @@ int main(int argc, char** argv) {
 
 int read(fs::path file) {
 	if (!fs::exists(file) || !fs::is_regular_file(file)) {
-		return 1;
+		std::cerr << "Unable to find file " << file << '\n';
 	}
 
 	libnokogiri::pcap::pcap_t capture{file, libnokogiri::captrue_compression_t::Autodetect, true};
 
 	if (!capture.valid()) {
+		std::cerr << "Capture file " << file << " is not valid \n";
 		return 1;
 	}
 
-	for (auto& pkt : capture) {
-		std::cout << "Packet Size: " << pkt.length() << " Packet Offset: " << pkt.offset() << std::endl;
+	for (auto pkt : capture) {
+		// std::cout << "Packet Size: " << pkt.length() << " Packet Offset: " << pkt.offset() << std::endl;
 	}
 
 	return {};

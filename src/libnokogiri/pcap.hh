@@ -30,6 +30,13 @@ namespace libnokogiri::pcap {
 
 	*/
 	struct LIBNOKOGIRI_CLS_API pcap_t final {
+	public:
+		using iterator_t = libnokogiri::internal::bi_iterator<
+			std::optional<std::reference_wrapper<packet_t>>,
+			packet_storage_t,
+			std::vector<packet_storage_t>::iterator
+		>;
+
 	private:
 		libnokogiri::internal::fd_t _file;
 		captrue_compression_t _compression;
@@ -92,6 +99,27 @@ namespace libnokogiri::pcap {
 			std::swap(_readonly, desc._readonly);
 			std::swap(_header, desc._header);
 			std::swap(_valid, desc._valid);
+		}
+
+		std::optional<std::reference_wrapper<packet_t>> get_packet(std::size_t idx) noexcept {
+			if (idx <= _packets.size()) {
+				return get_packet(std::ref(_packets[idx]));
+			}
+			return std::nullopt;
+		}
+
+		std::optional<std::reference_wrapper<packet_t>> get_packet(packet_storage_t& pkt_storage) noexcept;
+
+		iterator_t begin() noexcept {
+			return iterator_t([this](packet_storage_t& pkt_storage) -> std::optional<std::reference_wrapper<packet_t>> {
+				return get_packet(pkt_storage);
+			}, _packets.begin(), _packets.end(), true);
+		}
+
+		iterator_t end() noexcept {
+			return iterator_t([this](packet_storage_t& pkt_storage) -> std::optional<std::reference_wrapper<packet_t>> {
+				return get_packet(pkt_storage);
+			}, _packets.begin(), _packets.end(), false);
 		}
 	};
 

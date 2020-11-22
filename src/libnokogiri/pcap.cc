@@ -173,7 +173,8 @@ namespace libnokogiri::pcap {
 		const std::size_t pkt_len_offset = 8U;
 
 		while (!_file.isEOF()) {
-			if(_file.seek(pkt_len_offset) != pkt_len_offset)
+			const auto prev_pos = _file.tell();
+			if(_file.seek(pkt_len_offset) != (pkt_len_offset + prev_pos))
 				return false;
 
 			/* Returns an optional */
@@ -183,10 +184,16 @@ namespace libnokogiri::pcap {
 			}
 			const std::uintptr_t offset = static_cast<std::uintptr_t>(_file.seek(pkt_body_offset));
 			_packets.emplace_back(packet_storage_t{*size, offset});
-			if(_file.seek(*size) != *size)
+			const auto pckt_size = _file.tell();
+			if(_file.seek(*size) != (*size + pckt_size))
 				return false;
 		}
 
 		return true;
+	}
+
+	std::optional<std::reference_wrapper<packet_t>> pcap_t::get_packet(packet_storage_t& pkt_storage) noexcept {
+
+		return std::nullopt;
 	}
 }

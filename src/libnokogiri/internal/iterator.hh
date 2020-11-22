@@ -13,7 +13,7 @@ namespace libnokogiri::internal {
 	template<typename T, typename U, typename I>
 	struct bi_iterator final {
 	public:
-		using acc_func_t = std::function<T&(U&)>;
+		using acc_func_t = std::function<T(U&)>;
 	private:
 		acc_func_t _accessor;
 		const I _begin;
@@ -42,9 +42,9 @@ namespace libnokogiri::internal {
 		}
 
 		[[nodiscard]]
-		T& operator*() noexcept { return acc_func_t(*_current); }
+		T operator*() noexcept { return _accessor(*_current); }
 		[[nodiscard]]
-		T& operator->() noexcept { return operator*(); }
+		T operator->() noexcept { return operator*(); }
 
 		[[nodiscard]]
 		bool operator==(bi_iterator& a) const noexcept { return _current == a._current; }
