@@ -34,6 +34,7 @@ namespace libnokogiri::pcap {
 		libnokogiri::internal::fd_t _file;
 		captrue_compression_t _compression;
 		bool _readonly;
+		bool _prefetch;
 		file_header_t _header{};
 
 		bool _valid{false};
@@ -46,7 +47,14 @@ namespace libnokogiri::pcap {
 	public:
 		constexpr pcap_t() = delete;
 
-		pcap_t(libnokogiri::internal::fs::path& file, captrue_compression_t compression, bool read_only) noexcept;
+		/*! \brief Construct a new pcap file container
+
+			\param file The path to the pcap file
+			\param compression The compression mode for the pcap file
+			\param read_only Open the pcap file in read only
+			\param prefetch Rather than initially building a packet index and then doing I/O to get each packet, ingest all packets at once, this trades memory usage for speed
+		*/
+		pcap_t(libnokogiri::internal::fs::path& file, captrue_compression_t compression, bool read_only, bool prefetch = false) noexcept;
 
 		pcap_t(const pcap_t&) = delete;
 		pcap_t& operator=(const pcap_t&) = delete;

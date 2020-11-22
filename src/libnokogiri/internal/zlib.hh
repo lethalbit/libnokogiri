@@ -148,11 +148,11 @@ namespace libnokogiri::internal {
 				tmp.fill(0x00U);
 			}
 
-			if (gzread_ret == -1) {
+			if (gzread_ret < 0) {
 				return -1;
 			}
 
-			for (std::size_t idx{}; idx < gzread_ret; ++idx) {
+			for (std::int32_t idx{}; idx < gzread_ret; ++idx) {
 				const auto ret = file.write(tmp[idx]);
 				if (!ret) {
 					return -1;

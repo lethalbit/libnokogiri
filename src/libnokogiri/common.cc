@@ -13,7 +13,8 @@ namespace libnokogiri::internal {
 		constexpr static std::array<uint8_t, 2> gzip_header{0x1FU, 0x8BU};
 		std::array<uint8_t, 2> read_bytes{};
 		const auto res{file.read<2>(read_bytes)};
-		file.head();
+		[[maybe_unused]]
+		const auto _ = file.head();
 
 		if (!res) {
 			return captrue_compression_t::Unknown;

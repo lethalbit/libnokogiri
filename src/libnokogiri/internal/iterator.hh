@@ -26,7 +26,7 @@ namespace libnokogiri::internal {
 		[[nodiscard]]
 		bi_iterator& operator++() noexcept {
 			if (_current != _end) {
-				_current++
+				_current++;
 			}
 
 			return *this;
@@ -35,7 +35,7 @@ namespace libnokogiri::internal {
 		[[nodiscard]]
 		bi_iterator& operator--() noexcept {
 			if (_current != _begin) {
-				_current--
+				_current--;
 			}
 
 			return *this;
@@ -50,7 +50,7 @@ namespace libnokogiri::internal {
 		bool operator==(bi_iterator& a) const noexcept { return _current == a._current; }
 		[[nodiscard]]
 		bool operator!=(bi_iterator& a) const noexcept { return !operator==(a); }
-	}
+	};
 }
 
 #endif /* LIBNOKOGIRI_INTERNAL_ITERATOR_HH */

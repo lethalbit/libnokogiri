@@ -16,8 +16,8 @@ namespace fs = libnokogiri::internal::fs;
 
 namespace libnokogiri::pcap {
 
-	pcap_t::pcap_t(libnokogiri::internal::fs::path& file, captrue_compression_t compression, bool read_only) noexcept :
-		_file{}, _compression{compression}, _readonly{read_only} {
+	pcap_t::pcap_t(libnokogiri::internal::fs::path& file, captrue_compression_t compression, bool read_only, bool prefetch) noexcept :
+		_file{}, _compression{compression}, _readonly{read_only}, _prefetch{prefetch} {
 		libnokogiri::internal::fd_t cap{file, (read_only) ? O_RDONLY : O_RDWR};
 		if (_compression == captrue_compression_t::Autodetect) {
 			_compression = libnokogiri::internal::detect_captrue_compression(cap);
@@ -173,14 +173,18 @@ namespace libnokogiri::pcap {
 		const std::size_t pkt_len_offset = 8U;
 
 		while (!_file.isEOF()) {
-			_file.seek(pkt_len_offset);
+			if(_file.seek(pkt_len_offset) != pkt_len_offset)
+				return false;
+
+			/* Returns an optional */
 			const auto size = _file.read<std::uint32_t>();
 			if (!size) {
 				return false;
 			}
 			const std::uintptr_t offset = static_cast<std::uintptr_t>(_file.seek(pkt_body_offset));
 			_packets.emplace_back(packet_storage_t{*size, offset});
-			_file.seek(*size);
+			if(_file.seek(*size) != *size)
+				return false;
 		}
 
 		return true;

@@ -131,11 +131,16 @@ namespace libnokogiri::internal {
 		}
 
 		void operator =(fd_t &&fd_) noexcept { swap(fd_); }
-		LIBNOKOGIRI_NO_DISCARD(operator int32_t() const noexcept) { return fd; }
-		LIBNOKOGIRI_NO_DISCARD(bool operator ==(const int32_t desc) const noexcept) { return fd == desc; }
-		LIBNOKOGIRI_NO_DISCARD(bool valid() const noexcept) { return fd != -1; }
-		LIBNOKOGIRI_NO_DISCARD(bool isEOF() const noexcept) { return eof; }
-		LIBNOKOGIRI_NO_DISCARD(fs::path filename() const noexcept) { return _filename; }
+		[[nodiscard]]
+		operator int32_t() const noexcept { return fd; }
+		[[nodiscard]]
+		bool operator ==(const int32_t desc) const noexcept { return fd == desc; }
+		[[nodiscard]]
+		bool valid() const noexcept { return fd != -1; }
+		[[nodiscard]]
+		bool isEOF() const noexcept { return eof; }
+		[[nodiscard]]
+		fs::path filename() const noexcept { return _filename; }
 
 		void invalidate() noexcept { fd = -1; }
 
@@ -147,7 +152,8 @@ namespace libnokogiri::internal {
 			std::swap(_filename, desc._filename);
 		}
 
-		LIBNOKOGIRI_NO_DISCARD(ssize_t read(void *const bufferPtr, const size_t bufferLen, std::nullptr_t) const noexcept) {
+		[[nodiscard]]
+		ssize_t read(void *const bufferPtr, const size_t bufferLen, std::nullptr_t) const noexcept {
 			const auto result = internal::fdread(fd, bufferPtr, bufferLen);
 			if (!result && bufferLen) {
 				eof = true;
@@ -155,20 +161,26 @@ namespace libnokogiri::internal {
 			return result;
 		}
 
-		LIBNOKOGIRI_NO_DISCARD(off_t seek(const off_t offset, const int32_t whence = SEEK_CUR) const noexcept) {
+		[[nodiscard]]
+		off_t seek(const off_t offset, const int32_t whence = SEEK_CUR) const noexcept {
 			const auto result = internal::fdseek(fd, offset, whence);
 			eof = result == length();
 			return result;
 		}
 
-		LIBNOKOGIRI_NO_DISCARD(ssize_t write(const void *const bufferPtr, const size_t bufferLen, std::nullptr_t) const noexcept)
+		[[nodiscard]]
+		ssize_t write(const void *const bufferPtr, const size_t bufferLen, std::nullptr_t) const noexcept
 			{ return internal::fdwrite(fd, bufferPtr, bufferLen); }
-		LIBNOKOGIRI_NO_DISCARD(off_t tell() const noexcept) { return internal::fdtell(fd); }
+		[[nodiscard]]
+		off_t tell() const noexcept { return internal::fdtell(fd); }
 
-		LIBNOKOGIRI_NO_DISCARD(bool head() const noexcept) { return seek(0, SEEK_SET) == 0; }
-		LIBNOKOGIRI_NO_DISCARD(fd_t dup() const noexcept) { return ::dup(fd); }
+		[[nodiscard]]
+		bool head() const noexcept { return seek(0, SEEK_SET) == 0; }
+		[[nodiscard]]
+		fd_t dup() const noexcept { return ::dup(fd); }
 
-		LIBNOKOGIRI_NO_DISCARD(bool tail() const noexcept) {
+		[[nodiscard]]
+		bool tail() const noexcept {
 			const auto offset = length();
 			if (offset < 0) {
 				return false;
@@ -176,7 +188,8 @@ namespace libnokogiri::internal {
 			return seek(offset, SEEK_SET) == offset;
 		}
 
-		LIBNOKOGIRI_NO_DISCARD(internal::stat_t stat() const noexcept) {
+		[[nodiscard]]
+		internal::stat_t stat() const noexcept {
 			internal::stat_t fileStat{};
 			if (!internal::fstat(fd, &fileStat)) {
 				return fileStat;
@@ -184,7 +197,8 @@ namespace libnokogiri::internal {
 			return {};
 		}
 
-		LIBNOKOGIRI_NO_DISCARD(off_t length() const noexcept) {
+		[[nodiscard]]
+		off_t length() const noexcept {
 			if (_length != -1) {
 				return _length;
 			}
@@ -194,10 +208,12 @@ namespace libnokogiri::internal {
 			return _length;
 		}
 
-		LIBNOKOGIRI_NO_DISCARD(bool resize(const off_t newSize) const noexcept)
+		[[nodiscard]]
+		bool resize(const off_t newSize) const noexcept
 			{ return internal::fdtruncate(fd, newSize) == 0; }
 
-		LIBNOKOGIRI_NO_DISCARD(bool read(void *const value, const size_t valueLen, size_t &resultLen) const noexcept) {
+		[[nodiscard]]
+		bool read(void *const value, const size_t valueLen, size_t &resultLen) const noexcept {
 			const ssize_t result = read(value, valueLen, nullptr);
 			if (result < 0) {
 				return false;
@@ -206,12 +222,14 @@ namespace libnokogiri::internal {
 			return resultLen == valueLen;
 		}
 
-		LIBNOKOGIRI_NO_DISCARD(bool read(void *const value, const size_t valueLen) const noexcept) {
+		[[nodiscard]]
+		bool read(void *const value, const size_t valueLen) const noexcept {
 			size_t resultLen = 0;
 			return read(value, valueLen, resultLen);
 		}
 
-		LIBNOKOGIRI_NO_DISCARD(bool write(const void *const value, const size_t valueLen) const noexcept) {
+		[[nodiscard]]
+		bool write(const void *const value, const size_t valueLen) const noexcept {
 			const ssize_t result = write(value, valueLen, nullptr);
 			if (result < 0) {
 				return false;
@@ -219,59 +237,85 @@ namespace libnokogiri::internal {
 			return size_t(result) == valueLen;
 		}
 
-		template<typename T> bool read(T &value) const noexcept
+		template<typename T>
+		[[nodiscard]]
+		bool read(T &value) const noexcept
 			{ return read(&value, sizeof(T)); }
-		template<typename T> bool write(const T &value) const noexcept
+		template<typename T>
+		[[nodiscard]]
+		bool write(const T &value) const noexcept
 			{ return write(&value, sizeof(T)); }
-		template<typename T> bool read(std::unique_ptr<T> &value) const noexcept
+		template<typename T>
+		[[nodiscard]]
+		bool read(std::unique_ptr<T> &value) const noexcept
 			{ return read(value.get(), sizeof(T)); }
-		template<typename T> bool read(const std::unique_ptr<T> &value) const noexcept
+		template<typename T>
+		[[nodiscard]]
+		bool read(const std::unique_ptr<T> &value) const noexcept
 			{ return read(value.get(), sizeof(T)); }
-		template<typename T> bool write(const std::unique_ptr<T> &value) const noexcept
+		template<typename T>
+		[[nodiscard]]
+		bool write(const std::unique_ptr<T> &value) const noexcept
 			{ return write(value.get(), sizeof(T)); }
 		// NOLINTNEXTLINE(cppcoreguidelines-avoid-c-arrays,modernize-avoid-c-arrays)
-		template<typename T> bool read(const std::unique_ptr<T []> &value, const size_t valueCount) const noexcept
+		template<typename T>
+		[[nodiscard]]
+		bool read(const std::unique_ptr<T []> &value, const size_t valueCount) const noexcept
 			{ return read(value.get(), sizeof(T) * valueCount); }
 		// NOLINTNEXTLINE(cppcoreguidelines-avoid-c-arrays,modernize-avoid-c-arrays)
-		template<typename T> bool write(const std::unique_ptr<T []> &value, const size_t valueCount) const noexcept
+		template<typename T>
+		[[nodiscard]]
+		bool write(const std::unique_ptr<T []> &value, const size_t valueCount) const noexcept
 			{ return write(value.get(), sizeof(T) * valueCount); }
-		template<typename T, size_t N> bool read(std::array<T, N> &value) const noexcept
+		template<typename T, size_t N>
+		[[nodiscard]]
+		bool read(std::array<T, N> &value) const noexcept
 			{ return read(value.data(), sizeof(T) * N); }
-		template<typename T, size_t N> bool write(const std::array<T, N> &value) const noexcept
+		template<typename T, size_t N>
+		[[nodiscard]]
+		bool write(const std::array<T, N> &value) const noexcept
 			{ return write(value.data(), sizeof(T) * N); }
 
-		template<typename T> std::optional<T> read() const noexcept {
+		template<typename T>
+		[[nodiscard]]
+		std::optional<T> read() const noexcept {
 			T local{};
 			const auto res = read(local);
 			return res ? std::optional<T>{local} : std::nullopt;
 		}
 
+		[[nodiscard]]
 		bool write(const std::string &value) const noexcept
 			{ return write(value.data(), value.size()); }
 
+		[[nodiscard]]
 		bool write(const std::string_view &value) const noexcept
 			{ return write(value.data(), value.size()); }
 
 		template<size_t length, typename T, size_t N>
+		[[nodiscard]]
 		bool read(std::array<T, N> &value) const noexcept {
 			static_assert(length <= N, "Can't request to read more than the std::array<> length");
 			return read(value.data(), sizeof(T) * length);
 		}
 
 		template<size_t length, typename T, size_t N>
+		[[nodiscard]]
 		bool write(const std::array<T, N> &value) const noexcept {
 			static_assert(length <= N, "Can't request to write more than the std::array<> length");
 			return write(value.data(), sizeof(T) * length);
 		}
 
-		LIBNOKOGIRI_NO_DISCARD(bool readLE(uint16_t &value) const noexcept) {
+		[[nodiscard]]
+		bool readLE(uint16_t &value) const noexcept {
 			std::array<uint8_t, 2> data{};
 			const bool result = read(data);
 			value = (uint16_t(data[1]) << 8U) | data[0];
 			return result;
 		}
 
-		LIBNOKOGIRI_NO_DISCARD(bool writeLE(const uint16_t value) const noexcept) {
+		[[nodiscard]]
+		bool writeLE(const uint16_t value) const noexcept {
 			const std::array<uint8_t, 2> data
 			{{
 				uint8_t(value),
@@ -280,7 +324,8 @@ namespace libnokogiri::internal {
 			return write(data);
 		}
 
-		LIBNOKOGIRI_NO_DISCARD(bool readLE(uint32_t &value) const noexcept) {
+		[[nodiscard]]
+		bool readLE(uint32_t &value) const noexcept {
 			std::array<uint8_t, 4> data{};
 			const bool result = read(data);
 			value = (uint32_t(data[3]) << 24U) | (uint32_t(data[2]) << 16U) |
@@ -288,7 +333,8 @@ namespace libnokogiri::internal {
 			return result;
 		}
 
-		LIBNOKOGIRI_NO_DISCARD(bool writeLE(const uint32_t value) const noexcept) {
+		[[nodiscard]]
+		bool writeLE(const uint32_t value) const noexcept {
 			const std::array<uint8_t, 4> data
 			{{
 				uint8_t(value),
@@ -299,7 +345,8 @@ namespace libnokogiri::internal {
 			return write(data);
 		}
 
-		LIBNOKOGIRI_NO_DISCARD(bool readLE(uint64_t &value) const noexcept) {
+		[[nodiscard]]
+		bool readLE(uint64_t &value) const noexcept {
 			std::array<uint8_t, 8> data{};
 			const bool result = read(data);
 			value = (uint64_t(data[7]) << 56U) | (uint64_t(data[6]) << 48U) |
@@ -309,7 +356,8 @@ namespace libnokogiri::internal {
 			return result;
 		}
 
-		LIBNOKOGIRI_NO_DISCARD(bool writeLE(const uint64_t value) const noexcept) {
+		[[nodiscard]]
+		bool writeLE(const uint64_t value) const noexcept {
 			const std::array<uint8_t, 8> data
 			{{
 				uint8_t(value),
@@ -328,6 +376,7 @@ namespace libnokogiri::internal {
 			std::is_integral<T>::value && !std::is_same<T, bool>::value &&
 			std::is_signed<T>::value && sizeof(T) >= 2>::type
 		>
+		[[nodiscard]]
 		bool readLE(T &value) const noexcept {
 			typename std::make_unsigned<T>::type data{};
 			const auto result = readLE(data);
@@ -339,19 +388,22 @@ namespace libnokogiri::internal {
 			std::is_integral<T>::value && !std::is_same<T, bool>::value &&
 			std::is_signed<T>::value && sizeof(T) >= 2>::type
 		>
+		[[nodiscard]]
 		bool writeLE(const T value) const noexcept {
 			auto data{static_cast<typename std::make_unsigned<T>::type>(value)};
 			return writeLE(data);
 		}
 
-		LIBNOKOGIRI_NO_DISCARD(bool readBE(uint16_t &value) const noexcept) {
+		[[nodiscard]]
+		bool readBE(uint16_t &value) const noexcept {
 			std::array<uint8_t, 2> data{};
 			const bool result = read(data);
 			value = (uint16_t(data[0]) << 8U) | data[1];
 			return result;
 		}
 
-		LIBNOKOGIRI_NO_DISCARD(bool writeBE(const uint16_t value) const noexcept) {
+		[[nodiscard]]
+		bool writeBE(const uint16_t value) const noexcept {
 			const std::array<uint8_t, 2> data
 			{{
 				uint8_t(value >> 8U),
@@ -360,7 +412,8 @@ namespace libnokogiri::internal {
 			return write(data);
 		}
 
-		LIBNOKOGIRI_NO_DISCARD(bool readBE(uint32_t &value) const noexcept) {
+		[[nodiscard]]
+		bool readBE(uint32_t &value) const noexcept {
 			std::array<uint8_t, 4> data{};
 			const bool result = read(data);
 			value = (uint32_t(data[0]) << 24U) | (uint32_t(data[1]) << 16U) |
@@ -368,7 +421,8 @@ namespace libnokogiri::internal {
 			return result;
 		}
 
-		LIBNOKOGIRI_NO_DISCARD(bool writeBE(const uint32_t value) const noexcept) {
+		[[nodiscard]]
+		bool writeBE(const uint32_t value) const noexcept {
 			const std::array<uint8_t, 4> data
 			{{
 				uint8_t(value >> 24U),
@@ -379,7 +433,8 @@ namespace libnokogiri::internal {
 			return write(data);
 		}
 
-		LIBNOKOGIRI_NO_DISCARD(bool readBE(uint64_t &value) const noexcept) {
+		[[nodiscard]]
+		bool readBE(uint64_t &value) const noexcept {
 			std::array<uint8_t, 8> data{};
 			const bool result = read(data);
 			value = (uint64_t(data[0]) << 56U) | (uint64_t(data[1]) << 48U) |
@@ -389,7 +444,8 @@ namespace libnokogiri::internal {
 			return result;
 		}
 
-		LIBNOKOGIRI_NO_DISCARD(bool writeBE(const uint64_t value) const noexcept) {
+		[[nodiscard]]
+		bool writeBE(const uint64_t value) const noexcept {
 			const std::array<uint8_t, 8> data
 			{{
 				uint8_t(value >> 56U),
@@ -408,6 +464,7 @@ namespace libnokogiri::internal {
 			std::is_integral<T>::value && !std::is_same<T, bool>::value &&
 			std::is_signed<T>::value && sizeof(T) >= 2>::type
 		>
+		[[nodiscard]]
 		bool readBE(T &value) const noexcept {
 			typename std::make_unsigned<T>::type data{};
 			const auto result = readBE(data);
@@ -419,12 +476,14 @@ namespace libnokogiri::internal {
 			std::is_integral<T>::value && !std::is_same<T, bool>::value &&
 			std::is_signed<T>::value && sizeof(T) >= 2>::type
 		>
+		[[nodiscard]]
 		bool writeBE(const T value) const noexcept {
 			auto data{static_cast<typename std::make_unsigned<T>::type>(value)};
 			return writeBE(data);
 		}
 
-		LIBNOKOGIRI_NO_DISCARD(bool seekRel(const off_t offset) const noexcept) {
+		[[nodiscard]]
+		bool seekRel(const off_t offset) const noexcept {
 			const off_t currentPos = tell();
 			if (currentPos == -1 || currentPos + offset < 0)
 				return false;
