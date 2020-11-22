@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structlibnokogiri_1_1pcap_1_1packet__storage__t" kind="struct" language="C++" prot="public" final="yes">
+    <compoundname>libnokogiri::pcap::packet_storage_t</compoundname>
+    <includes refid="packet_8hh" local="no">packet.hh</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a00599d3e57dd6b1f303a559d66c07344" prot="private" static="no" mutable="no">
+        <type>std::uint32_t</type>
+        <definition>std::uint32_t libnokogiri::pcap::packet_storage_t::_len</definition>
+        <argsstring></argsstring>
+        <name>_len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap/packet.hh" line="250" column="1" bodyfile="pcap/packet.hh" bodystart="250" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1packet__storage__t_1ab39379cffc4ffed028e3b17c0ff95816" prot="private" static="no" mutable="no">
+        <type>std::uintptr_t</type>
+        <definition>std::uintptr_t libnokogiri::pcap::packet_storage_t::_offset</definition>
+        <argsstring></argsstring>
+        <name>_offset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap/packet.hh" line="251" column="1" bodyfile="pcap/packet.hh" bodystart="251" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a1892c49a8381df622de9ecc1d4c79db8" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="structlibnokogiri_1_1pcap_1_1packet__t" kindref="compound">packet_t</ref> &gt;</type>
+        <definition>std::optional&lt;packet_t&gt; libnokogiri::pcap::packet_storage_t::_packet_cache</definition>
+        <argsstring></argsstring>
+        <name>_packet_cache</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap/packet.hh" line="252" column="1" bodyfile="pcap/packet.hh" bodystart="252" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a8ed85a9d807973d8638e1e5074660d44" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr libnokogiri::pcap::packet_storage_t::packet_storage_t</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>packet_storage_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap/packet.hh" line="254" column="1" bodyfile="pcap/packet.hh" bodystart="254" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a87c1103981c0c06544431675fbd793dc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr libnokogiri::pcap::packet_storage_t::packet_storage_t</definition>
+        <argsstring>(std::uint32_t len, std::uintptr_t offset, std::optional&lt; packet_t &gt; packet=std::nullopt) noexcept</argsstring>
+        <name>packet_storage_t</name>
+        <param>
+          <type>std::uint32_t</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type>std::uintptr_t</type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="structlibnokogiri_1_1pcap_1_1packet__t" kindref="compound">packet_t</ref> &gt;</type>
+          <declname>packet</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap/packet.hh" line="258" column="1" bodyfile="pcap/packet.hh" bodystart="258" bodyend="260"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a3ef0984b79730b6d9de1b476261cfcd2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::uint32_t</type>
+        <definition>std::uint32_t libnokogiri::pcap::packet_storage_t::length</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap/packet.hh" line="263" column="1" bodyfile="pcap/packet.hh" bodystart="263" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a1ded31324136d8b366f126c56771456c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::uintptr_t</type>
+        <definition>std::uintptr_t libnokogiri::pcap::packet_storage_t::offset</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>offset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap/packet.hh" line="266" column="1" bodyfile="pcap/packet.hh" bodystart="266" bodyend="266"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a219beb96da0c7b502e3e0dd34ff9bd47" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="structlibnokogiri_1_1pcap_1_1packet__t" kindref="compound">packet_t</ref> &gt;</type>
+        <definition>std::optional&lt;packet_t&gt; libnokogiri::pcap::packet_storage_t::get_packet</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>get_packet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the packet that is represented by this storage object </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap/packet.hh" line="270" column="1" bodyfile="pcap/packet.hh" bodystart="270" bodyend="270"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Storage container for pcap packet data. </para>    </briefdescription>
+    <detaileddescription>
+<para>This structure stores a small amount of information pertaining to a packet within the pcap file.</para><para>It holds the packet type, the size of the packet (including the header), the offset into the pcap file, and the cached packet itself if it&apos;s been read. </para>    </detaileddescription>
+    <location file="pcap/packet.hh" line="248" column="1" bodyfile="pcap/packet.hh" bodystart="248" bodyend="271"/>
+    <listofallmembers>
+      <member refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a00599d3e57dd6b1f303a559d66c07344" prot="private" virt="non-virtual"><scope>libnokogiri::pcap::packet_storage_t</scope><name>_len</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1ab39379cffc4ffed028e3b17c0ff95816" prot="private" virt="non-virtual"><scope>libnokogiri::pcap::packet_storage_t</scope><name>_offset</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a1892c49a8381df622de9ecc1d4c79db8" prot="private" virt="non-virtual"><scope>libnokogiri::pcap::packet_storage_t</scope><name>_packet_cache</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a219beb96da0c7b502e3e0dd34ff9bd47" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::packet_storage_t</scope><name>get_packet</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a3ef0984b79730b6d9de1b476261cfcd2" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::packet_storage_t</scope><name>length</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a1ded31324136d8b366f126c56771456c" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::packet_storage_t</scope><name>offset</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a8ed85a9d807973d8638e1e5074660d44" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::packet_storage_t</scope><name>packet_storage_t</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a87c1103981c0c06544431675fbd793dc" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::packet_storage_t</scope><name>packet_storage_t</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

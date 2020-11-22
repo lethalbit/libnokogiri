@@ -43,6 +43,10 @@ Included By
 
 - :ref:`file_libnokogiri.hh`
 
+- :ref:`file_pcap_header.hh`
+
+- :ref:`file_pcap_packet.hh`
+
 - :ref:`file_pcap.hh`
 
 - :ref:`file_pcapng_blocks_section_header.hh`

@@ -1,9 +1,9 @@
 .. _exhale_struct_structlibnokogiri_1_1pcap_1_1packet__t:
 
-Template Struct packet_t
-========================
+Struct packet_t
+===============
 
-- Defined in :ref:`file_pcap.hh`
+- Defined in :ref:`file_pcap_packet.hh`
 
 
 Struct Documentation

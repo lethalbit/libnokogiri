@@ -5,6 +5,7 @@
     <innerclass refid="structlibnokogiri_1_1pcap_1_1file__header__t" prot="public">libnokogiri::pcap::file_header_t</innerclass>
     <innerclass refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t" prot="public">libnokogiri::pcap::packet_header_modified_t</innerclass>
     <innerclass refid="structlibnokogiri_1_1pcap_1_1packet__header__t" prot="public">libnokogiri::pcap::packet_header_t</innerclass>
+    <innerclass refid="structlibnokogiri_1_1pcap_1_1packet__storage__t" prot="public">libnokogiri::pcap::packet_storage_t</innerclass>
     <innerclass refid="structlibnokogiri_1_1pcap_1_1packet__t" prot="public">libnokogiri::pcap::packet_t</innerclass>
     <innerclass refid="structlibnokogiri_1_1pcap_1_1pcap__t" prot="public">libnokogiri::pcap::pcap_t</innerclass>
       <sectiondef kind="enum">
@@ -44,7 +45,7 @@
         </enumvalue>
         <enumvalue id="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a4146c294bcc82b1723c65bdc64b55089" prot="public">
           <name>Nanosecond</name>
-          <initializer>= 0xA1B23C4D</initializer>
+          <initializer>= 0xA1B23C4DU</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -56,7 +57,7 @@
           <briefdescription>
           </briefdescription>
           <detaileddescription>
-<para>Magic for the modified pcap format introduced by Ulf Lamping&apos;s patches. It&apos;s identical to the standard but the timestamps are in nanoseconds. </para>          </detaileddescription>
+<para>Magic for the modified pcap format introduced by Ulf Lamping&apos;s patches. It&apos;s identical to the standard but the timestamps are in nanoseconds. Swapped magic for standard pcap files </para>          </detaileddescription>
         </enumvalue>
         <enumvalue id="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656aae99b9c57b1bfe6a4d657eded0de17f2" prot="public">
           <name>SwappedModified</name>
@@ -64,7 +65,7 @@
           <briefdescription>
           </briefdescription>
           <detaileddescription>
-          </detaileddescription>
+<para>Swapped magic for modified pcap files </para>          </detaileddescription>
         </enumvalue>
         <enumvalue id="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a768c05c9a2c12abc1ad9244a7ccb9013" prot="public">
           <name>SwappedIXIAHW</name>
@@ -72,7 +73,7 @@
           <briefdescription>
           </briefdescription>
           <detaileddescription>
-          </detaileddescription>
+<para>Swapped magic for IXIA&apos;s lcap </para>          </detaileddescription>
         </enumvalue>
         <enumvalue id="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656acd100172ee368cbf65e108865bdbae70" prot="public">
           <name>SwappedIXIASW</name>
@@ -80,7 +81,7 @@
           <briefdescription>
           </briefdescription>
           <detaileddescription>
-          </detaileddescription>
+<para>Swapped magic for IXIA&apos;s lcap </para>          </detaileddescription>
         </enumvalue>
         <enumvalue id="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a6b63e2e1dc6b29aa7aa1f3a9d07271c7" prot="public">
           <name>SwappedNanosecond</name>
@@ -88,7 +89,7 @@
           <briefdescription>
           </briefdescription>
           <detaileddescription>
-          </detaileddescription>
+<para>Swapped magic for nanosecond pcap files </para>          </detaileddescription>
         </enumvalue>
         <briefdescription>
 <para>Types of possible pcap formats. </para>        </briefdescription>
@@ -96,38 +97,53 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="21" column="1" bodyfile="pcap.hh" bodystart="21" bodyend="34"/>
+        <location file="pcap/header.hh" line="17" column="1" bodyfile="pcap/header.hh" bodystart="17" bodyend="30"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="namespacelibnokogiri_1_1pcap_1a965b52b3bfb8d95a3dbcaadb074c5589" prot="public" static="no">
-        <type><ref refid="structlibnokogiri_1_1pcap_1_1packet__t" kindref="compound">packet_t</ref>&lt; <ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t" kindref="compound">packet_header_t</ref>, T &gt;</type>
-        <definition>using libnokogiri::pcap::generic_packet_t = typedef packet_t&lt;packet_header_t, T&gt;</definition>
-        <argsstring></argsstring>
-        <name>generic_packet_t</name>
+      <memberdef kind="enum" id="namespacelibnokogiri_1_1pcap_1a5f7e5dd30c2860eee6f4e2ed32ae7171" prot="public" static="no">
+        <name>packet_type_t</name>
+        <enumvalue id="namespacelibnokogiri_1_1pcap_1a5f7e5dd30c2860eee6f4e2ed32ae7171aeb6d8ae6f20283755b339c0dc273988b" prot="public">
+          <name>Standard</name>
+          <initializer>= 0x00</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Standard packet type </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacelibnokogiri_1_1pcap_1a5f7e5dd30c2860eee6f4e2ed32ae7171a35e0c8c0b180c95d4e122e55ed62cc64" prot="public">
+          <name>Modified</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Modified packet type with extended header </para>          </detaileddescription>
+        </enumvalue>
         <briefdescription>
-        </briefdescription>
+<para>Packet types. </para>        </briefdescription>
         <detaileddescription>
-<para>Type alias for generic conforming pcap packets with the standard header </para>        </detaileddescription>
+<para>This enum is sued in the <ref refid="structlibnokogiri_1_1pcap_1_1packet__storage__t" kindref="compound">libnokogiri::pcap::packet_storage_t</ref> container to allow you do differentiate between the standard packet types or the modified type. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="335" column="1" bodyfile="pcap.hh" bodystart="335" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="namespacelibnokogiri_1_1pcap_1a826df232831a75e6a2d4cf4693dccee1" prot="public" static="no">
-        <type><ref refid="structlibnokogiri_1_1pcap_1_1packet__t" kindref="compound">packet_t</ref>&lt; <ref refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t" kindref="compound">packet_header_modified_t</ref>, T &gt;</type>
-        <definition>using libnokogiri::pcap::modified_packet_t = typedef packet_t&lt;packet_header_modified_t, T&gt;</definition>
-        <argsstring></argsstring>
-        <name>modified_packet_t</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Type alias for packets from the modified pcap files </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pcap.hh" line="338" column="1" bodyfile="pcap.hh" bodystart="338" bodyend="-1"/>
+        <location file="pcap/packet.hh" line="22" column="1" bodyfile="pcap/packet.hh" bodystart="22" bodyend="25"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
+      <memberdef kind="function" id="namespacelibnokogiri_1_1pcap_1a50b9e8ce0a3adb5149c6deaff356ff61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t libnokogiri::pcap::get_packet_body_offset</definition>
+        <argsstring>(pcap_variant_t v)</argsstring>
+        <name>get_packet_body_offset</name>
+        <param>
+          <type><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656" kindref="member">pcap_variant_t</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap.cc" line="126" column="1" bodyfile="pcap.cc" bodystart="126" bodyend="138"/>
+      </memberdef>
       <memberdef kind="function" id="namespacelibnokogiri_1_1pcap_1a76032896386673aa5c89e72b674a6097" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void libnokogiri::pcap::swap</definition>
@@ -147,7 +163,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="398" column="1" bodyfile="pcap.hh" bodystart="398" bodyend="398"/>
+        <location file="pcap.hh" line="126" column="1" bodyfile="pcap.hh" bodystart="126" bodyend="126"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

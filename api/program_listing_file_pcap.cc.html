@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Program Listing for File pcap.cc &#8212; libnokogiri 0.0.1 8324b2b documentation</title>
+    <title>Program Listing for File pcap.cc &#8212; libnokogiri 0.0.1 78b90f2 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -84,12 +84,14 @@
 
 <span class="cp">#include</span> <span class="cpf">&lt;libnokogiri/internal/zlib.hh&gt;</span><span class="cp"></span>
 
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
 <span class="k">namespace</span> <span class="n">fs</span> <span class="o">=</span> <span class="n">libnokogiri</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">fs</span><span class="p">;</span>
 
 <span class="k">namespace</span> <span class="n">libnokogiri</span><span class="o">::</span><span class="n">pcap</span> <span class="p">{</span>
 
-    <span class="n">pcap_t</span><span class="o">::</span><span class="n">pcap_t</span><span class="p">(</span><span class="n">libnokogiri</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">fs</span><span class="o">::</span><span class="n">path</span><span class="o">&amp;</span> <span class="n">file</span><span class="p">,</span> <span class="n">captrue_compression_t</span> <span class="n">compression</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">read_only</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">:</span>
-        <span class="n">_file</span><span class="p">{},</span> <span class="n">_compression</span><span class="p">{</span><span class="n">compression</span><span class="p">},</span> <span class="n">_readonly</span><span class="p">{</span><span class="n">read_only</span><span class="p">}</span> <span class="p">{</span>
+    <span class="n">pcap_t</span><span class="o">::</span><span class="n">pcap_t</span><span class="p">(</span><span class="n">libnokogiri</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">fs</span><span class="o">::</span><span class="n">path</span><span class="o">&amp;</span> <span class="n">file</span><span class="p">,</span> <span class="n">captrue_compression_t</span> <span class="n">compression</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">read_only</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">prefetch</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">:</span>
+        <span class="n">_file</span><span class="p">{},</span> <span class="n">_compression</span><span class="p">{</span><span class="n">compression</span><span class="p">},</span> <span class="n">_readonly</span><span class="p">{</span><span class="n">read_only</span><span class="p">},</span> <span class="n">_prefetch</span><span class="p">{</span><span class="n">prefetch</span><span class="p">}</span> <span class="p">{</span>
         <span class="n">libnokogiri</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">fd_t</span> <span class="n">cap</span><span class="p">{</span><span class="n">file</span><span class="p">,</span> <span class="p">(</span><span class="n">read_only</span><span class="p">)</span> <span class="o">?</span> <span class="nl">O_RDONLY</span> <span class="p">:</span> <span class="n">O_RDWR</span><span class="p">};</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">_compression</span> <span class="o">==</span> <span class="n">captrue_compression_t</span><span class="o">::</span><span class="n">Autodetect</span><span class="p">)</span> <span class="p">{</span>
             <span class="n">_compression</span> <span class="o">=</span> <span class="n">libnokogiri</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">detect_captrue_compression</span><span class="p">(</span><span class="n">cap</span><span class="p">);</span>
@@ -101,96 +103,172 @@
             <span class="k">if</span> <span class="p">(</span><span class="n">gzcap</span><span class="p">.</span><span class="n">decompress_to</span><span class="p">(</span><span class="n">_file</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
                 <span class="k">return</span><span class="p">;</span>
             <span class="p">}</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">_file</span><span class="p">.</span><span class="n">head</span><span class="p">())</span> <span class="p">{</span>
+                <span class="k">return</span><span class="p">;</span>
+            <span class="p">}</span>
         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
             <span class="n">_file</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">cap</span><span class="p">);</span>
         <span class="p">}</span>
 
-
-
         <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">read_header</span><span class="p">())</span> <span class="p">{</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ingest_packets</span><span class="p">())</span> <span class="p">{</span>
             <span class="k">return</span><span class="p">;</span>
         <span class="p">}</span>
 
         <span class="n">_valid</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
     <span class="p">}</span>
 
-
     <span class="kt">bool</span> <span class="n">pcap_t</span><span class="o">::</span><span class="n">read_header</span><span class="p">()</span> <span class="k">noexcept</span> <span class="p">{</span>
-        <span class="c1">// if (auto magic = libnokogiri::internal::read&lt;std::uint32_t&gt;(_file)) {</span>
-        <span class="c1">//  const auto pcap_magic{static_cast&lt;pcap_variant_t&gt;(*magic)};</span>
-        <span class="c1">//  switch (pcap_magic) {</span>
-        <span class="c1">//      case pcap_variant_t::Standard:</span>
-        <span class="c1">//      case pcap_variant_t::Modified:</span>
-        <span class="c1">//      case pcap_variant_t::IXIAHW:</span>
-        <span class="c1">//      case pcap_variant_t::IXIASW:</span>
-        <span class="c1">//      case pcap_variant_t::Nanosecond: {</span>
-        <span class="c1">//          /* Swapping is disabled by default, no need to do so */</span>
-        <span class="c1">//          _header.variant(pcap_magic);</span>
-        <span class="c1">//          break;</span>
-        <span class="c1">//      }</span>
-        <span class="c1">//      case pcap_variant_t::SwappedStantard:</span>
-        <span class="c1">//      case pcap_variant_t::SwappedModified:</span>
-        <span class="c1">//      case pcap_variant_t::SwappedIXIAHW:</span>
-        <span class="c1">//      case pcap_variant_t::SwappedIXIASW:</span>
-        <span class="c1">//      case pcap_variant_t::SwappedNanosecond: {</span>
-        <span class="c1">//          /* We need to swap all the things when reading */</span>
-        <span class="c1">//          _needs_swapping = true;</span>
-        <span class="c1">//          _header.variant(static_cast&lt;pcap_variant_t&gt;(LIBNOKOGIRI_SWAP32(*magic)));</span>
-        <span class="c1">//          break;</span>
-        <span class="c1">//      } default : {</span>
-        <span class="c1">//          /* Unknown file, bail */</span>
-        <span class="c1">//          return false;</span>
-        <span class="c1">//      }</span>
-        <span class="c1">//  }</span>
-        <span class="c1">// } else {</span>
-        <span class="c1">//  return false;</span>
-        <span class="c1">// }</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">auto</span> <span class="n">magic</span> <span class="o">=</span> <span class="n">_file</span><span class="p">.</span><span class="n">read</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span><span class="o">&gt;</span><span class="p">())</span> <span class="p">{</span>
+            <span class="k">const</span> <span class="k">auto</span> <span class="n">pcap_magic</span><span class="p">{</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">pcap_variant_t</span><span class="o">&gt;</span><span class="p">(</span><span class="o">*</span><span class="n">magic</span><span class="p">)};</span>
+            <span class="k">switch</span> <span class="p">(</span><span class="n">pcap_magic</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">case</span> <span class="n">pcap_variant_t</span><span class="o">::</span><span class="nl">Standard</span><span class="p">:</span>
+                <span class="k">case</span> <span class="n">pcap_variant_t</span><span class="o">::</span><span class="nl">Modified</span><span class="p">:</span>
+                <span class="k">case</span> <span class="n">pcap_variant_t</span><span class="o">::</span><span class="nl">IXIAHW</span><span class="p">:</span>
+                <span class="k">case</span> <span class="n">pcap_variant_t</span><span class="o">::</span><span class="nl">IXIASW</span><span class="p">:</span>
+                <span class="k">case</span> <span class="n">pcap_variant_t</span><span class="o">::</span><span class="nl">Nanosecond</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="cm">/* Swapping is disabled by default, no need to do so */</span>
+                    <span class="n">_header</span><span class="p">.</span><span class="n">variant</span><span class="p">(</span><span class="n">pcap_magic</span><span class="p">);</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="k">case</span> <span class="n">pcap_variant_t</span><span class="o">::</span><span class="nl">SwappedStantard</span><span class="p">:</span>
+                <span class="k">case</span> <span class="n">pcap_variant_t</span><span class="o">::</span><span class="nl">SwappedModified</span><span class="p">:</span>
+                <span class="k">case</span> <span class="n">pcap_variant_t</span><span class="o">::</span><span class="nl">SwappedIXIAHW</span><span class="p">:</span>
+                <span class="k">case</span> <span class="n">pcap_variant_t</span><span class="o">::</span><span class="nl">SwappedIXIASW</span><span class="p">:</span>
+                <span class="k">case</span> <span class="n">pcap_variant_t</span><span class="o">::</span><span class="nl">SwappedNanosecond</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="cm">/* We need to swap all the things when reading */</span>
+                    <span class="n">_needs_swapping</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+                    <span class="n">_header</span><span class="p">.</span><span class="n">variant</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">pcap_variant_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">LIBNOKOGIRI_SWAP32</span><span class="p">(</span><span class="o">*</span><span class="n">magic</span><span class="p">)));</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="p">}</span> <span class="k">default</span> <span class="o">:</span> <span class="p">{</span>
+                    <span class="cm">/* Unknown file, bail */</span>
+                    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="p">}</span>
 
-        <span class="c1">// const auto major = libnokogiri::internal::read&lt;std::uint16_t&gt;(_file);</span>
-        <span class="c1">// const auto minor = libnokogiri::internal::read&lt;std::uint16_t&gt;(_file);</span>
-        <span class="c1">// if(major &amp;&amp; minor) {</span>
-        <span class="c1">//  _header.version(</span>
-        <span class="c1">//      (_needs_swapping) ?</span>
-        <span class="c1">//      version_t{LIBNOKOGIRI_SWAP16(*major), LIBNOKOGIRI_SWAP16(*minor)} :</span>
-        <span class="c1">//      version_t{*major, *minor}</span>
-        <span class="c1">//  );</span>
+        <span class="k">const</span> <span class="k">auto</span> <span class="n">majorv</span> <span class="o">=</span> <span class="n">_file</span><span class="p">.</span><span class="n">read</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">uint16_t</span><span class="o">&gt;</span><span class="p">();</span>
+        <span class="k">const</span> <span class="k">auto</span> <span class="n">minorv</span> <span class="o">=</span> <span class="n">_file</span><span class="p">.</span><span class="n">read</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">uint16_t</span><span class="o">&gt;</span><span class="p">();</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">majorv</span> <span class="o">&amp;&amp;</span> <span class="n">minorv</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">_header</span><span class="p">.</span><span class="n">version</span><span class="p">(</span>
+                <span class="p">(</span><span class="n">_needs_swapping</span><span class="p">)</span> <span class="o">?</span>
+                <span class="n">version_t</span><span class="p">{</span><span class="n">LIBNOKOGIRI_SWAP16</span><span class="p">(</span><span class="o">*</span><span class="n">majorv</span><span class="p">),</span> <span class="n">LIBNOKOGIRI_SWAP16</span><span class="p">(</span><span class="o">*</span><span class="n">minorv</span><span class="p">)}</span> <span class="o">:</span>
+                <span class="n">version_t</span><span class="p">{</span><span class="o">*</span><span class="n">majorv</span><span class="p">,</span> <span class="o">*</span><span class="n">minorv</span><span class="p">}</span>
+            <span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="p">}</span>
 
-        <span class="c1">// } else {</span>
-        <span class="c1">//  return false;</span>
-        <span class="c1">// }</span>
 
+        <span class="k">if</span> <span class="p">(</span><span class="k">auto</span> <span class="n">tz_offset</span> <span class="o">=</span> <span class="n">_file</span><span class="p">.</span><span class="n">read</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">int32_t</span><span class="o">&gt;</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">_header</span><span class="p">.</span><span class="n">timezone_offset</span><span class="p">((</span><span class="n">_needs_swapping</span><span class="p">)</span> <span class="o">?</span> <span class="n">LIBNOKOGIRI_SWAP32</span><span class="p">(</span><span class="o">*</span><span class="n">tz_offset</span><span class="p">)</span> <span class="o">:</span> <span class="o">*</span><span class="n">tz_offset</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="p">}</span>
 
-        <span class="c1">// if (auto tz_offset = libnokogiri::internal::read&lt;std::int32_t&gt;(_file)) {</span>
-        <span class="c1">//  _header.timezone_offset((_needs_swapping) ? LIBNOKOGIRI_SWAP32(*tz_offset) : *tz_offset);</span>
-        <span class="c1">// } else {</span>
-        <span class="c1">//  return false;</span>
-        <span class="c1">// }</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">auto</span> <span class="n">ts_figs</span> <span class="o">=</span> <span class="n">_file</span><span class="p">.</span><span class="n">read</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span><span class="o">&gt;</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">_header</span><span class="p">.</span><span class="n">timestamp_accuracy</span><span class="p">((</span><span class="n">_needs_swapping</span><span class="p">)</span> <span class="o">?</span> <span class="n">LIBNOKOGIRI_SWAP32</span><span class="p">(</span><span class="o">*</span><span class="n">ts_figs</span><span class="p">)</span> <span class="o">:</span> <span class="o">*</span><span class="n">ts_figs</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="p">}</span>
 
-        <span class="c1">// if (auto ts_figs = libnokogiri::internal::read&lt;std::uint32_t&gt;(_file)) {</span>
-        <span class="c1">//  _header.timestamp_accuracy((_needs_swapping) ? LIBNOKOGIRI_SWAP32(*ts_figs) : *ts_figs);</span>
-        <span class="c1">// } else {</span>
-        <span class="c1">//  return false;</span>
-        <span class="c1">// }</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">auto</span> <span class="n">pckt_len</span> <span class="o">=</span> <span class="n">_file</span><span class="p">.</span><span class="n">read</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span><span class="o">&gt;</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">_header</span><span class="p">.</span><span class="n">max_packet_length</span><span class="p">((</span><span class="n">_needs_swapping</span><span class="p">)</span> <span class="o">?</span> <span class="n">LIBNOKOGIRI_SWAP32</span><span class="p">(</span><span class="o">*</span><span class="n">pckt_len</span><span class="p">)</span> <span class="o">:</span> <span class="o">*</span><span class="n">pckt_len</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="p">}</span>
 
-        <span class="c1">// if (auto pckt_len = libnokogiri::internal::read&lt;std::uint32_t&gt;(_file)) {</span>
-        <span class="c1">//  _header.max_packet_length((_needs_swapping) ? LIBNOKOGIRI_SWAP32(*pckt_len) : *pckt_len);</span>
-        <span class="c1">// } else {</span>
-        <span class="c1">//  return false;</span>
-        <span class="c1">// }</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">auto</span> <span class="n">lnk_type</span> <span class="o">=</span> <span class="n">_file</span><span class="p">.</span><span class="n">read</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span><span class="o">&gt;</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">_header</span><span class="p">.</span><span class="n">link_type</span><span class="p">(</span>
+                <span class="p">(</span><span class="n">_needs_swapping</span><span class="p">)</span> <span class="o">?</span>
+                <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">link_type_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">LIBNOKOGIRI_SWAP32</span><span class="p">(</span><span class="o">*</span><span class="n">lnk_type</span><span class="p">))</span> <span class="o">:</span>
+                <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">link_type_t</span><span class="o">&gt;</span><span class="p">(</span><span class="o">*</span><span class="n">lnk_type</span><span class="p">)</span>
+            <span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="p">}</span>
 
-        <span class="c1">// if (auto lnk_type = libnokogiri::internal::read&lt;std::uint32_t&gt;(_file)) {</span>
-        <span class="c1">//  _header.link_type(</span>
-        <span class="c1">//      (_needs_swapping) ?</span>
-        <span class="c1">//      static_cast&lt;link_type_t&gt;(LIBNOKOGIRI_SWAP32(*lnk_type)) :</span>
-        <span class="c1">//      static_cast&lt;link_type_t&gt;(*lnk_type)</span>
-        <span class="c1">//  );</span>
-        <span class="c1">// } else {</span>
-        <span class="c1">//  return false;</span>
-        <span class="c1">// }</span>
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="p">}</span>
 
-        <span class="c1">// return true;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">get_packet_body_offset</span><span class="p">(</span><span class="n">pcap_variant_t</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="n">pcap_variant_t</span><span class="o">::</span><span class="nl">Modified</span><span class="p">:</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="mi">12U</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">case</span> <span class="n">pcap_variant_t</span><span class="o">::</span><span class="nl">Standard</span><span class="p">:</span>
+            <span class="k">case</span> <span class="n">pcap_variant_t</span><span class="o">::</span><span class="nl">IXIAHW</span><span class="p">:</span>
+            <span class="k">case</span> <span class="n">pcap_variant_t</span><span class="o">::</span><span class="nl">IXIASW</span><span class="p">:</span>
+            <span class="k">case</span> <span class="n">pcap_variant_t</span><span class="o">::</span><span class="nl">Nanosecond</span><span class="p">:</span>
+            <span class="k">default</span><span class="o">:</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="mi">4U</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">};</span>
+    <span class="p">}</span>
 
-        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="cm">/*</span>
+<span class="cm">        The idea behind this is fairly simple.</span>
+
+<span class="cm">        Because we are only interested in the packet offset and the size of</span>
+<span class="cm">        the data on the first pass, we can skip most if not all of the other</span>
+<span class="cm">        needed read calls.</span>
+
+<span class="cm">        Seeing as the packet headers are all fixed sizes, and all share the</span>
+<span class="cm">        common standard header we can seek to a known offset to extract the</span>
+<span class="cm">        length of the packet data, then based on the packet header type, add</span>
+<span class="cm">        that to our offset to get the proper offset for the packet data.</span>
+
+<span class="cm">        So it works as follows:</span>
+
+<span class="cm">            Assume the offset of _file is at the end of the file header.</span>
+
+<span class="cm">            Get the packet header offset for the type of headers we expect.</span>
+
+<span class="cm">            Until we reach the end of the file:</span>
+
+<span class="cm">                Seek 8 bytes, skips the time-stamp members of the packet header</span>
+
+<span class="cm">                Extract the next 4 bytes which is the size of the packet data</span>
+
+<span class="cm">                Seek the remaining offset 4 for standard packets and 12 for modified</span>
+
+<span class="cm">                Get the current seek position, set that as the offset.</span>
+
+<span class="cm">                Seek to the current position + packet length</span>
+
+<span class="cm">    */</span>
+    <span class="kt">bool</span> <span class="n">pcap_t</span><span class="o">::</span><span class="n">ingest_packets</span><span class="p">()</span> <span class="k">noexcept</span> <span class="p">{</span>
+        <span class="k">const</span> <span class="k">auto</span> <span class="n">pkt_body_offset</span> <span class="o">=</span> <span class="n">get_packet_body_offset</span><span class="p">(</span><span class="n">_header</span><span class="p">.</span><span class="n">variant</span><span class="p">());</span>
+        <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">pkt_len_offset</span> <span class="o">=</span> <span class="mi">8U</span><span class="p">;</span>
+
+        <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">_file</span><span class="p">.</span><span class="n">isEOF</span><span class="p">())</span> <span class="p">{</span>
+            <span class="k">const</span> <span class="k">auto</span> <span class="n">prev_pos</span> <span class="o">=</span> <span class="n">_file</span><span class="p">.</span><span class="n">tell</span><span class="p">();</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">_file</span><span class="p">.</span><span class="n">seek</span><span class="p">(</span><span class="n">pkt_len_offset</span><span class="p">)</span> <span class="o">!=</span> <span class="p">(</span><span class="n">pkt_len_offset</span> <span class="o">+</span> <span class="n">prev_pos</span><span class="p">))</span>
+                <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+
+            <span class="cm">/* Returns an optional */</span>
+            <span class="k">const</span> <span class="k">auto</span> <span class="n">size</span> <span class="o">=</span> <span class="n">_file</span><span class="p">.</span><span class="n">read</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">size</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">uintptr_t</span> <span class="n">offset</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">uintptr_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_file</span><span class="p">.</span><span class="n">seek</span><span class="p">(</span><span class="n">pkt_body_offset</span><span class="p">));</span>
+            <span class="n">_packets</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">packet_storage_t</span><span class="p">{</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="n">offset</span><span class="p">});</span>
+            <span class="k">const</span> <span class="k">auto</span> <span class="n">pckt_size</span> <span class="o">=</span> <span class="n">_file</span><span class="p">.</span><span class="n">tell</span><span class="p">();</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">_file</span><span class="p">.</span><span class="n">seek</span><span class="p">(</span><span class="o">*</span><span class="n">size</span><span class="p">)</span> <span class="o">!=</span> <span class="p">(</span><span class="o">*</span><span class="n">size</span> <span class="o">+</span> <span class="n">pckt_size</span><span class="p">))</span>
+                <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">reference_wrapper</span><span class="o">&lt;</span><span class="n">packet_t</span><span class="o">&gt;&gt;</span> <span class="n">pcap_t</span><span class="o">::</span><span class="n">get_packet</span><span class="p">(</span><span class="n">packet_storage_t</span><span class="o">&amp;</span> <span class="n">pkt_storage</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span>
+
+        <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">nullopt</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>

@@ -3,7 +3,7 @@
 Struct file_header_t
 ====================
 
-- Defined in :ref:`file_pcap.hh`
+- Defined in :ref:`file_pcap_header.hh`
 
 
 Struct Documentation

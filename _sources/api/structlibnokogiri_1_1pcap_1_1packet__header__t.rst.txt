@@ -3,7 +3,7 @@
 Struct packet_header_t
 ======================
 
-- Defined in :ref:`file_pcap.hh`
+- Defined in :ref:`file_pcap_packet.hh`
 
 
 Struct Documentation

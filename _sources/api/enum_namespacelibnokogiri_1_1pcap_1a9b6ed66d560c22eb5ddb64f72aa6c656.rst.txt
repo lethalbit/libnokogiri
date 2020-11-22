@@ -3,7 +3,7 @@
 Enum pcap_variant_t
 ===================
 
-- Defined in :ref:`file_pcap.hh`
+- Defined in :ref:`file_pcap_header.hh`
 
 
 Enum Documentation

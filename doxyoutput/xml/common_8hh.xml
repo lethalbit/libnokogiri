@@ -8,6 +8,8 @@
     <includes local="no">libnokogiri/internal/fd.hh</includes>
     <includedby refid="common_8cc" local="no">common.cc</includedby>
     <includedby refid="libnokogiri_8hh" local="no">libnokogiri.hh</includedby>
+    <includedby refid="header_8hh" local="no">pcap/header.hh</includedby>
+    <includedby refid="packet_8hh" local="no">pcap/packet.hh</includedby>
     <includedby refid="pcap_8hh" local="no">pcap.hh</includedby>
     <includedby refid="blocks_2section__header_8hh" local="no">pcapng/blocks/section_header.hh</includedby>
     <includedby refid="pcapng_8hh" local="no">pcapng.hh</includedby>
@@ -42,18 +44,18 @@
         <label>libnokogiri.hh</label>
         <link refid="libnokogiri_8hh_source"/>
       </node>
-      <node id="17">
+      <node id="19">
         <label>pcapng/blocks.hh</label>
         <link refid="blocks_8hh_source"/>
-        <childnode refid="18" relation="include">
+        <childnode refid="20" relation="include">
         </childnode>
       </node>
-      <node id="16">
+      <node id="18">
         <label>pcapng/blocks/section_header.hh</label>
         <link refid="blocks_2section__header_8hh_source"/>
-        <childnode refid="17" relation="include">
-        </childnode>
         <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
         </childnode>
       </node>
       <node id="13">
@@ -63,27 +65,43 @@
         </childnode>
         <childnode refid="15" relation="include">
         </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
         <childnode refid="16" relation="include">
         </childnode>
         <childnode refid="18" relation="include">
         </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
       </node>
-      <node id="18">
+      <node id="20">
         <label>pcapng.hh</label>
         <link refid="pcapng_8hh_source"/>
         <childnode refid="14" relation="include">
         </childnode>
       </node>
+      <node id="17">
+        <label>pcap/packet.hh</label>
+        <link refid="packet_8hh_source"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
       <node id="15">
+        <label>pcap/header.hh</label>
+        <link refid="header_8hh_source"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
         <label>pcap.hh</label>
         <link refid="pcap_8hh_source"/>
         <childnode refid="14" relation="include">
         </childnode>
       </node>
-      <node id="19">
+      <node id="21">
         <label>pcapng/section.hh</label>
         <link refid="section_8hh_source"/>
-        <childnode refid="18" relation="include">
+        <childnode refid="20" relation="include">
         </childnode>
       </node>
     </invincdepgraph>

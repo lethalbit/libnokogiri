@@ -30,7 +30,6 @@
     <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a22f5055178b1fbf5e96e2b6083b3e41f" kind="variable"><name>_network</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a0070077193cf63cf880682939c677d52" kind="function"><name>file_header_t</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a29ce345c0f92aeee73c51bc120a1f395" kind="function"><name>file_header_t</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1acaa4607cb357516633b2755f2f278381" kind="function"><name>file_header_t</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a52c221285b6e40d34e785561bbef8f63" kind="function"><name>variant</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1ab2b308414f764685b36eccd48545bfff" kind="function"><name>variant</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a8f5d56e0c357dd9a8d4148c331e5223e" kind="function"><name>version</name></member>
@@ -85,7 +84,6 @@
     <member refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a302e31323881cd7a9ab81f4142e6042d" kind="variable"><name>_was</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a524190e5a0737d4f035d556fc05434d9" kind="function"><name>packet_header_t</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a9d349d11b68074cb627431a8d7367e14" kind="function"><name>packet_header_t</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a4a7858b061f010f1dc09f8bbb1c7fee1" kind="function"><name>packet_header_t</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a9cd419a7db50fb2599573cf9b6c92a76" kind="function"><name>timestamp</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a3cc64e6e0a591efbacf1a2cc99738fee" kind="function"><name>timestamp</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a4fc89050bbdc58c0bed871de2054df80" kind="function"><name>useconds</name></member>
@@ -96,30 +94,32 @@
     <member refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1ab6ff365c35ec8a80e5bc768d2ea5046e" kind="function"><name>actual_len</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a6a765377ff1a056fd5c84e3d935d710c" kind="function"><name>full_packet</name></member>
   </compound>
+  <compound refid="structlibnokogiri_1_1pcap_1_1packet__storage__t" kind="struct"><name>libnokogiri::pcap::packet_storage_t</name>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a00599d3e57dd6b1f303a559d66c07344" kind="variable"><name>_len</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1ab39379cffc4ffed028e3b17c0ff95816" kind="variable"><name>_offset</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a1892c49a8381df622de9ecc1d4c79db8" kind="variable"><name>_packet_cache</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a8ed85a9d807973d8638e1e5074660d44" kind="function"><name>packet_storage_t</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a87c1103981c0c06544431675fbd793dc" kind="function"><name>packet_storage_t</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a3ef0984b79730b6d9de1b476261cfcd2" kind="function"><name>length</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a1ded31324136d8b366f126c56771456c" kind="function"><name>offset</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a219beb96da0c7b502e3e0dd34ff9bd47" kind="function"><name>get_packet</name></member>
+  </compound>
   <compound refid="structlibnokogiri_1_1pcap_1_1packet__t" kind="struct"><name>libnokogiri::pcap::packet_t</name>
-    <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a2f36c5dab04be86f0c6a5e397a07e0af" kind="typedef"><name>data_t</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a9cd71fbaa091a86c6c2265bcce681f1f" kind="variable"><name>_packet_header</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a0faf1413f1724c9b9a2d6e1f298dc910" kind="variable"><name>_offset</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1ac5558579daf495af7840225ea4f6bb19" kind="variable"><name>_data</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a2c89aeef76d58fa0b6460039504994fd" kind="function"><name>packet_t</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1aa10295eebf01fa9d13e1647034e8bd33" kind="function"><name>packet_t</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1ad56bdf16c44b986cb77f076d40926f2d" kind="function"><name>header</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a805d73e5f3d12d79904595634b264a73" kind="function"><name>header</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1aa984222ae3505097aeb4a1325ce23e7e" kind="function"><name>packet_offset</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a9540cc1ada7e66c68618eda85d875e76" kind="function"><name>packet_offset</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a83f8998f80456797e453abd7016b6ca2" kind="function"><name>packet_data</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1aac5616a323ad92d29a0613f3c85c0a83" kind="function"><name>packet_data</name></member>
   </compound>
   <compound refid="structlibnokogiri_1_1pcap_1_1pcap__t" kind="struct"><name>libnokogiri::pcap::pcap_t</name>
+    <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1ac65083de1f68a70d7a5bd12dd12f0d87" kind="typedef"><name>iterator_t</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a21eda2811ed97c1437cdd2db858b59a9" kind="variable"><name>_file</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a9843f899dab18585fd7b9803370877f8" kind="variable"><name>_compression</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a9f5a71d33263eca2b67448f3494ad804" kind="variable"><name>_readonly</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1afdfcec37817c8c10cb246f66733e4975" kind="variable"><name>_prefetch</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1aca9062af7560e0c273ffbfa0fdd61a51" kind="variable"><name>_header</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1aea045ebb59fb3384f414bdd1be8be611" kind="variable"><name>_valid</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a6d86f1142aee33d6430a7ca7a2029e00" kind="variable"><name>_needs_swapping</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a3076468e81ae7fe1cb4b3ec361e054d1" kind="variable"><name>_packets</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a7d47e094eb8ce5fe4496eefbbc460ec1" kind="function"><name>read_header</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a995849341347cb6fe23b0bcb76d829dc" kind="function"><name>ingest_packets</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a4c093bdcb1662933a63ab64a984b5b3d" kind="function"><name>pcap_t</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a73e96e9d3e68a48d6a8c8bd0527b2827" kind="function"><name>pcap_t</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1ab0128fbb81739002036ebe5013a73fea" kind="function"><name>pcap_t</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1af60e88a1b11c9b140a8734e44dd23af1" kind="function"><name>pcap_t</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1aa558e8a88c4b13a6549a291bc773d7ea" kind="function"><name>operator=</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1ab56e568272155aa141cbf918cf7b11c5" kind="function"><name>pcap_t</name></member>
@@ -129,8 +129,15 @@
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a2fa934e4752d85344e4e98471cfe5200" kind="function"><name>header</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a389ae2788440f4de58a4c4283dbd5189" kind="function"><name>compression_type</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a624508a386dee71fc91d38fa4f91838f" kind="function"><name>valid</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a989c5b8cdfe656150db8fc31c8c751c9" kind="function"><name>packet_count</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1aa1190f98e7361801caf17be474a0b773" kind="function"><name>begin</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a73464269e055588e4ecfdd6e8d2e22b4" kind="function"><name>end</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1ae6d03862d6946c388d2034c6a925b094" kind="function"><name>save</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a4ff30ae42107430821aa438774716ca1" kind="function"><name>swap</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a7e1db35d89ea5cec48ff22a1adf00a76" kind="function"><name>get_packet</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a8a287c9108a3d39af89707f43f63eb49" kind="function"><name>get_packet</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1afe7af361095b99410360517323261967" kind="function"><name>begin</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a82ada2736ee028f8322d705385f4dae8" kind="function"><name>end</name></member>
   </compound>
   <compound refid="structlibnokogiri_1_1pcapng_1_1pcapng__t" kind="struct"><name>libnokogiri::pcapng::pcapng_t</name>
   </compound>
@@ -329,8 +336,10 @@
     <member refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a768c05c9a2c12abc1ad9244a7ccb9013" kind="enumvalue"><name>SwappedIXIAHW</name></member>
     <member refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656acd100172ee368cbf65e108865bdbae70" kind="enumvalue"><name>SwappedIXIASW</name></member>
     <member refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a6b63e2e1dc6b29aa7aa1f3a9d07271c7" kind="enumvalue"><name>SwappedNanosecond</name></member>
-    <member refid="namespacelibnokogiri_1_1pcap_1a965b52b3bfb8d95a3dbcaadb074c5589" kind="typedef"><name>generic_packet_t</name></member>
-    <member refid="namespacelibnokogiri_1_1pcap_1a826df232831a75e6a2d4cf4693dccee1" kind="typedef"><name>modified_packet_t</name></member>
+    <member refid="namespacelibnokogiri_1_1pcap_1a5f7e5dd30c2860eee6f4e2ed32ae7171" kind="enum"><name>packet_type_t</name></member>
+    <member refid="namespacelibnokogiri_1_1pcap_1a5f7e5dd30c2860eee6f4e2ed32ae7171aeb6d8ae6f20283755b339c0dc273988b" kind="enumvalue"><name>Standard</name></member>
+    <member refid="namespacelibnokogiri_1_1pcap_1a5f7e5dd30c2860eee6f4e2ed32ae7171a35e0c8c0b180c95d4e122e55ed62cc64" kind="enumvalue"><name>Modified</name></member>
+    <member refid="namespacelibnokogiri_1_1pcap_1a50b9e8ce0a3adb5149c6deaff356ff61" kind="function"><name>get_packet_body_offset</name></member>
     <member refid="namespacelibnokogiri_1_1pcap_1a76032896386673aa5c89e72b674a6097" kind="function"><name>swap</name></member>
   </compound>
   <compound refid="namespacelibnokogiri_1_1pcapng" kind="namespace"><name>libnokogiri::pcapng</name>
@@ -390,6 +399,10 @@
   </compound>
   <compound refid="pcap_8hh" kind="file"><name>pcap.hh</name>
   </compound>
+  <compound refid="header_8hh" kind="file"><name>header.hh</name>
+  </compound>
+  <compound refid="packet_8hh" kind="file"><name>packet.hh</name>
+  </compound>
   <compound refid="pcapng_8cc" kind="file"><name>pcapng.cc</name>
   </compound>
   <compound refid="pcapng_8hh" kind="file"><name>pcapng.hh</name>
@@ -415,6 +428,8 @@
   <compound refid="dir_b56735cfad0d8174a0fc0dc42e28bac8" kind="dir"><name>pcapng/blocks</name>
   </compound>
   <compound refid="dir_44783a566ae8cb6c3d1129f135b0e9a8" kind="dir"><name>pcapng/options</name>
+  </compound>
+  <compound refid="dir_5483017494f5cac2c9a2c84c189382b3" kind="dir"><name>pcap</name>
   </compound>
   <compound refid="dir_4cab430cc10e3c93fde8e9a5e7f4c5b7" kind="dir"><name>pcapng</name>
   </compound>

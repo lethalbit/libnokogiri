@@ -63,6 +63,11 @@ Classes and Structs
 .. toctree::
    :maxdepth: 5
 
+   structlibnokogiri_1_1pcap_1_1packet__storage__t.rst
+
+.. toctree::
+   :maxdepth: 5
+
    structlibnokogiri_1_1pcap_1_1packet__t.rst
 
 .. toctree::
@@ -128,6 +133,11 @@ Enums
    :maxdepth: 5
 
    enum_namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   enum_namespacelibnokogiri_1_1pcap_1a5f7e5dd30c2860eee6f4e2ed32ae7171.rst
 
 .. toctree::
    :maxdepth: 5
@@ -206,6 +216,11 @@ Functions
 .. toctree::
    :maxdepth: 5
 
+   function_namespacelibnokogiri_1_1pcap_1a50b9e8ce0a3adb5149c6deaff356ff61.rst
+
+.. toctree::
+   :maxdepth: 5
+
    function_namespacelibnokogiri_1_1pcap_1a76032896386673aa5c89e72b674a6097.rst
 
 Defines
@@ -216,17 +231,3 @@ Defines
    :maxdepth: 5
 
    define_common_8hh_1a64bed52b3a785c5f321627adaf782835.rst
-
-Typedefs
-********
-
-
-.. toctree::
-   :maxdepth: 5
-
-   typedef_namespacelibnokogiri_1_1pcap_1a965b52b3bfb8d95a3dbcaadb074c5589.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   typedef_namespacelibnokogiri_1_1pcap_1a826df232831a75e6a2d4cf4693dccee1.rst

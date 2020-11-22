@@ -1,0 +1,13 @@
+.. _exhale_enum_namespacelibnokogiri_1_1pcap_1a5f7e5dd30c2860eee6f4e2ed32ae7171:
+
+Enum packet_type_t
+==================
+
+- Defined in :ref:`file_pcap_packet.hh`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: libnokogiri::pcap::packet_type_t

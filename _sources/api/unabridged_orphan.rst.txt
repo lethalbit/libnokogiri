@@ -11,6 +11,11 @@ Directories
 .. toctree::
    :maxdepth: 5
 
+   dir_pcap.rst
+
+.. toctree::
+   :maxdepth: 5
+
    dir_pcapng.rst
 
 .. toctree::
@@ -50,6 +55,11 @@ Files
 .. toctree::
    :maxdepth: 5
 
+   file_pcap_header.hh.rst
+
+.. toctree::
+   :maxdepth: 5
+
    file_pcapng_blocks_interface_description.hh.rst
 
 .. toctree::
@@ -71,6 +81,11 @@ Files
    :maxdepth: 5
 
    file_pcapng_options.hh.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_pcap_packet.hh.rst
 
 .. toctree::
    :maxdepth: 5

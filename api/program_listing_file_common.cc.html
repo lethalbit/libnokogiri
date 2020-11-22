@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Program Listing for File common.cc &#8212; libnokogiri 0.0.1 8324b2b documentation</title>
+    <title>Program Listing for File common.cc &#8212; libnokogiri 0.0.1 78b90f2 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -87,7 +87,8 @@
         <span class="k">constexpr</span> <span class="k">static</span> <span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">uint8_t</span><span class="p">,</span> <span class="mi">2</span><span class="o">&gt;</span> <span class="n">gzip_header</span><span class="p">{</span><span class="mh">0x1FU</span><span class="p">,</span> <span class="mh">0x8BU</span><span class="p">};</span>
         <span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">uint8_t</span><span class="p">,</span> <span class="mi">2</span><span class="o">&gt;</span> <span class="n">read_bytes</span><span class="p">{};</span>
         <span class="k">const</span> <span class="k">auto</span> <span class="n">res</span><span class="p">{</span><span class="n">file</span><span class="p">.</span><span class="n">read</span><span class="o">&lt;</span><span class="mi">2</span><span class="o">&gt;</span><span class="p">(</span><span class="n">read_bytes</span><span class="p">)};</span>
-        <span class="n">file</span><span class="p">.</span><span class="n">head</span><span class="p">();</span>
+        <span class="p">[[</span><span class="n">maybe_unused</span><span class="p">]]</span>
+        <span class="k">const</span> <span class="k">auto</span> <span class="n">_</span> <span class="o">=</span> <span class="n">file</span><span class="p">.</span><span class="n">head</span><span class="p">();</span>
 
         <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">res</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">return</span> <span class="n">captrue_compression_t</span><span class="o">::</span><span class="n">Unknown</span><span class="p">;</span>

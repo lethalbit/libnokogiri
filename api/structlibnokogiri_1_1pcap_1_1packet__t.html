@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template Struct packet_t &#8212; libnokogiri 0.0.1 8324b2b documentation</title>
+    <title>Struct packet_t &#8212; libnokogiri 0.0.1 78b90f2 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Struct pcap_t" href="structlibnokogiri_1_1pcap_1_1pcap__t.html" />
-    <link rel="prev" title="Struct packet_header_t" href="structlibnokogiri_1_1pcap_1_1packet__header__t.html" />
+    <link rel="prev" title="Struct packet_storage_t" href="structlibnokogiri_1_1pcap_1_1packet__storage__t.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -53,7 +53,7 @@
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
   <li><a href="index.html">libnokogiri API</a><ul>
-      <li>Previous: <a href="structlibnokogiri_1_1pcap_1_1packet__header__t.html" title="previous chapter">Struct packet_header_t</a></li>
+      <li>Previous: <a href="structlibnokogiri_1_1pcap_1_1packet__storage__t.html" title="previous chapter">Struct packet_storage_t</a></li>
       <li>Next: <a href="structlibnokogiri_1_1pcap_1_1pcap__t.html" title="next chapter">Struct pcap_t</a></li>
   </ul></li>
   </ul></li>
@@ -75,77 +75,28 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="template-struct-packet-t">
-<span id="exhale-struct-structlibnokogiri-1-1pcap-1-1packet-t"></span><h1>Template Struct packet_t<a class="headerlink" href="#template-struct-packet-t" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="struct-packet-t">
+<span id="exhale-struct-structlibnokogiri-1-1pcap-1-1packet-t"></span><h1>Struct packet_t<a class="headerlink" href="#struct-packet-t" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>Defined in <a class="reference internal" href="file_pcap.hh.html#file-pcap-hh"><span class="std std-ref">File pcap.hh</span></a></p></li>
+<li><p>Defined in <a class="reference internal" href="file_pcap_packet.hh.html#file-pcap-packet-hh"><span class="std std-ref">File packet.hh</span></a></p></li>
 </ul>
 <div class="section" id="struct-documentation">
 <h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp struct">
-<dt id="_CPPv4I00EN11libnokogiri4pcap8packet_tE">
-<span id="_CPPv3I00EN11libnokogiri4pcap8packet_tE"></span><span id="_CPPv2I00EN11libnokogiri4pcap8packet_tE"></span>template&lt;typename <code class="sig-name descname">T</code>, typename <code class="sig-name descname">U</code>&gt;<br /><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__t"></span><em class="property">struct </em><code class="sig-prename descclassname">libnokogiri::pcap<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">packet_t</code><a class="headerlink" href="#_CPPv4I00EN11libnokogiri4pcap8packet_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N11libnokogiri4pcap8packet_tE">
+<span id="_CPPv3N11libnokogiri4pcap8packet_tE"></span><span id="_CPPv2N11libnokogiri4pcap8packet_tE"></span><span id="libnokogiri::pcap::packet_t"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__t"></span><em class="property">struct </em><code class="sig-name descname">packet_t</code><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap8packet_tE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>pcap packet template </p>
+<p>Retrieve the packet header</p>
+<p>Set the packet header</p>
+<p>Retrieve the offset in the file the packet is located at</p>
+<p>Set the offset in the file the packet is located at</p>
+<p>Retrieve the packet data</p>
+<p>Set the packet data</p>
+<p>Type alias for generic conforming pcap packets with the standard header</p>
+<p>Type alias for packets from the modified pcap files</p>
 <p>This template provides the framework for reading and writing packets.</p>
-<p>They can have custom headers, but the two standardized packets are already specified as <a class="reference internal" href="typedef_namespacelibnokogiri_1_1pcap_1a965b52b3bfb8d95a3dbcaadb074c5589.html#namespacelibnokogiri_1_1pcap_1a965b52b3bfb8d95a3dbcaadb074c5589"><span class="std std-ref">libnokogiri::pcap::generic_packet_t</span></a> and <a class="reference internal" href="typedef_namespacelibnokogiri_1_1pcap_1a826df232831a75e6a2d4cf4693dccee1.html#namespacelibnokogiri_1_1pcap_1a826df232831a75e6a2d4cf4693dccee1"><span class="std std-ref">libnokogiri::pcap::modified_packet_t</span></a> .</p>
+<p>They can have custom headers, but the two standardized packets are already specified as libnokogiri::pcap::generic_packet_t and libnokogiri::pcap::modified_packet_t .</p>
 <p>All this template does is change out the packet header type, the rest of the logic is identical. </p>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Types</p>
-<dl class="cpp type">
-<dt id="_CPPv4N11libnokogiri4pcap8packet_t6data_tE">
-<span id="_CPPv3N11libnokogiri4pcap8packet_t6data_tE"></span><span id="_CPPv2N11libnokogiri4pcap8packet_t6data_tE"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__t_1a2f36c5dab04be86f0c6a5e397a07e0af"></span><em class="property">using </em><code class="sig-name descname">data_t</code> = std::optional&lt;std::unique_ptr&lt;<a class="reference internal" href="#_CPPv4I00EN11libnokogiri4pcap8packet_tE" title="libnokogiri::pcap::packet_t::U">U</a>&gt;&gt;<a class="headerlink" href="#_CPPv4N11libnokogiri4pcap8packet_t6data_tE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-</div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="cpp function">
-<dt id="_CPPv4N11libnokogiri4pcap8packet_t8packet_tEv">
-<span id="_CPPv3N11libnokogiri4pcap8packet_t8packet_tEv"></span><span id="_CPPv2N11libnokogiri4pcap8packet_t8packet_tEv"></span><span id="libnokogiri::pcap::packet_t::packet_tCE"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__t_1a2c89aeef76d58fa0b6460039504994fd"></span><em class="property">constexpr</em> <code class="sig-name descname">packet_t</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap8packet_t8packet_tEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N11libnokogiri4pcap8packet_t8packet_tE1TNSt9uintptr_tE6data_t">
-<span id="_CPPv3N11libnokogiri4pcap8packet_t8packet_tE1TNSt9uintptr_tE6data_t"></span><span id="_CPPv2N11libnokogiri4pcap8packet_t8packet_tE1TNSt9uintptr_tE6data_t"></span><span id="libnokogiri::pcap::packet_t::packet_t__T.std::uintptr_t.data_tCE"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__t_1aa10295eebf01fa9d13e1647034e8bd33"></span><em class="property">constexpr</em> <code class="sig-name descname">packet_t</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00EN11libnokogiri4pcap8packet_tE" title="libnokogiri::pcap::packet_t::T">T</a> <em>header</em>, std::uintptr_t <em>offset</em>, <a class="reference internal" href="#_CPPv4N11libnokogiri4pcap8packet_t6data_tE" title="libnokogiri::pcap::packet_t::data_t">data_t</a> <em>data</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap8packet_t8packet_tE1TNSt9uintptr_tE6data_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4NK11libnokogiri4pcap8packet_t6headerEv">
-<span id="_CPPv3NK11libnokogiri4pcap8packet_t6headerEv"></span><span id="_CPPv2NK11libnokogiri4pcap8packet_t6headerEv"></span><span id="libnokogiri::pcap::packet_t::headerC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__t_1ad56bdf16c44b986cb77f076d40926f2d"></span><a class="reference internal" href="#_CPPv4I00EN11libnokogiri4pcap8packet_tE" title="libnokogiri::pcap::packet_t::T">T</a> <code class="sig-name descname">header</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri4pcap8packet_t6headerEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Retrieve the packet header </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N11libnokogiri4pcap8packet_t6headerE1T">
-<span id="_CPPv3N11libnokogiri4pcap8packet_t6headerE1T"></span><span id="_CPPv2N11libnokogiri4pcap8packet_t6headerE1T"></span><span id="libnokogiri::pcap::packet_t::header__T"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__t_1a805d73e5f3d12d79904595634b264a73"></span>void <code class="sig-name descname">header</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00EN11libnokogiri4pcap8packet_tE" title="libnokogiri::pcap::packet_t::T">T</a> <em>header</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap8packet_t6headerE1T" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Set the packet header </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4NK11libnokogiri4pcap8packet_t13packet_offsetEv">
-<span id="_CPPv3NK11libnokogiri4pcap8packet_t13packet_offsetEv"></span><span id="_CPPv2NK11libnokogiri4pcap8packet_t13packet_offsetEv"></span><span id="libnokogiri::pcap::packet_t::packet_offsetC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__t_1aa984222ae3505097aeb4a1325ce23e7e"></span>std::uintptr_t <code class="sig-name descname">packet_offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri4pcap8packet_t13packet_offsetEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Retrieve the offset in the file the packet is located at </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N11libnokogiri4pcap8packet_t13packet_offsetENSt9uintptr_tE">
-<span id="_CPPv3N11libnokogiri4pcap8packet_t13packet_offsetENSt9uintptr_tE"></span><span id="_CPPv2N11libnokogiri4pcap8packet_t13packet_offsetENSt9uintptr_tE"></span><span id="libnokogiri::pcap::packet_t::packet_offset__std::uintptr_t"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__t_1a9540cc1ada7e66c68618eda85d875e76"></span>void <code class="sig-name descname">packet_offset</code><span class="sig-paren">(</span>std::uintptr_t <em>packet_offset</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap8packet_t13packet_offsetENSt9uintptr_tE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Set the offset in the file the packet is located at </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4NK11libnokogiri4pcap8packet_t11packet_dataEv">
-<span id="_CPPv3NK11libnokogiri4pcap8packet_t11packet_dataEv"></span><span id="_CPPv2NK11libnokogiri4pcap8packet_t11packet_dataEv"></span><span id="libnokogiri::pcap::packet_t::packet_dataC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__t_1a83f8998f80456797e453abd7016b6ca2"></span><a class="reference internal" href="#_CPPv4N11libnokogiri4pcap8packet_t6data_tE" title="libnokogiri::pcap::packet_t::data_t">data_t</a> <code class="sig-name descname">packet_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri4pcap8packet_t11packet_dataEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Retrieve the packet data </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N11libnokogiri4pcap8packet_t11packet_dataE6data_t">
-<span id="_CPPv3N11libnokogiri4pcap8packet_t11packet_dataE6data_t"></span><span id="_CPPv2N11libnokogiri4pcap8packet_t11packet_dataE6data_t"></span><span id="libnokogiri::pcap::packet_t::packet_data__data_t"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__t_1aac5616a323ad92d29a0613f3c85c0a83"></span>void <code class="sig-name descname">packet_data</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N11libnokogiri4pcap8packet_t6data_tE" title="libnokogiri::pcap::packet_t::data_t">data_t</a> <em>packet_data</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap8packet_t11packet_dataE6data_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Set the packet data </p>
-</dd></dl>
-
-</div>
 </dd></dl>
 
 </div>

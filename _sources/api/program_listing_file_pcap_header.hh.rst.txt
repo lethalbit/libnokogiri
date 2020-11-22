@@ -1,0 +1,86 @@
+
+.. _program_listing_file_pcap_header.hh:
+
+Program Listing for File header.hh
+==================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_pcap_header.hh>` (``pcap/header.hh``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   // SPDX-License-Identifier: LGPL-3.0-or-later
+   /* pcap/header.hh - libnokogiri pcap file header */
+   #if !defined(LIBNOKOGIRI_PCAP_HEADER_HH)
+   #define LIBNOKOGIRI_PCAP_HEADER_HH
+   
+   #include <cstdint>
+   
+   #include <libnokogiri/config.hh>
+   #include <libnokogiri/common.hh>
+   
+   #include <libnokogiri/internal/defs.hh>
+   
+   namespace libnokogiri::pcap {
+       enum struct pcap_variant_t : std::uint32_t {
+           Standard   = 0xA1B2C3D4U, 
+           Modified   = 0xA1B2CD34U, 
+           IXIAHW     = 0x1C0001ACU, 
+           IXIASW     = 0x1C0001ABU, 
+           Nanosecond = 0xA1B23C4DU, 
+           /* Swapped versions of the magic, so it's easy to detect */
+           SwappedStantard   = 0xD4C3B2A1U, 
+           SwappedModified   = 0x34CDB2A1U, 
+           SwappedIXIAHW     = 0xAC01001CU, 
+           SwappedIXIASW     = 0xAB01001CU, 
+           SwappedNanosecond = 0x4D3CB2A1U, 
+       };
+   
+       struct file_header_t final {
+       private:
+           pcap_variant_t _variant;
+           version_t _version;
+           std::int32_t _tz_offset;
+           std::uint32_t _timestamp_figs;
+           std::uint32_t _pcklen_max;
+           alignas(alignof(std::uint32_t)) link_type_t _network;
+       public:
+           constexpr file_header_t() noexcept :
+               _variant{pcap_variant_t::Standard}, _version{1U, 0U}, _tz_offset{0},
+               _timestamp_figs{0U}, _pcklen_max{0U}, _network{link_type_t::User0}
+               { /* NOP */ }
+   
+           constexpr file_header_t(pcap_variant_t variant, version_t version, std::int32_t tz_offset,
+                   std::uint32_t ts_figs, std::uint32_t pcklen, link_type_t network) noexcept :
+               _variant{variant}, _version{version}, _tz_offset{tz_offset},
+               _timestamp_figs{ts_figs}, _pcklen_max{pcklen}, _network{network}
+               { /* NOP */ }
+   
+           [[nodiscard]]
+           pcap_variant_t variant() const noexcept { return _variant; }
+           void variant(const pcap_variant_t variant) noexcept { _variant = variant; }
+   
+           [[nodiscard]]
+           version_t version() const noexcept { return _version; }
+           void version(const version_t version) noexcept { _version = version; }
+   
+           [[nodiscard]]
+           std::int32_t timezone_offset() const noexcept { return _tz_offset; }
+           void timezone_offset(const std::int32_t tz_offset) noexcept { _tz_offset = tz_offset; }
+   
+           [[nodiscard]]
+           std::uint32_t timestamp_accuracy() const noexcept { return _timestamp_figs; }
+           void timestamp_accuracy(const std::uint32_t ts_accuracy) noexcept { _timestamp_figs = ts_accuracy; }
+   
+           [[nodiscard]]
+           std::uint32_t max_packet_length() const noexcept { return _pcklen_max; }
+           void max_packet_length(const std::uint32_t length) noexcept { _pcklen_max = length; }
+   
+           [[nodiscard]]
+           link_type_t link_type() const noexcept { return _network; }
+           void link_type(const link_type_t type) noexcept { _network = type; }
+       };
+   }
+   
+   #endif /* LIBNOKOGIRI_PCAP_HEADER_HH */

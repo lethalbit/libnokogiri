@@ -145,18 +145,6 @@
     <detaileddescription>
 <para>The section header block is the only mandatory block type in pcapng files. It identifies the beginning of a section of the capture file.</para><para>This block does not contain capture data itself but rather it identifies a collection of blocks that are logically correlated.</para><para>There can be multiple of these blocks in the same pcapng file, however a section can not contain another section. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="30">
-        <label>libnokogiri::pcapng::block_t</label>
-        <link refid="structlibnokogiri_1_1pcapng_1_1block__t"/>
-      </node>
-      <node id="29">
-        <label>libnokogiri::pcapng::blocks::section_header_t</label>
-        <link refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t"/>
-        <childnode refid="30" relation="public-inheritance">
-        </childnode>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="32">
         <label>libnokogiri::pcapng::block_t</label>
         <link refid="structlibnokogiri_1_1pcapng_1_1block__t"/>
@@ -165,6 +153,18 @@
         <label>libnokogiri::pcapng::blocks::section_header_t</label>
         <link refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t"/>
         <childnode refid="32" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="34">
+        <label>libnokogiri::pcapng::block_t</label>
+        <link refid="structlibnokogiri_1_1pcapng_1_1block__t"/>
+      </node>
+      <node id="33">
+        <label>libnokogiri::pcapng::blocks::section_header_t</label>
+        <link refid="structlibnokogiri_1_1pcapng_1_1blocks_1_1section__header__t"/>
+        <childnode refid="34" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

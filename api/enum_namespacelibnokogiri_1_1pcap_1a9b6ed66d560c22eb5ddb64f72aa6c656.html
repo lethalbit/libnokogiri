@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Enum pcap_variant_t &#8212; libnokogiri 0.0.1 8324b2b documentation</title>
+    <title>Enum pcap_variant_t &#8212; libnokogiri 0.0.1 78b90f2 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Enum block_type_t" href="enum_namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1.html" />
-    <link rel="prev" title="Enum link_type_t" href="enum_namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c.html" />
+    <link rel="prev" title="Enum packet_type_t" href="enum_namespacelibnokogiri_1_1pcap_1a5f7e5dd30c2860eee6f4e2ed32ae7171.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -53,7 +53,7 @@
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
   <li><a href="index.html">libnokogiri API</a><ul>
-      <li>Previous: <a href="enum_namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c.html" title="previous chapter">Enum link_type_t</a></li>
+      <li>Previous: <a href="enum_namespacelibnokogiri_1_1pcap_1a5f7e5dd30c2860eee6f4e2ed32ae7171.html" title="previous chapter">Enum packet_type_t</a></li>
       <li>Next: <a href="enum_namespacelibnokogiri_1_1pcapng_1a5bf1fab137cdd6f2ea0a0967cd6922b1.html" title="next chapter">Enum block_type_t</a></li>
   </ul></li>
   </ul></li>
@@ -78,7 +78,7 @@
   <div class="section" id="enum-pcap-variant-t">
 <span id="exhale-enum-namespacelibnokogiri-1-1pcap-1a9b6ed66d560c22eb5ddb64f72aa6c656"></span><h1>Enum pcap_variant_t<a class="headerlink" href="#enum-pcap-variant-t" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>Defined in <a class="reference internal" href="file_pcap.hh.html#file-pcap-hh"><span class="std std-ref">File pcap.hh</span></a></p></li>
+<li><p>Defined in <a class="reference internal" href="file_pcap_header.hh.html#file-pcap-header-hh"><span class="std std-ref">File header.hh</span></a></p></li>
 </ul>
 <div class="section" id="enum-documentation">
 <h2>Enum Documentation<a class="headerlink" href="#enum-documentation" title="Permalink to this headline">¶</a></h2>
@@ -119,28 +119,32 @@
 <dl class="cpp enumerator">
 <dt id="_CPPv4N11libnokogiri4pcap14pcap_variant_t15SwappedStantardE">
 <span id="_CPPv3N11libnokogiri4pcap14pcap_variant_t15SwappedStantardE"></span><span id="_CPPv2N11libnokogiri4pcap14pcap_variant_t15SwappedStantardE"></span><span class="target" id="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656af50b33a9beb0122f09f5dac7fe32517b"></span><em class="property">enumerator </em><code class="sig-name descname">SwappedStantard</code><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap14pcap_variant_t15SwappedStantardE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Magic for the modified pcap format introduced by Ulf Lamping’s patches. It’s identical to the standard but the timestamps are in nanoseconds. </p>
+<dd><p>Magic for the modified pcap format introduced by Ulf Lamping’s patches. It’s identical to the standard but the timestamps are in nanoseconds. Swapped magic for standard pcap files </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N11libnokogiri4pcap14pcap_variant_t15SwappedModifiedE">
 <span id="_CPPv3N11libnokogiri4pcap14pcap_variant_t15SwappedModifiedE"></span><span id="_CPPv2N11libnokogiri4pcap14pcap_variant_t15SwappedModifiedE"></span><span class="target" id="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656aae99b9c57b1bfe6a4d657eded0de17f2"></span><em class="property">enumerator </em><code class="sig-name descname">SwappedModified</code><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap14pcap_variant_t15SwappedModifiedE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Swapped magic for modified pcap files </p>
+</dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N11libnokogiri4pcap14pcap_variant_t13SwappedIXIAHWE">
 <span id="_CPPv3N11libnokogiri4pcap14pcap_variant_t13SwappedIXIAHWE"></span><span id="_CPPv2N11libnokogiri4pcap14pcap_variant_t13SwappedIXIAHWE"></span><span class="target" id="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a768c05c9a2c12abc1ad9244a7ccb9013"></span><em class="property">enumerator </em><code class="sig-name descname">SwappedIXIAHW</code><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap14pcap_variant_t13SwappedIXIAHWE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Swapped magic for IXIA’s lcap </p>
+</dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N11libnokogiri4pcap14pcap_variant_t13SwappedIXIASWE">
 <span id="_CPPv3N11libnokogiri4pcap14pcap_variant_t13SwappedIXIASWE"></span><span id="_CPPv2N11libnokogiri4pcap14pcap_variant_t13SwappedIXIASWE"></span><span class="target" id="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656acd100172ee368cbf65e108865bdbae70"></span><em class="property">enumerator </em><code class="sig-name descname">SwappedIXIASW</code><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap14pcap_variant_t13SwappedIXIASWE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Swapped magic for IXIA’s lcap </p>
+</dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N11libnokogiri4pcap14pcap_variant_t17SwappedNanosecondE">
 <span id="_CPPv3N11libnokogiri4pcap14pcap_variant_t17SwappedNanosecondE"></span><span id="_CPPv2N11libnokogiri4pcap14pcap_variant_t17SwappedNanosecondE"></span><span class="target" id="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a6b63e2e1dc6b29aa7aa1f3a9d07271c7"></span><em class="property">enumerator </em><code class="sig-name descname">SwappedNanosecond</code><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap14pcap_variant_t17SwappedNanosecondE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Swapped magic for nanosecond pcap files </p>
+</dd></dl>
 
 </dd></dl>
 

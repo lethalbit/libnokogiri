@@ -1,0 +1,70 @@
+
+.. _file_pcap_header.hh:
+
+File header.hh
+==============
+
+|exhale_lsh| :ref:`Parent directory <dir_pcap>` (``pcap``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``pcap/header.hh``)
+-------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_pcap_header.hh.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``cstdint``
+
+- ``libnokogiri/common.hh``
+
+- ``libnokogiri/config.hh``
+
+- ``libnokogiri/internal/defs.hh``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_pcap.hh`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_libnokogiri__pcap`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structlibnokogiri_1_1pcap_1_1file__header__t`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656`
+

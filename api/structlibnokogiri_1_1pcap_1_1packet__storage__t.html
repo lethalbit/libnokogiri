@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Struct packet_storage_t &#8212; libnokogiri 0.0.1 78b90f2 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+    <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Struct packet_t" href="structlibnokogiri_1_1pcap_1_1packet__t.html" />
+    <link rel="prev" title="Struct packet_header_t" href="structlibnokogiri_1_1pcap_1_1packet__header__t.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">libnokogiri</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=lethalbit&repo=libnokogiri&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">libnokogiri API</a><ul>
+      <li>Previous: <a href="structlibnokogiri_1_1pcap_1_1packet__header__t.html" title="previous chapter">Struct packet_header_t</a></li>
+      <li>Next: <a href="structlibnokogiri_1_1pcap_1_1packet__t.html" title="next chapter">Struct packet_t</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div><h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">libnokogiri API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending/index.html">Extending libnokogiri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">libnokogiri examples</a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="struct-packet-storage-t">
+<span id="exhale-struct-structlibnokogiri-1-1pcap-1-1packet-storage-t"></span><h1>Struct packet_storage_t<a class="headerlink" href="#struct-packet-storage-t" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_pcap_packet.hh.html#file-pcap-packet-hh"><span class="std std-ref">File packet.hh</span></a></p></li>
+</ul>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp struct">
+<dt id="_CPPv4N11libnokogiri4pcap16packet_storage_tE">
+<span id="_CPPv3N11libnokogiri4pcap16packet_storage_tE"></span><span id="_CPPv2N11libnokogiri4pcap16packet_storage_tE"></span><span id="libnokogiri::pcap::packet_storage_t"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__storage__t"></span><em class="property">struct </em><code class="sig-prename descclassname">libnokogiri::pcap<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">packet_storage_t</code><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap16packet_storage_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Storage container for pcap packet data. </p>
+<p>This structure stores a small amount of information pertaining to a packet within the pcap file.</p>
+<p>It holds the packet type, the size of the packet (including the header), the offset into the pcap file, and the cached packet itself if it’s been read. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N11libnokogiri4pcap16packet_storage_t16packet_storage_tEv">
+<span id="_CPPv3N11libnokogiri4pcap16packet_storage_t16packet_storage_tEv"></span><span id="_CPPv2N11libnokogiri4pcap16packet_storage_t16packet_storage_tEv"></span><span id="libnokogiri::pcap::packet_storage_t::packet_storage_tCE"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a8ed85a9d807973d8638e1e5074660d44"></span><em class="property">constexpr</em> <code class="sig-name descname">packet_storage_t</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap16packet_storage_t16packet_storage_tEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N11libnokogiri4pcap16packet_storage_t16packet_storage_tENSt8uint32_tENSt9uintptr_tENSt8optionalI8packet_tEE">
+<span id="_CPPv3N11libnokogiri4pcap16packet_storage_t16packet_storage_tENSt8uint32_tENSt9uintptr_tENSt8optionalI8packet_tEE"></span><span id="_CPPv2N11libnokogiri4pcap16packet_storage_t16packet_storage_tENSt8uint32_tENSt9uintptr_tENSt8optionalI8packet_tEE"></span><span id="libnokogiri::pcap::packet_storage_t::packet_storage_t__std::uint32_t.std::uintptr_t.std::optional:packet_t:CE"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a87c1103981c0c06544431675fbd793dc"></span><em class="property">constexpr</em> <code class="sig-name descname">packet_storage_t</code><span class="sig-paren">(</span>std::uint32_t <em>len</em>, std::uintptr_t <em>offset</em>, std::optional&lt;<a class="reference internal" href="structlibnokogiri_1_1pcap_1_1packet__t.html#_CPPv4N11libnokogiri4pcap8packet_tE" title="libnokogiri::pcap::packet_t">packet_t</a>&gt; <em>packet</em> = std::nullopt<span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap16packet_storage_t16packet_storage_tENSt8uint32_tENSt9uintptr_tENSt8optionalI8packet_tEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK11libnokogiri4pcap16packet_storage_t6lengthEv">
+<span id="_CPPv3NK11libnokogiri4pcap16packet_storage_t6lengthEv"></span><span id="_CPPv2NK11libnokogiri4pcap16packet_storage_t6lengthEv"></span><span id="libnokogiri::pcap::packet_storage_t::lengthC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a3ef0984b79730b6d9de1b476261cfcd2"></span>std::uint32_t <code class="sig-name descname">length</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri4pcap16packet_storage_t6lengthEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK11libnokogiri4pcap16packet_storage_t6offsetEv">
+<span id="_CPPv3NK11libnokogiri4pcap16packet_storage_t6offsetEv"></span><span id="_CPPv2NK11libnokogiri4pcap16packet_storage_t6offsetEv"></span><span id="libnokogiri::pcap::packet_storage_t::offsetC"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a1ded31324136d8b366f126c56771456c"></span>std::uintptr_t <code class="sig-name descname">offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK11libnokogiri4pcap16packet_storage_t6offsetEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N11libnokogiri4pcap16packet_storage_t10get_packetEv">
+<span id="_CPPv3N11libnokogiri4pcap16packet_storage_t10get_packetEv"></span><span id="_CPPv2N11libnokogiri4pcap16packet_storage_t10get_packetEv"></span><span id="libnokogiri::pcap::packet_storage_t::get_packet"></span><span class="target" id="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a219beb96da0c7b502e3e0dd34ff9bd47"></span>std::optional&lt;<a class="reference internal" href="structlibnokogiri_1_1pcap_1_1packet__t.html#_CPPv4N11libnokogiri4pcap8packet_tE" title="libnokogiri::pcap::packet_t">packet_t</a>&gt; <code class="sig-name descname">get_packet</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap16packet_storage_t10get_packetEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the packet that is represented by this storage object </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2020, Aki Van Ness.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/api/structlibnokogiri_1_1pcap_1_1packet__storage__t.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

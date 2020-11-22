@@ -1,0 +1,272 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="packet_8hh" kind="file" language="C++">
+    <compoundname>packet.hh</compoundname>
+    <includes local="no">cstdint</includes>
+    <includes local="no">optional</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">libnokogiri/config.hh</includes>
+    <includes refid="common_8hh" local="no">libnokogiri/common.hh</includes>
+    <includes local="no">libnokogiri/internal/defs.hh</includes>
+    <includedby refid="pcap_8hh" local="no">pcap.hh</includedby>
+    <incdepgraph>
+      <node id="100">
+        <label>cstdint</label>
+      </node>
+      <node id="103">
+        <label>libnokogiri/config.hh</label>
+      </node>
+      <node id="104">
+        <label>libnokogiri/common.hh</label>
+        <link refid="common_8hh_source"/>
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+        <childnode refid="107" relation="include">
+        </childnode>
+      </node>
+      <node id="107">
+        <label>libnokogiri/internal/fd.hh</label>
+      </node>
+      <node id="106">
+        <label>libnokogiri/internal/defs.hh</label>
+      </node>
+      <node id="101">
+        <label>optional</label>
+      </node>
+      <node id="102">
+        <label>vector</label>
+      </node>
+      <node id="99">
+        <label>pcap/packet.hh</label>
+        <link refid="packet_8hh"/>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="102" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="104" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+      </node>
+      <node id="105">
+        <label>cstddef</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="110">
+        <label>libnokogiri.hh</label>
+        <link refid="libnokogiri_8hh_source"/>
+      </node>
+      <node id="108">
+        <label>pcap/packet.hh</label>
+        <link refid="packet_8hh"/>
+        <childnode refid="109" relation="include">
+        </childnode>
+      </node>
+      <node id="109">
+        <label>pcap.hh</label>
+        <link refid="pcap_8hh_source"/>
+        <childnode refid="110" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structlibnokogiri_1_1pcap_1_1packet__header__t" prot="public">libnokogiri::pcap::packet_header_t</innerclass>
+    <innerclass refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t" prot="public">libnokogiri::pcap::packet_header_modified_t</innerclass>
+    <innerclass refid="structlibnokogiri_1_1pcap_1_1packet__t" prot="public">libnokogiri::pcap::packet_t</innerclass>
+    <innerclass refid="structlibnokogiri_1_1pcap_1_1packet__storage__t" prot="public">libnokogiri::pcap::packet_storage_t</innerclass>
+    <innernamespace refid="namespacelibnokogiri_1_1pcap">libnokogiri::pcap</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>LGPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>pcap/packet.hh<sp/>-<sp/>libnokogiri<sp/>pcap<sp/>packets<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(LIBNOKOGIRI_PCAP_PACKET_HH)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LIBNOKOGIRI_PCAP_PACKET_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;libnokogiri/config.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;libnokogiri/common.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;libnokogiri/internal/defs.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacelibnokogiri_1_1pcap" kindref="compound">libnokogiri::pcap</ref><sp/>{</highlight></codeline>
+<codeline lineno="22" refid="namespacelibnokogiri_1_1pcap_1a5f7e5dd30c2860eee6f4e2ed32ae7171" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>struct</highlight><highlight class="normal"><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a5f7e5dd30c2860eee6f4e2ed32ae7171" kindref="member">packet_type_t</ref><sp/>:<sp/>uint8_t<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Standard<sp/>=<sp/>0x00,<sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a35e0c8c0b180c95d4e122e55ed62cc64" kindref="member">Modified</ref><sp/>=<sp/>0x01,<sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="structlibnokogiri_1_1pcap_1_1packet__header__t" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t" kindref="compound">packet_header_t</ref><sp/>final<sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint32_t<sp/>_timestamp;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint32_t<sp/>_usecs;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint32_t<sp/>_have;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint32_t<sp/>_was;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t" kindref="compound">packet_header_t</ref>()<sp/>noexcept<sp/>:</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_timestamp{0U},<sp/>_usecs{0U},<sp/>_have{0U},<sp/>_was{0U}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="comment">/*<sp/>NOP<sp/>*/</highlight><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t" kindref="compound">packet_header_t</ref>(std::uint32_t<sp/>timestamp,<sp/>std::uint32_t<sp/>useconds,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint32_t<sp/>pkt_len_have,<sp/>std::uint32_t<sp/>pkt_len_actual)<sp/>noexcept<sp/>:</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_timestamp{timestamp},<sp/>_usecs{useconds},<sp/>_have{pkt_len_have},<sp/>_was{pkt_len_actual}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="comment">/*<sp/>NOP<sp/>*/</highlight><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
+<codeline lineno="77" refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a9cd419a7db50fb2599573cf9b6c92a76" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint32_t<sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a9cd419a7db50fb2599573cf9b6c92a76" kindref="member">timestamp</ref>()<sp/>const<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_timestamp;<sp/>}</highlight></codeline>
+<codeline lineno="79" refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a3cc64e6e0a591efbacf1a2cc99738fee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a3cc64e6e0a591efbacf1a2cc99738fee" kindref="member">timestamp</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::uint32_t<sp/>timestamp)<sp/>noexcept<sp/>{<sp/>_timestamp<sp/>=<sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a3cc64e6e0a591efbacf1a2cc99738fee" kindref="member">timestamp</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
+<codeline lineno="83" refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a4fc89050bbdc58c0bed871de2054df80" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint32_t<sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a4fc89050bbdc58c0bed871de2054df80" kindref="member">useconds</ref>()<sp/>const<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_usecs;<sp/>}</highlight></codeline>
+<codeline lineno="85" refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1aca62c83d1041af332dbeec0a84493255" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1aca62c83d1041af332dbeec0a84493255" kindref="member">useconds</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::uint32_t<sp/>useconds)<sp/>noexcept<sp/>{<sp/>_usecs<sp/>=<sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1aca62c83d1041af332dbeec0a84493255" kindref="member">useconds</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
+<codeline lineno="89" refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a03cb5d9a6130e49093cfc4cc0d9b8cf3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint32_t<sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a03cb5d9a6130e49093cfc4cc0d9b8cf3" kindref="member">captured_len</ref>()<sp/>const<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_have;<sp/>}</highlight></codeline>
+<codeline lineno="91" refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a9b3b72b9c7ffc8020d2c21eb5d97d4e2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a9b3b72b9c7ffc8020d2c21eb5d97d4e2" kindref="member">captured_len</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::uint32_t<sp/>captured_len)<sp/>noexcept<sp/>{<sp/>_have<sp/>=<sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a9b3b72b9c7ffc8020d2c21eb5d97d4e2" kindref="member">captured_len</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
+<codeline lineno="95" refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1ae0d03678cf71fbfccf6d1fa8b52d4be2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint32_t<sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1ae0d03678cf71fbfccf6d1fa8b52d4be2" kindref="member">actual_len</ref>()<sp/>const<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_was;<sp/>}</highlight></codeline>
+<codeline lineno="97" refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1ab6ff365c35ec8a80e5bc768d2ea5046e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1ab6ff365c35ec8a80e5bc768d2ea5046e" kindref="member">actual_len</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::uint32_t<sp/>actual_len)<sp/>noexcept<sp/>{<sp/>_was<sp/>=<sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1ab6ff365c35ec8a80e5bc768d2ea5046e" kindref="member">actual_len</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
+<codeline lineno="101" refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a6a765377ff1a056fd5c84e3d935d710c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a6a765377ff1a056fd5c84e3d935d710c" kindref="member">full_packet</ref>()<sp/>const<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_was<sp/>==<sp/>_have;<sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135" refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t" kindref="compound">packet_header_modified_t</ref><sp/>final<sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t" kindref="compound">packet_header_t</ref><sp/>_base_header;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint32_t<sp/>_if_index;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint16_t<sp/>_proto;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint8_t<sp/>_type;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint8_t<sp/>_padding;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t" kindref="compound">packet_header_modified_t</ref>()<sp/>noexcept<sp/>:</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_base_header{},<sp/>_if_index{0U},<sp/>_proto{0U},<sp/>_type{0U},<sp/>_padding{0U}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="comment">/*<sp/>NOP<sp/>*/</highlight><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t" kindref="compound">packet_header_modified_t</ref>(<ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t" kindref="compound">packet_header_t</ref>&amp;&amp;<sp/>base_header,<sp/>std::uint32_t<sp/>if_index,</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint16_t<sp/>protocol,<sp/>std::uint8_t<sp/>type)<sp/>noexcept<sp/>:</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_base_header{base_header},<sp/>_if_index{if_index},<sp/>_proto{protocol},<sp/>_type{type},</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_padding{0U}<sp/>{<sp/></highlight><highlight class="comment">/*<sp/>NOP<sp/>*/</highlight><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t" kindref="compound">packet_header_modified_t</ref>(std::nullptr_t)<sp/>noexcept<sp/>{<sp/></highlight><highlight class="comment">/*<sp/>NOP<sp/>*/</highlight><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
+<codeline lineno="156" refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a85120c91c161baf2f4788736c7337510" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t" kindref="compound">packet_header_t</ref><sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a85120c91c161baf2f4788736c7337510" kindref="member">base_header</ref>()<sp/>const<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_base_header;<sp/>}</highlight></codeline>
+<codeline lineno="158" refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1af79884c4df05bcd9fb4302277bccf59e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1af79884c4df05bcd9fb4302277bccf59e" kindref="member">base_header</ref>(<ref refid="structlibnokogiri_1_1pcap_1_1packet__header__t" kindref="compound">packet_header_t</ref><sp/>base_header)<sp/>noexcept<sp/>{<sp/>_base_header<sp/>=<sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1af79884c4df05bcd9fb4302277bccf59e" kindref="member">base_header</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
+<codeline lineno="162" refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1aecefe500478e0b79f1c34331f5362a7f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint32_t<sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1aecefe500478e0b79f1c34331f5362a7f" kindref="member">interface_index</ref>()<sp/>const<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_if_index;<sp/>}</highlight></codeline>
+<codeline lineno="164" refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a23dbd8346862d11df3b1195ef8d77ccf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a23dbd8346862d11df3b1195ef8d77ccf" kindref="member">interface_index</ref>(std::uint32_t<sp/>interface_index)<sp/>noexcept<sp/>{<sp/>_if_index<sp/>=<sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a23dbd8346862d11df3b1195ef8d77ccf" kindref="member">interface_index</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
+<codeline lineno="168" refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1afdc05fee90005200b34482b46eccb1f5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint16_t<sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1afdc05fee90005200b34482b46eccb1f5" kindref="member">protocol</ref>()<sp/>const<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_proto;<sp/>}</highlight></codeline>
+<codeline lineno="170" refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a8f52653583d599396e2cd33201184c09" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a8f52653583d599396e2cd33201184c09" kindref="member">protocol</ref>(std::uint16_t<sp/>protocol)<sp/>noexcept<sp/>{<sp/>_proto<sp/>=<sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a8f52653583d599396e2cd33201184c09" kindref="member">protocol</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
+<codeline lineno="174" refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1aaeb34ff208e5b5772e97675002901c31" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint8_t<sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1aaeb34ff208e5b5772e97675002901c31" kindref="member">type</ref>()<sp/>const<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_type;<sp/>}</highlight></codeline>
+<codeline lineno="176" refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a52b308a8be3358f5c3db81f3b098b29b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a52b308a8be3358f5c3db81f3b098b29b" kindref="member">type</ref>(std::uint8_t<sp/>type)<sp/>noexcept<sp/>{<sp/>_type<sp/>=<sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a52b308a8be3358f5c3db81f3b098b29b" kindref="member">type</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>/*!<sp/>\struct<sp/>libnokogiri::pcap::packet_t</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>\brief<sp/>pcap<sp/>packet<sp/>template</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>This<sp/>template<sp/>provides<sp/>the<sp/>framework<sp/>for<sp/>reading<sp/>and<sp/>writing<sp/>packets.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>They<sp/>can<sp/>have<sp/>custom<sp/>headers,<sp/>but<sp/>the<sp/>two<sp/>standardized<sp/>packets<sp/>are<sp/>already</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>specified<sp/>as<sp/>libnokogiri::pcap::generic_packet_t<sp/>and<sp/>libnokogiri::pcap::modified_packet_t<sp/>.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>All<sp/>this<sp/>template<sp/>does<sp/>is<sp/>change<sp/>out<sp/>the<sp/>packet<sp/>header<sp/>type,<sp/>the<sp/>rest<sp/>of<sp/>the<sp/>logic<sp/>is<sp/>identical.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>template&lt;typename<sp/>T,<sp/>typename<sp/>U&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>struct<sp/>packet_t<sp/>final<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>public:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>using<sp/>data_t<sp/>=<sp/>std::optional&lt;std::unique_ptr&lt;U&gt;&gt;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>private:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>T<sp/>_packet_header;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>std::uintptr_t<sp/>_offset;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>data_t<sp/>_data;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>public:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>constexpr<sp/>packet_t()<sp/>noexcept<sp/>:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>_packet_header{},<sp/>_offset{0U},<sp/>_data{std::nullopt}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>/*<sp/>NOP<sp/>*/<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>constexpr<sp/>packet_t(T<sp/>header,<sp/>std::uintptr_t<sp/>offset,<sp/>data_t<sp/>data)<sp/>noexcept<sp/>:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>_packet_header{header},<sp/>_offset{offset},<sp/>_data{data}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>/*<sp/>NOP<sp/>*/<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>/*!<sp/>Retrieve<sp/>the<sp/>packet<sp/>header<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>[[nodiscard]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>T<sp/>header()<sp/>const<sp/>noexcept<sp/>{<sp/>return<sp/>_packet_header;<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>/*!<sp/>Set<sp/>the<sp/>packet<sp/>header<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>void<sp/>header(T<sp/>header)<sp/>noexcept<sp/>{<sp/>_packet_header<sp/>=<sp/>header;<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>/*!<sp/>Retrieve<sp/>the<sp/>offset<sp/>in<sp/>the<sp/>file<sp/>the<sp/>packet<sp/>is<sp/>located<sp/>at<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>[[nodiscard]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>std::uintptr_t<sp/>packet_offset()<sp/>const<sp/>noexcept<sp/>{<sp/>return<sp/>_offset;<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>/*!<sp/>Set<sp/>the<sp/>offset<sp/>in<sp/>the<sp/>file<sp/>the<sp/>packet<sp/>is<sp/>located<sp/>at<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>void<sp/>packet_offset(std::uintptr_t<sp/>packet_offset)<sp/>noexcept<sp/>{<sp/>_offset<sp/>=<sp/>packet_offset;<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>/*!<sp/>Retrieve<sp/>the<sp/>packet<sp/>data<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>[[nodiscard]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>data_t<sp/>packet_data()<sp/>const<sp/>noexcept<sp/>{<sp/>return<sp/>_data;<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>/*!<sp/>Set<sp/>the<sp/>packet<sp/>data<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>void<sp/>packet_data(data_t<sp/>packet_data)<sp/>noexcept<sp/>{<sp/>_data<sp/>=<sp/>packet_data;<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>};</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>/*!<sp/>Type<sp/>alias<sp/>for<sp/>generic<sp/>conforming<sp/>pcap<sp/>packets<sp/>with<sp/>the<sp/>standard<sp/>header<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>template&lt;typename<sp/>T&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>using<sp/>generic_packet_t<sp/>=<sp/>packet_t&lt;packet_header_t,<sp/>T&gt;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>/*!<sp/>Type<sp/>alias<sp/>for<sp/>packets<sp/>from<sp/>the<sp/>modified<sp/>pcap<sp/>files<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>template&lt;typename<sp/>T&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>using<sp/>modified_packet_t<sp/>=<sp/>packet_t&lt;packet_header_modified_t,<sp/>T&gt;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234" refid="structlibnokogiri_1_1pcap_1_1packet__t" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structlibnokogiri_1_1pcap_1_1packet__t" kindref="compound">packet_t</ref><sp/>{</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248" refid="structlibnokogiri_1_1pcap_1_1packet__storage__t" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structlibnokogiri_1_1pcap_1_1packet__storage__t" kindref="compound">packet_storage_t</ref><sp/>final<sp/>{</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint32_t<sp/>_len;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uintptr_t<sp/>_offset;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::optional&lt;packet_t&gt;<sp/>_packet_cache;</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__storage__t" kindref="compound">packet_storage_t</ref>()<sp/>noexcept<sp/>:</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_len{0U},<sp/>_offset{0U},<sp/>_packet_cache{std::nullopt}</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="comment">/*<sp/>NOP<sp/>*/</highlight><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__storage__t" kindref="compound">packet_storage_t</ref>(std::uint32_t<sp/>len,<sp/>std::uintptr_t<sp/>offset,<sp/>std::optional&lt;packet_t&gt;<sp/>packet<sp/>=<sp/>std::nullopt)<sp/>noexcept<sp/>:</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_len{len},<sp/>_offset{offset},<sp/>_packet_cache{packet}</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="comment">/*<sp/>NOP<sp/>*/</highlight><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint32_t<sp/>length()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_len;}</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uintptr_t<sp/>offset()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_offset;<sp/>}</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
+<codeline lineno="270" refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a219beb96da0c7b502e3e0dd34ff9bd47" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::optional&lt;packet_t&gt;<sp/><ref refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a219beb96da0c7b502e3e0dd34ff9bd47" kindref="member">get_packet</ref>()<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_packet_cache;<sp/>}</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="272"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>LIBNOKOGIRI_PCAP_PACKET_HH<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="pcap/packet.hh"/>
+  </compounddef>
+</doxygen>

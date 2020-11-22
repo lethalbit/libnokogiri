@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Typedef libnokogiri::pcap::generic_packet_t &#8212; libnokogiri 0.0.1 8324b2b documentation</title>
+    <title>Function libnokogiri::pcap::get_packet_body_offset &#8212; libnokogiri 0.0.1 78b90f2 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -19,8 +19,8 @@
     <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Typedef libnokogiri::pcap::modified_packet_t" href="typedef_namespacelibnokogiri_1_1pcap_1a826df232831a75e6a2d4cf4693dccee1.html" />
-    <link rel="prev" title="Define LIBNOKOGIRI_COMMON_HH" href="define_common_8hh_1a64bed52b3a785c5f321627adaf782835.html" />
+    <link rel="next" title="Function libnokogiri::pcap::swap" href="function_namespacelibnokogiri_1_1pcap_1a76032896386673aa5c89e72b674a6097.html" />
+    <link rel="prev" title="Function libnokogiri::operator””_TiB" href="function_namespacelibnokogiri_1ad5453c8c75e1f4453c121d1b7348fadd.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -53,8 +53,8 @@
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
   <li><a href="index.html">libnokogiri API</a><ul>
-      <li>Previous: <a href="define_common_8hh_1a64bed52b3a785c5f321627adaf782835.html" title="previous chapter">Define LIBNOKOGIRI_COMMON_HH</a></li>
-      <li>Next: <a href="typedef_namespacelibnokogiri_1_1pcap_1a826df232831a75e6a2d4cf4693dccee1.html" title="next chapter">Typedef libnokogiri::pcap::modified_packet_t</a></li>
+      <li>Previous: <a href="function_namespacelibnokogiri_1ad5453c8c75e1f4453c121d1b7348fadd.html" title="previous chapter">Function libnokogiri::operator””_TiB</a></li>
+      <li>Next: <a href="function_namespacelibnokogiri_1_1pcap_1a76032896386673aa5c89e72b674a6097.html" title="next chapter">Function libnokogiri::pcap::swap</a></li>
   </ul></li>
   </ul></li>
 </ul>
@@ -75,18 +75,17 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="typedef-libnokogiri-pcap-generic-packet-t">
-<span id="exhale-typedef-namespacelibnokogiri-1-1pcap-1a965b52b3bfb8d95a3dbcaadb074c5589"></span><h1>Typedef libnokogiri::pcap::generic_packet_t<a class="headerlink" href="#typedef-libnokogiri-pcap-generic-packet-t" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="function-libnokogiri-pcap-get-packet-body-offset">
+<span id="exhale-function-namespacelibnokogiri-1-1pcap-1a50b9e8ce0a3adb5149c6deaff356ff61"></span><h1>Function libnokogiri::pcap::get_packet_body_offset<a class="headerlink" href="#function-libnokogiri-pcap-get-packet-body-offset" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>Defined in <a class="reference internal" href="file_pcap.hh.html#file-pcap-hh"><span class="std std-ref">File pcap.hh</span></a></p></li>
+<li><p>Defined in <a class="reference internal" href="file_pcap.cc.html#file-pcap-cc"><span class="std std-ref">File pcap.cc</span></a></p></li>
 </ul>
-<div class="section" id="typedef-documentation">
-<h2>Typedef Documentation<a class="headerlink" href="#typedef-documentation" title="Permalink to this headline">¶</a></h2>
-<dl class="cpp type">
-<dt id="_CPPv4N11libnokogiri4pcap16generic_packet_tE">
-<span id="_CPPv3N11libnokogiri4pcap16generic_packet_tE"></span><span id="_CPPv2N11libnokogiri4pcap16generic_packet_tE"></span><span class="target" id="namespacelibnokogiri_1_1pcap_1a965b52b3bfb8d95a3dbcaadb074c5589"></span><em class="property">using </em><code class="sig-prename descclassname">libnokogiri::pcap<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">generic_packet_t</code> = <a class="reference internal" href="structlibnokogiri_1_1pcap_1_1packet__t.html#_CPPv4I00EN11libnokogiri4pcap8packet_tE" title="libnokogiri::pcap::packet_t">packet_t</a>&lt;<a class="reference internal" href="structlibnokogiri_1_1pcap_1_1packet__header__t.html#_CPPv4N11libnokogiri4pcap15packet_header_tE" title="libnokogiri::pcap::packet_header_t">packet_header_t</a>, T&gt;<a class="headerlink" href="#_CPPv4N11libnokogiri4pcap16generic_packet_tE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Type alias for generic conforming pcap packets with the standard header </p>
-</dd></dl>
+<div class="section" id="function-documentation">
+<h2>Function Documentation<a class="headerlink" href="#function-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp function">
+<dt id="_CPPv4N11libnokogiri4pcap22get_packet_body_offsetE14pcap_variant_t">
+<span id="_CPPv3N11libnokogiri4pcap22get_packet_body_offsetE14pcap_variant_t"></span><span id="_CPPv2N11libnokogiri4pcap22get_packet_body_offsetE14pcap_variant_t"></span><span id="libnokogiri::pcap::get_packet_body_offset__pcap_variant_t"></span><span class="target" id="namespacelibnokogiri_1_1pcap_1a50b9e8ce0a3adb5149c6deaff356ff61"></span>std::size_t <code class="sig-prename descclassname">libnokogiri::pcap<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">get_packet_body_offset</code><span class="sig-paren">(</span><a class="reference internal" href="enum_namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656.html#_CPPv4N11libnokogiri4pcap14pcap_variant_tE" title="libnokogiri::pcap::pcap_variant_t">pcap_variant_t</a> <em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11libnokogiri4pcap22get_packet_body_offsetE14pcap_variant_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 </div>
 </div>
@@ -106,7 +105,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="../_sources/api/typedef_namespacelibnokogiri_1_1pcap_1a965b52b3bfb8d95a3dbcaadb074c5589.rst.txt"
+      <a href="../_sources/api/function_namespacelibnokogiri_1_1pcap_1a50b9e8ce0a3adb5149c6deaff356ff61.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

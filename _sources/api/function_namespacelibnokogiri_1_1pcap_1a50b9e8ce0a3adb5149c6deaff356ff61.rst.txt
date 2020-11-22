@@ -1,0 +1,13 @@
+.. _exhale_function_namespacelibnokogiri_1_1pcap_1a50b9e8ce0a3adb5149c6deaff356ff61:
+
+Function libnokogiri::pcap::get_packet_body_offset
+==================================================
+
+- Defined in :ref:`file_pcap.cc`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: libnokogiri::pcap::get_packet_body_offset(pcap_variant_t)
