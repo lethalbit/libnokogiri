@@ -12,11 +12,13 @@
 
 #include <libnokogiri/internal/defs.hh>
 #include <libnokogiri/internal/fs.hh>
+#include <libnokogiri/internal/iterator.hh>
 
 #include <libnokogiri/pcap/header.hh>
 #include <libnokogiri/pcap/packet.hh>
 
 namespace libnokogiri::pcap {
+
 	/*! \struct pcap_t
 		\brief pcap file container
 
