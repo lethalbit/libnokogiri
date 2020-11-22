@@ -3,7 +3,7 @@ libnokogiri_headers_pcapng = files([
 	'blocks.hh',
 	'option.hh',
 	'options.hh',
-	'section.hh'
+	'section.hh',
 ])
 
 subdir('blocks')

@@ -25,6 +25,7 @@
 #include <string>
 #include <string_view>
 #include <random>
+#include <optional>
 #include <algorithm>
 
 #if defined(_MSC_VER) && !defined(_WINDOWS)
@@ -154,7 +155,7 @@ namespace libnokogiri::internal {
 			return result;
 		}
 
-		LIBNOKOGIRI_NO_DISCARD(off_t seek(const off_t offset, const int32_t whence) const noexcept) {
+		LIBNOKOGIRI_NO_DISCARD(off_t seek(const off_t offset, const int32_t whence = SEEK_CUR) const noexcept) {
 			const auto result = internal::fdseek(fd, offset, whence);
 			eof = result == length();
 			return result;
@@ -238,6 +239,12 @@ namespace libnokogiri::internal {
 			{ return read(value.data(), sizeof(T) * N); }
 		template<typename T, size_t N> bool write(const std::array<T, N> &value) const noexcept
 			{ return write(value.data(), sizeof(T) * N); }
+
+		template<typename T> std::optional<T> read() const noexcept {
+			T local{};
+			const auto res = read(local);
+			return res ? std::optional<T>{local} : std::nullopt;
+		}
 
 		bool write(const std::string &value) const noexcept
 			{ return write(value.data(), value.size()); }

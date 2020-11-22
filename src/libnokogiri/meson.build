@@ -6,6 +6,7 @@ libnokogiri_headers = files([
 
 subdir('internal')
 
+subdir('pcap')
 subdir('pcapng')
 
 config = configuration_data()

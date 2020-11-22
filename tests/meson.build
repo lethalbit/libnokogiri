@@ -64,6 +64,27 @@ pcap_test_files = files([
 	'test_data/pcap/file9.pcap.gz',
 	'test_data/pcap/fileA.pcap',
 	'test_data/pcap/fileA.pcap.gz',
+
+	'test_data/pcap/file1.ns.pcap',
+	'test_data/pcap/file1.ns.pcap.gz',
+	'test_data/pcap/file2.ns.pcap',
+	'test_data/pcap/file2.ns.pcap.gz',
+	'test_data/pcap/file3.ns.pcap',
+	'test_data/pcap/file3.ns.pcap.gz',
+	'test_data/pcap/file4.ns.pcap',
+	'test_data/pcap/file4.ns.pcap.gz',
+	'test_data/pcap/file5.ns.pcap',
+	'test_data/pcap/file5.ns.pcap.gz',
+	'test_data/pcap/file6.ns.pcap',
+	'test_data/pcap/file6.ns.pcap.gz',
+	'test_data/pcap/file7.ns.pcap',
+	'test_data/pcap/file7.ns.pcap.gz',
+	'test_data/pcap/file8.ns.pcap',
+	'test_data/pcap/file8.ns.pcap.gz',
+	'test_data/pcap/file9.ns.pcap',
+	'test_data/pcap/file9.ns.pcap.gz',
+	'test_data/pcap/fileA.ns.pcap',
+	'test_data/pcap/fileA.ns.pcap.gz',
 ])
 
 pcapng_test_host = executable(
