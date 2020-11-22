@@ -20,8 +20,8 @@ namespace libnokogiri::internal {
 		const I _end;
 		I _current;
 	public:
-		constexpr bi_iterator(acc_func_t acc, I begin, I end) noexcept :
-			_accessor{acc}, _begin{begin}, _end{end}, _current{begin} { /* NOP */ }
+		constexpr bi_iterator(acc_func_t acc, const I begin, const I end, const bool forward = true) noexcept :
+			_accessor{acc}, _begin{begin}, _end{end}, _current{(forward) ? begin : end} { /* NOP */ }
 
 		[[nodiscard]]
 		bi_iterator& operator++() noexcept {
