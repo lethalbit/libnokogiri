@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Program Listing for File packet.hh &#8212; libnokogiri 0.0.1 78b90f2 documentation</title>
+    <title>Program Listing for File packet.hh &#8212; libnokogiri 0.0.1 1b4c066 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -79,6 +79,7 @@
 
 <span class="cp">#include</span> <span class="cpf">&lt;cstdint&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;optional&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;variant&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
 
 <span class="cp">#include</span> <span class="cpf">&lt;libnokogiri/config.hh&gt;</span><span class="cp"></span>
@@ -220,32 +221,132 @@
 
 
     <span class="k">struct</span> <span class="n">packet_t</span> <span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="k">using</span> <span class="n">pkt_header_t</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">variant</span><span class="o">&lt;</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">monostate</span><span class="p">,</span>
+            <span class="n">packet_header_t</span><span class="p">,</span>
+            <span class="n">packet_header_modified_t</span>
+        <span class="o">&gt;</span><span class="p">;</span>
+    <span class="k">private</span><span class="o">:</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">uint8_t</span><span class="o">&gt;</span> <span class="n">_raw_data</span><span class="p">;</span>
+        <span class="n">pkt_header_t</span> <span class="n">_packet_header</span><span class="p">;</span>
 
+        <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">enable_if_t</span><span class="o">&lt;</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">is_pod_v</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&amp;&amp;</span>
+            <span class="o">!</span><span class="n">libnokogiri</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">has_nullable_ctor_v</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&amp;&amp;</span>
+            <span class="o">!</span><span class="n">std</span><span class="o">::</span><span class="n">is_same_v</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="kt">void</span><span class="o">*&gt;</span><span class="p">,</span>
+        <span class="n">T</span><span class="o">*&gt;</span>
+        <span class="n">index</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">offset</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">offset</span> <span class="o">&lt;</span> <span class="n">_raw_data</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="k">new</span> <span class="p">(</span><span class="k">const_cast</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">*&gt;</span><span class="p">(</span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">_raw_data</span><span class="p">.</span><span class="n">data</span><span class="p">()))</span> <span class="o">+</span> <span class="p">(</span><span class="n">offset</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">T</span><span class="p">)))</span> <span class="n">T</span><span class="p">{};</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">enable_if_t</span><span class="o">&lt;</span>
+            <span class="n">libnokogiri</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">has_nullable_ctor_v</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&amp;&amp;</span>
+            <span class="o">!</span><span class="n">std</span><span class="o">::</span><span class="n">is_same_v</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="kt">void</span><span class="o">*&gt;</span><span class="p">,</span>
+        <span class="n">T</span><span class="o">*&gt;</span>
+        <span class="n">index</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">offset</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">offset</span> <span class="o">&lt;</span> <span class="n">_raw_data</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="k">new</span> <span class="p">(</span><span class="k">const_cast</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">*&gt;</span><span class="p">(</span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">_raw_data</span><span class="p">.</span><span class="n">data</span><span class="p">()))</span> <span class="o">+</span> <span class="p">(</span><span class="n">offset</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">T</span><span class="p">)))</span> <span class="n">T</span><span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">enable_if_t</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">is_same_v</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="kt">void</span><span class="o">*&gt;</span><span class="p">,</span> <span class="kt">void</span><span class="o">*&gt;</span>
+        <span class="n">index</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">offset</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">offset</span> <span class="o">&lt;</span> <span class="n">_raw_data</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="k">const_cast</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">*&gt;</span><span class="p">(</span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">_raw_data</span><span class="p">.</span><span class="n">data</span><span class="p">()))</span> <span class="o">+</span> <span class="n">offset</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+        <span class="p">}</span>
+
+    <span class="k">public</span><span class="o">:</span>
+
+        <span class="n">packet_t</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">length</span><span class="p">,</span> <span class="n">pkt_header_t</span> <span class="n">header</span> <span class="o">=</span> <span class="p">{})</span> <span class="k">noexcept</span> <span class="o">:</span>
+            <span class="n">_raw_data</span><span class="p">{},</span> <span class="n">_packet_header</span><span class="p">{</span><span class="n">header</span><span class="p">}</span> <span class="p">{</span> <span class="n">_raw_data</span><span class="p">.</span><span class="n">reserve</span><span class="p">(</span><span class="n">length</span><span class="p">);</span> <span class="p">}</span>
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">length</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_raw_data</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="p">}</span>
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">pkt_header_t</span><span class="o">&amp;</span> <span class="n">header</span><span class="p">()</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_packet_header</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="kt">bool</span> <span class="n">is_complete</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">visit</span><span class="p">([](</span><span class="k">auto</span><span class="o">&amp;</span> <span class="n">header</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
+                <span class="k">using</span> <span class="n">T</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">decay_t</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">header</span><span class="p">)</span><span class="o">&gt;</span><span class="p">;</span>
+                <span class="k">if</span> <span class="nf">constexpr</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">is_same_v</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">packet_header_modified_t</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">return</span> <span class="n">header</span><span class="p">.</span><span class="n">base_header</span><span class="p">().</span><span class="n">full_packet</span><span class="p">();</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nf">constexpr</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">is_same_v</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">packet_header_t</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">return</span> <span class="n">header</span><span class="p">.</span><span class="n">full_packet</span><span class="p">();</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">},</span> <span class="n">_packet_header</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">T</span><span class="o">&amp;</span> <span class="n">as</span><span class="p">()</span> <span class="p">{</span> <span class="o">*</span><span class="n">index</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">();</span> <span class="p">}</span>
+
+        <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">T</span> <span class="o">*</span><span class="k">operator</span> <span class="p">[](</span><span class="k">const</span> <span class="kt">off_t</span> <span class="n">idx</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">index</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span> <span class="p">}</span>
+
+        <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="k">const</span> <span class="n">T</span> <span class="o">*</span><span class="k">operator</span> <span class="p">[](</span><span class="k">const</span> <span class="kt">off_t</span> <span class="n">idx</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">index</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span> <span class="p">}</span>
+
+        <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="n">T</span> <span class="o">*</span><span class="n">at</span><span class="p">(</span><span class="k">const</span> <span class="kt">off_t</span> <span class="n">idx</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">index</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span> <span class="p">}</span>
+
+        <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="k">const</span> <span class="n">T</span> <span class="o">*</span><span class="n">at</span><span class="p">(</span><span class="k">const</span> <span class="kt">off_t</span> <span class="n">idx</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">index</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span> <span class="p">}</span>
+
+        <span class="kt">void</span> <span class="o">*</span><span class="n">address</span><span class="p">(</span><span class="k">const</span> <span class="kt">off_t</span> <span class="n">offset</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">index</span><span class="o">&lt;</span><span class="kt">void</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">offset</span><span class="p">);</span> <span class="p">}</span>
+        <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">address</span><span class="p">(</span><span class="k">const</span> <span class="kt">off_t</span> <span class="n">offset</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">index</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">offset</span><span class="p">);</span> <span class="p">}</span>
     <span class="p">};</span>
+
 
 
     <span class="k">struct</span> <span class="n">packet_storage_t</span> <span class="k">final</span> <span class="p">{</span>
     <span class="k">private</span><span class="o">:</span>
         <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">_len</span><span class="p">;</span>
         <span class="n">std</span><span class="o">::</span><span class="kt">uintptr_t</span> <span class="n">_offset</span><span class="p">;</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">packet_t</span><span class="o">&gt;</span> <span class="n">_packet_cache</span><span class="p">;</span>
+        <span class="n">packet_t</span> <span class="n">_packet_cache</span><span class="p">;</span>
     <span class="k">public</span><span class="o">:</span>
-        <span class="k">constexpr</span> <span class="n">packet_storage_t</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">:</span>
-            <span class="n">_len</span><span class="p">{</span><span class="mi">0U</span><span class="p">},</span> <span class="n">_offset</span><span class="p">{</span><span class="mi">0U</span><span class="p">},</span> <span class="n">_packet_cache</span><span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">nullopt</span><span class="p">}</span>
+        <span class="n">packet_storage_t</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">:</span>
+            <span class="n">_len</span><span class="p">{</span><span class="mi">0U</span><span class="p">},</span> <span class="n">_offset</span><span class="p">{</span><span class="mi">0U</span><span class="p">},</span> <span class="n">_packet_cache</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span>
             <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
 
-        <span class="k">constexpr</span> <span class="n">packet_storage_t</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">len</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">uintptr_t</span> <span class="n">offset</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">packet_t</span><span class="o">&gt;</span> <span class="n">packet</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">nullopt</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">:</span>
+        <span class="n">packet_storage_t</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">len</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">uintptr_t</span> <span class="n">offset</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">:</span>
+            <span class="n">_len</span><span class="p">{</span><span class="n">len</span><span class="p">},</span> <span class="n">_offset</span><span class="p">{</span><span class="n">offset</span><span class="p">},</span> <span class="n">_packet_cache</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span>
+            <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
+
+        <span class="n">packet_storage_t</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">len</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">uintptr_t</span> <span class="n">offset</span><span class="p">,</span> <span class="n">packet_t</span><span class="o">&amp;&amp;</span> <span class="n">packet</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">:</span>
             <span class="n">_len</span><span class="p">{</span><span class="n">len</span><span class="p">},</span> <span class="n">_offset</span><span class="p">{</span><span class="n">offset</span><span class="p">},</span> <span class="n">_packet_cache</span><span class="p">{</span><span class="n">packet</span><span class="p">}</span>
             <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
 
         <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
-        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">length</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_len</span><span class="p">;}</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">length</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_len</span><span class="p">;</span> <span class="p">}</span>
 
         <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
         <span class="n">std</span><span class="o">::</span><span class="kt">uintptr_t</span> <span class="n">offset</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_offset</span><span class="p">;</span> <span class="p">}</span>
 
         <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">packet_t</span><span class="o">&gt;</span> <span class="n">get_packet</span><span class="p">()</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_packet_cache</span><span class="p">;</span> <span class="p">}</span>
+        <span class="n">packet_t</span><span class="o">&amp;</span> <span class="n">get_packet</span><span class="p">()</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_packet_cache</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="kt">void</span> <span class="n">set_packet</span><span class="p">(</span><span class="n">packet_t</span><span class="o">&amp;&amp;</span> <span class="n">pkt</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="n">_packet_cache</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">pkt</span><span class="p">);</span> <span class="p">}</span>
     <span class="p">};</span>
 <span class="p">}</span>
 

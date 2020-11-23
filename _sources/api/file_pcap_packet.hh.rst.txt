@@ -39,6 +39,8 @@ Includes
 
 - ``optional``
 
+- ``variant``
+
 - ``vector``
 
 

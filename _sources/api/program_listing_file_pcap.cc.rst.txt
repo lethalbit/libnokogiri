@@ -194,10 +194,11 @@ Program Listing for File pcap.cc
                if (!size) {
                    return false;
                }
-               const std::uintptr_t offset = static_cast<std::uintptr_t>(_file.seek(pkt_body_offset));
-               _packets.emplace_back(packet_storage_t{*size, offset});
+   
+               _packets.emplace_back(packet_storage_t{*size, std::uintptr_t(prev_pos)});
                const auto pckt_size = _file.tell();
-               if(_file.seek(*size) != (*size + pckt_size))
+               const auto next_packet =  *size + pkt_body_offset;
+               if(_file.seek(next_packet) != (next_packet + pckt_size))
                    return false;
            }
    
@@ -205,6 +206,56 @@ Program Listing for File pcap.cc
        }
    
        std::optional<std::reference_wrapper<packet_t>> pcap_t::get_packet(packet_storage_t& pkt_storage) noexcept {
+           if (_file.seek(pkt_storage.offset(), SEEK_SET) != pkt_storage.offset()) {
+               return std::nullopt;
+           }
+   
+           packet_t::pkt_header_t header{};
+           /* extract the header */
+           switch (_header.variant()) {
+               case pcap_variant_t::Modified: {
+                   if (const auto hdr = _file.read<packet_header_modified_t>()) {
+                       header.emplace<packet_header_modified_t>(*hdr);
+                   } else {
+                       return std::nullopt;
+                   }
+                   break;
+               } case pcap_variant_t::Standard:
+               case pcap_variant_t::IXIAHW:
+               case pcap_variant_t::IXIASW:
+               case pcap_variant_t::Nanosecond:
+               default: {
+                   if (const auto hdr = _file.read<packet_header_t>()) {
+                       header.emplace<packet_header_t>(*hdr);
+                   } else {
+                       return std::nullopt;
+                   }
+                   break;
+               }
+           }
+   
+           packet_t packet{
+               std::visit([](auto& header) -> std::size_t {
+                   using T = std::decay_t<decltype(header)>;
+                   if constexpr (std::is_same_v<T, packet_header_modified_t>) {
+                       return header.base_header().captured_len();
+                   } else if constexpr (std::is_same_v<T, packet_header_t>) {
+                       return header.captured_len();
+                   } else {
+                       return 0U;
+                   }
+               }, header),
+               header
+           };
+   
+           /* ingest the body */
+           const auto ingested = _file.read(packet.address(0), packet.length());
+   
+           if (ingested) {
+               pkt_storage.set_packet(std::move(packet));
+   
+               return std::make_optional(std::ref(pkt_storage.get_packet()));
+           }
    
            return std::nullopt;
        }

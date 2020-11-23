@@ -123,7 +123,7 @@
 <para>This enum is sued in the <ref refid="structlibnokogiri_1_1pcap_1_1packet__storage__t" kindref="compound">libnokogiri::pcap::packet_storage_t</ref> container to allow you do differentiate between the standard packet types or the modified type. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap/packet.hh" line="22" column="1" bodyfile="pcap/packet.hh" bodystart="22" bodyend="25"/>
+        <location file="pcap/packet.hh" line="23" column="1" bodyfile="pcap/packet.hh" bodystart="23" bodyend="26"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">

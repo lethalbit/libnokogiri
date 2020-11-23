@@ -152,7 +152,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="53" column="1" bodyfile="pcap.cc" bodystart="171" bodyend="193"/>
+        <location file="pcap.hh" line="53" column="1" bodyfile="pcap.cc" bodystart="171" bodyend="194"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -464,7 +464,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap.hh" line="111" column="1" bodyfile="pcap.cc" bodystart="195" bodyend="198"/>
+        <location file="pcap.hh" line="111" column="1" bodyfile="pcap.cc" bodystart="196" bodyend="249"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1pcap__t_1afe7af361095b99410360517323261967" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>iterator_t</type>
