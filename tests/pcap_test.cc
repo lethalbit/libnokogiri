@@ -47,7 +47,9 @@ int read(fs::path file) {
 	}
 
 	for (auto pkt : capture) {
-		// std::cout << "Packet Size: " << pkt.length() << " Packet Offset: " << pkt.offset() << std::endl;
+		if(!pkt)
+			return 1;
+		std::cout << "Len: " << (*pkt).get().length() << "\n";
 	}
 
 	return {};

@@ -5,6 +5,7 @@
 
 #include <cstdint>
 #include <optional>
+#include <variant>
 #include <vector>
 
 #include <libnokogiri/config.hh>
@@ -232,8 +233,102 @@ namespace libnokogiri::pcap {
 
 
 	struct packet_t {
+	public:
+		using pkt_header_t = std::variant<
+			std::monostate,
+			packet_header_t,
+			packet_header_modified_t
+		>;
+	private:
+		std::vector<std::uint8_t> _raw_data;
+		pkt_header_t _packet_header;
 
+		template<typename T>
+		[[nodiscard]]
+		std::enable_if_t<
+			std::is_pod_v<T> &&
+			!libnokogiri::internal::has_nullable_ctor_v<T> &&
+			!std::is_same_v<T, void*>,
+		T*>
+		index(const std::size_t offset) const {
+			if (offset < _raw_data.size()) {
+				return new (const_cast<void*>(reinterpret_cast<const void *>(_raw_data.data())) + (offset * sizeof(T))) T{};
+			}
+			return nullptr;
+		}
+
+		template<typename T>
+		[[nodiscard]]
+		std::enable_if_t<
+			libnokogiri::internal::has_nullable_ctor_v<T> &&
+			!std::is_same_v<T, void*>,
+		T*>
+		index(const std::size_t offset) const {
+			if (offset < _raw_data.size()) {
+				return new (const_cast<void*>(reinterpret_cast<const void *>(_raw_data.data())) + (offset * sizeof(T))) T{nullptr};
+			}
+			return nullptr;
+		}
+
+		template<typename T>
+		[[nodiscard]]
+		std::enable_if_t<std::is_same_v<T, void*>, void*>
+		index(const std::size_t offset) const {
+			if (offset < _raw_data.size()) {
+				return const_cast<void*>(reinterpret_cast<const void *>(_raw_data.data())) + offset;
+			}
+			return nullptr;
+		}
+
+	public:
+
+		packet_t(std::size_t length, pkt_header_t header = {}) noexcept :
+			_raw_data{}, _packet_header{header} { _raw_data.reserve(length); }
+
+		[[nodiscard]]
+		std::size_t length() const noexcept { return _raw_data.size(); }
+
+		[[nodiscard]]
+		pkt_header_t& header() noexcept { return _packet_header; }
+
+		[[nodiscard]]
+		bool is_complete() const noexcept {
+			return std::visit([](auto& header) -> bool {
+				using T = std::decay_t<decltype(header)>;
+				if constexpr (std::is_same_v<T, packet_header_modified_t>) {
+					return header.base_header().full_packet();
+				} else if constexpr (std::is_same_v<T, packet_header_t>) {
+					return header.full_packet();
+				} else {
+					return false;
+				}
+			}, _packet_header);
+		}
+
+		template<typename T>
+		[[nodiscard]]
+		T& as() { *index<T>(); }
+
+		template<typename T>
+		[[nodiscard]]
+		T *operator [](const off_t idx) { return index<T>(idx); }
+
+		template<typename T>
+		[[nodiscard]]
+		const T *operator [](const off_t idx) const { return index<const T>(idx); }
+
+		template<typename T>
+		[[nodiscard]]
+		T *at(const off_t idx) { return index<T>(idx); }
+
+		template<typename T>
+		[[nodiscard]]
+		const T *at(const off_t idx) const { return index<const T>(idx); }
+
+		void *address(const off_t offset) noexcept { return index<void *>(offset); }
+		const void *address(const off_t offset) const noexcept { return index<const void *>(offset); }
 	};
+
 
 
 	/*! \struct libnokogiri::pcap::packet_storage_t
@@ -249,25 +344,31 @@ namespace libnokogiri::pcap {
 	private:
 		std::uint32_t _len;
 		std::uintptr_t _offset;
-		std::optional<packet_t> _packet_cache;
+		packet_t _packet_cache;
 	public:
-		constexpr packet_storage_t() noexcept :
-			_len{0U}, _offset{0U}, _packet_cache{std::nullopt}
+		packet_storage_t() noexcept :
+			_len{0U}, _offset{0U}, _packet_cache{0}
 			{ /* NOP */ }
 
-		constexpr packet_storage_t(std::uint32_t len, std::uintptr_t offset, std::optional<packet_t> packet = std::nullopt) noexcept :
+		packet_storage_t(std::uint32_t len, std::uintptr_t offset) noexcept :
+			_len{len}, _offset{offset}, _packet_cache{0}
+			{ /* NOP */ }
+
+		packet_storage_t(std::uint32_t len, std::uintptr_t offset, packet_t&& packet) noexcept :
 			_len{len}, _offset{offset}, _packet_cache{packet}
 			{ /* NOP */ }
 
 		[[nodiscard]]
-		std::uint32_t length() const noexcept { return _len;}
+		std::uint32_t length() const noexcept { return _len; }
 
 		[[nodiscard]]
 		std::uintptr_t offset() const noexcept { return _offset; }
 
 		/*! Gets the packet that is represented by this storage object */
 		[[nodiscard]]
-		std::optional<packet_t> get_packet() noexcept { return _packet_cache; }
+		packet_t& get_packet() noexcept { return _packet_cache; }
+
+		void set_packet(packet_t&& pkt) noexcept { _packet_cache = std::move(pkt); }
 	};
 }
 
