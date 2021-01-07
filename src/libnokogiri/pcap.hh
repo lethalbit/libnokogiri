@@ -39,7 +39,7 @@ namespace libnokogiri::pcap {
 
 	private:
 		libnokogiri::internal::fd_t _file;
-		captrue_compression_t _compression;
+		capture_compression_t _compression;
 		bool _readonly;
 		bool _prefetch;
 		file_header_t _header{};
@@ -61,7 +61,7 @@ namespace libnokogiri::pcap {
 			\param read_only Open the pcap file in read only
 			\param prefetch Rather than initially building a packet index and then doing I/O to get each packet, ingest all packets at once, this trades memory usage for speed
 		*/
-		pcap_t(libnokogiri::internal::fs::path& file, captrue_compression_t compression, bool read_only, bool prefetch = false) noexcept;
+		pcap_t(libnokogiri::internal::fs::path& file, capture_compression_t compression, bool read_only, bool prefetch = false) noexcept;
 
 		pcap_t(const pcap_t&) = delete;
 		pcap_t& operator=(const pcap_t&) = delete;
@@ -75,20 +75,17 @@ namespace libnokogiri::pcap {
 		bool needs_swapping() const noexcept { return _needs_swapping; }
 
 		[[nodiscard]]
-		file_header_t header() const noexcept { return _header; }
-		void header(file_header_t header) noexcept { _header = header; }
+		file_header_t& header() noexcept { return _header; }
+		void header(file_header_t&& header) noexcept { _header = std::move(header); }
 
 		[[nodiscard]]
-		captrue_compression_t compression_type() const noexcept { return _compression; }
+		capture_compression_t compression_type() const noexcept { return _compression; }
 
 		[[nodiscard]]
 		bool valid() const noexcept { return _valid; }
 
 		[[nodiscard]]
 		std::size_t packet_count() const noexcept { return _packets.size(); }
-
-		auto begin() const noexcept { return _packets.begin(); }
-		auto end() const noexcept { return _packets.end(); }
 
 		[[nodiscard]]
 		bool save() const noexcept;
@@ -100,6 +97,9 @@ namespace libnokogiri::pcap {
 			std::swap(_header, desc._header);
 			std::swap(_valid, desc._valid);
 		}
+
+
+		void remove_packet(std::size_t index) noexcept {  }
 
 		std::optional<std::reference_wrapper<packet_t>> get_packet(std::size_t idx) noexcept {
 			if (idx <= _packets.size()) {

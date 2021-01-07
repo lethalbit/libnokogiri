@@ -6,11 +6,14 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <array>
+#include <string_view>
 
 #include <libnokogiri/internal/defs.hh>
 #include <libnokogiri/internal/fd.hh>
 
 namespace libnokogiri {
+	using libnokogiri::internal::enum_pair_t;
 	/*! \enum libnokogiri::link_type_t
 		\brief Defines the link layer of the interface
 
@@ -186,21 +189,159 @@ namespace libnokogiri {
 		ATSC_ALP                   = 0x0121U, /*!< ATSC Link-Layer Protocol frames, as described in section 5 of the A/330 Link-Layer Protocol specification, found at the [ATSC 3.0 standards page](https://www.atsc.org/atsc-documents/type/3-0-standards/), beginning with a Base Header. */
 	};
 
+	const std::array<const enum_pair_t<link_type_t>, 128> link_type_s{{
+		{ link_type_t::BSDLoopback,                "BSDLoopback"sv             },
+		{ link_type_t::Ethernet,                   "Ethernet"sv                },
+		{ link_type_t::AX25,                       "AX25"sv                    },
+		{ link_type_t::IEEE802_5,                  "IEEE802_5"sv               },
+		{ link_type_t::ARCNET_BSD,                 "ARCNET_BSD"sv              },
+		{ link_type_t::SLIP,                       "SLIP"sv                    },
+		{ link_type_t::PPP,                        "PPP"sv                     },
+		{ link_type_t::FDDI,                       "FDDI"sv                    },
+		{ link_type_t::PPP_HDLC,                   "PPP_HDLC"sv                },
+		{ link_type_t::PPPoE,                      "PPPoE"sv                   },
+		{ link_type_t::ATM_RFC1483,                "ATM_RFC1483"sv             },
+		{ link_type_t::Raw,                        "Raw"sv                     },
+		{ link_type_t::CiscoHDLC,                  "CiscoHDLC"sv               },
+		{ link_type_t::IEEE802_11,                 "IEEE802_11"sv              },
+		{ link_type_t::LAPFFrameRelay,             "LAPFFrameRelay"sv          },
+		{ link_type_t::OpenBSDLoopback,            "OpenBSDLoopback"sv         },
+		{ link_type_t::LinuxSLL,                   "LinuxSLL"sv                },
+		{ link_type_t::AppleLocalTalk,             "AppleLocalTalk"sv          },
+		{ link_type_t::OpenBSDPFLog,               "OpenBSDPFLog"sv            },
+		{ link_type_t::IEEE802_11_Prism,           "IEEE802_11_Prism"sv        },
+		{ link_type_t::IPOverFC,                   "IPOverFC"sv                },
+		{ link_type_t::SunATM,                     "SunATM"sv                  },
+		{ link_type_t::IEEE802_11_Radiotap,        "IEEE802_11_Radiotap"sv     },
+		{ link_type_t::ARCNETLinux,                "ARCNETLinux"sv             },
+		{ link_type_t::AppleIPOverIEEE1394,        "AppleIPOverIEEE1394"sv     },
+		{ link_type_t::MTP2WithPHeader,            "MTP2WithPHeader"sv         },
+		{ link_type_t::MTP2,                       "MTP2"sv                    },
+		{ link_type_t::MTP3,                       "MTP3"sv                    },
+		{ link_type_t::SCCP,                       "SCCP"sv                    },
+		{ link_type_t::DOCSIS,                     "DOCSIS"sv                  },
+		{ link_type_t::LinuxIrDA,                  "LinuxIrDA"sv               },
+		{ link_type_t::User0,                      "User0"sv                   },
+		{ link_type_t::User1,                      "User1"sv                   },
+		{ link_type_t::User2,                      "User2"sv                   },
+		{ link_type_t::User3,                      "User3"sv                   },
+		{ link_type_t::User4,                      "User4"sv                   },
+		{ link_type_t::User5,                      "User5"sv                   },
+		{ link_type_t::User6,                      "User6"sv                   },
+		{ link_type_t::User7,                      "User7"sv                   },
+		{ link_type_t::User8,                      "User8"sv                   },
+		{ link_type_t::User9,                      "User9"sv                   },
+		{ link_type_t::User10,                     "User10"sv                  },
+		{ link_type_t::User11,                     "User11"sv                  },
+		{ link_type_t::User12,                     "User12"sv                  },
+		{ link_type_t::User13,                     "User13"sv                  },
+		{ link_type_t::User14,                     "User14"sv                  },
+		{ link_type_t::User15,                     "User15"sv                  },
+		{ link_type_t::IEEE802_11_AVS,             "IEEE802_11_AVS"sv          },
+		{ link_type_t::BACNet_MS_TP,               "BACNet_MS_TP"sv            },
+		{ link_type_t::PPP_PPPD,                   "PPP_PPPD"sv                },
+		{ link_type_t::GPRS_LLC,                   "GPRS_LLC"sv                },
+		{ link_type_t::GPF_T,                      "GPF_T"sv                   },
+		{ link_type_t::GPF_F,                      "GPF_F"sv                   },
+		{ link_type_t::LinuxLAPD,                  "LinuxLAPD"sv               },
+		{ link_type_t::MFR,                        "MFR"sv                     },
+		{ link_type_t::BluetoothHCI_H4,            "BluetoothHCI_H4"sv         },
+		{ link_type_t::USBLinux,                   "USBLinux"sv                },
+		{ link_type_t::PPI,                        "PPI"sv                     },
+		{ link_type_t::IEEE802_15_4_WithFCS,       "IEEE802_15_4_WithFCS"sv    },
+		{ link_type_t::SITA,                       "SITA"sv                    },
+		{ link_type_t::ERF,                        "ERF"sv                     },
+		{ link_type_t::BluetoothHCI_H4WithPhdr,    "BluetoothHCI_H4WithPhdr"sv },
+		{ link_type_t::AX25_KIDD,                  "AX25_KIDD"sv               },
+		{ link_type_t::LAPD,                       "LAPD"sv                    },
+		{ link_type_t::PPPWithDir,                 "PPPWithDir"sv              },
+		{ link_type_t::CiscoHDLCWithDir,           "CiscoHDLCWithDir"sv        },
+		{ link_type_t::FrameRelayWithDir,          "FrameRelayWithDir"sv       },
+		{ link_type_t::LAPBWithDir,                "LAPBWithDir"sv             },
+		{ link_type_t::Ipmb_linux,                 "Ipmb_linux"sv              },
+		{ link_type_t::IEEE802_15_4_nonask_phy,    "IEEE802_15_4_nonask_phy"sv },
+		{ link_type_t::UUSBLinuxMmapped,           "UUSBLinuxMmapped"sv        },
+		{ link_type_t::FC2,                        "FC2"sv                     },
+		{ link_type_t::FC2WithFrameDelims,         "FC2WithFrameDelims"sv      },
+		{ link_type_t::IPNET,                      "IPNET"sv                   },
+		{ link_type_t::CANSocketCan,               "CANSocketCan"sv            },
+		{ link_type_t::IpV4,                       "IpV4"sv                    },
+		{ link_type_t::IpV6,                       "IpV6"sv                    },
+		{ link_type_t::IEEE802_15_4_nofcs,         "IEEE802_15_4_nofcs"sv      },
+		{ link_type_t::DBus,                       "DBus"sv                    },
+		{ link_type_t::DVB_CI,                     "DVB_CI"sv                  },
+		{ link_type_t::Mux27010,                   "Mux27010"sv                },
+		{ link_type_t::Stanag5066DPDU,             "Stanag5066DPDU"sv          },
+		{ link_type_t::NFLog,                      "NFLog"sv                   },
+		{ link_type_t::NetAnalyzer,                "NetAnalyzer"sv             },
+		{ link_type_t::NetAnalyzerTransparent,     "NetAnalyzerTransparent"sv  },
+		{ link_type_t::IPoIB,                      "IPoIB"sv                   },
+		{ link_type_t::MPEG2Transport,             "MPEG2Transport"sv          },
+		{ link_type_t::NG40,                       "NG40"sv                    },
+		{ link_type_t::NFC_LLCP,                   "NFC_LLCP"sv                },
+		{ link_type_t::InfiniBand,                 "InfiniBand"sv              },
+		{ link_type_t::SCTP,                       "SCTP"sv                    },
+		{ link_type_t::USBPcap,                    "USBPcap"sv                 },
+		{ link_type_t::RTACSerial,                 "RTACSerial"sv              },
+		{ link_type_t::BluetoothLELL,              "BluetoothLELL"sv           },
+		{ link_type_t::Netlink,                    "Netlink"sv                 },
+		{ link_type_t::BluetoothLinuxMonitor,      "BluetoothLinuxMonitor"sv   },
+		{ link_type_t::Bluetooth_bredr_bb,         "Bluetooth_bredr_bb"sv      },
+		{ link_type_t::BluetoothLELLWithPHDR,      "BluetoothLELLWithPHDR"sv   },
+		{ link_type_t::PROFIBUSDatalink,           "PROFIBUSDatalink"sv        },
+		{ link_type_t::PKTAP,                      "PKTAP"sv                   },
+		{ link_type_t::EoPON,                      "EoPON"sv                   },
+		{ link_type_t::IPMI_hpm_2,                 "IPMI_hpm_2"sv              },
+		{ link_type_t::ZWaveR1R2,                  "ZWaveR1R2"sv               },
+		{ link_type_t::ZWaveR3,                    "ZWaveR3"sv                 },
+		{ link_type_t::WattStopperDLM,             "WattStopperDLM"sv          },
+		{ link_type_t::ISO14443,                   "ISO14443"sv                },
+		{ link_type_t::RDS,                        "RDS"sv                     },
+		{ link_type_t::USBDarwin,                  "USBDarwin"sv               },
+		{ link_type_t::SDLC,                       "SDLC"sv                    },
+		{ link_type_t::LoRaTap,                    "LoRaTap"sv                 },
+		{ link_type_t::VSOCK,                      "VSOCK"sv                   },
+		{ link_type_t::NordicBLE,                  "NordicBLE"sv               },
+		{ link_type_t::DOCSIS31_XRA31,             "DOCSIS31_XRA31"sv          },
+		{ link_type_t::Ethernet_mpacket,           "Ethernet_mpacket"sv        },
+		{ link_type_t::DisplayportAux,             "DisplayportAux"sv          },
+		{ link_type_t::LinuxSLL2,                  "LinuxSLL2"sv               },
+		{ link_type_t::Openvizsla,                 "Openvizsla"sv              },
+		{ link_type_t::EBHSCR,                     "EBHSCR"sv                  },
+		{ link_type_t::VPPDispatch,                "VPPDispatch"sv             },
+		{ link_type_t::DSATagBRCM,                 "DSATagBRCM"sv              },
+		{ link_type_t::DSATagBRCMPrepend,          "DSATagBRCMPrepend"sv       },
+		{ link_type_t::IEEE802_15_4_Tap,           "IEEE802_15_4_Tap"sv        },
+		{ link_type_t::DSATagDSA,                  "DSATagDSA"sv               },
+		{ link_type_t::DSATagEDSA,                 "DSATagEDSA"sv              },
+		{ link_type_t::ELEE,                       "ELEE"sv                    },
+		{ link_type_t::ZWaveSerial,                "ZWaveSerial"sv             },
+		{ link_type_t::USB2,                       "USB2"sv                    },
+		{ link_type_t::ATSC_ALP,                   "ATSC_ALP"sv                },
+	}};
+
 	/*! \enum libnokogiri::capture_compression_t
 		\brief Type of compression the capture file is under
 
 		This dictates how capture files are read and written, with or without compression.
 	*/
-	enum struct captrue_compression_t : std::uint8_t {
+	enum struct capture_compression_t : std::uint8_t {
 		Uncompressed = 0x00U, /*!< Indicates that the capture is uncompressed */
 		Compressed   = 0x01U, /*!< Indicates that the capture is compressed */
 		Autodetect   = 0x02U, /*!< When opening a file auto detect the file compression, when writing it defaults to Uncompressed */
 		Unknown      = 0xFFU, /*!< Unknown compression or invalid file */
 	};
 
+	const std::array<const enum_pair_t<capture_compression_t>, 4> capture_compression_s{{
+		{ capture_compression_t::Uncompressed, "Uncompressed"sv },
+		{ capture_compression_t::Compressed,   "Compressed"sv   },
+		{ capture_compression_t::Autodetect,   "Autodetect"sv   },
+		{ capture_compression_t::Unknown,      "Unknown"sv      },
+	}};
+
 	namespace internal {
 		[[nodiscard]]
-		LIBNOKOGIRI_API captrue_compression_t detect_captrue_compression(fd_t& file);
+		LIBNOKOGIRI_API capture_compression_t detect_captrue_compression(fd_t& file);
 	}
 
 	/*! \struct libnokogiri::version_t

@@ -39,17 +39,43 @@ int read(fs::path file) {
 		std::cerr << "Unable to find file " << file << '\n';
 	}
 
-	libnokogiri::pcap::pcap_t capture{file, libnokogiri::captrue_compression_t::Autodetect, true};
+	libnokogiri::pcap::pcap_t capture{file, libnokogiri::capture_compression_t::Autodetect, true};
 
 	if (!capture.valid()) {
 		std::cerr << "Capture file " << file << " is not valid \n";
 		return 1;
 	}
 
+	auto& hdr = capture.header();
+
+	std::cout << "File Type: " << libnokogiri::internal::enum_name(
+			libnokogiri::pcap::pcap_variant_s, hdr.variant()
+		) << '\n';
+	std::cout << "Compression: " << libnokogiri::internal::enum_name(
+			libnokogiri::capture_compression_s, capture.compression_type()
+		) << '\n';
+	std::cout << "Packet count: " << capture.packet_count() << '\n';
+
+	std::cout << "Version: " << hdr.version().major_version() << hdr.version().minor_version() << '\n';
+	std::cout << "TZ Offset: " << hdr.timezone_offset() << '\n';
+	std::cout << "TS Accuracy: " << hdr.timestamp_accuracy() << '\n';
+	std::cout << "Max Packet Len: " << hdr.max_packet_length() << '\n';
+	std::cout << "Link Type: " << libnokogiri::internal::enum_name(
+			libnokogiri::link_type_s, hdr.link_type()
+		) << '\n';
+
 	for (auto pkt : capture) {
-		if(!pkt)
+		if (!pkt) {
 			return 1;
-		std::cout << "Len: " << (*pkt).get().length() << "\n";
+		}
+
+		auto& packet = pkt->get();
+
+		if (packet.length() == 0) {
+			return 1;
+		}
+
+
 	}
 
 	return {};

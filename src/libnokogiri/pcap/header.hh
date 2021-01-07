@@ -4,6 +4,8 @@
 #define LIBNOKOGIRI_PCAP_HEADER_HH
 
 #include <cstdint>
+#include <array>
+#include <string_view>
 
 #include <libnokogiri/config.hh>
 #include <libnokogiri/common.hh>
@@ -11,6 +13,7 @@
 #include <libnokogiri/internal/defs.hh>
 
 namespace libnokogiri::pcap {
+	using libnokogiri::internal::enum_pair_t;
 	/*! \enum libnokogiri::pcap::pcap_variant_t
 		\brief Types of possible pcap formats
 	 */
@@ -22,12 +25,28 @@ namespace libnokogiri::pcap {
 		Nanosecond = 0xA1B23C4DU, /*! Magic for the modified pcap format introduced by Ulf Lamping's patches. It's identical to the standard but the timestamps are in nanoseconds. */
 
 		/* Swapped versions of the magic, so it's easy to detect */
-		SwappedStantard   = 0xD4C3B2A1U, /*!< Swapped magic for standard pcap files */
+		SwappedStandard   = 0xD4C3B2A1U, /*!< Swapped magic for standard pcap files */
 		SwappedModified   = 0x34CDB2A1U, /*!< Swapped magic for modified pcap files */
 		SwappedIXIAHW     = 0xAC01001CU, /*!< Swapped magic for IXIA's lcap */
 		SwappedIXIASW     = 0xAB01001CU, /*!< Swapped magic for IXIA's lcap */
 		SwappedNanosecond = 0x4D3CB2A1U, /*!< Swapped magic for nanosecond pcap files */
 	};
+
+	const std::array<const enum_pair_t<pcap_variant_t>, 10> pcap_variant_s{{
+		{ pcap_variant_t::Standard,   "Standard"sv   },
+		{ pcap_variant_t::Modified,   "Modified"sv   },
+		{ pcap_variant_t::IXIAHW,     "IXIAHW"sv     },
+		{ pcap_variant_t::IXIASW,     "IXIASW"sv     },
+		{ pcap_variant_t::Nanosecond, "Nanosecond"sv },
+
+		{ pcap_variant_t::SwappedStandard,   "Swapped Standard"sv  },
+		{ pcap_variant_t::SwappedModified,   "Swapped Modified"sv  },
+		{ pcap_variant_t::SwappedIXIAHW,     "SwappedIXIAHW"sv     },
+		{ pcap_variant_t::SwappedIXIASW,     "SwappedIXIASW"sv     },
+		{ pcap_variant_t::SwappedNanosecond, "SwappedNanosecond"sv },
+	}};
+
+
 
 	/*! \struct libnokogiri::pcap::file_header_t
 		\brief pcap file header
@@ -84,6 +103,12 @@ namespace libnokogiri::pcap {
 			_variant{variant}, _version{version}, _tz_offset{tz_offset},
 			_timestamp_figs{ts_figs}, _pcklen_max{pcklen}, _network{network}
 			{ /* NOP */ }
+
+		file_header_t(const file_header_t&) = delete;
+		file_header_t& operator=(const file_header_t&) = delete;
+
+		file_header_t(file_header_t&&) = default;
+		file_header_t& operator=(file_header_t&&) = default;
 
 		/*! Retrieve the type of pcap file this is. This is also the magic number for the file  */
 		[[nodiscard]]

@@ -281,7 +281,7 @@ namespace libnokogiri::internal {
 		std::optional<T> read() const noexcept {
 			T local{};
 			const auto res = read(local);
-			return res ? std::optional<T>{local} : std::nullopt;
+			return res ? std::optional<T>{std::move(local)} : std::nullopt;
 		}
 
 		[[nodiscard]]

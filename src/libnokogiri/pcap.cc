@@ -16,14 +16,14 @@ namespace fs = libnokogiri::internal::fs;
 
 namespace libnokogiri::pcap {
 
-	pcap_t::pcap_t(libnokogiri::internal::fs::path& file, captrue_compression_t compression, bool read_only, bool prefetch) noexcept :
+	pcap_t::pcap_t(libnokogiri::internal::fs::path& file, capture_compression_t compression, bool read_only, bool prefetch) noexcept :
 		_file{}, _compression{compression}, _readonly{read_only}, _prefetch{prefetch} {
 		libnokogiri::internal::fd_t cap{file, (read_only) ? O_RDONLY : O_RDWR};
-		if (_compression == captrue_compression_t::Autodetect) {
+		if (_compression == capture_compression_t::Autodetect) {
 			_compression = libnokogiri::internal::detect_captrue_compression(cap);
 		}
 
-		if (_compression == captrue_compression_t::Compressed) {
+		if (_compression == capture_compression_t::Compressed) {
 			_file = std::move(libnokogiri::internal::fd_t::maketemp(O_RDWR,  S_IWUSR | S_IRUSR | S_IRGRP | S_IROTH, ".pcap"sv));
 			libnokogiri::internal::gzfile_t gzcap{cap};
 			if (gzcap.decompress_to(_file) == -1) {
@@ -61,7 +61,7 @@ namespace libnokogiri::pcap {
 					_header.variant(pcap_magic);
 					break;
 				}
-				case pcap_variant_t::SwappedStantard:
+				case pcap_variant_t::SwappedStandard:
 				case pcap_variant_t::SwappedModified:
 				case pcap_variant_t::SwappedIXIAHW:
 				case pcap_variant_t::SwappedIXIASW:
@@ -174,7 +174,7 @@ namespace libnokogiri::pcap {
 
 		while (!_file.isEOF()) {
 			const auto prev_pos = _file.tell();
-			if(_file.seek(pkt_len_offset) != (pkt_len_offset + prev_pos))
+			if(_file.seek(pkt_len_offset) != std::ptrdiff_t(pkt_len_offset + prev_pos))
 				return false;
 
 			/* Returns an optional */
@@ -186,7 +186,7 @@ namespace libnokogiri::pcap {
 			_packets.emplace_back(packet_storage_t{*size, std::uintptr_t(prev_pos)});
 			const auto pckt_size = _file.tell();
 			const auto next_packet =  *size + pkt_body_offset;
-			if(_file.seek(next_packet) != (next_packet + pckt_size))
+			if(_file.seek(next_packet) != std::ptrdiff_t(next_packet + pckt_size))
 				return false;
 		}
 
@@ -194,7 +194,7 @@ namespace libnokogiri::pcap {
 	}
 
 	std::optional<std::reference_wrapper<packet_t>> pcap_t::get_packet(packet_storage_t& pkt_storage) noexcept {
-		if (_file.seek(pkt_storage.offset(), SEEK_SET) != pkt_storage.offset()) {
+		if (_file.seek(pkt_storage.offset(), SEEK_SET) != std::ptrdiff_t(pkt_storage.offset())) {
 			return std::nullopt;
 		}
 
@@ -202,8 +202,8 @@ namespace libnokogiri::pcap {
 		/* extract the header */
 		switch (_header.variant()) {
 			case pcap_variant_t::Modified: {
-				if (const auto hdr = _file.read<packet_header_modified_t>()) {
-					header.emplace<packet_header_modified_t>(*hdr);
+				if (auto hdr = _file.read<packet_header_modified_t>()) {
+					header = std::move(*hdr);
 				} else {
 					return std::nullopt;
 				}
@@ -213,8 +213,8 @@ namespace libnokogiri::pcap {
 			case pcap_variant_t::IXIASW:
 			case pcap_variant_t::Nanosecond:
 			default: {
-				if (const auto hdr = _file.read<packet_header_t>()) {
-					header.emplace<packet_header_t>(*hdr);
+				if (auto hdr = _file.read<packet_header_t>()) {
+					header = std::move(*hdr);
 				} else {
 					return std::nullopt;
 				}
@@ -230,13 +230,14 @@ namespace libnokogiri::pcap {
 				} else if constexpr (std::is_same_v<T, packet_header_t>) {
 					return header.captured_len();
 				} else {
-					return 0U;
+					return -1U;
 				}
 			}, header),
-			header
+			std::move(header)
 		};
 
 		/* ingest the body */
+		// fucking broken
 		const auto ingested = _file.read(packet.address(0), packet.length());
 
 		if (ingested) {
@@ -246,5 +247,17 @@ namespace libnokogiri::pcap {
 		}
 
 		return std::nullopt;
+	}
+
+	bool pcap_t::save() const noexcept {
+		if (_readonly)
+			return false;
+
+		if (_file.seek(0, SEEK_SET) != 0)
+			return false;
+
+
+
+		return {};
 	}
 }

@@ -6,6 +6,8 @@
 
 #include <type_traits>
 #include <variant>
+#include <string_view>
+#include <algorithm>
 
 #if defined(_MSC_VER) && !defined(_WINDOWS)
 #define _WINDOWS 1
@@ -38,6 +40,8 @@
 #endif
 
 namespace libnokogiri::internal {
+	using namespace std::literals::string_view_literals;
+
 	template<typename T>
 	struct has_nullable_ctor final {
 		template<typename U>
@@ -53,6 +57,38 @@ namespace libnokogiri::internal {
 
 	template<typename T, typename U>
 	using optional_pair = std::variant<std::monostate, T, U>;
+
+	template<typename T>
+	struct enum_pair_t final {
+		using value_type = T;
+	private:
+		T _value;
+		const std::string_view _name;
+	public:
+		constexpr enum_pair_t() noexcept : _value{}, _name{""sv}
+			{ /* NOP */ }
+
+		constexpr enum_pair_t(T v, const std::string_view n) noexcept :
+			_value{v}, _name{n} { /* NOP */ }
+
+		T value() const noexcept { return _value; }
+		void value(const T value) noexcept { _value = value; }
+
+		std::string_view name() const noexcept { return _name; }
+		void name(const std::string_view name) noexcept { _name = name; }
+	};
+
+	template<typename map_t, typename value_t>
+	std::string_view enum_name(map_t m, value_t v) noexcept {
+		auto pos = std::find_if(
+			std::begin(m), std::end(m),
+			[&v](const typename map_t::value_type& t) {
+				return (t.value() == v);
+			});
+
+		return pos != std::end(m) ? pos->name() : "?"sv;
+	}
+
 }
 
 #endif /* LIBNOKOGIRI_INTERNAL_DEFS_HH */

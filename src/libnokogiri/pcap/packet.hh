@@ -7,6 +7,8 @@
 #include <optional>
 #include <variant>
 #include <vector>
+#include <array>
+#include <string_view>
 
 #include <libnokogiri/config.hh>
 #include <libnokogiri/common.hh>
@@ -14,6 +16,7 @@
 #include <libnokogiri/internal/defs.hh>
 
 namespace libnokogiri::pcap {
+	using libnokogiri::internal::enum_pair_t;
 	/*! \enum libnokogiri::pcap::packet_type_t
 		\brief Packet types
 
@@ -24,6 +27,11 @@ namespace libnokogiri::pcap {
 		Standard = 0x00, /*!< Standard packet type */
 		Modified = 0x01, /*!< Modified packet type with extended header */
 	};
+
+	const std::array<const enum_pair_t<packet_type_t>, 2> packet_type_s{{
+		{ packet_type_t::Standard, "Standard"sv },
+		{ packet_type_t::Modified, "Modified"sv }
+	}};
 
 	/*! \struct libnokogiri::pcap::packet_header_t
 		\brief The packet header for normal unmodified pcap file packets
@@ -72,6 +80,12 @@ namespace libnokogiri::pcap {
 				std::uint32_t pkt_len_have, std::uint32_t pkt_len_actual) noexcept :
 			_timestamp{timestamp}, _usecs{useconds}, _have{pkt_len_have}, _was{pkt_len_actual}
 			{ /* NOP */ }
+
+		packet_header_t(const packet_header_t&) = delete;
+		packet_header_t& operator=(const packet_header_t&) = delete;
+
+		packet_header_t(packet_header_t&&) = default;
+		packet_header_t& operator=(packet_header_t&&) = default;
 
 		/*! Retrieve the packets timestamp */
 		[[nodiscard]]
@@ -147,16 +161,22 @@ namespace libnokogiri::pcap {
 
 		constexpr packet_header_modified_t(packet_header_t&& base_header, std::uint32_t if_index,
 				std::uint16_t protocol, std::uint8_t type) noexcept :
-			_base_header{base_header}, _if_index{if_index}, _proto{protocol}, _type{type},
+			_base_header{std::move(base_header)}, _if_index{if_index}, _proto{protocol}, _type{type},
 			_padding{0U} { /* NOP */ }
 
 		packet_header_modified_t(std::nullptr_t) noexcept { /* NOP */ }
 
+		packet_header_modified_t(const packet_header_modified_t&) = delete;
+		packet_header_modified_t& operator=(const packet_header_modified_t&) = delete;
+
+		packet_header_modified_t(packet_header_modified_t&&) = default;
+		packet_header_modified_t& operator=(packet_header_modified_t&&) = default;
+
 		/*! Retrieve the base packet header */
 		[[nodiscard]]
-		const packet_header_t base_header() const noexcept { return _base_header; }
+		const packet_header_t& base_header() const noexcept { return _base_header; }
 		/*! Set the base packet header */
-		void base_header(packet_header_t base_header) noexcept { _base_header = base_header; }
+		void base_header(packet_header_t&& base_header) noexcept { _base_header = std::move(base_header); }
 
 		/*! Retrieve the interface index for this packet */
 		[[nodiscard]]
@@ -250,9 +270,9 @@ namespace libnokogiri::pcap {
 			!libnokogiri::internal::has_nullable_ctor_v<T> &&
 			!std::is_same_v<T, void*>,
 		T*>
-		index(const std::size_t offset) const {
+		index(const std::size_t offset) {
 			if (offset < _raw_data.size()) {
-				return new (const_cast<void*>(reinterpret_cast<const void *>(_raw_data.data())) + (offset * sizeof(T))) T{};
+				return new (reinterpret_cast<std::uint8_t *>(_raw_data.data()) + (offset * sizeof(T))) T{};
 			}
 			return nullptr;
 		}
@@ -263,9 +283,9 @@ namespace libnokogiri::pcap {
 			libnokogiri::internal::has_nullable_ctor_v<T> &&
 			!std::is_same_v<T, void*>,
 		T*>
-		index(const std::size_t offset) const {
+		index(const std::size_t offset) {
 			if (offset < _raw_data.size()) {
-				return new (const_cast<void*>(reinterpret_cast<const void *>(_raw_data.data())) + (offset * sizeof(T))) T{nullptr};
+				return new (reinterpret_cast<std::uint8_t *>(_raw_data.data()) + (offset * sizeof(T))) T{nullptr};
 			}
 			return nullptr;
 		}
@@ -273,9 +293,9 @@ namespace libnokogiri::pcap {
 		template<typename T>
 		[[nodiscard]]
 		std::enable_if_t<std::is_same_v<T, void*>, void*>
-		index(const std::size_t offset) const {
+		index(const std::size_t offset) {
 			if (offset < _raw_data.size()) {
-				return const_cast<void*>(reinterpret_cast<const void *>(_raw_data.data())) + offset;
+				return reinterpret_cast<std::uint8_t *>(_raw_data.data()) + offset;
 			}
 			return nullptr;
 		}
@@ -283,7 +303,15 @@ namespace libnokogiri::pcap {
 	public:
 
 		packet_t(std::size_t length, pkt_header_t header = {}) noexcept :
-			_raw_data{}, _packet_header{header} { _raw_data.reserve(length); }
+			_raw_data{std::vector<std::uint8_t>(length)},
+			_packet_header{std::move(header)} { /* NOP */ }
+
+
+		packet_t(const packet_t&) = delete;
+		packet_t& operator=(const packet_t&) = delete;
+
+		packet_t(packet_t&&) = default;
+		packet_t& operator=(packet_t&&) = default;
 
 		[[nodiscard]]
 		std::size_t length() const noexcept { return _raw_data.size(); }
@@ -313,6 +341,11 @@ namespace libnokogiri::pcap {
 		[[nodiscard]]
 		T *operator [](const off_t idx) { return index<T>(idx); }
 
+		[[nodiscard]]
+		auto begin() noexcept { return _raw_data.begin(); }
+		[[nodiscard]]
+		auto end() noexcept { return _raw_data.end(); }
+
 		template<typename T>
 		[[nodiscard]]
 		const T *operator [](const off_t idx) const { return index<const T>(idx); }
@@ -326,7 +359,6 @@ namespace libnokogiri::pcap {
 		const T *at(const off_t idx) const { return index<const T>(idx); }
 
 		void *address(const off_t offset) noexcept { return index<void *>(offset); }
-		const void *address(const off_t offset) const noexcept { return index<const void *>(offset); }
 	};
 
 
@@ -355,8 +387,14 @@ namespace libnokogiri::pcap {
 			{ /* NOP */ }
 
 		packet_storage_t(std::uint32_t len, std::uintptr_t offset, packet_t&& packet) noexcept :
-			_len{len}, _offset{offset}, _packet_cache{packet}
+			_len{len}, _offset{offset}, _packet_cache{std::move(packet)}
 			{ /* NOP */ }
+
+		packet_storage_t(const packet_storage_t&) = delete;
+		packet_storage_t& operator=(const packet_storage_t&) = delete;
+
+		packet_storage_t(packet_storage_t&&) = default;
+		packet_storage_t& operator=(packet_storage_t&&) = default;
 
 		[[nodiscard]]
 		std::uint32_t length() const noexcept { return _len; }

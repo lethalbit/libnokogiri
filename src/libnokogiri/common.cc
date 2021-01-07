@@ -9,7 +9,7 @@
 
 namespace libnokogiri::internal {
 	[[nodiscard]]
-	captrue_compression_t detect_captrue_compression(fd_t& file) {
+	capture_compression_t detect_captrue_compression(fd_t& file) {
 		constexpr static std::array<uint8_t, 2> gzip_header{0x1FU, 0x8BU};
 		std::array<uint8_t, 2> read_bytes{};
 		const auto res{file.read<2>(read_bytes)};
@@ -17,7 +17,7 @@ namespace libnokogiri::internal {
 		const auto _ = file.head();
 
 		if (!res) {
-			return captrue_compression_t::Unknown;
+			return capture_compression_t::Unknown;
 		}
 
 		const auto is_gzip = std::equal(
@@ -25,6 +25,6 @@ namespace libnokogiri::internal {
 			read_bytes.begin(), read_bytes.end()
 		);
 
-		return is_gzip ? captrue_compression_t::Compressed : captrue_compression_t::Uncompressed;
+		return is_gzip ? capture_compression_t::Compressed : capture_compression_t::Uncompressed;
 	}
 }
