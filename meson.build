@@ -10,7 +10,6 @@ project(
 )
 
 cxx = meson.get_compiler('cpp')
-pkgconfig = import('pkgconfig')
 
 extra_args = [
 	'-Wvla',
@@ -40,7 +39,8 @@ if get_option('build_examples')
 	subdir('examples')
 endif
 
-if not meson.is_subproject()
+if not meson.is_subproject() and target_machine.system() != 'windows'
+	pkgconfig = import('pkgconfig')
 	pkgconfig.generate(
 		subdirs: '.',
 		name: meson.project_name(),
