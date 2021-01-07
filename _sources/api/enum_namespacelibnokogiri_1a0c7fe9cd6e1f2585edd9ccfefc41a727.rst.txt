@@ -1,0 +1,13 @@
+.. _exhale_enum_namespacelibnokogiri_1a0c7fe9cd6e1f2585edd9ccfefc41a727:
+
+Enum capture_compression_t
+==========================
+
+- Defined in :ref:`file_common.hh`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: libnokogiri::capture_compression_t

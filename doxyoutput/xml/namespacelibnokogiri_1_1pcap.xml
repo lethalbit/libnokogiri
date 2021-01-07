@@ -51,8 +51,8 @@
           <detaileddescription>
 <para>Magic for IXIA&apos;s lcap format </para>          </detaileddescription>
         </enumvalue>
-        <enumvalue id="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656af50b33a9beb0122f09f5dac7fe32517b" prot="public">
-          <name>SwappedStantard</name>
+        <enumvalue id="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a868409fd1aa8d36cba281e1afde72f19" prot="public">
+          <name>SwappedStandard</name>
           <initializer>= 0xD4C3B2A1U</initializer>
           <briefdescription>
           </briefdescription>
@@ -97,7 +97,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap/header.hh" line="17" column="1" bodyfile="pcap/header.hh" bodystart="17" bodyend="30"/>
+        <location file="pcap/header.hh" line="20" column="1" bodyfile="pcap/header.hh" bodystart="20" bodyend="33"/>
       </memberdef>
       <memberdef kind="enum" id="namespacelibnokogiri_1_1pcap_1a5f7e5dd30c2860eee6f4e2ed32ae7171" prot="public" static="no">
         <name>packet_type_t</name>
@@ -123,7 +123,52 @@
 <para>This enum is sued in the <ref refid="structlibnokogiri_1_1pcap_1_1packet__storage__t" kindref="compound">libnokogiri::pcap::packet_storage_t</ref> container to allow you do differentiate between the standard packet types or the modified type. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap/packet.hh" line="23" column="1" bodyfile="pcap/packet.hh" bodystart="23" bodyend="26"/>
+        <location file="pcap/packet.hh" line="26" column="1" bodyfile="pcap/packet.hh" bodystart="26" bodyend="29"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacelibnokogiri_1_1pcap_1aafae5738a20d0edfcc38477dacc4db4c" prot="public" static="no" mutable="no">
+        <type>const std::array&lt; const enum_pair_t&lt; <ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656" kindref="member">pcap_variant_t</ref> &gt;, 10 &gt;</type>
+        <definition>const std::array&lt;const enum_pair_t&lt;pcap_variant_t&gt;, 10&gt; libnokogiri::pcap::pcap_variant_s</definition>
+        <argsstring></argsstring>
+        <name>pcap_variant_s</name>
+        <initializer>{{
+		{ pcap_variant_t::Standard,   &quot;Standard&quot;sv   },
+		{ <ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a35e0c8c0b180c95d4e122e55ed62cc64" kindref="member">pcap_variant_t::Modified</ref>,   &quot;Modified&quot;sv   },
+		{ <ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a8556cee2e2a5b5e735f3593dc348521a" kindref="member">pcap_variant_t::IXIAHW</ref>,     &quot;IXIAHW&quot;sv     },
+		{ <ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a5cc3e33ec226f9b110878c1f197f298f" kindref="member">pcap_variant_t::IXIASW</ref>,     &quot;IXIASW&quot;sv     },
+		{ <ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a4146c294bcc82b1723c65bdc64b55089" kindref="member">pcap_variant_t::Nanosecond</ref>, &quot;Nanosecond&quot;sv },
+
+		{ <ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a868409fd1aa8d36cba281e1afde72f19" kindref="member">pcap_variant_t::SwappedStandard</ref>,   &quot;Swapped Standard&quot;sv  },
+		{ <ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656aae99b9c57b1bfe6a4d657eded0de17f2" kindref="member">pcap_variant_t::SwappedModified</ref>,   &quot;Swapped Modified&quot;sv  },
+		{ <ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a768c05c9a2c12abc1ad9244a7ccb9013" kindref="member">pcap_variant_t::SwappedIXIAHW</ref>,     &quot;SwappedIXIAHW&quot;sv     },
+		{ <ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656acd100172ee368cbf65e108865bdbae70" kindref="member">pcap_variant_t::SwappedIXIASW</ref>,     &quot;SwappedIXIASW&quot;sv     },
+		{ <ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a6b63e2e1dc6b29aa7aa1f3a9d07271c7" kindref="member">pcap_variant_t::SwappedNanosecond</ref>, &quot;SwappedNanosecond&quot;sv },
+	}}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap/header.hh" line="35" column="1" bodyfile="pcap/header.hh" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacelibnokogiri_1_1pcap_1ac69f6d8f24bab7cf8e7e36a1b9ff4b11" prot="public" static="no" mutable="no">
+        <type>const std::array&lt; const enum_pair_t&lt; <ref refid="namespacelibnokogiri_1_1pcap_1a5f7e5dd30c2860eee6f4e2ed32ae7171" kindref="member">packet_type_t</ref> &gt;, 2 &gt;</type>
+        <definition>const std::array&lt;const enum_pair_t&lt;packet_type_t&gt;, 2&gt; libnokogiri::pcap::packet_type_s</definition>
+        <argsstring></argsstring>
+        <name>packet_type_s</name>
+        <initializer>{{
+		{ packet_type_t::Standard, &quot;Standard&quot;sv },
+		{ <ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a35e0c8c0b180c95d4e122e55ed62cc64" kindref="member">packet_type_t::Modified</ref>, &quot;Modified&quot;sv }
+	}}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap/packet.hh" line="31" column="1" bodyfile="pcap/packet.hh" bodystart="31" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">

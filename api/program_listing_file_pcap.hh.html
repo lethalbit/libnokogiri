@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Program Listing for File pcap.hh &#8212; libnokogiri 0.0.1 1b4c066 documentation</title>
+    <title>Program Listing for File pcap.hh &#8212; libnokogiri 0.0.1 fe87912 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -103,7 +103,7 @@
 
     <span class="k">private</span><span class="o">:</span>
         <span class="n">libnokogiri</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">fd_t</span> <span class="n">_file</span><span class="p">;</span>
-        <span class="n">captrue_compression_t</span> <span class="n">_compression</span><span class="p">;</span>
+        <span class="n">capture_compression_t</span> <span class="n">_compression</span><span class="p">;</span>
         <span class="kt">bool</span> <span class="n">_readonly</span><span class="p">;</span>
         <span class="kt">bool</span> <span class="n">_prefetch</span><span class="p">;</span>
         <span class="n">file_header_t</span> <span class="n">_header</span><span class="p">{};</span>
@@ -118,7 +118,7 @@
     <span class="k">public</span><span class="o">:</span>
         <span class="k">constexpr</span> <span class="n">pcap_t</span><span class="p">()</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
 
-        <span class="n">pcap_t</span><span class="p">(</span><span class="n">libnokogiri</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">fs</span><span class="o">::</span><span class="n">path</span><span class="o">&amp;</span> <span class="n">file</span><span class="p">,</span> <span class="n">captrue_compression_t</span> <span class="n">compression</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">read_only</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">prefetch</span> <span class="o">=</span> <span class="nb">false</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
+        <span class="n">pcap_t</span><span class="p">(</span><span class="n">libnokogiri</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">fs</span><span class="o">::</span><span class="n">path</span><span class="o">&amp;</span> <span class="n">file</span><span class="p">,</span> <span class="n">capture_compression_t</span> <span class="n">compression</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">read_only</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">prefetch</span> <span class="o">=</span> <span class="nb">false</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
 
         <span class="n">pcap_t</span><span class="p">(</span><span class="k">const</span> <span class="n">pcap_t</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
         <span class="n">pcap_t</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">pcap_t</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
@@ -132,20 +132,17 @@
         <span class="kt">bool</span> <span class="n">needs_swapping</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_needs_swapping</span><span class="p">;</span> <span class="p">}</span>
 
         <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
-        <span class="n">file_header_t</span> <span class="n">header</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_header</span><span class="p">;</span> <span class="p">}</span>
-        <span class="kt">void</span> <span class="n">header</span><span class="p">(</span><span class="n">file_header_t</span> <span class="n">header</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="n">_header</span> <span class="o">=</span> <span class="n">header</span><span class="p">;</span> <span class="p">}</span>
+        <span class="n">file_header_t</span><span class="o">&amp;</span> <span class="n">header</span><span class="p">()</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_header</span><span class="p">;</span> <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">header</span><span class="p">(</span><span class="n">file_header_t</span><span class="o">&amp;&amp;</span> <span class="n">header</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="n">_header</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">header</span><span class="p">);</span> <span class="p">}</span>
 
         <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
-        <span class="n">captrue_compression_t</span> <span class="n">compression_type</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_compression</span><span class="p">;</span> <span class="p">}</span>
+        <span class="n">capture_compression_t</span> <span class="n">compression_type</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_compression</span><span class="p">;</span> <span class="p">}</span>
 
         <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
         <span class="kt">bool</span> <span class="n">valid</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_valid</span><span class="p">;</span> <span class="p">}</span>
 
         <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
         <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">packet_count</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_packets</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="p">}</span>
-
-        <span class="k">auto</span> <span class="n">begin</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_packets</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="p">}</span>
-        <span class="k">auto</span> <span class="n">end</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_packets</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="p">}</span>
 
         <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
         <span class="kt">bool</span> <span class="n">save</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
@@ -157,6 +154,9 @@
             <span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="n">_header</span><span class="p">,</span> <span class="n">desc</span><span class="p">.</span><span class="n">_header</span><span class="p">);</span>
             <span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="n">_valid</span><span class="p">,</span> <span class="n">desc</span><span class="p">.</span><span class="n">_valid</span><span class="p">);</span>
         <span class="p">}</span>
+
+
+        <span class="kt">void</span> <span class="nf">remove_packet</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">index</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span>  <span class="p">}</span>
 
         <span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">reference_wrapper</span><span class="o">&lt;</span><span class="n">packet_t</span><span class="o">&gt;&gt;</span> <span class="n">get_packet</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">idx</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">idx</span> <span class="o">&lt;=</span> <span class="n">_packets</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>

@@ -29,6 +29,8 @@ Includes
 --------
 
 
+- ``array``
+
 - ``cstdint``
 
 - ``libnokogiri/common.hh``
@@ -38,6 +40,8 @@ Includes
 - ``libnokogiri/internal/defs.hh``
 
 - ``optional``
+
+- ``string_view``
 
 - ``variant``
 
@@ -79,4 +83,11 @@ Enums
 
 
 - :ref:`exhale_enum_namespacelibnokogiri_1_1pcap_1a5f7e5dd30c2860eee6f4e2ed32ae7171`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_namespacelibnokogiri_1_1pcap_1ac69f6d8f24bab7cf8e7e36a1b9ff4b11`
 

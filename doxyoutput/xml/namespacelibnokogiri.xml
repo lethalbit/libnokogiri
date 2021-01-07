@@ -1040,11 +1040,11 @@
 <para>This table and the descriptions of each link type has been directly lifted from <ulink url="https://www.tcpdump.org/linktypes.html">https://www.tcpdump.org/linktypes.html</ulink>.</para><para>Note: See the site linked above for details on the <computeroutput><ref refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cafc461ac8b6e3f19a9f64800389e202fe" kindref="member">link_type_t::User0</ref></computeroutput> through <computeroutput><ref refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca3e98cb5941d48a70df0c8cdf76c127b0" kindref="member">link_type_t::User15</ref></computeroutput> values and other notes about reserved ranges.</para><para>TODO: Waiting on the tcpdump mailing list to respond to <ulink url="https://lists.sandelman.ca/pipermail/tcpdump-workers/2020-October/001548.html">https://lists.sandelman.ca/pipermail/tcpdump-workers/2020-October/001548.html</ulink> to see if we can add needed link types. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="24" column="1" bodyfile="common.hh" bodystart="24" bodyend="187"/>
+        <location file="common.hh" line="27" column="1" bodyfile="common.hh" bodystart="27" bodyend="190"/>
       </memberdef>
-      <memberdef kind="enum" id="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44" prot="public" static="no">
-        <name>captrue_compression_t</name>
-        <enumvalue id="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44aadf6b3d6508faa5f47e983c09bf39f5a" prot="public">
+      <memberdef kind="enum" id="namespacelibnokogiri_1a0c7fe9cd6e1f2585edd9ccfefc41a727" prot="public" static="no">
+        <name>capture_compression_t</name>
+        <enumvalue id="namespacelibnokogiri_1a0c7fe9cd6e1f2585edd9ccfefc41a727aadf6b3d6508faa5f47e983c09bf39f5a" prot="public">
           <name>Uncompressed</name>
           <initializer>= 0x00U</initializer>
           <briefdescription>
@@ -1052,7 +1052,7 @@
           <detaileddescription>
 <para>Indicates that the capture is uncompressed </para>          </detaileddescription>
         </enumvalue>
-        <enumvalue id="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44a4d602abc0c0f2f7c1a5156d964517e4e" prot="public">
+        <enumvalue id="namespacelibnokogiri_1a0c7fe9cd6e1f2585edd9ccfefc41a727a4d602abc0c0f2f7c1a5156d964517e4e" prot="public">
           <name>Compressed</name>
           <initializer>= 0x01U</initializer>
           <briefdescription>
@@ -1060,7 +1060,7 @@
           <detaileddescription>
 <para>Indicates that the capture is compressed </para>          </detaileddescription>
         </enumvalue>
-        <enumvalue id="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44aa0f56afccfad0701bc1076f838655233" prot="public">
+        <enumvalue id="namespacelibnokogiri_1a0c7fe9cd6e1f2585edd9ccfefc41a727aa0f56afccfad0701bc1076f838655233" prot="public">
           <name>Autodetect</name>
           <initializer>= 0x02U</initializer>
           <briefdescription>
@@ -1068,7 +1068,7 @@
           <detaileddescription>
 <para>When opening a file auto detect the file compression, when writing it defaults to Uncompressed </para>          </detaileddescription>
         </enumvalue>
-        <enumvalue id="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44a88183b946cc5f0e8c96b2e66e1c74a7e" prot="public">
+        <enumvalue id="namespacelibnokogiri_1a0c7fe9cd6e1f2585edd9ccfefc41a727a88183b946cc5f0e8c96b2e66e1c74a7e" prot="public">
           <name>Unknown</name>
           <initializer>= 0xFFU</initializer>
           <briefdescription>
@@ -1077,12 +1077,46 @@
 <para>Unknown compression or invalid file </para>          </detaileddescription>
         </enumvalue>
         <briefdescription>
+<para>Type of compression the capture file is under. </para>        </briefdescription>
+        <detaileddescription>
+<para>This dictates how capture files are read and written, with or without compression. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common.hh" line="328" column="1" bodyfile="common.hh" bodystart="328" bodyend="333"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacelibnokogiri_1a956608dd7c84cd6b7ae0e75238b192e6" prot="public" static="no" mutable="no">
+        <type>const std::array&lt; const enum_pair_t&lt; <ref refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c" kindref="member">link_type_t</ref> &gt;, 128 &gt;</type>
+        <definition>const std::array&lt;const enum_pair_t&lt;link_type_t&gt;, 128&gt; libnokogiri::link_type_s</definition>
+        <argsstring></argsstring>
+        <name>link_type_s</name>
+        <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="194" column="1" bodyfile="common.hh" bodystart="194" bodyend="199"/>
+        <location file="common.hh" line="192" column="1" bodyfile="common.hh" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacelibnokogiri_1ac806f979eaedc1a6d2d9f92911e3093c" prot="public" static="no" mutable="no">
+        <type>const std::array&lt; const enum_pair_t&lt; <ref refid="namespacelibnokogiri_1a0c7fe9cd6e1f2585edd9ccfefc41a727" kindref="member">capture_compression_t</ref> &gt;, 4 &gt;</type>
+        <definition>const std::array&lt;const enum_pair_t&lt;capture_compression_t&gt;, 4&gt; libnokogiri::capture_compression_s</definition>
+        <argsstring></argsstring>
+        <name>capture_compression_s</name>
+        <initializer>{{
+		{ <ref refid="namespacelibnokogiri_1a0c7fe9cd6e1f2585edd9ccfefc41a727aadf6b3d6508faa5f47e983c09bf39f5a" kindref="member">capture_compression_t::Uncompressed</ref>, &quot;Uncompressed&quot;sv },
+		{ <ref refid="namespacelibnokogiri_1a0c7fe9cd6e1f2585edd9ccfefc41a727a4d602abc0c0f2f7c1a5156d964517e4e" kindref="member">capture_compression_t::Compressed</ref>,   &quot;Compressed&quot;sv   },
+		{ <ref refid="namespacelibnokogiri_1a0c7fe9cd6e1f2585edd9ccfefc41a727aa0f56afccfad0701bc1076f838655233" kindref="member">capture_compression_t::Autodetect</ref>,   &quot;Autodetect&quot;sv   },
+		{ <ref refid="namespacelibnokogiri_1a0c7fe9cd6e1f2585edd9ccfefc41a727a88183b946cc5f0e8c96b2e66e1c74a7e" kindref="member">capture_compression_t::Unknown</ref>,      &quot;Unknown&quot;sv      },
+	}}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common.hh" line="335" column="1" bodyfile="common.hh" bodystart="335" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -1101,7 +1135,7 @@
 <para>Expand value to Kibibytes (n * 1024) </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="276" column="1" bodyfile="common.hh" bodystart="276" bodyend="276"/>
+        <location file="common.hh" line="417" column="1" bodyfile="common.hh" bodystart="417" bodyend="417"/>
       </memberdef>
       <memberdef kind="function" id="namespacelibnokogiri_1a3e74466721b0e2a285799b414c6500c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr uint64_t</type>
@@ -1118,7 +1152,7 @@
 <para>Expand value to Mebibytes (n * 1024^2) </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="278" column="1" bodyfile="common.hh" bodystart="278" bodyend="278"/>
+        <location file="common.hh" line="419" column="1" bodyfile="common.hh" bodystart="419" bodyend="419"/>
       </memberdef>
       <memberdef kind="function" id="namespacelibnokogiri_1a3cad4ef8bce758b5aae48fa79a62c37c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr uint64_t</type>
@@ -1135,7 +1169,7 @@
 <para>Expand value to Gibibytes (n * 1024^3) </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="280" column="1" bodyfile="common.hh" bodystart="280" bodyend="280"/>
+        <location file="common.hh" line="421" column="1" bodyfile="common.hh" bodystart="421" bodyend="421"/>
       </memberdef>
       <memberdef kind="function" id="namespacelibnokogiri_1ad5453c8c75e1f4453c121d1b7348fadd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr uint64_t</type>
@@ -1152,7 +1186,7 @@
 <para>Expand value to Tebibytes (n * 1024^4) </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="282" column="1" bodyfile="common.hh" bodystart="282" bodyend="282"/>
+        <location file="common.hh" line="423" column="1" bodyfile="common.hh" bodystart="423" bodyend="423"/>
       </memberdef>
       <memberdef kind="function" id="namespacelibnokogiri_1a8d5c3b9bac9fe50f543ebe0f7ee59c5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr uint64_t</type>
@@ -1169,7 +1203,7 @@
 <para>Expand value to Pebibytes (n * 1024^5) </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="284" column="1" bodyfile="common.hh" bodystart="284" bodyend="284"/>
+        <location file="common.hh" line="425" column="1" bodyfile="common.hh" bodystart="425" bodyend="425"/>
       </memberdef>
       <memberdef kind="function" id="namespacelibnokogiri_1a617c8b7745989d35228424a3588025ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr uint64_t</type>
@@ -1186,7 +1220,7 @@
 <para>Expand value to Kilobytes (n * 1000) </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="288" column="1" bodyfile="common.hh" bodystart="288" bodyend="288"/>
+        <location file="common.hh" line="429" column="1" bodyfile="common.hh" bodystart="429" bodyend="429"/>
       </memberdef>
       <memberdef kind="function" id="namespacelibnokogiri_1ab628e220aef659b9e9432384eeec8c02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr uint64_t</type>
@@ -1203,7 +1237,7 @@
 <para>Expand value to Megabytes (n * 1000^2) </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="290" column="1" bodyfile="common.hh" bodystart="290" bodyend="290"/>
+        <location file="common.hh" line="431" column="1" bodyfile="common.hh" bodystart="431" bodyend="431"/>
       </memberdef>
       <memberdef kind="function" id="namespacelibnokogiri_1ab292b31a51076eaf2584c41ad1881611" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr uint64_t</type>
@@ -1220,7 +1254,7 @@
 <para>Expand value to Gigabytes (n * 1000^3) </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="292" column="1" bodyfile="common.hh" bodystart="292" bodyend="292"/>
+        <location file="common.hh" line="433" column="1" bodyfile="common.hh" bodystart="433" bodyend="433"/>
       </memberdef>
       <memberdef kind="function" id="namespacelibnokogiri_1aa1b601204d808065a7bd6861a72732ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr uint64_t</type>
@@ -1237,7 +1271,7 @@
 <para>Expand value to Terabytes (n * 1000^4) </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="294" column="1" bodyfile="common.hh" bodystart="294" bodyend="294"/>
+        <location file="common.hh" line="435" column="1" bodyfile="common.hh" bodystart="435" bodyend="435"/>
       </memberdef>
       <memberdef kind="function" id="namespacelibnokogiri_1a66d321564b7eef4cfb1e78e8b495b392" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr uint64_t</type>
@@ -1254,7 +1288,7 @@
 <para>Expand value to Petabytes (n * 1000^5) </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="296" column="1" bodyfile="common.hh" bodystart="296" bodyend="296"/>
+        <location file="common.hh" line="437" column="1" bodyfile="common.hh" bodystart="437" bodyend="437"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

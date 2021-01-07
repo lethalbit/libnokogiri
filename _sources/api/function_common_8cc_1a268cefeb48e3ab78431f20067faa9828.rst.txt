@@ -1,4 +1,4 @@
-.. _exhale_function_common_8cc_1a9146f34c23b427106b3ea7dc478c1ce6:
+.. _exhale_function_common_8cc_1a268cefeb48e3ab78431f20067faa9828:
 
 Function libnokogiri::internal::detect_captrue_compression
 ==========================================================

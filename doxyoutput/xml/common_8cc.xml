@@ -33,12 +33,22 @@
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
       </node>
-      <node id="6">
+      <node id="8">
         <label>libnokogiri/internal/fd.hh</label>
       </node>
-      <node id="5">
+      <node id="6">
+        <label>string_view</label>
+      </node>
+      <node id="7">
         <label>libnokogiri/internal/defs.hh</label>
+      </node>
+      <node id="5">
+        <label>array</label>
       </node>
       <node id="1">
         <label>cstddef</label>
@@ -64,7 +74,7 @@
 <codeline lineno="9"><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacelibnokogiri_1_1internal" kindref="compound">libnokogiri::internal</ref><sp/>{</highlight></codeline>
 <codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44" kindref="member">captrue_compression_t</ref><sp/>detect_captrue_compression(fd_t&amp;<sp/>file)<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1a0c7fe9cd6e1f2585edd9ccfefc41a727" kindref="member">capture_compression_t</ref><sp/>detect_captrue_compression(fd_t&amp;<sp/>file)<sp/>{</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::array&lt;uint8_t,<sp/>2&gt;<sp/>gzip_header{0x1FU,<sp/>0x8BU};</highlight></codeline>
 <codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::array&lt;uint8_t,<sp/>2&gt;<sp/>read_bytes{};</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>res{file.read&lt;2&gt;(read_bytes)};</highlight></codeline>
@@ -72,7 +82,7 @@
 <codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>_<sp/>=<sp/>file.head();</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!res)<sp/>{</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44a88183b946cc5f0e8c96b2e66e1c74a7e" kindref="member">captrue_compression_t::Unknown</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacelibnokogiri_1a0c7fe9cd6e1f2585edd9ccfefc41a727a88183b946cc5f0e8c96b2e66e1c74a7e" kindref="member">capture_compression_t::Unknown</ref>;</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>is_gzip<sp/>=<sp/>std::equal(</highlight></codeline>
@@ -80,7 +90,7 @@
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>read_bytes.begin(),<sp/>read_bytes.end()</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>is_gzip<sp/>?<sp/><ref refid="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44a4d602abc0c0f2f7c1a5156d964517e4e" kindref="member">captrue_compression_t::Compressed</ref><sp/>:<sp/><ref refid="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44aadf6b3d6508faa5f47e983c09bf39f5a" kindref="member">captrue_compression_t::Uncompressed</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>is_gzip<sp/>?<sp/><ref refid="namespacelibnokogiri_1a0c7fe9cd6e1f2585edd9ccfefc41a727a4d602abc0c0f2f7c1a5156d964517e4e" kindref="member">capture_compression_t::Compressed</ref><sp/>:<sp/><ref refid="namespacelibnokogiri_1a0c7fe9cd6e1f2585edd9ccfefc41a727aadf6b3d6508faa5f47e983c09bf39f5a" kindref="member">capture_compression_t::Uncompressed</ref>;</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="30"><highlight class="normal">}</highlight></codeline>
     </programlisting>

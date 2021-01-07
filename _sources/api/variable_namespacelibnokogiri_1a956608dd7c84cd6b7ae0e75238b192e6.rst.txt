@@ -1,0 +1,13 @@
+.. _exhale_variable_namespacelibnokogiri_1a956608dd7c84cd6b7ae0e75238b192e6:
+
+Variable libnokogiri::link_type_s
+=================================
+
+- Defined in :ref:`file_common.hh`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: libnokogiri::link_type_s

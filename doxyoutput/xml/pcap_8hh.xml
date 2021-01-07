@@ -15,93 +15,99 @@
     <includedby refid="libnokogiri_8hh" local="no">libnokogiri.hh</includedby>
     <includedby refid="pcap_8cc" local="no">pcap.cc</includedby>
     <incdepgraph>
-      <node id="75">
+      <node id="83">
         <label>cstdint</label>
       </node>
-      <node id="87">
+      <node id="97">
         <label>variant</label>
       </node>
-      <node id="78">
+      <node id="86">
         <label>libnokogiri/config.hh</label>
       </node>
-      <node id="79">
+      <node id="87">
         <label>libnokogiri/common.hh</label>
         <link refid="common_8hh_source"/>
-        <childnode refid="80" relation="include">
+        <childnode refid="88" relation="include">
         </childnode>
-        <childnode refid="75" relation="include">
+        <childnode refid="83" relation="include">
         </childnode>
-        <childnode refid="81" relation="include">
+        <childnode refid="89" relation="include">
         </childnode>
-        <childnode refid="82" relation="include">
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
         </childnode>
       </node>
-      <node id="82">
+      <node id="92">
         <label>libnokogiri/internal/fd.hh</label>
       </node>
-      <node id="81">
+      <node id="90">
+        <label>string_view</label>
+      </node>
+      <node id="91">
         <label>libnokogiri/internal/defs.hh</label>
       </node>
-      <node id="83">
+      <node id="93">
         <label>libnokogiri/internal/fs.hh</label>
       </node>
-      <node id="77">
+      <node id="85">
         <label>optional</label>
       </node>
-      <node id="88">
+      <node id="98">
         <label>vector</label>
       </node>
-      <node id="84">
+      <node id="94">
         <label>libnokogiri/internal/iterator.hh</label>
       </node>
-      <node id="86">
+      <node id="89">
+        <label>array</label>
+      </node>
+      <node id="96">
         <label>libnokogiri/pcap/packet.hh</label>
         <link refid="packet_8hh_source"/>
-        <childnode refid="75" relation="include">
+        <childnode refid="83" relation="include">
         </childnode>
-        <childnode refid="77" relation="include">
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="97" relation="include">
+        </childnode>
+        <childnode refid="98" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
         </childnode>
         <childnode refid="87" relation="include">
         </childnode>
-        <childnode refid="88" relation="include">
-        </childnode>
-        <childnode refid="78" relation="include">
-        </childnode>
-        <childnode refid="79" relation="include">
-        </childnode>
-        <childnode refid="81" relation="include">
+        <childnode refid="91" relation="include">
         </childnode>
       </node>
-      <node id="80">
+      <node id="88">
         <label>cstddef</label>
       </node>
-      <node id="85">
+      <node id="95">
         <label>libnokogiri/pcap/header.hh</label>
         <link refid="header_8hh_source"/>
-        <childnode refid="75" relation="include">
+        <childnode refid="83" relation="include">
         </childnode>
-        <childnode refid="78" relation="include">
+        <childnode refid="89" relation="include">
         </childnode>
-        <childnode refid="79" relation="include">
+        <childnode refid="90" relation="include">
         </childnode>
-        <childnode refid="81" relation="include">
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
         </childnode>
       </node>
-      <node id="74">
+      <node id="82">
         <label>pcap.hh</label>
         <link refid="pcap_8hh"/>
-        <childnode refid="75" relation="include">
-        </childnode>
-        <childnode refid="76" relation="include">
-        </childnode>
-        <childnode refid="77" relation="include">
-        </childnode>
-        <childnode refid="78" relation="include">
-        </childnode>
-        <childnode refid="79" relation="include">
-        </childnode>
-        <childnode refid="81" relation="include">
-        </childnode>
         <childnode refid="83" relation="include">
         </childnode>
         <childnode refid="84" relation="include">
@@ -110,20 +116,32 @@
         </childnode>
         <childnode refid="86" relation="include">
         </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
       </node>
-      <node id="76">
+      <node id="84">
         <label>memory</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="90">
+      <node id="100">
         <label>libnokogiri.hh</label>
         <link refid="libnokogiri_8hh_source"/>
       </node>
-      <node id="89">
+      <node id="99">
         <label>pcap.hh</label>
         <link refid="pcap_8hh"/>
-        <childnode refid="90" relation="include">
+        <childnode refid="100" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -165,7 +183,7 @@
 <codeline lineno="39"><highlight class="normal"></highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>libnokogiri::internal::fd_t<sp/>_file;</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44" kindref="member">captrue_compression_t</ref><sp/>_compression;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1a0c7fe9cd6e1f2585edd9ccfefc41a727" kindref="member">capture_compression_t</ref><sp/>_compression;</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>_readonly;</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>_prefetch;</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref><sp/>_header{};</highlight></codeline>
@@ -180,7 +198,7 @@
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/><ref refid="structlibnokogiri_1_1pcap_1_1pcap__t" kindref="compound">pcap_t</ref>()<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structlibnokogiri_1_1pcap_1_1pcap__t" kindref="compound">pcap_t</ref>(libnokogiri::internal::fs::path&amp;<sp/>file,<sp/><ref refid="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44" kindref="member">captrue_compression_t</ref><sp/>compression,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>read_only,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>prefetch<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>noexcept;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structlibnokogiri_1_1pcap_1_1pcap__t" kindref="compound">pcap_t</ref>(libnokogiri::internal::fs::path&amp;<sp/>file,<sp/><ref refid="namespacelibnokogiri_1a0c7fe9cd6e1f2585edd9ccfefc41a727" kindref="member">capture_compression_t</ref><sp/>compression,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>read_only,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>prefetch<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>noexcept;</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"></highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structlibnokogiri_1_1pcap_1_1pcap__t" kindref="compound">pcap_t</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcap_1_1pcap__t" kindref="compound">pcap_t</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structlibnokogiri_1_1pcap_1_1pcap__t" kindref="compound">pcap_t</ref>&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcap_1_1pcap__t" kindref="compound">pcap_t</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
@@ -194,11 +212,11 @@
 <codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>needs_swapping()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_needs_swapping;<sp/>}</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"></highlight></codeline>
 <codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref><sp/>header()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_header;<sp/>}</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>header(<ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref><sp/>header)<sp/>noexcept<sp/>{<sp/>_header<sp/>=<sp/>header;<sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref>&amp;<sp/>header()<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_header;<sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>header(<ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref>&amp;&amp;<sp/>header)<sp/>noexcept<sp/>{<sp/>_header<sp/>=<sp/>std::move(header);<sp/>}</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"></highlight></codeline>
 <codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44" kindref="member">captrue_compression_t</ref><sp/>compression_type()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_compression;<sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1a0c7fe9cd6e1f2585edd9ccfefc41a727" kindref="member">capture_compression_t</ref><sp/>compression_type()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_compression;<sp/>}</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"></highlight></codeline>
 <codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
 <codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>valid()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_valid;<sp/>}</highlight></codeline>
@@ -206,19 +224,19 @@
 <codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>packet_count()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_packets.size();<sp/>}</highlight></codeline>
 <codeline lineno="89"><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>begin()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_packets.begin();<sp/>}</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>end()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_packets.end();<sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>save()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>noexcept;</highlight></codeline>
 <codeline lineno="92"><highlight class="normal"></highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>save()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>noexcept;</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"></highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>swap(<ref refid="structlibnokogiri_1_1pcap_1_1pcap__t" kindref="compound">pcap_t</ref>&amp;<sp/>desc)<sp/>noexcept<sp/>{</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::swap(_file,<sp/>desc._file);</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::swap(_compression,<sp/>desc._compression);</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::swap(_readonly,<sp/>desc._readonly);</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::swap(_header,<sp/>desc._header);</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::swap(_valid,<sp/>desc._valid);</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>swap(<ref refid="structlibnokogiri_1_1pcap_1_1pcap__t" kindref="compound">pcap_t</ref>&amp;<sp/>desc)<sp/>noexcept<sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::swap(_file,<sp/>desc._file);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::swap(_compression,<sp/>desc._compression);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::swap(_readonly,<sp/>desc._readonly);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::swap(_header,<sp/>desc._header);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::swap(_valid,<sp/>desc._valid);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>remove_packet(std::size_t<sp/>index)<sp/>noexcept<sp/>{<sp/><sp/>}</highlight></codeline>
 <codeline lineno="103"><highlight class="normal"></highlight></codeline>
 <codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::optional&lt;std::reference_wrapper&lt;packet_t&gt;&gt;<sp/>get_packet(std::size_t<sp/>idx)<sp/>noexcept<sp/>{</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(idx<sp/>&lt;=<sp/>_packets.size())<sp/>{</highlight></codeline>

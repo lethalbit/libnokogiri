@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Program Listing for File packet.hh &#8212; libnokogiri 0.0.1 1b4c066 documentation</title>
+    <title>Program Listing for File packet.hh &#8212; libnokogiri 0.0.1 fe87912 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -81,6 +81,8 @@
 <span class="cp">#include</span> <span class="cpf">&lt;optional&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;variant&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;array&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string_view&gt;</span><span class="cp"></span>
 
 <span class="cp">#include</span> <span class="cpf">&lt;libnokogiri/config.hh&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;libnokogiri/common.hh&gt;</span><span class="cp"></span>
@@ -88,10 +90,16 @@
 <span class="cp">#include</span> <span class="cpf">&lt;libnokogiri/internal/defs.hh&gt;</span><span class="cp"></span>
 
 <span class="k">namespace</span> <span class="n">libnokogiri</span><span class="o">::</span><span class="n">pcap</span> <span class="p">{</span>
+    <span class="k">using</span> <span class="n">libnokogiri</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">enum_pair_t</span><span class="p">;</span>
     <span class="k">enum</span> <span class="k">struct</span> <span class="nl">packet_type_t</span> <span class="p">:</span> <span class="kt">uint8_t</span> <span class="p">{</span>
         <span class="n">Standard</span> <span class="o">=</span> <span class="mh">0x00</span><span class="p">,</span>
         <span class="n">Modified</span> <span class="o">=</span> <span class="mh">0x01</span><span class="p">,</span>
     <span class="p">};</span>
+
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">enum_pair_t</span><span class="o">&lt;</span><span class="n">packet_type_t</span><span class="o">&gt;</span><span class="p">,</span> <span class="mi">2</span><span class="o">&gt;</span> <span class="n">packet_type_s</span><span class="p">{{</span>
+        <span class="p">{</span> <span class="n">packet_type_t</span><span class="o">::</span><span class="n">Standard</span><span class="p">,</span> <span class="s">&quot;Standard&quot;</span><span class="n">sv</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="n">packet_type_t</span><span class="o">::</span><span class="n">Modified</span><span class="p">,</span> <span class="s">&quot;Modified&quot;</span><span class="n">sv</span> <span class="p">}</span>
+    <span class="p">}};</span>
 
     <span class="k">struct</span> <span class="n">packet_header_t</span> <span class="k">final</span> <span class="p">{</span>
     <span class="k">private</span><span class="o">:</span>
@@ -108,6 +116,12 @@
                 <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">pkt_len_have</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">pkt_len_actual</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">:</span>
             <span class="n">_timestamp</span><span class="p">{</span><span class="n">timestamp</span><span class="p">},</span> <span class="n">_usecs</span><span class="p">{</span><span class="n">useconds</span><span class="p">},</span> <span class="n">_have</span><span class="p">{</span><span class="n">pkt_len_have</span><span class="p">},</span> <span class="n">_was</span><span class="p">{</span><span class="n">pkt_len_actual</span><span class="p">}</span>
             <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
+
+        <span class="n">packet_header_t</span><span class="p">(</span><span class="k">const</span> <span class="n">packet_header_t</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
+        <span class="n">packet_header_t</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">packet_header_t</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
+
+        <span class="n">packet_header_t</span><span class="p">(</span><span class="n">packet_header_t</span><span class="o">&amp;&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+        <span class="n">packet_header_t</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">packet_header_t</span><span class="o">&amp;&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
 
         <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
         <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">timestamp</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_timestamp</span><span class="p">;</span> <span class="p">}</span>
@@ -143,14 +157,20 @@
 
         <span class="k">constexpr</span> <span class="n">packet_header_modified_t</span><span class="p">(</span><span class="n">packet_header_t</span><span class="o">&amp;&amp;</span> <span class="n">base_header</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">if_index</span><span class="p">,</span>
                 <span class="n">std</span><span class="o">::</span><span class="kt">uint16_t</span> <span class="n">protocol</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint8_t</span> <span class="n">type</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">:</span>
-            <span class="n">_base_header</span><span class="p">{</span><span class="n">base_header</span><span class="p">},</span> <span class="n">_if_index</span><span class="p">{</span><span class="n">if_index</span><span class="p">},</span> <span class="n">_proto</span><span class="p">{</span><span class="n">protocol</span><span class="p">},</span> <span class="n">_type</span><span class="p">{</span><span class="n">type</span><span class="p">},</span>
+            <span class="n">_base_header</span><span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">base_header</span><span class="p">)},</span> <span class="n">_if_index</span><span class="p">{</span><span class="n">if_index</span><span class="p">},</span> <span class="n">_proto</span><span class="p">{</span><span class="n">protocol</span><span class="p">},</span> <span class="n">_type</span><span class="p">{</span><span class="n">type</span><span class="p">},</span>
             <span class="n">_padding</span><span class="p">{</span><span class="mi">0U</span><span class="p">}</span> <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
 
         <span class="n">packet_header_modified_t</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">nullptr_t</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
 
+        <span class="n">packet_header_modified_t</span><span class="p">(</span><span class="k">const</span> <span class="n">packet_header_modified_t</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
+        <span class="n">packet_header_modified_t</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">packet_header_modified_t</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
+
+        <span class="n">packet_header_modified_t</span><span class="p">(</span><span class="n">packet_header_modified_t</span><span class="o">&amp;&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+        <span class="n">packet_header_modified_t</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">packet_header_modified_t</span><span class="o">&amp;&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+
         <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
-        <span class="k">const</span> <span class="n">packet_header_t</span> <span class="n">base_header</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_base_header</span><span class="p">;</span> <span class="p">}</span>
-        <span class="kt">void</span> <span class="n">base_header</span><span class="p">(</span><span class="n">packet_header_t</span> <span class="n">base_header</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="n">_base_header</span> <span class="o">=</span> <span class="n">base_header</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">const</span> <span class="n">packet_header_t</span><span class="o">&amp;</span> <span class="n">base_header</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_base_header</span><span class="p">;</span> <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">base_header</span><span class="p">(</span><span class="n">packet_header_t</span><span class="o">&amp;&amp;</span> <span class="n">base_header</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="n">_base_header</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">base_header</span><span class="p">);</span> <span class="p">}</span>
 
         <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
         <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">interface_index</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_if_index</span><span class="p">;</span> <span class="p">}</span>
@@ -238,9 +258,9 @@
             <span class="o">!</span><span class="n">libnokogiri</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">has_nullable_ctor_v</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&amp;&amp;</span>
             <span class="o">!</span><span class="n">std</span><span class="o">::</span><span class="n">is_same_v</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="kt">void</span><span class="o">*&gt;</span><span class="p">,</span>
         <span class="n">T</span><span class="o">*&gt;</span>
-        <span class="n">index</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">offset</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+        <span class="n">index</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">offset</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">offset</span> <span class="o">&lt;</span> <span class="n">_raw_data</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
-                <span class="k">return</span> <span class="k">new</span> <span class="p">(</span><span class="k">const_cast</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">*&gt;</span><span class="p">(</span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">_raw_data</span><span class="p">.</span><span class="n">data</span><span class="p">()))</span> <span class="o">+</span> <span class="p">(</span><span class="n">offset</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">T</span><span class="p">)))</span> <span class="n">T</span><span class="p">{};</span>
+                <span class="k">return</span> <span class="k">new</span> <span class="p">(</span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">uint8_t</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">_raw_data</span><span class="p">.</span><span class="n">data</span><span class="p">())</span> <span class="o">+</span> <span class="p">(</span><span class="n">offset</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">T</span><span class="p">)))</span> <span class="n">T</span><span class="p">{};</span>
             <span class="p">}</span>
             <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
         <span class="p">}</span>
@@ -251,9 +271,9 @@
             <span class="n">libnokogiri</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">has_nullable_ctor_v</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&amp;&amp;</span>
             <span class="o">!</span><span class="n">std</span><span class="o">::</span><span class="n">is_same_v</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="kt">void</span><span class="o">*&gt;</span><span class="p">,</span>
         <span class="n">T</span><span class="o">*&gt;</span>
-        <span class="n">index</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">offset</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+        <span class="n">index</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">offset</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">offset</span> <span class="o">&lt;</span> <span class="n">_raw_data</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
-                <span class="k">return</span> <span class="k">new</span> <span class="p">(</span><span class="k">const_cast</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">*&gt;</span><span class="p">(</span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">_raw_data</span><span class="p">.</span><span class="n">data</span><span class="p">()))</span> <span class="o">+</span> <span class="p">(</span><span class="n">offset</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">T</span><span class="p">)))</span> <span class="n">T</span><span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
+                <span class="k">return</span> <span class="k">new</span> <span class="p">(</span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">uint8_t</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">_raw_data</span><span class="p">.</span><span class="n">data</span><span class="p">())</span> <span class="o">+</span> <span class="p">(</span><span class="n">offset</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">T</span><span class="p">)))</span> <span class="n">T</span><span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
             <span class="p">}</span>
             <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
         <span class="p">}</span>
@@ -261,9 +281,9 @@
         <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
         <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
         <span class="n">std</span><span class="o">::</span><span class="n">enable_if_t</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">is_same_v</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="kt">void</span><span class="o">*&gt;</span><span class="p">,</span> <span class="kt">void</span><span class="o">*&gt;</span>
-        <span class="n">index</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">offset</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+        <span class="n">index</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">offset</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">offset</span> <span class="o">&lt;</span> <span class="n">_raw_data</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
-                <span class="k">return</span> <span class="k">const_cast</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">*&gt;</span><span class="p">(</span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">_raw_data</span><span class="p">.</span><span class="n">data</span><span class="p">()))</span> <span class="o">+</span> <span class="n">offset</span><span class="p">;</span>
+                <span class="k">return</span> <span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">uint8_t</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">_raw_data</span><span class="p">.</span><span class="n">data</span><span class="p">())</span> <span class="o">+</span> <span class="n">offset</span><span class="p">;</span>
             <span class="p">}</span>
             <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
         <span class="p">}</span>
@@ -271,7 +291,15 @@
     <span class="k">public</span><span class="o">:</span>
 
         <span class="n">packet_t</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">length</span><span class="p">,</span> <span class="n">pkt_header_t</span> <span class="n">header</span> <span class="o">=</span> <span class="p">{})</span> <span class="k">noexcept</span> <span class="o">:</span>
-            <span class="n">_raw_data</span><span class="p">{},</span> <span class="n">_packet_header</span><span class="p">{</span><span class="n">header</span><span class="p">}</span> <span class="p">{</span> <span class="n">_raw_data</span><span class="p">.</span><span class="n">reserve</span><span class="p">(</span><span class="n">length</span><span class="p">);</span> <span class="p">}</span>
+            <span class="n">_raw_data</span><span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">uint8_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">length</span><span class="p">)},</span>
+            <span class="n">_packet_header</span><span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">header</span><span class="p">)}</span> <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
+
+
+        <span class="n">packet_t</span><span class="p">(</span><span class="k">const</span> <span class="n">packet_t</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
+        <span class="n">packet_t</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">packet_t</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
+
+        <span class="n">packet_t</span><span class="p">(</span><span class="n">packet_t</span><span class="o">&amp;&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+        <span class="n">packet_t</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">packet_t</span><span class="o">&amp;&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
 
         <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
         <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">length</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_raw_data</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="p">}</span>
@@ -301,6 +329,11 @@
         <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
         <span class="n">T</span> <span class="o">*</span><span class="k">operator</span> <span class="p">[](</span><span class="k">const</span> <span class="kt">off_t</span> <span class="n">idx</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">index</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span> <span class="p">}</span>
 
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="k">auto</span> <span class="n">begin</span><span class="p">()</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_raw_data</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="p">}</span>
+        <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
+        <span class="k">auto</span> <span class="n">end</span><span class="p">()</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_raw_data</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="p">}</span>
+
         <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
         <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
         <span class="k">const</span> <span class="n">T</span> <span class="o">*</span><span class="k">operator</span> <span class="p">[](</span><span class="k">const</span> <span class="kt">off_t</span> <span class="n">idx</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">index</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span> <span class="p">}</span>
@@ -314,7 +347,6 @@
         <span class="k">const</span> <span class="n">T</span> <span class="o">*</span><span class="n">at</span><span class="p">(</span><span class="k">const</span> <span class="kt">off_t</span> <span class="n">idx</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">index</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span> <span class="p">}</span>
 
         <span class="kt">void</span> <span class="o">*</span><span class="n">address</span><span class="p">(</span><span class="k">const</span> <span class="kt">off_t</span> <span class="n">offset</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">index</span><span class="o">&lt;</span><span class="kt">void</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">offset</span><span class="p">);</span> <span class="p">}</span>
-        <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">address</span><span class="p">(</span><span class="k">const</span> <span class="kt">off_t</span> <span class="n">offset</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">index</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">offset</span><span class="p">);</span> <span class="p">}</span>
     <span class="p">};</span>
 
 
@@ -334,8 +366,14 @@
             <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
 
         <span class="n">packet_storage_t</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">len</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">uintptr_t</span> <span class="n">offset</span><span class="p">,</span> <span class="n">packet_t</span><span class="o">&amp;&amp;</span> <span class="n">packet</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">:</span>
-            <span class="n">_len</span><span class="p">{</span><span class="n">len</span><span class="p">},</span> <span class="n">_offset</span><span class="p">{</span><span class="n">offset</span><span class="p">},</span> <span class="n">_packet_cache</span><span class="p">{</span><span class="n">packet</span><span class="p">}</span>
+            <span class="n">_len</span><span class="p">{</span><span class="n">len</span><span class="p">},</span> <span class="n">_offset</span><span class="p">{</span><span class="n">offset</span><span class="p">},</span> <span class="n">_packet_cache</span><span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">packet</span><span class="p">)}</span>
             <span class="p">{</span> <span class="cm">/* NOP */</span> <span class="p">}</span>
+
+        <span class="n">packet_storage_t</span><span class="p">(</span><span class="k">const</span> <span class="n">packet_storage_t</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
+        <span class="n">packet_storage_t</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">packet_storage_t</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
+
+        <span class="n">packet_storage_t</span><span class="p">(</span><span class="n">packet_storage_t</span><span class="o">&amp;&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+        <span class="n">packet_storage_t</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">packet_storage_t</span><span class="o">&amp;&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
 
         <span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
         <span class="n">std</span><span class="o">::</span><span class="kt">uint32_t</span> <span class="n">length</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_len</span><span class="p">;</span> <span class="p">}</span>

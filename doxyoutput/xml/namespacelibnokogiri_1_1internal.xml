@@ -3,9 +3,9 @@
   <compounddef id="namespacelibnokogiri_1_1internal" kind="namespace" language="C++">
     <compoundname>libnokogiri::internal</compoundname>
       <sectiondef kind="func">
-      <memberdef kind="function" id="common_8cc_1a9146f34c23b427106b3ea7dc478c1ce6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44" kindref="member">captrue_compression_t</ref></type>
-        <definition>LIBNOKOGIRI_API captrue_compression_t libnokogiri::internal::detect_captrue_compression</definition>
+      <memberdef kind="function" id="common_8cc_1a268cefeb48e3ab78431f20067faa9828" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacelibnokogiri_1a0c7fe9cd6e1f2585edd9ccfefc41a727" kindref="member">capture_compression_t</ref></type>
+        <definition>LIBNOKOGIRI_API capture_compression_t libnokogiri::internal::detect_captrue_compression</definition>
         <argsstring>(fd_t &amp;file)</argsstring>
         <name>detect_captrue_compression</name>
         <param>

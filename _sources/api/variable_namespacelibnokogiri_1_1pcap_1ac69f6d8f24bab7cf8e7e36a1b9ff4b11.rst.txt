@@ -1,0 +1,13 @@
+.. _exhale_variable_namespacelibnokogiri_1_1pcap_1ac69f6d8f24bab7cf8e7e36a1b9ff4b11:
+
+Variable libnokogiri::pcap::packet_type_s
+=========================================
+
+- Defined in :ref:`file_pcap_packet.hh`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: libnokogiri::pcap::packet_type_s

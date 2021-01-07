@@ -57,3 +57,12 @@ Functions
 - :ref:`exhale_function_namespacelibnokogiri_1_1pcap_1a50b9e8ce0a3adb5149c6deaff356ff61`
 
 - :ref:`exhale_function_namespacelibnokogiri_1_1pcap_1a76032896386673aa5c89e72b674a6097`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_namespacelibnokogiri_1_1pcap_1ac69f6d8f24bab7cf8e7e36a1b9ff4b11`
+
+- :ref:`exhale_variable_namespacelibnokogiri_1_1pcap_1aafae5738a20d0edfcc38477dacc4db4c`

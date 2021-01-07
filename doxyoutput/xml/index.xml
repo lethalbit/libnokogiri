@@ -30,6 +30,10 @@
     <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a22f5055178b1fbf5e96e2b6083b3e41f" kind="variable"><name>_network</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a0070077193cf63cf880682939c677d52" kind="function"><name>file_header_t</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a29ce345c0f92aeee73c51bc120a1f395" kind="function"><name>file_header_t</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a8f8b2b0ab6e3d947863466876930acd1" kind="function"><name>file_header_t</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a97b3fef9925718e72ec69c8ad896bfb3" kind="function"><name>operator=</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a16a6ced1c65aafb6562f647b76604eec" kind="function"><name>file_header_t</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a3e1e2887f1387173b8bc8ad22517bdfb" kind="function"><name>operator=</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a52c221285b6e40d34e785561bbef8f63" kind="function"><name>variant</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1ab2b308414f764685b36eccd48545bfff" kind="function"><name>variant</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a8f5d56e0c357dd9a8d4148c331e5223e" kind="function"><name>version</name></member>
@@ -68,8 +72,12 @@
     <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a81aa37b1ef69e193ba56f51389f51936" kind="function"><name>packet_header_modified_t</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1ac71fde773d13ab318e1bec2956492c03" kind="function"><name>packet_header_modified_t</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a5b4aa06001df4e422366006d32c45dff" kind="function"><name>packet_header_modified_t</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a85120c91c161baf2f4788736c7337510" kind="function"><name>base_header</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1af79884c4df05bcd9fb4302277bccf59e" kind="function"><name>base_header</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1adb1e6d76ea7bbab7391c52115ba65bb1" kind="function"><name>packet_header_modified_t</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a41e30acfbeed11dd40eef9986880fc56" kind="function"><name>operator=</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a5467e82979931985eb471a1ab7005027" kind="function"><name>packet_header_modified_t</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a00fd3ab394093d5d9e8ebb78d076b094" kind="function"><name>operator=</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a4c33fbc4786f57463ea2e1cbbd3b34b6" kind="function"><name>base_header</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a9a3650c0d6769c7f7b584ab996dc2d4e" kind="function"><name>base_header</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1aecefe500478e0b79f1c34331f5362a7f" kind="function"><name>interface_index</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1a23dbd8346862d11df3b1195ef8d77ccf" kind="function"><name>interface_index</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__header__modified__t_1afdc05fee90005200b34482b46eccb1f5" kind="function"><name>protocol</name></member>
@@ -84,6 +92,10 @@
     <member refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a302e31323881cd7a9ab81f4142e6042d" kind="variable"><name>_was</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a524190e5a0737d4f035d556fc05434d9" kind="function"><name>packet_header_t</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a9d349d11b68074cb627431a8d7367e14" kind="function"><name>packet_header_t</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a5674794d6e3070e4efa36f52809e1c42" kind="function"><name>packet_header_t</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1ab064c23fe90c1d19643c45fbcb178d9f" kind="function"><name>operator=</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a0009013b412e71f1fb7b4d3e3bb55a91" kind="function"><name>packet_header_t</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a9d682a640219a15ce19ccb7c86145e85" kind="function"><name>operator=</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a9cd419a7db50fb2599573cf9b6c92a76" kind="function"><name>timestamp</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a3cc64e6e0a591efbacf1a2cc99738fee" kind="function"><name>timestamp</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__header__t_1a4fc89050bbdc58c0bed871de2054df80" kind="function"><name>useconds</name></member>
@@ -101,6 +113,10 @@
     <member refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1ad2430bbf6a649a78b3fce9bb2a37fc31" kind="function"><name>packet_storage_t</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a4475bbe187b9b87d1f2c3ad99bbc9754" kind="function"><name>packet_storage_t</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a35f1f87b3119d349c45bd914cf72dad7" kind="function"><name>packet_storage_t</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1ac279bfa37212151d6c1a2ff2fc868ef4" kind="function"><name>packet_storage_t</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1aff43b7026f42ceea5ad5ca660f465708" kind="function"><name>operator=</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1ac5485bda35c0c024d015f7f35e44035e" kind="function"><name>packet_storage_t</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a1996368526ed32458ccedeeac59e9f28" kind="function"><name>operator=</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a3ef0984b79730b6d9de1b476261cfcd2" kind="function"><name>length</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a1ded31324136d8b366f126c56771456c" kind="function"><name>offset</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__storage__t_1a37351fcfc9effdbdc7df07e52da576b5" kind="function"><name>get_packet</name></member>
@@ -110,25 +126,30 @@
     <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a1a9bfe19b1ab25a6c2aca14f5edb5cff" kind="typedef"><name>pkt_header_t</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a49414e3c2b1b24dd2059da10c3cdcd18" kind="variable"><name>_raw_data</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a628ce98a2439eb8cd28112762bf24443" kind="variable"><name>_packet_header</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1aa1f622cfb73ffa57777334cbbccda5e1" kind="function"><name>index</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a2579da9ac02d936ef970d729a9460ade" kind="function"><name>index</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a1cd073d2391d7ff53c371e0260e957fb" kind="function"><name>index</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a060fc430977d7681d8e8a62b7300e587" kind="function"><name>index</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a926e7873284da879af99eb26bae63ca7" kind="function"><name>index</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1ac1ee579d1f73898642bc483d3becbb1d" kind="function"><name>index</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1ac497729fb243d73126da28a21621a814" kind="function"><name>packet_t</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a45f065fd450dbec01fe08404f78aab75" kind="function"><name>packet_t</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a6fcb7212de79faf82412cbd4cb9cda9f" kind="function"><name>operator=</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a47b2e8aa3f34ba46d05e9d4b88986844" kind="function"><name>packet_t</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a613e364d2b5fc8559c817d350c0a38ee" kind="function"><name>operator=</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a0872afe159779fc333baac232c9bc330" kind="function"><name>length</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1acb40b196db7391c844015e457144a126" kind="function"><name>header</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a73fa8a4a97d5063840cd15c3db59c4e5" kind="function"><name>is_complete</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1abd14e5035fdaa10576e41f03d8fa045a" kind="function"><name>as</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1af34e0b14b7d03071cb63739d5acc2e2a" kind="function"><name>operator[]</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a7515f9a8713ec5c5e9d4104115a02198" kind="function"><name>begin</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1abe061a31e4a6e6b3b53bc57110ed773a" kind="function"><name>end</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a38b865c098384141fbde28a96d573f05" kind="function"><name>operator[]</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a735a97098095006b9e3a88a6da63d6bb" kind="function"><name>at</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1af0e1dbca669217602910e47c968a2690" kind="function"><name>at</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a2d558814b6f874ef89808f737924cad6" kind="function"><name>address</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1packet__t_1a3bd445ff68464d70c256a323bbb15a90" kind="function"><name>address</name></member>
   </compound>
   <compound refid="structlibnokogiri_1_1pcap_1_1pcap__t" kind="struct"><name>libnokogiri::pcap::pcap_t</name>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1ac65083de1f68a70d7a5bd12dd12f0d87" kind="typedef"><name>iterator_t</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a21eda2811ed97c1437cdd2db858b59a9" kind="variable"><name>_file</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a9843f899dab18585fd7b9803370877f8" kind="variable"><name>_compression</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1ad97cb088d8aa577e3f38dff0c7bf5385" kind="variable"><name>_compression</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a9f5a71d33263eca2b67448f3494ad804" kind="variable"><name>_readonly</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1afdfcec37817c8c10cb246f66733e4975" kind="variable"><name>_prefetch</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1aca9062af7560e0c273ffbfa0fdd61a51" kind="variable"><name>_header</name></member>
@@ -138,21 +159,20 @@
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a7d47e094eb8ce5fe4496eefbbc460ec1" kind="function"><name>read_header</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a995849341347cb6fe23b0bcb76d829dc" kind="function"><name>ingest_packets</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a4c093bdcb1662933a63ab64a984b5b3d" kind="function"><name>pcap_t</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1ab0128fbb81739002036ebe5013a73fea" kind="function"><name>pcap_t</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a98ae4b4fa21e1eb97ffd523886c38fc5" kind="function"><name>pcap_t</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1af60e88a1b11c9b140a8734e44dd23af1" kind="function"><name>pcap_t</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1aa558e8a88c4b13a6549a291bc773d7ea" kind="function"><name>operator=</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1ab56e568272155aa141cbf918cf7b11c5" kind="function"><name>pcap_t</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a13a350c072d00bef3cb6217cfafddadf" kind="function"><name>operator=</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a7d94420f48cf3ab6a19a0108fe3952d0" kind="function"><name>needs_swapping</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a48698606d7c3241c8020dd42e17b205f" kind="function"><name>header</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a2fa934e4752d85344e4e98471cfe5200" kind="function"><name>header</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a389ae2788440f4de58a4c4283dbd5189" kind="function"><name>compression_type</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a09d39afb91dfdd1a8c4a215fd4760d60" kind="function"><name>header</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a917b460e009b162620563262736a32a1" kind="function"><name>header</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a1f39bdb967ee1f877ee3fca493c122ea" kind="function"><name>compression_type</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a624508a386dee71fc91d38fa4f91838f" kind="function"><name>valid</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a989c5b8cdfe656150db8fc31c8c751c9" kind="function"><name>packet_count</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1aa1190f98e7361801caf17be474a0b773" kind="function"><name>begin</name></member>
-    <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a73464269e055588e4ecfdd6e8d2e22b4" kind="function"><name>end</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1ae6d03862d6946c388d2034c6a925b094" kind="function"><name>save</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a4ff30ae42107430821aa438774716ca1" kind="function"><name>swap</name></member>
+    <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a09df5c03baacd1197c296b27d18c9653" kind="function"><name>remove_packet</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a7e1db35d89ea5cec48ff22a1adf00a76" kind="function"><name>get_packet</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1a8a287c9108a3d39af89707f43f63eb49" kind="function"><name>get_packet</name></member>
     <member refid="structlibnokogiri_1_1pcap_1_1pcap__t_1afe7af361095b99410360517323261967" kind="function"><name>begin</name></member>
@@ -322,11 +342,13 @@
     <member refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59ca559ce66771b35bc8991e8f8c23f7b3c9" kind="enumvalue"><name>ZWaveSerial</name></member>
     <member refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cafd5b050088428465622343639cab1e8f" kind="enumvalue"><name>USB2</name></member>
     <member refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cad7ebf0a4a7bc1540003250f207386a78" kind="enumvalue"><name>ATSC_ALP</name></member>
-    <member refid="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44" kind="enum"><name>captrue_compression_t</name></member>
-    <member refid="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44aadf6b3d6508faa5f47e983c09bf39f5a" kind="enumvalue"><name>Uncompressed</name></member>
-    <member refid="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44a4d602abc0c0f2f7c1a5156d964517e4e" kind="enumvalue"><name>Compressed</name></member>
-    <member refid="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44aa0f56afccfad0701bc1076f838655233" kind="enumvalue"><name>Autodetect</name></member>
-    <member refid="namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44a88183b946cc5f0e8c96b2e66e1c74a7e" kind="enumvalue"><name>Unknown</name></member>
+    <member refid="namespacelibnokogiri_1a0c7fe9cd6e1f2585edd9ccfefc41a727" kind="enum"><name>capture_compression_t</name></member>
+    <member refid="namespacelibnokogiri_1a0c7fe9cd6e1f2585edd9ccfefc41a727aadf6b3d6508faa5f47e983c09bf39f5a" kind="enumvalue"><name>Uncompressed</name></member>
+    <member refid="namespacelibnokogiri_1a0c7fe9cd6e1f2585edd9ccfefc41a727a4d602abc0c0f2f7c1a5156d964517e4e" kind="enumvalue"><name>Compressed</name></member>
+    <member refid="namespacelibnokogiri_1a0c7fe9cd6e1f2585edd9ccfefc41a727aa0f56afccfad0701bc1076f838655233" kind="enumvalue"><name>Autodetect</name></member>
+    <member refid="namespacelibnokogiri_1a0c7fe9cd6e1f2585edd9ccfefc41a727a88183b946cc5f0e8c96b2e66e1c74a7e" kind="enumvalue"><name>Unknown</name></member>
+    <member refid="namespacelibnokogiri_1a956608dd7c84cd6b7ae0e75238b192e6" kind="variable"><name>link_type_s</name></member>
+    <member refid="namespacelibnokogiri_1ac806f979eaedc1a6d2d9f92911e3093c" kind="variable"><name>capture_compression_s</name></member>
     <member refid="namespacelibnokogiri_1a26e3f6267e224ffe89ca57d57260dd99" kind="function"><name>operator&quot;&quot;_KiB</name></member>
     <member refid="namespacelibnokogiri_1a3e74466721b0e2a285799b414c6500c6" kind="function"><name>operator&quot;&quot;_MiB</name></member>
     <member refid="namespacelibnokogiri_1a3cad4ef8bce758b5aae48fa79a62c37c" kind="function"><name>operator&quot;&quot;_GiB</name></member>
@@ -341,7 +363,7 @@
   <compound refid="namespacelibnokogiri_1_1compiletime" kind="namespace"><name>libnokogiri::compiletime</name>
   </compound>
   <compound refid="namespacelibnokogiri_1_1internal" kind="namespace"><name>libnokogiri::internal</name>
-    <member refid="common_8cc_1a9146f34c23b427106b3ea7dc478c1ce6" kind="function"><name>detect_captrue_compression</name></member>
+    <member refid="common_8cc_1a268cefeb48e3ab78431f20067faa9828" kind="function"><name>detect_captrue_compression</name></member>
   </compound>
   <compound refid="namespacelibnokogiri_1_1pcap" kind="namespace"><name>libnokogiri::pcap</name>
     <member refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656" kind="enum"><name>pcap_variant_t</name></member>
@@ -350,7 +372,7 @@
     <member refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a8556cee2e2a5b5e735f3593dc348521a" kind="enumvalue"><name>IXIAHW</name></member>
     <member refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a5cc3e33ec226f9b110878c1f197f298f" kind="enumvalue"><name>IXIASW</name></member>
     <member refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a4146c294bcc82b1723c65bdc64b55089" kind="enumvalue"><name>Nanosecond</name></member>
-    <member refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656af50b33a9beb0122f09f5dac7fe32517b" kind="enumvalue"><name>SwappedStantard</name></member>
+    <member refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a868409fd1aa8d36cba281e1afde72f19" kind="enumvalue"><name>SwappedStandard</name></member>
     <member refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656aae99b9c57b1bfe6a4d657eded0de17f2" kind="enumvalue"><name>SwappedModified</name></member>
     <member refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a768c05c9a2c12abc1ad9244a7ccb9013" kind="enumvalue"><name>SwappedIXIAHW</name></member>
     <member refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656acd100172ee368cbf65e108865bdbae70" kind="enumvalue"><name>SwappedIXIASW</name></member>
@@ -358,6 +380,8 @@
     <member refid="namespacelibnokogiri_1_1pcap_1a5f7e5dd30c2860eee6f4e2ed32ae7171" kind="enum"><name>packet_type_t</name></member>
     <member refid="namespacelibnokogiri_1_1pcap_1a5f7e5dd30c2860eee6f4e2ed32ae7171aeb6d8ae6f20283755b339c0dc273988b" kind="enumvalue"><name>Standard</name></member>
     <member refid="namespacelibnokogiri_1_1pcap_1a5f7e5dd30c2860eee6f4e2ed32ae7171a35e0c8c0b180c95d4e122e55ed62cc64" kind="enumvalue"><name>Modified</name></member>
+    <member refid="namespacelibnokogiri_1_1pcap_1aafae5738a20d0edfcc38477dacc4db4c" kind="variable"><name>pcap_variant_s</name></member>
+    <member refid="namespacelibnokogiri_1_1pcap_1ac69f6d8f24bab7cf8e7e36a1b9ff4b11" kind="variable"><name>packet_type_s</name></member>
     <member refid="namespacelibnokogiri_1_1pcap_1a50b9e8ce0a3adb5149c6deaff356ff61" kind="function"><name>get_packet_body_offset</name></member>
     <member refid="namespacelibnokogiri_1_1pcap_1a76032896386673aa5c89e72b674a6097" kind="function"><name>swap</name></member>
   </compound>

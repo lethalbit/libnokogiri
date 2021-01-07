@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap/header.hh" line="70" column="1" bodyfile="pcap/header.hh" bodystart="70" bodyend="-1"/>
+        <location file="pcap/header.hh" line="89" column="1" bodyfile="pcap/header.hh" bodystart="89" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a7c52ada14ef3811600151f9e1c0d74aa" prot="private" static="no" mutable="no">
         <type><ref refid="structlibnokogiri_1_1version__t" kindref="compound">version_t</ref></type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap/header.hh" line="71" column="1" bodyfile="pcap/header.hh" bodystart="71" bodyend="-1"/>
+        <location file="pcap/header.hh" line="90" column="1" bodyfile="pcap/header.hh" bodystart="90" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a8bf6552f1c10bb96d3011f2dcd6b6daa" prot="private" static="no" mutable="no">
         <type>std::int32_t</type>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap/header.hh" line="72" column="1" bodyfile="pcap/header.hh" bodystart="72" bodyend="-1"/>
+        <location file="pcap/header.hh" line="91" column="1" bodyfile="pcap/header.hh" bodystart="91" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1file__header__t_1aa1853b161fb92358f1f4a204c90b2193" prot="private" static="no" mutable="no">
         <type>std::uint32_t</type>
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap/header.hh" line="73" column="1" bodyfile="pcap/header.hh" bodystart="73" bodyend="-1"/>
+        <location file="pcap/header.hh" line="92" column="1" bodyfile="pcap/header.hh" bodystart="92" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a2752da22e31dd414bb030a0d6032251c" prot="private" static="no" mutable="no">
         <type>std::uint32_t</type>
@@ -67,7 +67,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap/header.hh" line="74" column="1" bodyfile="pcap/header.hh" bodystart="74" bodyend="-1"/>
+        <location file="pcap/header.hh" line="93" column="1" bodyfile="pcap/header.hh" bodystart="93" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a22f5055178b1fbf5e96e2b6083b3e41f" prot="private" static="no" mutable="no">
         <type><ref refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c" kindref="member">link_type_t</ref></type>
@@ -80,7 +80,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap/header.hh" line="75" column="1" bodyfile="pcap/header.hh" bodystart="75" bodyend="-1"/>
+        <location file="pcap/header.hh" line="94" column="1" bodyfile="pcap/header.hh" bodystart="94" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -95,7 +95,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap/header.hh" line="77" column="1" bodyfile="pcap/header.hh" bodystart="77" bodyend="80"/>
+        <location file="pcap/header.hh" line="96" column="1" bodyfile="pcap/header.hh" bodystart="96" bodyend="99"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a29ce345c0f92aeee73c51bc120a1f395" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -132,7 +132,71 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap/header.hh" line="82" column="1" bodyfile="pcap/header.hh" bodystart="82" bodyend="86"/>
+        <location file="pcap/header.hh" line="101" column="1" bodyfile="pcap/header.hh" bodystart="101" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a8f8b2b0ab6e3d947863466876930acd1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>libnokogiri::pcap::file_header_t::file_header_t</definition>
+        <argsstring>(const file_header_t &amp;)=delete</argsstring>
+        <name>file_header_t</name>
+        <param>
+          <type>const <ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap/header.hh" line="107" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a97b3fef9925718e72ec69c8ad896bfb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref> &amp;</type>
+        <definition>file_header_t&amp; libnokogiri::pcap::file_header_t::operator=</definition>
+        <argsstring>(const file_header_t &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap/header.hh" line="108" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a16a6ced1c65aafb6562f647b76604eec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>libnokogiri::pcap::file_header_t::file_header_t</definition>
+        <argsstring>(file_header_t &amp;&amp;)=default</argsstring>
+        <name>file_header_t</name>
+        <param>
+          <type><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap/header.hh" line="110" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a3e1e2887f1387173b8bc8ad22517bdfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref> &amp;</type>
+        <definition>file_header_t&amp; libnokogiri::pcap::file_header_t::operator=</definition>
+        <argsstring>(file_header_t &amp;&amp;)=default</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pcap/header.hh" line="111" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a52c221285b6e40d34e785561bbef8f63" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656" kindref="member">pcap_variant_t</ref></type>
@@ -145,7 +209,7 @@
 <para>Retrieve the type of pcap file this is. This is also the magic number for the file </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap/header.hh" line="90" column="1" bodyfile="pcap/header.hh" bodystart="90" bodyend="90"/>
+        <location file="pcap/header.hh" line="115" column="1" bodyfile="pcap/header.hh" bodystart="115" bodyend="115"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1file__header__t_1ab2b308414f764685b36eccd48545bfff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -162,7 +226,7 @@
 <para>Set the type of pcap file this is. This is also the magic number for the file </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap/header.hh" line="92" column="1" bodyfile="pcap/header.hh" bodystart="92" bodyend="92"/>
+        <location file="pcap/header.hh" line="117" column="1" bodyfile="pcap/header.hh" bodystart="117" bodyend="117"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a8f5d56e0c357dd9a8d4148c331e5223e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structlibnokogiri_1_1version__t" kindref="compound">version_t</ref></type>
@@ -175,7 +239,7 @@
 <para>Retrieve the pcap file version. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap/header.hh" line="96" column="1" bodyfile="pcap/header.hh" bodystart="96" bodyend="96"/>
+        <location file="pcap/header.hh" line="121" column="1" bodyfile="pcap/header.hh" bodystart="121" bodyend="121"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a4158712947e8adb2936fa17ea0333187" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -192,7 +256,7 @@
 <para>Set the pcap file version. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap/header.hh" line="98" column="1" bodyfile="pcap/header.hh" bodystart="98" bodyend="98"/>
+        <location file="pcap/header.hh" line="123" column="1" bodyfile="pcap/header.hh" bodystart="123" bodyend="123"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a82e65553181db7fbb1d6d38fb7ab91d1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::int32_t</type>
@@ -205,7 +269,7 @@
 <para>Retrieve the offset for the timezone in seconds relative to GMT. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap/header.hh" line="102" column="1" bodyfile="pcap/header.hh" bodystart="102" bodyend="102"/>
+        <location file="pcap/header.hh" line="127" column="1" bodyfile="pcap/header.hh" bodystart="127" bodyend="127"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a4547526b226ca8a10b1539b59133ce3b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -222,7 +286,7 @@
 <para>Set the offset for the timezone in seconds relative to GMT. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap/header.hh" line="104" column="1" bodyfile="pcap/header.hh" bodystart="104" bodyend="104"/>
+        <location file="pcap/header.hh" line="129" column="1" bodyfile="pcap/header.hh" bodystart="129" bodyend="129"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a847b846fa2e02698b81d490378752e4a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::uint32_t</type>
@@ -235,7 +299,7 @@
 <para>Retrieve the accuracy of the timestamps </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap/header.hh" line="108" column="1" bodyfile="pcap/header.hh" bodystart="108" bodyend="108"/>
+        <location file="pcap/header.hh" line="133" column="1" bodyfile="pcap/header.hh" bodystart="133" bodyend="133"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a2286c25c16b34cab79cd6cecf8a22b18" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -252,7 +316,7 @@
 <para>Set the accuracy of the timestamps </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap/header.hh" line="110" column="1" bodyfile="pcap/header.hh" bodystart="110" bodyend="110"/>
+        <location file="pcap/header.hh" line="135" column="1" bodyfile="pcap/header.hh" bodystart="135" bodyend="135"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a0785987b4eacff38c639e2b6b0746dd9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::uint32_t</type>
@@ -265,7 +329,7 @@
 <para>Retrieve the maximum length a packet can be in this pcap file. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap/header.hh" line="114" column="1" bodyfile="pcap/header.hh" bodystart="114" bodyend="114"/>
+        <location file="pcap/header.hh" line="139" column="1" bodyfile="pcap/header.hh" bodystart="139" bodyend="139"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a246411e8af5b5bf72db3af082f9843c1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -282,7 +346,7 @@
 <para>Set the maximum length a packet can be in this pcap file. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap/header.hh" line="116" column="1" bodyfile="pcap/header.hh" bodystart="116" bodyend="116"/>
+        <location file="pcap/header.hh" line="141" column="1" bodyfile="pcap/header.hh" bodystart="141" bodyend="141"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1file__header__t_1ac96e39eb2628892ad874907b6ba9c85b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c" kindref="member">link_type_t</ref></type>
@@ -295,7 +359,7 @@
 <para>Retrieve the link type for the packets that this pcap file contain. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap/header.hh" line="120" column="1" bodyfile="pcap/header.hh" bodystart="120" bodyend="120"/>
+        <location file="pcap/header.hh" line="145" column="1" bodyfile="pcap/header.hh" bodystart="145" bodyend="145"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1pcap_1_1file__header__t_1a3cfc12e8f5c82ca93168acf12925a6e7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -312,7 +376,7 @@
 <para>Set the link type for the packets that this pcap file contain. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pcap/header.hh" line="122" column="1" bodyfile="pcap/header.hh" bodystart="122" bodyend="122"/>
+        <location file="pcap/header.hh" line="147" column="1" bodyfile="pcap/header.hh" bodystart="147" bodyend="147"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -336,7 +400,7 @@
 </programlisting></para><para><itemizedlist>
 <listitem><para><computeroutput>PCAP Magic Number</computeroutput> - The 32-bit unsigned value is used to identify the type of pcap file and its endianness.</para></listitem><listitem><para><computeroutput>Major Version Number</computeroutput> &amp; <computeroutput>Minor Version Number</computeroutput> Two unsigned 16-bit values to indicate the version of the pcap</para></listitem><listitem><para><computeroutput>Timezone GMT Offset</computeroutput> - A signed 32-bit value which describes the timezone offset in seconds from GMT that this capture was taken at. (normally set to <computeroutput>0</computeroutput>)</para></listitem><listitem><para><computeroutput>Time-stamp Accuracy</computeroutput> - An unsigned 32-bit value describing the number of significant figures the timestamps have (normally <computeroutput>0</computeroutput>)</para></listitem><listitem><para><computeroutput>Max Packet Length</computeroutput> - An unsigned 32-bit value that represents the maximum number of octets saved per packet in this file. Packets larger than this value will be truncated.</para></listitem><listitem><para><computeroutput>Data Link Type</computeroutput> - Am unsigned 32-bit value describing the link layer. See <ref refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c" kindref="member">libnokogiri::link_type_t</ref> for possible values.</para></listitem></itemizedlist>
 </para><para>The most recent version for pcap is 2.4. </para>    </detaileddescription>
-    <location file="pcap/header.hh" line="68" column="1" bodyfile="pcap/header.hh" bodystart="68" bodyend="123"/>
+    <location file="pcap/header.hh" line="87" column="1" bodyfile="pcap/header.hh" bodystart="87" bodyend="148"/>
     <listofallmembers>
       <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a22f5055178b1fbf5e96e2b6083b3e41f" prot="private" virt="non-virtual"><scope>libnokogiri::pcap::file_header_t</scope><name>_network</name></member>
       <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a2752da22e31dd414bb030a0d6032251c" prot="private" virt="non-virtual"><scope>libnokogiri::pcap::file_header_t</scope><name>_pcklen_max</name></member>
@@ -346,10 +410,14 @@
       <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a7c52ada14ef3811600151f9e1c0d74aa" prot="private" virt="non-virtual"><scope>libnokogiri::pcap::file_header_t</scope><name>_version</name></member>
       <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a0070077193cf63cf880682939c677d52" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::file_header_t</scope><name>file_header_t</name></member>
       <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a29ce345c0f92aeee73c51bc120a1f395" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::file_header_t</scope><name>file_header_t</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a8f8b2b0ab6e3d947863466876930acd1" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::file_header_t</scope><name>file_header_t</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a16a6ced1c65aafb6562f647b76604eec" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::file_header_t</scope><name>file_header_t</name></member>
       <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1ac96e39eb2628892ad874907b6ba9c85b" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::file_header_t</scope><name>link_type</name></member>
       <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a3cfc12e8f5c82ca93168acf12925a6e7" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::file_header_t</scope><name>link_type</name></member>
       <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a0785987b4eacff38c639e2b6b0746dd9" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::file_header_t</scope><name>max_packet_length</name></member>
       <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a246411e8af5b5bf72db3af082f9843c1" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::file_header_t</scope><name>max_packet_length</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a97b3fef9925718e72ec69c8ad896bfb3" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::file_header_t</scope><name>operator=</name></member>
+      <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a3e1e2887f1387173b8bc8ad22517bdfb" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::file_header_t</scope><name>operator=</name></member>
       <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a847b846fa2e02698b81d490378752e4a" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::file_header_t</scope><name>timestamp_accuracy</name></member>
       <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a2286c25c16b34cab79cd6cecf8a22b18" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::file_header_t</scope><name>timestamp_accuracy</name></member>
       <member refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a82e65553181db7fbb1d6d38fb7ab91d1" prot="public" virt="non-virtual"><scope>libnokogiri::pcap::file_header_t</scope><name>timezone_offset</name></member>

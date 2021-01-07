@@ -41,7 +41,7 @@ Program Listing for File pcap.hh
    
        private:
            libnokogiri::internal::fd_t _file;
-           captrue_compression_t _compression;
+           capture_compression_t _compression;
            bool _readonly;
            bool _prefetch;
            file_header_t _header{};
@@ -56,7 +56,7 @@ Program Listing for File pcap.hh
        public:
            constexpr pcap_t() = delete;
    
-           pcap_t(libnokogiri::internal::fs::path& file, captrue_compression_t compression, bool read_only, bool prefetch = false) noexcept;
+           pcap_t(libnokogiri::internal::fs::path& file, capture_compression_t compression, bool read_only, bool prefetch = false) noexcept;
    
            pcap_t(const pcap_t&) = delete;
            pcap_t& operator=(const pcap_t&) = delete;
@@ -70,20 +70,17 @@ Program Listing for File pcap.hh
            bool needs_swapping() const noexcept { return _needs_swapping; }
    
            [[nodiscard]]
-           file_header_t header() const noexcept { return _header; }
-           void header(file_header_t header) noexcept { _header = header; }
+           file_header_t& header() noexcept { return _header; }
+           void header(file_header_t&& header) noexcept { _header = std::move(header); }
    
            [[nodiscard]]
-           captrue_compression_t compression_type() const noexcept { return _compression; }
+           capture_compression_t compression_type() const noexcept { return _compression; }
    
            [[nodiscard]]
            bool valid() const noexcept { return _valid; }
    
            [[nodiscard]]
            std::size_t packet_count() const noexcept { return _packets.size(); }
-   
-           auto begin() const noexcept { return _packets.begin(); }
-           auto end() const noexcept { return _packets.end(); }
    
            [[nodiscard]]
            bool save() const noexcept;
@@ -95,6 +92,9 @@ Program Listing for File pcap.hh
                std::swap(_header, desc._header);
                std::swap(_valid, desc._valid);
            }
+   
+   
+           void remove_packet(std::size_t index) noexcept {  }
    
            std::optional<std::reference_wrapper<packet_t>> get_packet(std::size_t idx) noexcept {
                if (idx <= _packets.size()) {

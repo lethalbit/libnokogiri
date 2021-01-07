@@ -3,66 +3,82 @@
   <compounddef id="header_8hh" kind="file" language="C++">
     <compoundname>header.hh</compoundname>
     <includes local="no">cstdint</includes>
+    <includes local="no">array</includes>
+    <includes local="no">string_view</includes>
     <includes local="no">libnokogiri/config.hh</includes>
     <includes refid="common_8hh" local="no">libnokogiri/common.hh</includes>
     <includes local="no">libnokogiri/internal/defs.hh</includes>
     <includedby refid="pcap_8hh" local="no">pcap.hh</includedby>
     <incdepgraph>
-      <node id="92">
+      <node id="102">
         <label>cstdint</label>
       </node>
-      <node id="93">
+      <node id="105">
         <label>libnokogiri/config.hh</label>
       </node>
-      <node id="94">
+      <node id="106">
         <label>libnokogiri/common.hh</label>
         <link refid="common_8hh_source"/>
-        <childnode refid="95" relation="include">
+        <childnode refid="107" relation="include">
         </childnode>
-        <childnode refid="92" relation="include">
+        <childnode refid="102" relation="include">
         </childnode>
-        <childnode refid="96" relation="include">
+        <childnode refid="103" relation="include">
         </childnode>
-        <childnode refid="97" relation="include">
+        <childnode refid="104" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="109" relation="include">
         </childnode>
       </node>
-      <node id="97">
+      <node id="109">
         <label>libnokogiri/internal/fd.hh</label>
       </node>
-      <node id="96">
+      <node id="104">
+        <label>string_view</label>
+      </node>
+      <node id="108">
         <label>libnokogiri/internal/defs.hh</label>
       </node>
-      <node id="95">
+      <node id="103">
+        <label>array</label>
+      </node>
+      <node id="107">
         <label>cstddef</label>
       </node>
-      <node id="91">
+      <node id="101">
         <label>pcap/header.hh</label>
         <link refid="header_8hh"/>
-        <childnode refid="92" relation="include">
+        <childnode refid="102" relation="include">
         </childnode>
-        <childnode refid="93" relation="include">
+        <childnode refid="103" relation="include">
         </childnode>
-        <childnode refid="94" relation="include">
+        <childnode refid="104" relation="include">
         </childnode>
-        <childnode refid="96" relation="include">
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
         </childnode>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="100">
+      <node id="112">
         <label>libnokogiri.hh</label>
         <link refid="libnokogiri_8hh_source"/>
       </node>
-      <node id="98">
+      <node id="110">
         <label>pcap/header.hh</label>
         <link refid="header_8hh"/>
-        <childnode refid="99" relation="include">
+        <childnode refid="111" relation="include">
         </childnode>
       </node>
-      <node id="99">
+      <node id="111">
         <label>pcap.hh</label>
         <link refid="pcap_8hh_source"/>
-        <childnode refid="100" relation="include">
+        <childnode refid="112" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -79,74 +95,99 @@
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LIBNOKOGIRI_PCAP_HEADER_HH</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;libnokogiri/config.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;libnokogiri/common.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;libnokogiri/internal/defs.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;array&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string_view&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;libnokogiri/config.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;libnokogiri/common.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacelibnokogiri_1_1pcap" kindref="compound">libnokogiri::pcap</ref><sp/>{</highlight></codeline>
-<codeline lineno="17" refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>struct</highlight><highlight class="normal"><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656" kindref="member">pcap_variant_t</ref><sp/>:<sp/>std::uint32_t<sp/>{</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Standard<sp/><sp/><sp/>=<sp/>0xA1B2C3D4U,<sp/></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a35e0c8c0b180c95d4e122e55ed62cc64" kindref="member">Modified</ref><sp/><sp/><sp/>=<sp/>0xA1B2CD34U,<sp/></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a8556cee2e2a5b5e735f3593dc348521a" kindref="member">IXIAHW</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0x1C0001ACU,<sp/></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a5cc3e33ec226f9b110878c1f197f298f" kindref="member">IXIASW</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0x1C0001ABU,<sp/></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a4146c294bcc82b1723c65bdc64b55089" kindref="member">Nanosecond</ref><sp/>=<sp/>0xA1B23C4DU,<sp/></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Swapped<sp/>versions<sp/>of<sp/>the<sp/>magic,<sp/>so<sp/>it&apos;s<sp/>easy<sp/>to<sp/>detect<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656af50b33a9beb0122f09f5dac7fe32517b" kindref="member">SwappedStantard</ref><sp/><sp/><sp/>=<sp/>0xD4C3B2A1U,<sp/></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656aae99b9c57b1bfe6a4d657eded0de17f2" kindref="member">SwappedModified</ref><sp/><sp/><sp/>=<sp/>0x34CDB2A1U,<sp/></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a768c05c9a2c12abc1ad9244a7ccb9013" kindref="member">SwappedIXIAHW</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0xAC01001CU,<sp/></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656acd100172ee368cbf65e108865bdbae70" kindref="member">SwappedIXIASW</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0xAB01001CU,<sp/></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a6b63e2e1dc6b29aa7aa1f3a9d07271c7" kindref="member">SwappedNanosecond</ref><sp/>=<sp/>0x4D3CB2A1U,<sp/></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68" refid="structlibnokogiri_1_1pcap_1_1file__header__t" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref><sp/>final<sp/>{</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656" kindref="member">pcap_variant_t</ref><sp/>_variant;</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structlibnokogiri_1_1version__t" kindref="compound">version_t</ref><sp/>_version;</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::int32_t<sp/>_tz_offset;</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint32_t<sp/>_timestamp_figs;</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint32_t<sp/>_pcklen_max;</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">alignas</highlight><highlight class="normal">(</highlight><highlight class="keyword">alignof</highlight><highlight class="normal">(std::uint32_t))<sp/><ref refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c" kindref="member">link_type_t</ref><sp/>_network;</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref>()<sp/>noexcept<sp/>:</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_variant{pcap_variant_t::Standard},<sp/>_version{1U,<sp/>0U},<sp/>_tz_offset{0},</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_timestamp_figs{0U},<sp/>_pcklen_max{0U},<sp/>_network{<ref refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cafc461ac8b6e3f19a9f64800389e202fe" kindref="member">link_type_t::User0</ref>}</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="comment">/*<sp/>NOP<sp/>*/</highlight><highlight class="normal"><sp/>}</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"></highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref>(<ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656" kindref="member">pcap_variant_t</ref><sp/>variant,<sp/><ref refid="structlibnokogiri_1_1version__t" kindref="compound">version_t</ref><sp/>version,<sp/>std::int32_t<sp/>tz_offset,</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint32_t<sp/>ts_figs,<sp/>std::uint32_t<sp/>pcklen,<sp/><ref refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c" kindref="member">link_type_t</ref><sp/>network)<sp/>noexcept<sp/>:</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_variant{variant},<sp/>_version{version},<sp/>_tz_offset{tz_offset},</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_timestamp_figs{ts_figs},<sp/>_pcklen_max{pcklen},<sp/>_network{network}</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="comment">/*<sp/>NOP<sp/>*/</highlight><highlight class="normal"><sp/>}</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
-<codeline lineno="90" refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a52c221285b6e40d34e785561bbef8f63" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656" kindref="member">pcap_variant_t</ref><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a52c221285b6e40d34e785561bbef8f63" kindref="member">variant</ref>()<sp/>const<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_variant;<sp/>}</highlight></codeline>
-<codeline lineno="92" refid="structlibnokogiri_1_1pcap_1_1file__header__t_1ab2b308414f764685b36eccd48545bfff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1ab2b308414f764685b36eccd48545bfff" kindref="member">variant</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656" kindref="member">pcap_variant_t</ref><sp/>variant)<sp/>noexcept<sp/>{<sp/>_variant<sp/>=<sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1ab2b308414f764685b36eccd48545bfff" kindref="member">variant</ref>;<sp/>}</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"></highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
-<codeline lineno="96" refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a8f5d56e0c357dd9a8d4148c331e5223e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structlibnokogiri_1_1version__t" kindref="compound">version_t</ref><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a8f5d56e0c357dd9a8d4148c331e5223e" kindref="member">version</ref>()<sp/>const<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_version;<sp/>}</highlight></codeline>
-<codeline lineno="98" refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a4158712947e8adb2936fa17ea0333187" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a4158712947e8adb2936fa17ea0333187" kindref="member">version</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1version__t" kindref="compound">version_t</ref><sp/>version)<sp/>noexcept<sp/>{<sp/>_version<sp/>=<sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a4158712947e8adb2936fa17ea0333187" kindref="member">version</ref>;<sp/>}</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"></highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
-<codeline lineno="102" refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a82e65553181db7fbb1d6d38fb7ab91d1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::int32_t<sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a82e65553181db7fbb1d6d38fb7ab91d1" kindref="member">timezone_offset</ref>()<sp/>const<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_tz_offset;<sp/>}</highlight></codeline>
-<codeline lineno="104" refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a4547526b226ca8a10b1539b59133ce3b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a4547526b226ca8a10b1539b59133ce3b" kindref="member">timezone_offset</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::int32_t<sp/>tz_offset)<sp/>noexcept<sp/>{<sp/>_tz_offset<sp/>=<sp/>tz_offset;<sp/>}</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"></highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
-<codeline lineno="108" refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a847b846fa2e02698b81d490378752e4a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint32_t<sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a847b846fa2e02698b81d490378752e4a" kindref="member">timestamp_accuracy</ref>()<sp/>const<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_timestamp_figs;<sp/>}</highlight></codeline>
-<codeline lineno="110" refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a2286c25c16b34cab79cd6cecf8a22b18" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a2286c25c16b34cab79cd6cecf8a22b18" kindref="member">timestamp_accuracy</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::uint32_t<sp/>ts_accuracy)<sp/>noexcept<sp/>{<sp/>_timestamp_figs<sp/>=<sp/>ts_accuracy;<sp/>}</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"></highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
-<codeline lineno="114" refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a0785987b4eacff38c639e2b6b0746dd9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint32_t<sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a0785987b4eacff38c639e2b6b0746dd9" kindref="member">max_packet_length</ref>()<sp/>const<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_pcklen_max;<sp/>}</highlight></codeline>
-<codeline lineno="116" refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a246411e8af5b5bf72db3af082f9843c1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a246411e8af5b5bf72db3af082f9843c1" kindref="member">max_packet_length</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::uint32_t<sp/>length)<sp/>noexcept<sp/>{<sp/>_pcklen_max<sp/>=<sp/>length;<sp/>}</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"></highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
-<codeline lineno="120" refid="structlibnokogiri_1_1pcap_1_1file__header__t_1ac96e39eb2628892ad874907b6ba9c85b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c" kindref="member">link_type_t</ref><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1ac96e39eb2628892ad874907b6ba9c85b" kindref="member">link_type</ref>()<sp/>const<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_network;<sp/>}</highlight></codeline>
-<codeline lineno="122" refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a3cfc12e8f5c82ca93168acf12925a6e7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a3cfc12e8f5c82ca93168acf12925a6e7" kindref="member">link_type</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c" kindref="member">link_type_t</ref><sp/>type)<sp/>noexcept<sp/>{<sp/>_network<sp/>=<sp/>type;<sp/>}</highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="124"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"></highlight></codeline>
-<codeline lineno="126"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>LIBNOKOGIRI_PCAP_HEADER_HH<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;libnokogiri/internal/defs.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacelibnokogiri_1_1pcap" kindref="compound">libnokogiri::pcap</ref><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>libnokogiri::internal::enum_pair_t;</highlight></codeline>
+<codeline lineno="20" refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>struct</highlight><highlight class="normal"><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656" kindref="member">pcap_variant_t</ref><sp/>:<sp/>std::uint32_t<sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Standard<sp/><sp/><sp/>=<sp/>0xA1B2C3D4U,<sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a35e0c8c0b180c95d4e122e55ed62cc64" kindref="member">Modified</ref><sp/><sp/><sp/>=<sp/>0xA1B2CD34U,<sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a8556cee2e2a5b5e735f3593dc348521a" kindref="member">IXIAHW</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0x1C0001ACU,<sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a5cc3e33ec226f9b110878c1f197f298f" kindref="member">IXIASW</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0x1C0001ABU,<sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a4146c294bcc82b1723c65bdc64b55089" kindref="member">Nanosecond</ref><sp/>=<sp/>0xA1B23C4DU,<sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Swapped<sp/>versions<sp/>of<sp/>the<sp/>magic,<sp/>so<sp/>it&apos;s<sp/>easy<sp/>to<sp/>detect<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a868409fd1aa8d36cba281e1afde72f19" kindref="member">SwappedStandard</ref><sp/><sp/><sp/>=<sp/>0xD4C3B2A1U,<sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656aae99b9c57b1bfe6a4d657eded0de17f2" kindref="member">SwappedModified</ref><sp/><sp/><sp/>=<sp/>0x34CDB2A1U,<sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a768c05c9a2c12abc1ad9244a7ccb9013" kindref="member">SwappedIXIAHW</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0xAC01001CU,<sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656acd100172ee368cbf65e108865bdbae70" kindref="member">SwappedIXIASW</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0xAB01001CU,<sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a6b63e2e1dc6b29aa7aa1f3a9d07271c7" kindref="member">SwappedNanosecond</ref><sp/>=<sp/>0x4D3CB2A1U,<sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array&lt;const<sp/>enum_pair_t&lt;pcap_variant_t&gt;,<sp/>10&gt;<sp/>pcap_variant_s{{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>pcap_variant_t::Standard,<sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Standard&quot;</highlight><highlight class="normal">sv<sp/><sp/><sp/>},</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a35e0c8c0b180c95d4e122e55ed62cc64" kindref="member">pcap_variant_t::Modified</ref>,<sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Modified&quot;</highlight><highlight class="normal">sv<sp/><sp/><sp/>},</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a8556cee2e2a5b5e735f3593dc348521a" kindref="member">pcap_variant_t::IXIAHW</ref>,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;IXIAHW&quot;</highlight><highlight class="normal">sv<sp/><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a5cc3e33ec226f9b110878c1f197f298f" kindref="member">pcap_variant_t::IXIASW</ref>,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;IXIASW&quot;</highlight><highlight class="normal">sv<sp/><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a4146c294bcc82b1723c65bdc64b55089" kindref="member">pcap_variant_t::Nanosecond</ref>,<sp/></highlight><highlight class="stringliteral">&quot;Nanosecond&quot;</highlight><highlight class="normal">sv<sp/>},</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a868409fd1aa8d36cba281e1afde72f19" kindref="member">pcap_variant_t::SwappedStandard</ref>,<sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Swapped<sp/>Standard&quot;</highlight><highlight class="normal">sv<sp/><sp/>},</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656aae99b9c57b1bfe6a4d657eded0de17f2" kindref="member">pcap_variant_t::SwappedModified</ref>,<sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Swapped<sp/>Modified&quot;</highlight><highlight class="normal">sv<sp/><sp/>},</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a768c05c9a2c12abc1ad9244a7ccb9013" kindref="member">pcap_variant_t::SwappedIXIAHW</ref>,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;SwappedIXIAHW&quot;</highlight><highlight class="normal">sv<sp/><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656acd100172ee368cbf65e108865bdbae70" kindref="member">pcap_variant_t::SwappedIXIASW</ref>,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;SwappedIXIASW&quot;</highlight><highlight class="normal">sv<sp/><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656a6b63e2e1dc6b29aa7aa1f3a9d07271c7" kindref="member">pcap_variant_t::SwappedNanosecond</ref>,<sp/></highlight><highlight class="stringliteral">&quot;SwappedNanosecond&quot;</highlight><highlight class="normal">sv<sp/>},</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}};</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="structlibnokogiri_1_1pcap_1_1file__header__t" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref><sp/>final<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656" kindref="member">pcap_variant_t</ref><sp/>_variant;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structlibnokogiri_1_1version__t" kindref="compound">version_t</ref><sp/>_version;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::int32_t<sp/>_tz_offset;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint32_t<sp/>_timestamp_figs;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint32_t<sp/>_pcklen_max;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">alignas</highlight><highlight class="normal">(</highlight><highlight class="keyword">alignof</highlight><highlight class="normal">(std::uint32_t))<sp/><ref refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c" kindref="member">link_type_t</ref><sp/>_network;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref>()<sp/>noexcept<sp/>:</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_variant{pcap_variant_t::Standard},<sp/>_version{1U,<sp/>0U},<sp/>_tz_offset{0},</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_timestamp_figs{0U},<sp/>_pcklen_max{0U},<sp/>_network{<ref refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59cafc461ac8b6e3f19a9f64800389e202fe" kindref="member">link_type_t::User0</ref>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="comment">/*<sp/>NOP<sp/>*/</highlight><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref>(<ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656" kindref="member">pcap_variant_t</ref><sp/>variant,<sp/><ref refid="structlibnokogiri_1_1version__t" kindref="compound">version_t</ref><sp/>version,<sp/>std::int32_t<sp/>tz_offset,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint32_t<sp/>ts_figs,<sp/>std::uint32_t<sp/>pcklen,<sp/><ref refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c" kindref="member">link_type_t</ref><sp/>network)<sp/>noexcept<sp/>:</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_variant{variant},<sp/>_version{version},<sp/>_tz_offset{tz_offset},</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_timestamp_figs{ts_figs},<sp/>_pcklen_max{pcklen},<sp/>_network{network}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="comment">/*<sp/>NOP<sp/>*/</highlight><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref>&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref>(<ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref>&amp;&amp;)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref>&amp;<sp/>operator=(<ref refid="structlibnokogiri_1_1pcap_1_1file__header__t" kindref="compound">file_header_t</ref>&amp;&amp;)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
+<codeline lineno="115" refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a52c221285b6e40d34e785561bbef8f63" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656" kindref="member">pcap_variant_t</ref><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a52c221285b6e40d34e785561bbef8f63" kindref="member">variant</ref>()<sp/>const<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_variant;<sp/>}</highlight></codeline>
+<codeline lineno="117" refid="structlibnokogiri_1_1pcap_1_1file__header__t_1ab2b308414f764685b36eccd48545bfff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1ab2b308414f764685b36eccd48545bfff" kindref="member">variant</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacelibnokogiri_1_1pcap_1a9b6ed66d560c22eb5ddb64f72aa6c656" kindref="member">pcap_variant_t</ref><sp/>variant)<sp/>noexcept<sp/>{<sp/>_variant<sp/>=<sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1ab2b308414f764685b36eccd48545bfff" kindref="member">variant</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
+<codeline lineno="121" refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a8f5d56e0c357dd9a8d4148c331e5223e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structlibnokogiri_1_1version__t" kindref="compound">version_t</ref><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a8f5d56e0c357dd9a8d4148c331e5223e" kindref="member">version</ref>()<sp/>const<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_version;<sp/>}</highlight></codeline>
+<codeline lineno="123" refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a4158712947e8adb2936fa17ea0333187" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a4158712947e8adb2936fa17ea0333187" kindref="member">version</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1version__t" kindref="compound">version_t</ref><sp/>version)<sp/>noexcept<sp/>{<sp/>_version<sp/>=<sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a4158712947e8adb2936fa17ea0333187" kindref="member">version</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
+<codeline lineno="127" refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a82e65553181db7fbb1d6d38fb7ab91d1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::int32_t<sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a82e65553181db7fbb1d6d38fb7ab91d1" kindref="member">timezone_offset</ref>()<sp/>const<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_tz_offset;<sp/>}</highlight></codeline>
+<codeline lineno="129" refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a4547526b226ca8a10b1539b59133ce3b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a4547526b226ca8a10b1539b59133ce3b" kindref="member">timezone_offset</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::int32_t<sp/>tz_offset)<sp/>noexcept<sp/>{<sp/>_tz_offset<sp/>=<sp/>tz_offset;<sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
+<codeline lineno="133" refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a847b846fa2e02698b81d490378752e4a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint32_t<sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a847b846fa2e02698b81d490378752e4a" kindref="member">timestamp_accuracy</ref>()<sp/>const<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_timestamp_figs;<sp/>}</highlight></codeline>
+<codeline lineno="135" refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a2286c25c16b34cab79cd6cecf8a22b18" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a2286c25c16b34cab79cd6cecf8a22b18" kindref="member">timestamp_accuracy</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::uint32_t<sp/>ts_accuracy)<sp/>noexcept<sp/>{<sp/>_timestamp_figs<sp/>=<sp/>ts_accuracy;<sp/>}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
+<codeline lineno="139" refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a0785987b4eacff38c639e2b6b0746dd9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint32_t<sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a0785987b4eacff38c639e2b6b0746dd9" kindref="member">max_packet_length</ref>()<sp/>const<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_pcklen_max;<sp/>}</highlight></codeline>
+<codeline lineno="141" refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a246411e8af5b5bf72db3af082f9843c1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a246411e8af5b5bf72db3af082f9843c1" kindref="member">max_packet_length</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::uint32_t<sp/>length)<sp/>noexcept<sp/>{<sp/>_pcklen_max<sp/>=<sp/>length;<sp/>}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]</highlight></codeline>
+<codeline lineno="145" refid="structlibnokogiri_1_1pcap_1_1file__header__t_1ac96e39eb2628892ad874907b6ba9c85b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c" kindref="member">link_type_t</ref><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1ac96e39eb2628892ad874907b6ba9c85b" kindref="member">link_type</ref>()<sp/>const<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_network;<sp/>}</highlight></codeline>
+<codeline lineno="147" refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a3cfc12e8f5c82ca93168acf12925a6e7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structlibnokogiri_1_1pcap_1_1file__header__t_1a3cfc12e8f5c82ca93168acf12925a6e7" kindref="member">link_type</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c" kindref="member">link_type_t</ref><sp/>type)<sp/>noexcept<sp/>{<sp/>_network<sp/>=<sp/>type;<sp/>}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="149"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>LIBNOKOGIRI_PCAP_HEADER_HH<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
     <location file="pcap/header.hh"/>
   </compounddef>

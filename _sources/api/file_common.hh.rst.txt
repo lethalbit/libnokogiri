@@ -25,6 +25,8 @@ Includes
 --------
 
 
+- ``array``
+
 - ``cstddef``
 
 - ``cstdint``
@@ -32,6 +34,8 @@ Includes
 - ``libnokogiri/internal/defs.hh``
 
 - ``libnokogiri/internal/fd.hh``
+
+- ``string_view``
 
 
 
@@ -76,7 +80,7 @@ Enums
 -----
 
 
-- :ref:`exhale_enum_namespacelibnokogiri_1a5d8388038cdb5669c9bb66e38214cd44`
+- :ref:`exhale_enum_namespacelibnokogiri_1a0c7fe9cd6e1f2585edd9ccfefc41a727`
 
 - :ref:`exhale_enum_namespacelibnokogiri_1a2a757e6afcdf6b68678d6e0693eda59c`
 
@@ -111,4 +115,13 @@ Defines
 
 
 - :ref:`exhale_define_common_8hh_1a64bed52b3a785c5f321627adaf782835`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_namespacelibnokogiri_1ac806f979eaedc1a6d2d9f92911e3093c`
+
+- :ref:`exhale_variable_namespacelibnokogiri_1a956608dd7c84cd6b7ae0e75238b192e6`
 

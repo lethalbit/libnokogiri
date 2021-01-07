@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="215" column="1" bodyfile="common.hh" bodystart="215" bodyend="-1"/>
+        <location file="common.hh" line="356" column="1" bodyfile="common.hh" bodystart="356" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structlibnokogiri_1_1version__t_1a27e85a5bcc90c08c4c31547f8982d0b6" prot="private" static="no" mutable="no">
         <type>std::uint16_t</type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="216" column="1" bodyfile="common.hh" bodystart="216" bodyend="-1"/>
+        <location file="common.hh" line="357" column="1" bodyfile="common.hh" bodystart="357" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="218" column="1" bodyfile="common.hh" bodystart="218" bodyend="220"/>
+        <location file="common.hh" line="359" column="1" bodyfile="common.hh" bodystart="359" bodyend="361"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1version__t_1af4c37e6f3be36f9bfd4fcac25d27adcc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -64,7 +64,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="222" column="1" bodyfile="common.hh" bodystart="222" bodyend="224"/>
+        <location file="common.hh" line="363" column="1" bodyfile="common.hh" bodystart="363" bodyend="365"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1version__t_1a77c0166a7cb8c7f88a82c9e0f0a51d16" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -80,7 +80,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="226" column="1" bodyfile="common.hh" bodystart="226" bodyend="226"/>
+        <location file="common.hh" line="367" column="1" bodyfile="common.hh" bodystart="367" bodyend="367"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1version__t_1a0fa586017d79f8f3bedca85ea64a236d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::uint32_t</type>
@@ -93,7 +93,7 @@
 <para>Gets the major version of the section header </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="230" column="1" bodyfile="common.hh" bodystart="230" bodyend="230"/>
+        <location file="common.hh" line="371" column="1" bodyfile="common.hh" bodystart="371" bodyend="371"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1version__t_1afb76a90bf8bd42a3e3fbbdb496f01080" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::uint32_t</type>
@@ -106,7 +106,7 @@
 <para>Gets the minor version of the section header </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="233" column="1" bodyfile="common.hh" bodystart="233" bodyend="233"/>
+        <location file="common.hh" line="374" column="1" bodyfile="common.hh" bodystart="374" bodyend="374"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1version__t_1a86244cf61a82a01cb2aac4856c2dbee1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -123,7 +123,7 @@
 <para>Check if two versions are equal </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="237" column="1" bodyfile="common.hh" bodystart="237" bodyend="239"/>
+        <location file="common.hh" line="378" column="1" bodyfile="common.hh" bodystart="378" bodyend="380"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1version__t_1a00041c87d504e820f876fe1a4420feec" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -140,7 +140,7 @@
 <para>Check if two versions are not equal </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="242" column="1" bodyfile="common.hh" bodystart="242" bodyend="244"/>
+        <location file="common.hh" line="383" column="1" bodyfile="common.hh" bodystart="383" bodyend="385"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1version__t_1a4f3852486d82d3d25ed424cf288169a2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -157,7 +157,7 @@
 <para>Check if one version is greater than another </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="248" column="1" bodyfile="common.hh" bodystart="248" bodyend="252"/>
+        <location file="common.hh" line="389" column="1" bodyfile="common.hh" bodystart="389" bodyend="393"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1version__t_1a2e71556f18e992b6178aa12258ef7c26" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -174,7 +174,7 @@
 <para>Check if one version is greater than or equal to another </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="255" column="1" bodyfile="common.hh" bodystart="255" bodyend="257"/>
+        <location file="common.hh" line="396" column="1" bodyfile="common.hh" bodystart="396" bodyend="398"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1version__t_1ae26daa9a60766ad133b6278357e60f86" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -191,7 +191,7 @@
 <para>Check if one version is less than another </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="261" column="1" bodyfile="common.hh" bodystart="261" bodyend="265"/>
+        <location file="common.hh" line="402" column="1" bodyfile="common.hh" bodystart="402" bodyend="406"/>
       </memberdef>
       <memberdef kind="function" id="structlibnokogiri_1_1version__t_1a417d91818a690b84dec43214c1b22328" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -208,14 +208,14 @@
 <para>Check if one version is less than or equal to another </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="common.hh" line="268" column="1" bodyfile="common.hh" bodystart="268" bodyend="270"/>
+        <location file="common.hh" line="409" column="1" bodyfile="common.hh" bodystart="409" bodyend="411"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>pcap version information </para>    </briefdescription>
     <detaileddescription>
 <para>This structure is just a glorified container for holding version information.</para><para>Both pcapng and the standard pcap formats both use this. </para>    </detaileddescription>
-    <location file="common.hh" line="213" column="1" bodyfile="common.hh" bodystart="213" bodyend="271"/>
+    <location file="common.hh" line="354" column="1" bodyfile="common.hh" bodystart="354" bodyend="412"/>
     <listofallmembers>
       <member refid="structlibnokogiri_1_1version__t_1a0ef00172fa1f2e2f8a6880ee501bce05" prot="private" virt="non-virtual"><scope>libnokogiri::version_t</scope><name>_major</name></member>
       <member refid="structlibnokogiri_1_1version__t_1a27e85a5bcc90c08c4c31547f8982d0b6" prot="private" virt="non-virtual"><scope>libnokogiri::version_t</scope><name>_minor</name></member>
