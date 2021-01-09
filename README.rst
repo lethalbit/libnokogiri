@@ -37,8 +37,8 @@ Building
 --------
 Once you have configured libnokogiri appropriately, to simply build and install simply run the following:::
 
-	$ ninja -c build
-	$ ninja -c build install
+	$ ninja -C build
+	$ ninja -C build install
 
 
 This will build and install libnokogiri into the default prefix which is `/usr/local`, to change that see the configuration steps above.
