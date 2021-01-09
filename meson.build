@@ -21,9 +21,16 @@ add_project_arguments(
 	language: 'cpp'
 )
 
-libnokogiri_deps = [
-	dependency('zlib', version: '>=1.1.130', required: true)
-]
+if target_machine.system() == 'windows'
+	zlib = subproject('zlib')
+	libnokogiri_deps = [
+		zlib.get_variable('zlib_dep')
+	]
+else
+	libnokogiri_deps = [
+		dependency('zlib', version: '>=1.1.130', required: true)
+	]
+endif
 
 subdir('src')
 
