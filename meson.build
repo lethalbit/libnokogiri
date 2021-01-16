@@ -2,7 +2,7 @@ project(
 	'libnokogiri',
 	'cpp',
 	default_options: [
-		'cpp_std=gnu++17',
+		'cpp_std=c++17',
 		'warning_level=3'
 	],
 	version: '0.0.1',
